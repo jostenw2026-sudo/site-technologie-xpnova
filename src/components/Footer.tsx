@@ -199,7 +199,7 @@ export default function Footer() {
       <div className="border-t border-white/12">
         <div className="max-w-6xl mx-auto flex flex-col items-center justify-between gap-2 py-4 px-6 text-[0.72rem] leading-relaxed text-white/50 lg:flex-row">
           <p className="text-center lg:text-left">
-            © {new Date().getFullYear()} {site.legalName} — {site.legal.forme} au capital de{" "}
+            © 2026 {site.legalName} — {site.legal.forme} au capital de{" "}
             {site.legal.capital} · CNPS : {site.legal.cnps} · RCCM : {site.legal.rccm} · NIU :{" "}
             {site.legal.niu}
           </p>
