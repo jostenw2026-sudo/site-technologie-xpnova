@@ -5,9 +5,12 @@ import { SharedNavigation } from "@/components/shared/SharedNavigation";
 import Footer from "@/components/Footer";
 import "./globals.css";
 
+const isProd = process.env.SITE_ENV === "production";
+
 export const metadata: Metadata = {
   title: "Technologie — Ingénierie des équipements et systèmes techniques — XP-NOVA",
   description: "Ingénierie mécanisation, irrigation, transformation, stockage, froid, énergie, manutention et équipements numériques pour projets agro-systémiques au Cameroun et en Afrique centrale.",
+  ...(!isProd && { robots: { index: false, follow: false } }),
 };
 
 const divisions = [
