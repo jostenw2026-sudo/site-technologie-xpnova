@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 
@@ -149,7 +149,7 @@ export default function ContactPage() {
           <div className="mt-12 p-6 bg-white rounded border border-[#E2E5EC]">
             <h2 className="text-xl font-bold text-[#0D1F5C] mb-3">Contact direct</h2>
             <p className="text-[#5A6072] mb-2">
-              <strong>E-mail :</strong> contact@xp-nova.com
+              <strong>E-mail :</strong> hello@xp-nova.com
             </p>
             <p className="text-[#5A6072] mb-2">
               <strong>Téléphone :</strong> +237 670 034 000

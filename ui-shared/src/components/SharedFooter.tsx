@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 
 export interface FooterColumn {
   title: string;
@@ -42,7 +42,7 @@ export const SharedFooter: React.FC<SharedFooterProps> = ({
     signature: 'De l\'idée à l\'impact.',
     address: '134, Rue 1813, Vallée Bastos — B.P. 5603, Nlongkak, Yaoundé, Cameroun',
     phone: '+237 670 034 000',
-    email: 'contact@xp-nova.com',
+    email: 'hello@xp-nova.com',
     responsePromise: '48 h',
   },
   divisions = [],
