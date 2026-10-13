@@ -12,10 +12,10 @@ export default function Footer() {
     legalName: 'XP-NOVA SARL',
     legal: {
       forme: 'SARL',
-      capital: '5 000 000 FCFA',
-      cnps: '102038665-0',
-      rccm: 'RC/YAO/2021/B/374',
-      niu: 'M050200000102B',
+      capital: '10 000 000 FCFA',
+      cnps: '321-0105061-A',
+      rccm: 'RC/YAO/2006/B/945 (modif. RC/YAO/2026/M/354)',
+      niu: 'M010600019838W',
     },
   };
 
