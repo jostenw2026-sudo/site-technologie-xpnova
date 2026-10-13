@@ -45,18 +45,43 @@ export default function Home() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              'Mécanisation',
-              'Irrigation et eau',
-              'Transformation et usines',
-              'Stockage, conservation et froid',
-              'Énergie et utilités',
-              'Manutention et logistique',
-              'Équipements numériques',
+              {
+                title: 'Mécanisation',
+                description: 'Tracteurs, équipements de travail du sol, semis et récolte adaptés aux contextes africains.',
+              },
+              {
+                title: 'Irrigation et eau',
+                description: "Systèmes d'irrigation (goutte-à-goutte, aspersion, gravitaire), pompage, traitement et stockage de l'eau.",
+              },
+              {
+                title: 'Transformation et usines',
+                description: 'Unités de transformation agroalimentaire, lignes de production, équipements de conditionnement.',
+              },
+              {
+                title: 'Stockage, conservation et froid',
+                description: 'Entrepôts, silos, chambres froides, chaîne du froid, systèmes de conservation des produits.',
+              },
+              {
+                title: 'Énergie et utilités',
+                description: 'Énergie solaire, groupes électrogènes, réseaux électriques, utilités industrielles.',
+              },
+              {
+                title: 'Manutention et logistique',
+                description: 'Convoyeurs, chariots élévateurs, systèmes de manutention, équipements de logistique interne.',
+              },
+              {
+                title: 'Équipements numériques',
+                description: 'Logiciels de gestion, capteurs et IoT, connectivité, systèmes de monitoring et de pilotage.',
+              },
             ].map((domaine) => (
-              <div key={domaine} className="p-6 border border-[#E2E5EC] rounded hover:border-[#D4A017] transition-colors">
-                <h3 className="font-semibold text-[#0D1F5C] mb-2">{domaine}</h3>
-                <p className="text-sm text-[#5A6072]">Détails à venir</p>
-              </div>
+              <a
+                key={domaine.title}
+                href="/domaines"
+                className="p-6 border border-[#E2E5EC] rounded hover:border-[#D4A017] transition-colors block"
+              >
+                <h3 className="font-semibold text-[#0D1F5C] mb-2">{domaine.title}</h3>
+                <p className="text-sm text-[#5A6072]">{domaine.description}</p>
+              </a>
             ))}
           </div>
         </div>
@@ -71,20 +96,51 @@ export default function Home() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              'Analyse du besoin',
-              'Variantes',
-              'Architecture technique',
-              'Dimensionnement',
-              'Cahiers des charges',
-              'Analyse d\'offres',
-              'Essais / testing',
-              'Vérification de performance',
-              'Assistance à la réception',
+              {
+                title: 'Analyse du besoin',
+                description: "Diagnostic des besoins techniques, audit de l'existant et définition des objectifs.",
+              },
+              {
+                title: 'Variantes',
+                description: 'Étude de solutions alternatives, comparatif technico-économique et recommandation argumentée.',
+              },
+              {
+                title: 'Architecture technique',
+                description: "Conception de l'architecture système, schémas fonctionnels et flux de données.",
+              },
+              {
+                title: 'Dimensionnement',
+                description: 'Calcul des capacités requises : débits, puissances et capacités de stockage.',
+              },
+              {
+                title: 'Cahiers des charges',
+                description: "Rédaction de cahiers des charges techniques pour vos appels d'offres.",
+              },
+              {
+                title: "Analyse d'offres",
+                description: 'Vérification de conformité et analyse technico-économique des offres reçues.',
+              },
+              {
+                title: 'Essais / testing',
+                description: "Conception de protocoles d'essai pour vérifier la conformité des équipements.",
+              },
+              {
+                title: 'Vérification de performance',
+                description: 'Tests de performance sur site et validation des capacités en conditions réelles.',
+              },
+              {
+                title: 'Assistance à la réception',
+                description: 'Vérification finale, formation des équipes et documentation de transfert.',
+              },
             ].map((service) => (
-              <div key={service} className="p-4 bg-white rounded border border-[#E2E5EC]">
-                <h3 className="font-semibold text-[#0D1F5C] mb-2">{service}</h3>
-                <p className="text-sm text-[#5A6072]">Détails à venir</p>
-              </div>
+              <a
+                key={service.title}
+                href="/services"
+                className="p-4 bg-white rounded border border-[#E2E5EC] hover:border-[#D4A017] transition-colors block"
+              >
+                <h3 className="font-semibold text-[#0D1F5C] mb-2">{service.title}</h3>
+                <p className="text-sm text-[#5A6072]">{service.description}</p>
+              </a>
             ))}
           </div>
         </div>
