@@ -34,15 +34,8 @@ export default function ContactPage() {
         <div className="max-w-3xl mx-auto">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label className="block text-sm font-semibold text-[#0D1F5C] mb-2">
-                Type de projet *
-              </label>
-              <select
-                required
-                value={formData.type}
-                onChange={(e) => setFormData({ ...formData, type: e.target.value })}
-                className="w-full p-3 border border-[#E2E5EC] rounded focus:outline-none focus:border-[#D4A017]"
-              >
+              <label className="block text-sm font-semibold text-[#0D1F5C] mb-2">Type de projet *</label>
+              <select required value={formData.type} onChange={(e) => setFormData({ ...formData, type: e.target.value })} className="w-full p-3 border border-[#E2E5EC] rounded focus:outline-none focus:border-[#D4A017]">
                 <option value="">Sélectionnez...</option>
                 <option value="mecanisation">Mécanisation</option>
                 <option value="irrigation">Irrigation et eau</option>
@@ -56,107 +49,45 @@ export default function ContactPage() {
             </div>
 
             <div>
-              <label className="block text-sm font-semibold text-[#0D1F5C] mb-2">
-                Site / Localisation *
-              </label>
-              <input
-                type="text"
-                required
-                value={formData.localisation}
-                onChange={(e) => setFormData({ ...formData, localisation: e.target.value })}
-                className="w-full p-3 border border-[#E2E5EC] rounded focus:outline-none focus:border-[#D4A017]"
-                placeholder="Ville, région, pays..."
-              />
+              <label className="block text-sm font-semibold text-[#0D1F5C] mb-2">Site / Localisation *</label>
+              <input type="text" required value={formData.localisation} onChange={(e) => setFormData({ ...formData, localisation: e.target.value })} className="w-full p-3 border border-[#E2E5EC] rounded focus:outline-none focus:border-[#D4A017]" placeholder="Ville, région, pays..." />
             </div>
 
             <div>
-              <label className="block text-sm font-semibold text-[#0D1F5C] mb-2">
-                Filière *
-              </label>
-              <input
-                type="text"
-                required
-                value={formData.filiere}
-                onChange={(e) => setFormData({ ...formData, filiere: e.target.value })}
-                className="w-full p-3 border border-[#E2E5EC] rounded focus:outline-none focus:border-[#D4A017]"
-                placeholder="Ex: riziculture, transformation cacao, élevage..."
-              />
+              <label className="block text-sm font-semibold text-[#0D1F5C] mb-2">Filière *</label>
+              <input type="text" required value={formData.filiere} onChange={(e) => setFormData({ ...formData, filiere: e.target.value })} className="w-full p-3 border border-[#E2E5EC] rounded focus:outline-none focus:border-[#D4A017]" placeholder="Ex: riziculture, transformation cacao, élevage..." />
             </div>
 
             <div>
-              <label className="block text-sm font-semibold text-[#0D1F5C] mb-2">
-                Domaines concernés
-              </label>
-              <textarea
-                value={formData.domaines}
-                onChange={(e) => setFormData({ ...formData, domaines: e.target.value })}
-                className="w-full p-3 border border-[#E2E5EC] rounded focus:outline-none focus:border-[#D4A017]"
-                rows={3}
-                placeholder="Décrivez les domaines techniques concernés..."
-              />
+              <label className="block text-sm font-semibold text-[#0D1F5C] mb-2">Domaines concernés</label>
+              <textarea value={formData.domaines} onChange={(e) => setFormData({ ...formData, domaines: e.target.value })} className="w-full p-3 border border-[#E2E5EC] rounded focus:outline-none focus:border-[#D4A017]" rows={3} placeholder="Décrivez les domaines techniques concernés..." />
             </div>
 
             <div>
-              <label className="block text-sm font-semibold text-[#0D1F5C] mb-2">
-                Description du besoin *
-              </label>
-              <textarea
-                required
-                value={formData.description}
-                onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-                className="w-full p-3 border border-[#E2E5EC] rounded focus:outline-none focus:border-[#D4A017]"
-                rows={5}
-                placeholder="Décrivez votre projet et vos besoins..."
-              />
+              <label className="block text-sm font-semibold text-[#0D1F5C] mb-2">Description du besoin *</label>
+              <textarea required value={formData.description} onChange={(e) => setFormData({ ...formData, description: e.target.value })} className="w-full p-3 border border-[#E2E5EC] rounded focus:outline-none focus:border-[#D4A017]" rows={5} placeholder="Décrivez votre projet et vos besoins..." />
             </div>
 
             <div>
-              <label className="block text-sm font-semibold text-[#0D1F5C] mb-2">
-                E-mail *
-              </label>
-              <input
-                type="email"
-                required
-                value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="w-full p-3 border border-[#E2E5EC] rounded focus:outline-none focus:border-[#D4A017]"
-                placeholder="votre@email.com"
-              />
+              <label className="block text-sm font-semibold text-[#0D1F5C] mb-2">E-mail *</label>
+              <input type="email" required value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} className="w-full p-3 border border-[#E2E5EC] rounded focus:outline-none focus:border-[#D4A017]" placeholder="votre@email.com" />
             </div>
 
             <div>
-              <label className="block text-sm font-semibold text-[#0D1F5C] mb-2">
-                Téléphone *
-              </label>
-              <input
-                type="tel"
-                required
-                value={formData.telephone}
-                onChange={(e) => setFormData({ ...formData, telephone: e.target.value })}
-                className="w-full p-3 border border-[#E2E5EC] rounded focus:outline-none focus:border-[#D4A017]"
-                placeholder="+237 ..."
-              />
+              <label className="block text-sm font-semibold text-[#0D1F5C] mb-2">Téléphone *</label>
+              <input type="tel" required value={formData.telephone} onChange={(e) => setFormData({ ...formData, telephone: e.target.value })} className="w-full p-3 border border-[#E2E5EC] rounded focus:outline-none focus:border-[#D4A017]" placeholder="+237 ..." />
             </div>
 
-            <button
-              type="submit"
-              className="w-full px-6 py-3 bg-[#D4A017] text-white rounded font-semibold hover:bg-[#B8860B] transition-colors"
-            >
+            <button type="submit" className="w-full px-6 py-3 bg-[#D4A017] text-white rounded font-semibold hover:bg-[#B8860B] transition-colors">
               Soumettre ma demande
             </button>
           </form>
 
           <div className="mt-12 p-6 bg-white rounded border border-[#E2E5EC]">
             <h2 className="text-xl font-bold text-[#0D1F5C] mb-3">Contact direct</h2>
-            <p className="text-[#5A6072] mb-2">
-              <strong>E-mail :</strong> contact@xp-nova.com
-            </p>
-            <p className="text-[#5A6072] mb-2">
-              <strong>Téléphone :</strong> +237 670 034 000
-            </p>
-            <p className="text-[#5A6072]">
-              <strong>Adresse :</strong> 134, Rue 1813, Vallée Bastos — B.P. 5603, Nlongkak, Yaoundé, Cameroun
-            </p>
+            <p className="text-[#5A6072] mb-2"><strong>E-mail :</strong> hello@xp-nova.com</p>
+            <p className="text-[#5A6072] mb-2"><strong>Téléphone :</strong> +237 6700 34 000</p>
+            <p className="text-[#5A6072]"><strong>Adresse :</strong> 134, Rue 1813, Vallée Bastos — B.P. 5603, Nlongkak, Yaoundé, Cameroun</p>
           </div>
         </div>
       </section>
