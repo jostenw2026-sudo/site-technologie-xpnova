@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React from 'react';
 
@@ -58,8 +58,8 @@ export const UtilityBar: React.FC<UtilityBarProps> = ({
         </nav>
         <div className="flex items-center gap-4">
           {showEmail && (
-            <a href="mailto:contact@xp-nova.com" className="hidden text-white/80 hover:text-white sm:inline">
-              contact@xp-nova.com
+            <a href="mailto:hello@xp-nova.com" className="hidden text-white/80 hover:text-white sm:inline">
+              hello@xp-nova.com
             </a>
           )}
           {showPortal && (

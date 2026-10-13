@@ -1,4 +1,4 @@
-import Link from 'next/link';
+﻿import Link from 'next/link';
 import Image from 'next/image';
 
 export default function Footer() {
@@ -7,7 +7,7 @@ export default function Footer() {
     baseline: 'Bureau d\'Ingénierie Conseil',
     address: '134, Rue 1813, Vallée Bastos — B.P. 5603, Nlongkak, Yaoundé, Cameroun',
     phone: '+237 6700 34 000',
-    email: 'contact@xp-nova.com',
+    email: 'hello@xp-nova.com',
     responsePromise: '48 h',
     legalName: 'XP-NOVA SARL',
     legal: {
