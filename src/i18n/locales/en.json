@@ -1,0 +1,107 @@
+{
+  "home": {
+    "hero": {
+      "title": "Engineering of technical equipment and systems",
+      "description": "We design and size the technical and digital equipment required for your agro-systemic projects, from mechanization to cold chain, including irrigation and connectivity systems.",
+      "cta_expertise": "Request technical expertise",
+      "cta_domains": "Discover our domains"
+    },
+    "distinction": {
+      "title": "Our role:",
+      "text": "XP-NOVA provides engineering, studies and technical specifications. The supply of equipment, installation works and operation are entrusted to specialized service providers selected according to your needs."
+    },
+    "domains": {
+      "title": "7 domains for complete projects",
+      "intro": "From production equipment to storage systems, including energy and connectivity, we cover all the technical needs of agro-systemic projects.",
+      "items": {
+        "mechanization": {
+          "title": "Mechanization",
+          "description": "Tractors, soil preparation equipment, planting and harvesting adapted to African contexts."
+        },
+        "irrigation": {
+          "title": "Irrigation and water",
+          "description": "Irrigation systems (drip, sprinkler, gravity), pumping, water treatment and storage."
+        },
+        "processing": {
+          "title": "Processing and plants",
+          "description": "Agri-food processing units, production lines, packaging equipment."
+        },
+        "storage": {
+          "title": "Storage, preservation and cold",
+          "description": "Warehouses, silos, cold rooms, cold chain, product preservation systems."
+        },
+        "energy": {
+          "title": "Energy and utilities",
+          "description": "Solar energy, generators, electrical networks, industrial utilities."
+        },
+        "handling": {
+          "title": "Handling and logistics",
+          "description": "Conveyors, forklifts, handling systems, internal logistics equipment."
+        },
+        "digital": {
+          "title": "Digital equipment",
+          "description": "Management software, sensors and IoT, connectivity, monitoring and control systems."
+        }
+      }
+    },
+    "services": {
+      "title": "9 services for informed choices",
+      "intro": "We support your projects from needs analysis to equipment reception, including specification design and solution selection.",
+      "items": {
+        "needs_analysis": {
+          "title": "Needs analysis",
+          "description": "Diagnosis of technical needs, audit of existing systems and definition of objectives."
+        },
+        "variants": {
+          "title": "Variants",
+          "description": "Study of alternative solutions, technico-economic comparison and reasoned recommendation."
+        },
+        "architecture": {
+          "title": "Technical architecture",
+          "description": "Design of system architecture, functional diagrams and data flows."
+        },
+        "sizing": {
+          "title": "Sizing",
+          "description": "Calculation of required capacities: flow rates, powers and storage capacities."
+        },
+        "specifications": {
+          "title": "Specifications",
+          "description": "Drafting of technical specifications for your calls for tenders."
+        },
+        "offer_analysis": {
+          "title": "Offer analysis",
+          "description": "Compliance verification and technico-economic analysis of received offers."
+        },
+        "testing": {
+          "title": "Testing",
+          "description": "Design of test protocols to verify equipment compliance."
+        },
+        "performance": {
+          "title": "Performance verification",
+          "description": "On-site performance tests and validation of capacities in real conditions."
+        },
+        "handover": {
+          "title": "Reception assistance",
+          "description": "Final verification, team training and transfer documentation."
+        }
+      }
+    },
+    "cta": {
+      "title": "Does your project need technical expertise?",
+      "subtitle": "Our engineers support you in the design and sizing of equipment and technical systems adapted to your context.",
+      "button": "Request technical expertise"
+    }
+  },
+  "nav": {
+    "about": "About",
+    "lifecycle": "Lifecycle",
+    "domains": "Domains",
+    "services": "Services",
+    "references": "References",
+    "contact": "Contact"
+  },
+  "common": {
+    "email": "hello@xp-nova.com",
+    "phone": "+237 6 70 04 80 00"
+  }
+}
