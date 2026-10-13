@@ -6,16 +6,16 @@ export default function Footer() {
     signature: 'De l\'idée à l\'impact.',
     baseline: 'Bureau d\'Ingénierie Conseil',
     address: '134, Rue 1813, Vallée Bastos — B.P. 5603, Nlongkak, Yaoundé, Cameroun',
-    phone: '+237 670 034 000',
+    phone: '+237 6700 34 000',
     email: 'contact@xp-nova.com',
     responsePromise: '48 h',
     legalName: 'XP-NOVA SARL',
     legal: {
       forme: 'SARL',
-      capital: '5 000 000 FCFA',
-      cnps: '102038665-0',
-      rccm: 'RC/YAO/2021/B/374',
-      niu: 'M050200000102B',
+      capital: '10 000 000 FCFA',
+      cnps: '321-0105061-A',
+      rccm: 'RC/YAO/2006/B/945 (modif. RC/YAO/2026/M/354)',
+      niu: 'M010600019838W',
     },
   };
 
