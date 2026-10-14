@@ -1,4 +1,4 @@
-# @xpnova/ui-shared
+﻿# @xpnova/ui-shared
 
 Composants partagés de l'écosystème web XP-NOVA.
 
@@ -137,7 +137,7 @@ import { SharedFooter } from '@xpnova/ui-shared';
     signature: 'De l\'idée à l\'impact.',
     address: '134, Rue 1813, Vallée Bastos — B.P. 5603, Nlongkak, Yaoundé, Cameroun',
     phone: '+237 670 034 000',
-    email: 'contact@xp-nova.com',
+    email: 'hello@xp-nova.com',
     responsePromise: '48 h',
   }}
   legal={{

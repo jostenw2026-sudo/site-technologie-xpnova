@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 
 export interface Division {
   key: string;
@@ -74,10 +74,10 @@ export const UtilityBar: React.FC<UtilityBarProps> = ({
       <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
         {showEmail && (
           <a
-            href="mailto:contact@xp-nova.com"
+            href="mailto:hello@xp-nova.com"
             style={{ color: '#FFFFFF', textDecoration: 'none', fontSize: '0.875rem' }}
           >
-            contact@xp-nova.com
+            hello@xp-nova.com
           </a>
         )}
         {showPortal && (
