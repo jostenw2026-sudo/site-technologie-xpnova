@@ -54,7 +54,7 @@ export default function DomainesPage() {
         "Rédaction des spécifications techniques pour les appels d'offres.",
       ],
       livrables: [
-        'Schéma de procédé et d'implantation',
+        'Schéma de procédé et d\'implantation',
         'Note de dimensionnement des capacités',
         "Cahier des charges des équipements de transformation",
       ],
@@ -142,7 +142,7 @@ export default function DomainesPage() {
     },
   ];
 
-return (
+  return (
     <div className="flex flex-col">
       <section className="py-16 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
@@ -153,7 +153,7 @@ return (
         </div>
       </section>
 
-<section className="py-16 px-6 bg-[#F4F5F8]">
+      <section className="py-16 px-6 bg-[#F4F5F8]">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
           {domaines.map((domaine) => (
             <div key={domaine.title} className="bg-white rounded border border-[#E2E5EC] overflow-hidden flex flex-col">
