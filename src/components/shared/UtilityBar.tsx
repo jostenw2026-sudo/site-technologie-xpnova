@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React from 'react';
 import Link from 'next/link';
@@ -144,10 +144,7 @@ export const UtilityBar: React.FC<UtilityBarProps> = ({
 
         <div className="flex items-center gap-4">
           {showEmail && (
-<<<<<<< HEAD
-            =======
             <a href="mailto:hello@xp-nova.com" className="hidden text-white/90 hover:text-white sm:inline font-medium">
->>>>>>> 2385a92e121799cb0d338e217be43f181dd94244
               hello@xp-nova.com
             </a>
           )}
