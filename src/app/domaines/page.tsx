@@ -41,6 +41,26 @@ export default function DomainesPage() {
       services: ['Analyse du besoin', 'Dimensionnement', 'Architecture technique'],
     },
     {
+      title: 'Serres agricoles',
+      image: 'https://d2lm3begjhzc49.cloudfront.net/generated-images/87915a82.webp',
+      enjeu:
+        "Les serres protègent les cultures des aléas climatiques et permettent une maîtrise du microclimat. Mal conçues, elles génèrent surchauffes, maladies et rendements inférieurs aux attentes.",
+      description:
+        'Serres multi-tunnels, structures chapelles, ventilation, ombrage, irrigation intégrée, gestion du climat.',
+      perimetre: [
+        "Dimensionnement des structures et des surfaces selon les cultures et le climat local.",
+        "Choix des matériaux de couverture (film polyéthylène, polycarbonate, verre) et des systèmes d'ancrage.",
+        "Conception de la ventilation naturelle ou mécanique, du système d'ombrage et de brumisation.",
+        "Intégration de l'irrigation localisée et du pilotage climatique (capteurs, régulation).",
+      ],
+      livrables: [
+        'Note de dimensionnement et implantation des serres',
+        'Spécifications techniques des structures et équipements climatiques',
+        "Cahier des charges pour l'acquisition et la construction",
+      ],
+      services: ['Architecture technique', 'Dimensionnement', 'Cahiers des charges'],
+    },
+    {
       title: 'Transformation et usines',
       image: 'https://d2lm3begjhzc49.cloudfront.net/generated-images/1ebcaed5.webp',
       enjeu:
