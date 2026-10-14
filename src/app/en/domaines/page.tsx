@@ -136,49 +136,49 @@ export default function DomainesPageEN() {
   ];
 
   return (
-    <div className=\"flex flex-col\">
-      <section className=\"py-16 px-6 bg-white\">
-        <div className=\"max-w-6xl mx-auto\">
-          <h1 className=\"text-4xl font-bold text-[#0D1F5C] mb-6\">Our intervention domains</h1>
-          <p className=\"text-lg text-[#5A6072] max-w-3xl\">
+    <div className="flex flex-col">
+      <section className="py-16 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <h1 className="text-4xl font-bold text-[#0D1F5C] mb-6">Our intervention domains</h1>
+          <p className="text-lg text-[#5A6072] max-w-3xl">
             From production equipment to storage systems, including energy and connectivity, we cover all the technical needs of agro-systemic projects.
           </p>
         </div>
       </section>
 
-      <section className=\"py-16 px-6 bg-[#F4F5F8]\">
-        <div className=\"max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8\">
+      <section className="py-16 px-6 bg-[#F4F5F8]">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
           {domaines.map((domaine) => (
-            <div key={domaine.title} className=\"p-6 bg-white rounded border border-[#E2E5EC]\">
-              <h2 className=\"text-xl font-bold text-[#0D1F5C] mb-3\">{domaine.title}</h2>
-              <p className=\"text-[#5A6072] mb-4\">{domaine.enjeu}</p>
-              <div className=\"mb-4\">
-                <h3 className=\"text-sm font-semibold text-[#0D1F5C] mb-2\">XP-NOVA engineering scope</h3>
-                <ul className=\"text-sm text-[#5A6072] list-disc list-inside\">
+            <div key={domaine.title} className="p-6 bg-white rounded border border-[#E2E5EC]">
+              <h2 className="text-xl font-bold text-[#0D1F5C] mb-3">{domaine.title}</h2>
+              <p className="text-[#5A6072] mb-4">{domaine.enjeu}</p>
+              <div className="mb-4">
+                <h3 className="text-sm font-semibold text-[#0D1F5C] mb-2">XP-NOVA engineering scope</h3>
+                <ul className="text-sm text-[#5A6072] list-disc list-inside">
                   {domaine.perimetre.map((p) => (
                     <li key={p}>{p}</li>
                   ))}
                 </ul>
               </div>
-              <div className=\"mb-4\">
-                <h3 className=\"text-sm font-semibold text-[#0D1F5C] mb-2\">Deliverables & guarantees</h3>
-                <ul className=\"text-sm text-[#5A6072] list-disc list-inside\">
+              <div className="mb-4">
+                <h3 className="text-sm font-semibold text-[#0D1F5C] mb-2">Deliverables & guarantees</h3>
+                <ul className="text-sm text-[#5A6072] list-disc list-inside">
                   {domaine.livrables.map((l) => (
                     <li key={l}>{l}</li>
                   ))}
                 </ul>
               </div>
-              <div className=\"mb-4\">
-                <h3 className=\"text-sm font-semibold text-[#0D1F5C] mb-2\">Applicable services</h3>
-                <ul className=\"text-sm text-[#5A6072] list-disc list-inside\">
+              <div className="mb-4">
+                <h3 className="text-sm font-semibold text-[#0D1F5C] mb-2">Applicable services</h3>
+                <ul className="text-sm text-[#5A6072] list-disc list-inside">
                   {domaine.services.map((service) => (
                     <li key={service}>{service}</li>
                   ))}
                 </ul>
               </div>
               <a
-                href=\"/en/contact\"
-                className=\"inline-block px-4 py-2 bg-[#D4A017] text-white rounded text-sm font-semibold hover:bg-[#B8860B] transition-colors\"
+                href="/en/contact"
+                className="inline-block px-4 py-2 bg-[#D4A017] text-white rounded text-sm font-semibold hover:bg-[#B8860B] transition-colors"
               >
                 Request expertise
               </a>
