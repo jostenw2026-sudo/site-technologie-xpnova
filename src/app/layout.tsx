@@ -58,13 +58,16 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body className="min-h-full flex flex-col">
-        <UtilityBar divisions={divisions} siteUrl="https://xp-nova.com" />
-        <SharedNavigation
-          items={navItems}
-          logoSrc="/brand/logo_xpnova_color.png"
-          logoAlt="XP-NOVA"
-          logoHref="/"
-        />
+        {/* Bandeau + navigation collés en haut de l'écran au scroll */}
+        <div className="sticky top-0 z-50">
+          <UtilityBar divisions={divisions} siteUrl="https://xp-nova.com" currentKey="technologie" />
+          <SharedNavigation
+            items={navItems}
+            logoSrc="/brand/logo_xpnova_color.png"
+            logoAlt="XP-NOVA"
+            logoHref="/"
+          />
+        </div>
         <DivisionBadge divisionName="Technologie" />
         <main className="flex-1">{children}</main>
         <Footer />

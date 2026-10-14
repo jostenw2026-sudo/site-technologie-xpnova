@@ -1,0 +1,107 @@
+{
+  "home": {
+    "hero": {
+      "title": "Ingénierie des équipements et systèmes techniques",
+      "description": "Nous concevons et dimensionnons les équipements techniques et numériques nécessaires à vos projets agro-systémiques, de la mécanisation à la chaîne du froid, en passant par l'irrigation et les systèmes de connectivité.",
+      "cta_expertise": "Demander une expertise technique",
+      "cta_domains": "Découvrir nos domaines"
+    },
+    "distinction": {
+      "title": "Notre rôle :",
+      "text": "XP-NOVA assure l'ingénierie, les études et les spécifications techniques. La fourniture d'équipements, les travaux d'installation et l'exploitation sont confiés à des prestataires spécialisés sélectionnés selon vos besoins."
+    },
+    "domains": {
+      "title": "7 domaines pour des projets complets",
+      "intro": "Des équipements de production aux systèmes de stockage, en passant par l'énergie et la connectivité, nous couvrons l'ensemble des besoins techniques des projets agro-systémiques.",
+      "items": {
+        "mechanization": {
+          "title": "Mécanisation",
+          "description": "Tracteurs, équipements de travail du sol, semis et récolte adaptés aux contextes africains."
+        },
+        "irrigation": {
+          "title": "Irrigation et eau",
+          "description": "Systèmes d'irrigation (goutte-à-goutte, aspersion, gravitaire), pompage, traitement et stockage de l'eau."
+        },
+        "processing": {
+          "title": "Transformation et usines",
+          "description": "Unités de transformation agroalimentaire, lignes de production, équipements de conditionnement."
+        },
+        "storage": {
+          "title": "Stockage, conservation et froid",
+          "description": "Entrepôts, silos, chambres froides, chaîne du froid, systèmes de conservation des produits."
+        },
+        "energy": {
+          "title": "Énergie et utilités",
+          "description": "Énergie solaire, groupes électrogènes, réseaux électriques, utilités industrielles."
+        },
+        "handling": {
+          "title": "Manutention et logistique",
+          "description": "Convoyeurs, chariots élévateurs, systèmes de manutention, équipements de logistique interne."
+        },
+        "digital": {
+          "title": "Équipements numériques",
+          "description": "Logiciels de gestion, capteurs et IoT, connectivité, systèmes de monitoring et de pilotage."
+        }
+      }
+    },
+    "services": {
+      "title": "9 services pour des choix éclairés",
+      "intro": "Nous accompagnons vos projets de l'analyse du besoin jusqu'à la réception des équipements, en passant par la conception des spécifications et la sélection des solutions.",
+      "items": {
+        "needs_analysis": {
+          "title": "Analyse du besoin",
+          "description": "Diagnostic des besoins techniques, audit de l'existant et définition des objectifs."
+        },
+        "variants": {
+          "title": "Variantes",
+          "description": "Étude de solutions alternatives, comparatif technico-économique et recommandation argumentée."
+        },
+        "architecture": {
+          "title": "Architecture technique",
+          "description": "Conception de l'architecture système, schémas fonctionnels et flux de données."
+        },
+        "sizing": {
+          "title": "Dimensionnement",
+          "description": "Calcul des capacités requises : débits, puissances et capacités de stockage."
+        },
+        "specifications": {
+          "title": "Cahiers des charges",
+          "description": "Rédaction de cahiers des charges techniques pour vos appels d'offres."
+        },
+        "offer_analysis": {
+          "title": "Analyse d'offres",
+          "description": "Vérification de conformité et analyse technico-économique des offres reçues."
+        },
+        "testing": {
+          "title": "Essais / testing",
+          "description": "Conception de protocoles d'essai pour vérifier la conformité des équipements."
+        },
+        "performance": {
+          "title": "Vérification de performance",
+          "description": "Tests de performance sur site et validation des capacités en conditions réelles."
+        },
+        "handover": {
+          "title": "Assistance à la réception",
+          "description": "Vérification finale, formation des équipes et documentation de transfert."
+        }
+      }
+    },
+    "cta": {
+      "title": "Votre projet a besoin d'une expertise technique ?",
+      "subtitle": "Nos ingénieurs vous accompagnent dans la conception et le dimensionnement des équipements et systèmes techniques adaptés à votre contexte.",
+      "button": "Demander une expertise technique"
+    }
+  },
+  "nav": {
+    "about": "À propos",
+    "lifecycle": "Cycle de vie",
+    "domains": "Domaines",
+    "services": "Services",
+    "references": "Références",
+    "contact": "Contact"
+  },
+  "common": {
+    "email": "hello@xp-nova.com",
+    "phone": "+237 6 70 04 80 00"
+  }
+}
