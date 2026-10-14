@@ -41,13 +41,13 @@ const divisions = [
 ];
 
 const navItems = [
-  { label: 'Home', href: '/en', active: true },
-  { label: 'Domains', href: '/en/domaines', active: false },
-  { label: 'Services', href: '/en/services', active: false },
-  { label: 'Life Cycle', href: '/en/cycle-de-vie', active: false },
-  { label: 'References', href: '/en/references', active: false },
-  { label: 'About', href: '/en/a-propos', active: false },
-  { label: 'Contact', href: '/en/contact', active: false },
+  { label: 'Home', href: '/en' },
+  { label: 'Domains', href: '/en/domaines' },
+  { label: 'Services', href: '/en/services' },
+  { label: 'Life Cycle', href: '/en/cycle-de-vie' },
+  { label: 'References', href: '/en/references' },
+  { label: 'About', href: '/en/a-propos' },
+  { label: 'Contact', href: '/en/contact' },
 ];
 
 export default function EnglishLayout({
