@@ -102,47 +102,47 @@ export default function ServicesPageEN() {
   ];
 
   return (
-    <div className=\"flex flex-col\">
-      <section className=\"py-16 px-6 bg-white\">
-        <div className=\"max-w-6xl mx-auto\">
-          <h1 className=\"text-4xl font-bold text-[#0D1F5C] mb-6\">Our technical engineering services</h1>
-          <p className=\"text-lg text-[#5A6072] max-w-3xl\">
+    <div className="flex flex-col">
+      <section className="py-16 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <h1 className="text-4xl font-bold text-[#0D1F5C] mb-6">Our technical engineering services</h1>
+          <p className="text-lg text-[#5A6072] max-w-3xl">
             We support your projects from needs analysis to equipment reception, with a structured method, clear deliverables and an impartial advisory role.
           </p>
         </div>
       </section>
 
-      <section className=\"py-16 px-6 bg-[#F4F5F8]\">
-        <div className=\"max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6\">
+      <section className="py-16 px-6 bg-[#F4F5F8]">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service) => (
-            <div key={service.title} className=\"p-6 bg-white rounded border border-[#E2E5EC]\">
-              <h2 className=\"text-xl font-bold text-[#0D1F5C] mb-3\">{service.title}</h2>
-              <p className=\"text-[#5A6072] mb-4 text-sm italic\">{service.objectif}</p>
-              <div className=\"mb-4\">
-                <h3 className=\"text-sm font-semibold text-[#0D1F5C] mb-2\">Deliverables</h3>
-                <ul className=\"text-sm text-[#5A6072] list-disc list-inside\">
+            <div key={service.title} className="p-6 bg-white rounded border border-[#E2E5EC]">
+              <h2 className="text-xl font-bold text-[#0D1F5C] mb-3">{service.title}</h2>
+              <p className="text-[#5A6072] mb-4 text-sm italic">{service.objectif}</p>
+              <div className="mb-4">
+                <h3 className="text-sm font-semibold text-[#0D1F5C] mb-2">Deliverables</h3>
+                <ul className="text-sm text-[#5A6072] list-disc list-inside">
                   {service.livrables.map((livrable) => (
                     <li key={livrable}>{livrable}</li>
                   ))}
                 </ul>
               </div>
-              <div className=\"mb-4\">
-                <h3 className=\"text-sm font-semibold text-[#0D1F5C] mb-2\">Role of XP-NOVA</h3>
-                <p className=\"text-sm text-[#5A6072]\">{service.role}</p>
+              <div className="mb-4">
+                <h3 className="text-sm font-semibold text-[#0D1F5C] mb-2">Role of XP-NOVA</h3>
+                <p className="text-sm text-[#5A6072]">{service.role}</p>
               </div>
-              <p className=\"text-sm text-[#5A6072] mb-4\">
-                <span className=\"font-semibold\">Indicative duration:</span> {service.duree}
+              <p className="text-sm text-[#5A6072] mb-4">
+                <span className="font-semibold">Indicative duration:</span> {service.duree}
               </p>
             </div>
           ))}
         </div>
       </section>
 
-      <section className=\"py-16 px-6 bg-white\">
-        <div className=\"max-w-6xl mx-auto\">
-          <div className=\"p-6 bg-[#F4F5F8] border-l-4 border-[#D4A017] mb-8\">
-            <h2 className=\"text-xl font-bold text-[#0D1F5C] mb-3\">What we do not do</h2>
-            <ul className=\"text-[#5A6072] list-disc list-inside\">
+      <section className="py-16 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="p-6 bg-[#F4F5F8] border-l-4 border-[#D4A017] mb-8">
+            <h2 className="text-xl font-bold text-[#0D1F5C] mb-3">What we do not do</h2>
+            <ul className="text-[#5A6072] list-disc list-inside">
               <li>Equipment supply (we do not sell equipment)</li>
               <li>Installation works (we do not carry out installations)</li>
               <li>Operation and maintenance (we do not ensure maintenance)</li>
@@ -150,8 +150,8 @@ export default function ServicesPageEN() {
             </ul>
           </div>
           <a
-            href=\"/en/contact\"
-            className=\"inline-block px-6 py-3 bg-[#D4A017] text-white rounded font-semibold hover:bg-[#B8860B] transition-colors\"
+            href="/en/contact"
+            className="inline-block px-6 py-3 bg-[#D4A017] text-white rounded font-semibold hover:bg-[#B8860B] transition-colors"
           >
             Request technical expertise
           </a>
