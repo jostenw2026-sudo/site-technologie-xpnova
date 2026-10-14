@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 
 export interface Division {
   key: string;
@@ -28,6 +29,7 @@ export interface UtilityBarProps {
  * - La division courante (`currentKey`) est un badge NON-cliquable (aria-current),
  *   avec un anneau blanc pour marquer le site actif.
  * - Les autres divisions sont des liens atténués (opacité) avec « ↗ », pleins au survol.
+ * - À droite : email + sélecteur de langue FR/EN.
  * Compatible Next.js 14 et 16.
  */
 export const UtilityBar: React.FC<UtilityBarProps> = ({
@@ -146,14 +148,24 @@ export const UtilityBar: React.FC<UtilityBarProps> = ({
               hello@xp-nova.com
             </a>
           )}
-          {showLanguageToggle && onLanguageChange && (
-            <button
-              onClick={() => onLanguageChange(currentLang === 'fr' ? 'en' : 'fr')}
-              className="rounded border border-white/30 px-2 py-0.5 text-xs font-bold text-white no-underline hover:border-[#D4A017] hover:text-[#D4A017]"
-              aria-label={currentLang === 'fr' ? 'Version anglaise' : 'Version française'}
-            >
-              {currentLang === 'fr' ? 'EN' : 'FR'}
-            </button>
+          {showLanguageToggle && (
+            onLanguageChange ? (
+              <button
+                onClick={() => onLanguageChange(currentLang === 'fr' ? 'en' : 'fr')}
+                className="rounded border border-white/30 px-2 py-0.5 text-xs font-bold text-white no-underline hover:border-[#D4A017] hover:text-[#D4A017]"
+                aria-label={currentLang === 'fr' ? 'Version anglaise' : 'Version française'}
+              >
+                {currentLang === 'fr' ? 'EN' : 'FR'}
+              </button>
+            ) : (
+              <Link
+                href={currentLang === 'fr' ? '/en' : '/'}
+                className="rounded border border-white/30 px-2 py-0.5 text-xs font-bold text-white no-underline hover:border-[#D4A017] hover:text-[#D4A017]"
+                aria-label={currentLang === 'fr' ? 'Version anglaise' : 'Version française'}
+              >
+                {currentLang === 'fr' ? 'EN' : 'FR'}
+              </Link>
+            )
           )}
         </div>
       </div>
