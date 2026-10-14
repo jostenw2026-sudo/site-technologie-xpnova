@@ -42,13 +42,13 @@ const divisions = [
 ];
 
 const navItems = [
-  { label: 'Accueil', href: '/', active: true },
-  { label: 'Domaines', href: '/domaines', active: false },
-  { label: 'Services', href: '/services', active: false },
-  { label: 'Cycle de vie', href: '/cycle-de-vie', active: false },
-  { label: 'Références', href: '/references', active: false },
-  { label: 'À propos', href: '/a-propos', active: false },
-  { label: 'Contact', href: '/contact', active: false },
+  { label: 'Accueil', href: '/' },
+  { label: 'Domaines', href: '/domaines' },
+  { label: 'Services', href: '/services' },
+  { label: 'Cycle de vie', href: '/cycle-de-vie' },
+  { label: 'Références', href: '/references' },
+  { label: 'À propos', href: '/a-propos' },
+  { label: 'Contact', href: '/contact' },
 ];
 
 export default function RootLayout({
