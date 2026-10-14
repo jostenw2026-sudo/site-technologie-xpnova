@@ -58,7 +58,7 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body className="min-h-full flex flex-col">
-        <UtilityBar divisions={divisions} siteUrl="https://xp-nova.com" />
+        <UtilityBar divisions={divisions} siteUrl="https://xp-nova.com" currentKey="technologie" />
         <SharedNavigation
           items={navItems}
           logoSrc="/brand/logo_xpnova_color.png"
