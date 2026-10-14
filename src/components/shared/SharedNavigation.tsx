@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
 export interface NavItem {
   label: string;
@@ -32,6 +33,14 @@ export const SharedNavigation: React.FC<SharedNavigationProps> = ({
   logoHref = '/',
 }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  const isActive = (href: string) => {
+    if (href === '/') {
+      return pathname === '/';
+    }
+    return pathname?.startsWith(href);
+  };
 
   return (
     <header className={`sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-[#E2E5EC] ${className}`}>
@@ -50,21 +59,24 @@ export const SharedNavigation: React.FC<SharedNavigationProps> = ({
 
         {/* Menu desktop */}
         <nav className="hidden lg:flex items-center gap-4 xl:gap-5" aria-label="Navigation principale">
-          {items.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              target={item.external ? '_blank' : undefined}
-              rel={item.external ? 'noopener noreferrer' : undefined}
-              className={`text-[0.88rem] xl:text-[0.95rem] font-semibold whitespace-nowrap no-underline ${
-                item.active
-                  ? 'text-[#D4A017]'
-                  : 'text-[#1A1A2E] hover:text-[#00289A]'
-              }`}
-            >
-              {item.label}
-            </a>
-          ))}
+          {items.map((item) => {
+            const active = item.active !== undefined ? item.active : isActive(item.href);
+            return (
+              <a
+                key={item.href}
+                href={item.href}
+                target={item.external ? '_blank' : undefined}
+                rel={item.external ? 'noopener noreferrer' : undefined}
+                className={`text-[0.88rem] xl:text-[0.95rem] font-semibold whitespace-nowrap no-underline ${
+                  active
+                    ? 'text-[#D4A017]'
+                    : 'text-[#1A1A2E] hover:text-[#00289A]'
+                }`}
+              >
+                {item.label}
+              </a>
+            );
+          })}
         </nav>
 
         {/* Bouton menu mobile */}
@@ -84,20 +96,23 @@ export const SharedNavigation: React.FC<SharedNavigationProps> = ({
       {isMobileMenuOpen && (
         <nav className="lg:hidden border-t border-[#E2E5EC] bg-white" aria-label="Navigation mobile">
           <div className="max-w-6xl mx-auto py-3 px-6 flex flex-col">
-            {items.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                target={item.external ? '_blank' : undefined}
-                rel={item.external ? 'noopener noreferrer' : undefined}
-                className={`py-2.5 font-semibold border-b border-[#E2E5EC] no-underline ${
-                  item.active ? 'text-[#D4A017]' : 'text-[#1A1A2E]'
-                }`}
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {item.label}
-              </a>
-            ))}
+            {items.map((item) => {
+              const active = item.active !== undefined ? item.active : isActive(item.href);
+              return (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  target={item.external ? '_blank' : undefined}
+                  rel={item.external ? 'noopener noreferrer' : undefined}
+                  className={`py-2.5 font-semibold border-b border-[#E2E5EC] no-underline ${
+                    active ? 'text-[#D4A017]' : 'text-[#1A1A2E]'
+                  }`}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {item.label}
+                </a>
+              );
+            })}
           </div>
         </nav>
       )}
