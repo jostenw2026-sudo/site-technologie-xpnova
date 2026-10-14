@@ -56,7 +56,11 @@ export const SharedNavigation: React.FC<SharedNavigationProps> = ({
               href={item.href}
               target={item.external ? '_blank' : undefined}
               rel={item.external ? 'noopener noreferrer' : undefined}
-              className="text-[0.88rem] xl:text-[0.95rem] font-semibold whitespace-nowrap text-[#1A1A2E] hover:text-[#00289A] no-underline"
+              className={`text-[0.88rem] xl:text-[0.95rem] font-semibold whitespace-nowrap no-underline ${
+                item.active
+                  ? 'text-[#D4A017]'
+                  : 'text-[#1A1A2E] hover:text-[#00289A]'
+              }`}
             >
               {item.label}
             </a>
@@ -86,7 +90,9 @@ export const SharedNavigation: React.FC<SharedNavigationProps> = ({
                 href={item.href}
                 target={item.external ? '_blank' : undefined}
                 rel={item.external ? 'noopener noreferrer' : undefined}
-                className="py-2.5 font-semibold text-[#1A1A2E] border-b border-[#E2E5EC] no-underline"
+                className={`py-2.5 font-semibold border-b border-[#E2E5EC] no-underline ${
+                  item.active ? 'text-[#D4A017]' : 'text-[#1A1A2E]'
+                }`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item.label}
