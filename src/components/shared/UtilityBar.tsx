@@ -18,58 +18,95 @@ export interface UtilityBarProps {
   currentLang?: 'fr' | 'en';
   onLanguageChange?: (lang: 'fr' | 'en') => void;
   className?: string;
+  currentKey?: string;
 }
 
-/**
- * Bandeau utilitaire - Style XP-NOVA
- * Compatible Next.js 14 et 16
- */
 export const UtilityBar: React.FC<UtilityBarProps> = ({
   divisions,
   siteUrl = 'https://xp-nova.com',
   showEmail = true,
-  showPortal = false, // Default false (Portal link removed)
   showLanguageToggle = true,
   currentLang = 'fr',
   onLanguageChange,
   className = '',
+  currentKey,
 }) => {
+  const labels = {
+    nosDivisions: currentLang === 'fr' ? 'NOS DIVISIONS' : 'OUR DIVISIONS',
+    retourAria: currentLang === 'fr' ? 'Retour au site principal XP-NOVA' : 'Back to the main XP-NOVA site',
+  };
+
+  const renderBadge = (division: Division) => {
+    const isCurrent = division.key === currentKey;
+    const style: React.CSSProperties = {
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: 4,
+      borderRadius: 9999,
+      padding: '2px 10px',
+      fontSize: 12,
+      fontWeight: 800,
+      color: '#fff',
+      textDecoration: 'none',
+      background: division.accentColor,
+    };
+    if (isCurrent) {
+      return (
+        <strong key={division.key} aria-current="true" style={style}>
+          {division.name}
+        </strong>
+      );
+    }
+    return (
+      <a key={division.key} href={division.url} target="_blank" rel="noopener noreferrer" style={style}>
+        {division.name} <span aria-hidden>↗</span>
+      </a>
+    );
+  };
+
   return (
-    <div className={`bg-[#0D1F5C] text-white/90 text-sm ${className}`}>
-      <div className="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-x-4 gap-y-2 py-2 px-6">
-        {/* Left: XP-NOVA button + "Nos divisions" + Division badges */}
-        <nav className="flex flex-wrap items-center gap-3" aria-label="Sites des divisions">
-          {/* XP-NOVA premium button */}
+    <div style={{ background: '#0d1f5c' }} className={className}>
+      <div
+        className="max-w-6xl mx-auto"
+        style={{
+          minHeight: 0,
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          flexWrap: 'wrap',
+          gap: '4px 16px',
+          paddingTop: 6,
+          paddingBottom: 6,
+          paddingLeft: 24,
+          paddingRight: 24,
+        }}
+      >
+        <nav aria-label={currentLang === 'fr' ? 'Sites des divisions' : 'Division websites'} style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 12 }}>
           <a
             href={siteUrl}
-            className="inline-flex items-center gap-1.5 rounded-md bg-gradient-to-br from-[#1e3a8a] to-[#3b82f6] px-3 py-1.5 text-[0.85rem] font-bold tracking-wide text-white no-underline shadow-md transition-transform hover:scale-105 hover:shadow-lg"
-            aria-label="Retour au site principal XP-NOVA"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: 6,
+              borderRadius: 6,
+              padding: '4px 14px',
+              fontSize: 13,
+              fontWeight: 800,
+              color: '#fff',
+              textDecoration: 'none',
+              background: 'linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%)',
+              boxShadow: '0 2px 4px rgba(0,0,0,0.15)',
+            }}
+            aria-label={labels.retourAria}
           >
             XP-NOVA
           </a>
-
-          {/* "Nos divisions" label */}
-          <span className="text-[0.8rem] font-semibold uppercase tracking-wider text-white">
-            Nos divisions
+          <span style={{ fontSize: 13, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: '#fff', marginLeft: 8 }}>
+            {labels.nosDivisions}
           </span>
-
-          {/* Division badges */}
-          {divisions.map((division) => (
-            <a
-              key={division.key}
-              href={division.url}
-              target="_blank"
-              rel="noopener"
-              className={`inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[0.8rem] font-extrabold tracking-wide text-white no-underline transition-[filter] hover:brightness-110 ${
-                division.key === 'agrovita' ? 'bg-[#22C55E]' : division.key === 'odt' ? 'bg-[#00289A]' : division.key === 'technologie' ? 'bg-[#D4A017]' : 'bg-[#F97316]'
-              }`}
-            >
-              {division.name} <span aria-hidden>↗</span>
-            </a>
-          ))}
+          {divisions.map(renderBadge)}
         </nav>
 
-        {/* Right: Email + Language toggle */}
         <div className="flex items-center gap-4">
           {showEmail && (
             <a href="mailto:hello@xp-nova.com" className="hidden text-white/90 hover:text-white sm:inline font-medium">
