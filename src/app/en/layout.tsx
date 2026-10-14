@@ -75,7 +75,7 @@ export default function EnglishLayout({
         </div>
         <DivisionBadge divisionName="Technology" />
         <main className="flex-1">{children}</main>
-        <Footer />
+        <Footer lang="en" />
       </body>
     </html>
   );
