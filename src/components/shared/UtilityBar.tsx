@@ -18,9 +18,18 @@ export interface UtilityBarProps {
   currentLang?: 'fr' | 'en';
   onLanguageChange?: (lang: 'fr' | 'en') => void;
   className?: string;
+  /** Clé de la division courante : rendue en badge non-cliquable (référence AGROVITA). */
   currentKey?: string;
 }
 
+/**
+ * Bandeau utilitaire — identique au bandeau AGROVITA :
+ * - XP-NOVA (bouton premium) à gauche, puis « NOS DIVISIONS », puis les badges.
+ * - La division courante (`currentKey`) est un badge NON-cliquable (aria-current),
+ *   avec un anneau blanc pour marquer le site actif.
+ * - Les autres divisions sont des liens atténués (opacité) avec « ↗ », pleins au survol.
+ * Compatible Next.js 14 et 16.
+ */
 export const UtilityBar: React.FC<UtilityBarProps> = ({
   divisions,
   siteUrl = 'https://xp-nova.com',
@@ -38,27 +47,51 @@ export const UtilityBar: React.FC<UtilityBarProps> = ({
 
   const renderBadge = (division: Division) => {
     const isCurrent = division.key === currentKey;
-    const style: React.CSSProperties = {
-      display: 'inline-flex',
-      alignItems: 'center',
-      gap: 4,
-      borderRadius: 9999,
-      padding: '2px 10px',
-      fontSize: 12,
-      fontWeight: 800,
-      color: '#fff',
-      textDecoration: 'none',
-      background: division.accentColor,
-    };
     if (isCurrent) {
       return (
-        <strong key={division.key} aria-current="true" style={style}>
+        <strong
+          key={division.key}
+          aria-current="true"
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: 4,
+            borderRadius: 9999,
+            padding: '2px 10px',
+            fontSize: 12,
+            fontWeight: 800,
+            color: '#fff',
+            background: division.accentColor,
+            boxShadow: '0 0 0 2px #fff',
+          }}
+        >
           {division.name}
         </strong>
       );
     }
     return (
-      <a key={division.key} href={division.url} target="_blank" rel="noopener noreferrer" style={style}>
+      <a
+        key={division.key}
+        href={division.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: 4,
+          borderRadius: 9999,
+          padding: '2px 10px',
+          fontSize: 12,
+          fontWeight: 800,
+          color: '#fff',
+          textDecoration: 'none',
+          background: division.accentColor,
+          opacity: 0.85,
+          transition: 'opacity 150ms ease',
+        }}
+        onMouseEnter={(e) => { e.currentTarget.style.opacity = '1'; }}
+        onMouseLeave={(e) => { e.currentTarget.style.opacity = '0.85'; }}
+      >
         {division.name} <span aria-hidden>↗</span>
       </a>
     );
