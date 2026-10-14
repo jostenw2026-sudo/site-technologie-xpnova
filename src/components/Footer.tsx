@@ -1,14 +1,73 @@
-﻿import Link from 'next/link';
+import Link from 'next/link';
 import Image from 'next/image';
 
-export default function Footer() {
+interface FooterProps {
+  lang?: 'fr' | 'en';
+}
+
+export default function Footer({ lang = 'fr' }: FooterProps) {
+  const translations = {
+    fr: {
+      signature: "De l'idée à l'impact.",
+      baseline: "Bureau d'Ingénierie Conseil",
+      responsePromise: "Un expert vous répond sous 48 h.",
+      navigation: "Navigation",
+      portal: "Le portail",
+      divisions: "Nos divisions",
+      legal: "Mentions légales",
+      privacy: "Confidentialité",
+      navItems: [
+        { href: '/', label: 'Accueil' },
+        { href: '/domaines', label: 'Domaines' },
+        { href: '/services', label: 'Services' },
+        { href: '/cycle-de-vie', label: 'Cycle de vie' },
+        { href: '/references', label: 'Références' },
+        { href: '/a-propos', label: 'À propos' },
+        { href: '/contact', label: 'Contact' },
+      ],
+      portalItems: [
+        { href: 'https://xp-nova.com', label: 'XP-NOVA' },
+        { href: 'https://xp-nova.com/cabinet', label: 'Le cabinet' },
+        { href: 'https://xp-nova.com/metiers', label: 'Métiers' },
+        { href: 'https://xp-nova.com/portail', label: 'Portail interne' },
+      ],
+    },
+    en: {
+      signature: "From idea to impact.",
+      baseline: "Engineering Consulting Firm",
+      responsePromise: "An expert answers within 48 hours.",
+      navigation: "Navigation",
+      portal: "The Portal",
+      divisions: "Our Divisions",
+      legal: "Legal Notice",
+      privacy: "Privacy",
+      navItems: [
+        { href: '/en', label: 'Home' },
+        { href: '/en/domaines', label: 'Domains' },
+        { href: '/en/services', label: 'Services' },
+        { href: '/en/cycle-de-vie', label: 'Life Cycle' },
+        { href: '/en/references', label: 'References' },
+        { href: '/en/a-propos', label: 'About' },
+        { href: '/en/contact', label: 'Contact' },
+      ],
+      portalItems: [
+        { href: 'https://xp-nova.com', label: 'XP-NOVA' },
+        { href: 'https://xp-nova.com/cabinet', label: 'The Firm' },
+        { href: 'https://xp-nova.com/metiers', label: 'Professions' },
+        { href: 'https://xp-nova.com/portail', label: 'Internal Portal' },
+      ],
+    },
+  };
+
+  const t = translations[lang];
+
   const site = {
-    signature: 'De l\'idée à l\'impact.',
-    baseline: 'Bureau d\'Ingénierie Conseil',
+    signature: t.signature,
+    baseline: t.baseline,
     address: '134, Rue 1813, Vallée Bastos — B.P. 5603, Nlongkak, Yaoundé, Cameroun',
     phone: '+237 6700 34 000',
     email: 'hello@xp-nova.com',
-    responsePromise: '48 h',
+    responsePromise: t.responsePromise,
     legalName: 'XP-NOVA SARL',
     legal: {
       forme: 'SARL',
@@ -25,28 +84,28 @@ export default function Footer() {
       name: 'AGROVITA',
       href: '/agrovita',
       url: 'https://agrovita.xp-nova.com',
-      tagline: 'Produire pour la Demande',
+      tagline: lang === 'fr' ? 'Produire pour la Demande' : 'Produce for Demand',
     },
     {
       key: 'odt',
       name: 'ODT',
       href: '/odt',
       url: 'https://odt.xp-nova.com',
-      tagline: 'Ingénierie territoriale',
+      tagline: lang === 'fr' ? 'Ingénierie territoriale' : 'Territorial Engineering',
     },
     {
       key: 'technologie',
-      name: 'Technologie',
+      name: lang === 'fr' ? 'Technologie' : 'Technology',
       href: '/technologie',
       url: 'https://technologie.xp-nova.com',
-      tagline: 'Ingénierie technique',
+      tagline: lang === 'fr' ? 'Ingénierie technique' : 'Technical Engineering',
     },
     {
       key: 'formation',
-      name: 'Formation',
+      name: lang === 'fr' ? 'Formation' : 'Training',
       href: '/formation',
       url: 'https://ingenierie-formation.xp-nova.com',
-      tagline: 'Ingénierie pédagogique',
+      tagline: lang === 'fr' ? 'Ingénierie pédagogique' : 'Training Engineering',
     },
   ];
 
@@ -89,87 +148,46 @@ export default function Footer() {
             </a>
           </address>
           <p className="mt-2.5 text-[0.86rem] font-semibold text-[#D4A017]/80">
-            Un expert vous répond sous {site.responsePromise}.
+            {site.responsePromise}
           </p>
         </div>
 
         {/* Navigation */}
         <div>
           <p className="mb-3 text-[0.72rem] font-bold uppercase tracking-[0.16em] text-[#D4A017]">
-            Navigation
+            {t.navigation}
           </p>
           <ul className="space-y-[0.42rem] text-[0.9rem] leading-snug">
-            <li>
-              <Link href="/" className="text-white/70 hover:text-[#D4A017] no-underline">
-                Accueil
-              </Link>
-            </li>
-            <li>
-              <Link href="/domaines" className="text-white/70 hover:text-[#D4A017] no-underline">
-                Domaines
-              </Link>
-            </li>
-            <li>
-              <Link href="/services" className="text-white/70 hover:text-[#D4A017] no-underline">
-                Services
-              </Link>
-            </li>
-            <li>
-              <Link href="/cycle-de-vie" className="text-white/70 hover:text-[#D4A017] no-underline">
-                Cycle de vie
-              </Link>
-            </li>
-            <li>
-              <Link href="/references" className="text-white/70 hover:text-[#D4A017] no-underline">
-                Références
-              </Link>
-            </li>
-            <li>
-              <Link href="/a-propos" className="text-white/70 hover:text-[#D4A017] no-underline">
-                À propos
-              </Link>
-            </li>
-            <li>
-              <Link href="/contact" className="text-white/70 hover:text-[#D4A017] no-underline">
-                Contact
-              </Link>
-            </li>
+            {t.navItems.map((item) => (
+              <li key={item.href}>
+                <Link href={item.href} className="text-white/70 hover:text-[#D4A017] no-underline">
+                  {item.label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 
         {/* Le portail */}
         <div>
           <p className="mb-3 text-[0.72rem] font-bold uppercase tracking-[0.16em] text-[#D4A017]">
-            Le portail
+            {t.portal}
           </p>
           <ul className="space-y-[0.42rem] text-[0.9rem] leading-snug">
-            <li>
-              <Link href="https://xp-nova.com" className="text-white/70 hover:text-[#D4A017] no-underline">
-                XP-NOVA
-              </Link>
-            </li>
-            <li>
-              <Link href="https://xp-nova.com/cabinet" className="text-white/70 hover:text-[#D4A017] no-underline">
-                Le cabinet
-              </Link>
-            </li>
-            <li>
-              <Link href="https://xp-nova.com/metiers" className="text-white/70 hover:text-[#D4A017] no-underline">
-                Métiers
-              </Link>
-            </li>
-            <li>
-              <Link href="https://xp-nova.com/portail" className="text-white/70 hover:text-[#D4A017] no-underline">
-                Portail interne
-              </Link>
-            </li>
+            {t.portalItems.map((item) => (
+              <li key={item.href}>
+                <Link href={item.href} className="text-white/70 hover:text-[#D4A017] no-underline">
+                  {item.label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 
         {/* Nos divisions */}
         <div>
           <p className="mb-3 text-[0.72rem] font-bold uppercase tracking-[0.16em] text-[#D4A017]">
-            Nos divisions
+            {t.divisions}
           </p>
           <ul className="space-y-4 text-[0.9rem] leading-snug">
             {ecosystem.map((e) => (
@@ -205,10 +223,10 @@ export default function Footer() {
           </p>
           <p className="flex shrink-0 gap-5">
             <Link href="https://xp-nova.com/mentions-legales" className="text-white/50 hover:text-[#D4A017] no-underline">
-              Mentions légales
+              {t.legal}
             </Link>
             <Link href="https://xp-nova.com/confidentialite" className="text-white/50 hover:text-[#D4A017] no-underline">
-              Confidentialité
+              {t.privacy}
             </Link>
           </p>
         </div>
