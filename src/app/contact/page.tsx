@@ -1,6 +1,8 @@
-﻿'use client';
+'use client';
 
 import { useState } from 'react';
+import { envoyerDemande, type EtatEnvoi } from '@/lib/contact-client';
+import { EtatEnvoiPanneau } from '@/components/EtatEnvoi';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -13,10 +15,12 @@ export default function ContactPage() {
     telephone: '',
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [etat, setEtat] = useState<EtatEnvoi>({ phase: 'repos' });
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Formulaire soumis:', formData);
-    alert('Merci pour votre demande. Nous vous répondrons sous 48 h.');
+    setEtat({ phase: 'envoi' });
+    setEtat(await envoyerDemande(formData, 'fr'));
   };
 
   return (
@@ -140,10 +144,13 @@ export default function ContactPage() {
 
             <button
               type="submit"
-              className="w-full px-6 py-3 bg-[#D4A017] text-white rounded font-semibold hover:bg-[#B8860B] transition-colors"
+              disabled={etat.phase === 'envoi'}
+              className="w-full px-6 py-3 bg-[#D4A017] text-white rounded font-semibold hover:bg-[#B8860B] transition-colors disabled:opacity-60"
             >
               Soumettre ma demande
             </button>
+
+            <EtatEnvoiPanneau etat={etat} lang="fr" />
           </form>
 
           <div className="mt-12 p-6 bg-white rounded border border-[#E2E5EC]">
