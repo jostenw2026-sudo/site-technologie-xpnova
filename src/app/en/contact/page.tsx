@@ -1,6 +1,8 @@
 'use client';
 
 import { useState } from 'react';
+import { envoyerDemande, type EtatEnvoi } from '@/lib/contact-client';
+import { EtatEnvoiPanneau } from '@/components/EtatEnvoi';
 import { Metadata } from 'next';
 
 export default function ContactPageEN() {
@@ -14,10 +16,12 @@ export default function ContactPageEN() {
     telephone: '',
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [etat, setEtat] = useState<EtatEnvoi>({ phase: 'repos' });
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Thank you for your request. We will respond within 48 hours.');
+    setEtat({ phase: 'envoi' });
+    setEtat(await envoyerDemande(formData, 'en'));
   };
 
   return (
@@ -141,10 +145,13 @@ export default function ContactPageEN() {
 
             <button
               type="submit"
-              className="w-full px-6 py-3 bg-[#D4A017] text-white rounded font-semibold hover:bg-[#B8860B] transition-colors"
+              disabled={etat.phase === 'envoi'}
+              className="w-full px-6 py-3 bg-[#D4A017] text-white rounded font-semibold hover:bg-[#B8860B] transition-colors disabled:opacity-60"
             >
               Submit my request
             </button>
+
+            <EtatEnvoiPanneau etat={etat} lang="en" />
           </form>
 
           <div className="mt-12 p-6 bg-white rounded border border-[#E2E5EC]">

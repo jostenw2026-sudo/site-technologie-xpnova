@@ -5,12 +5,11 @@ import { SharedNavigation } from "@/components/shared/SharedNavigation";
 import Footer from "@/components/Footer";
 import "../globals.css";
 
-const isProd = process.env.SITE_ENV === "production";
+// Indexation : gérée par src/proxy.ts (en-tête X-Robots-Tag hors production).
 
 export const metadata: Metadata = {
   title: "Technology — Equipment & Technical Systems Engineering — XP-NOVA",
   description: "Engineering for mechanization, irrigation, processing, storage, cold chain, energy, handling and digital equipment for agro-systemic projects in Cameroon and Central Africa.",
-  ...(!isProd && { robots: { index: false, follow: false } }),
 };
 
 const divisions = [
