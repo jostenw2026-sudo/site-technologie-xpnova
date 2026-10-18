@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { URL_SITES } from "@/lib/sites";
 
 interface FooterProps {
   lang?: 'fr' | 'en';
@@ -26,10 +27,10 @@ export default function Footer({ lang = 'fr' }: FooterProps) {
         { href: '/contact', label: 'Contact' },
       ],
       portalItems: [
-        { href: 'https://xp-nova.com', label: 'XP-NOVA' },
-        { href: 'https://xp-nova.com/cabinet', label: 'Le cabinet' },
-        { href: 'https://xp-nova.com/metiers', label: 'Métiers' },
-        { href: 'https://xp-nova.com/portail', label: 'Portail interne' },
+        { href: URL_SITES.portail, label: 'XP-NOVA' },
+        { href: `${URL_SITES.portail}/cabinet`, label: 'Le cabinet' },
+        { href: `${URL_SITES.portail}/metiers`, label: 'Métiers' },
+        { href: `${URL_SITES.portail}/portail`, label: 'Portail interne' },
       ],
     },
     en: {
@@ -51,10 +52,10 @@ export default function Footer({ lang = 'fr' }: FooterProps) {
         { href: '/en/contact', label: 'Contact' },
       ],
       portalItems: [
-        { href: 'https://xp-nova.com', label: 'XP-NOVA' },
-        { href: 'https://xp-nova.com/cabinet', label: 'The Firm' },
-        { href: 'https://xp-nova.com/metiers', label: 'Professions' },
-        { href: 'https://xp-nova.com/portail', label: 'Internal Portal' },
+        { href: URL_SITES.portail, label: 'XP-NOVA' },
+        { href: `${URL_SITES.portail}/cabinet`, label: 'The Firm' },
+        { href: `${URL_SITES.portail}/metiers`, label: 'Professions' },
+        { href: `${URL_SITES.portail}/portail`, label: 'Internal Portal' },
       ],
     },
   };
@@ -83,28 +84,28 @@ export default function Footer({ lang = 'fr' }: FooterProps) {
       key: 'agrovita',
       name: 'AGROVITA',
       href: '/agrovita',
-      url: 'https://agrovita.xp-nova.com',
+      url: URL_SITES.agrovita,
       tagline: lang === 'fr' ? 'Produire pour la Demande' : 'Produce for Demand',
     },
     {
       key: 'odt',
       name: 'ODT',
       href: '/odt',
-      url: 'https://odt.xp-nova.com',
+      url: URL_SITES.odt,
       tagline: lang === 'fr' ? 'Ingénierie territoriale' : 'Territorial Engineering',
     },
     {
       key: 'technologie',
       name: lang === 'fr' ? 'Technologie' : 'Technology',
       href: '/technologie',
-      url: 'https://technologie.xp-nova.com',
+      url: URL_SITES.technologie,
       tagline: lang === 'fr' ? 'Ingénierie technique' : 'Technical Engineering',
     },
     {
       key: 'formation',
       name: lang === 'fr' ? 'Formation' : 'Training',
       href: '/formation',
-      url: 'https://ingenierie-formation.xp-nova.com',
+      url: URL_SITES.formation,
       tagline: lang === 'fr' ? 'Ingénierie pédagogique' : 'Training Engineering',
     },
   ];
@@ -222,10 +223,10 @@ export default function Footer({ lang = 'fr' }: FooterProps) {
             {site.legal.niu}
           </p>
           <p className="flex shrink-0 gap-5">
-            <Link href="https://xp-nova.com/mentions-legales" className="text-white/50 hover:text-[#D4A017] no-underline">
+            <Link href={`${URL_SITES.portail}/mentions-legales`} className="text-white/50 hover:text-[#D4A017] no-underline">
               {t.legal}
             </Link>
-            <Link href="https://xp-nova.com/confidentialite" className="text-white/50 hover:text-[#D4A017] no-underline">
+            <Link href={`${URL_SITES.portail}/confidentialite`} className="text-white/50 hover:text-[#D4A017] no-underline">
               {t.privacy}
             </Link>
           </p>

@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import { URL_SITES } from "@/lib/sites";
 
 export interface Division {
   key: string;
@@ -34,7 +35,7 @@ export interface UtilityBarProps {
  */
 export const UtilityBar: React.FC<UtilityBarProps> = ({
   divisions,
-  siteUrl = 'https://xp-nova.com',
+  siteUrl = URL_SITES.portail,
   showEmail = true,
   showLanguageToggle = true,
   currentLang = 'fr',

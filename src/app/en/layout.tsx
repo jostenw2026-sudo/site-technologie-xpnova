@@ -4,6 +4,7 @@ import { DivisionBadge } from "@/components/shared/DivisionBadge";
 import { SharedNavigation } from "@/components/shared/SharedNavigation";
 import Footer from "@/components/Footer";
 import "../globals.css";
+import { URL_SITES } from "@/lib/sites";
 
 // Indexation : gérée par src/proxy.ts (en-tête X-Robots-Tag hors production).
 
@@ -16,25 +17,25 @@ const divisions = [
   {
     key: 'agrovita',
     name: 'AGROVITA',
-    url: 'https://agrovita.xp-nova.com',
+    url: URL_SITES.agrovita,
     accentColor: '#22C55E',
   },
   {
     key: 'odt',
     name: 'ODT',
-    url: 'https://odt.xp-nova.com',
+    url: URL_SITES.odt,
     accentColor: '#00289A',
   },
   {
     key: 'technologie',
     name: 'Technology',
-    url: 'https://technologie.xp-nova.com',
+    url: URL_SITES.technologie,
     accentColor: '#D4A017',
   },
   {
     key: 'formation',
     name: 'Training',
-    url: 'https://ingenierie-formation.xp-nova.com',
+    url: URL_SITES.formation,
     accentColor: '#F97316',
   },
 ];
@@ -61,7 +62,7 @@ export default function EnglishLayout({
         <div className="sticky top-0 z-50">
           <UtilityBar
             divisions={divisions}
-            siteUrl="https://xp-nova.com"
+            siteUrl={URL_SITES.portail}
             currentKey="technologie"
             currentLang="en"
           />

@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { URL_SITES } from "@/lib/sites";
 
 export interface DivisionBadgeProps {
   divisionName: string;
@@ -15,7 +16,7 @@ export interface DivisionBadgeProps {
  */
 export const DivisionBadge: React.FC<DivisionBadgeProps> = ({
   divisionName,
-  parentUrl = 'https://xp-nova.com',
+  parentUrl = URL_SITES.portail,
   className = '',
   showParentLink = true,
 }) => {
