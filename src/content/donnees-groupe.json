@@ -1,0 +1,38 @@
+{
+  "version": "2026-10-19",
+  "regle": "Fichier de référence des données du groupe XP-NOVA (CDC-RECETTE-XPNOVA v1.1 §8). Source : portail-xp-nova. Recopié à l'identique dans chaque dépôt ; ne pas modifier une copie, modifier la source puis recopier.",
+  "groupe": {
+    "nom": "XP-NOVA",
+    "raisonSociale": "XP-NOVA SARL",
+    "designation": "XP-NOVA, bureau d'ingénierie conseil",
+    "baseline": "Bureau d'Ingénierie Conseil",
+    "baselineEn": "Engineering & Advisory Firm",
+    "signature": "De l'idée à l'impact.",
+    "signatureLongue": "L'expérience comme boussole. L'innovation comme moteur.",
+    "fondation": "2006",
+    "ville": "Yaoundé",
+    "pays": "Cameroun"
+  },
+  "identiteLegale": {
+    "forme": "SARL",
+    "capital": "10 000 000 FCFA",
+    "rccm": "RC/YAO/2006/B/945 (modif. RC/YAO/2026/M/354)",
+    "niu": "M010600019838W",
+    "cnps": "321-0105061-A"
+  },
+  "coordonnees": {
+    "courriel": "hello@xp-nova.com",
+    "telephone": "+237 6700 34 000",
+    "adresse": "134, Rue 1813, Vallée Bastos — B.P. 5603, Nlongkak, Yaoundé, Cameroun",
+    "adresseEn": "134, Rue 1813, Vallée Bastos — P.O. Box 5603, Nlongkak, Yaoundé, Cameroon"
+  },
+  "engagements": {
+    "premierRetour": "48 h"
+  },
+  "divisions": [
+    { "cle": "agrovita", "nom": "AGROVITA", "tagline": "Agriculture, élevage & agro-industrie", "taglineEn": "Agriculture & agri-business", "urlProduction": "https://agrovita.xp-nova.com" },
+    { "cle": "odt", "nom": "ODT", "tagline": "Territoires, infrastructures & projets locaux", "taglineEn": "Territorial Development Operator", "urlProduction": "https://odt.xp-nova.com" },
+    { "cle": "technologie", "nom": "Technologie", "nomEn": "Technology", "tagline": "Ingénierie des équipements et systèmes techniques", "taglineEn": "Equipment & systems engineering", "urlProduction": "https://technologie.xp-nova.com" },
+    { "cle": "formation", "nom": "Formation", "nomEn": "Training", "tagline": "Ingénierie de la formation professionnelle", "taglineEn": "Professional training engineering", "urlProduction": "https://ingenierie-formation.xp-nova.com" }
+  ]
+}

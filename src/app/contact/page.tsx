@@ -145,7 +145,7 @@ export default function ContactPage() {
             <button
               type="submit"
               disabled={etat.phase === 'envoi'}
-              className="w-full px-6 py-3 bg-[#D4A017] text-white rounded font-semibold hover:bg-[#B8860B] transition-colors disabled:opacity-60"
+              className="w-full px-6 py-3 bg-[#D4A017] text-[#0D1F5C] rounded font-semibold hover:bg-[#E9C25A] transition-colors disabled:opacity-60"
             >
               Soumettre ma demande
             </button>

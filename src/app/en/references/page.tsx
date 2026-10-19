@@ -5,7 +5,7 @@ export default function ReferencesPageEN() {
         <div className="max-w-6xl mx-auto">
           <h1 className="text-4xl font-bold text-[#0D1F5C] mb-6">Technical engineering projects</h1>
           <p className="text-lg text-[#5A6072] max-w-3xl">
-            Our references illustrate our engineering role in agro-systemic projects in Cameroon and Central Africa.
+            References will be published once documented: XP-NOVA’s exact role, client, location and period.
           </p>
         </div>
       </section>

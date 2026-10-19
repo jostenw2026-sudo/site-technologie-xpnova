@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "verifier:groupe": "node scripts/verifier-donnees-groupe.mjs"
   },
   "dependencies": {
     "next": "16.4.0",

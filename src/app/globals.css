@@ -1,26 +1,63 @@
 @import "tailwindcss";
 
+/* ============================================================
+   Charte A — XP-NOVA (lot 6 de la recette, 19/10/2026)
+   Navy du groupe #0D1F5C, or #D4A017 (surfaces), Playfair Display (titres) et
+   Source Sans 3 (texte), auto-hébergées (next/font/local, layout.tsx).
+   Pas de mode sombre automatique : la charte est claire (le gabarit d'origine
+   passait le texte en blanc cassé sur des sections restées blanches).
+   ============================================================ */
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1a1a2e;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-navy: #0d1f5c;
+  --color-gold: #d4a017;
+  --color-gold-deep: #8a6300;
+  --color-gold-soft: #e9c25a;
+  --color-agro: #2e7d32;
+  --color-odt: #0e4c5a;
+  --color-techno: #3d5a73;
+  --color-techno-profond: #22364a;
+  --color-formation: #b4470f;
+  --color-formation-profond: #6b2a0a;
+  --font-sans: var(--font-source-sans), "Source Sans 3", system-ui, sans-serif;
+  --font-display: var(--font-playfair), "Playfair Display", Georgia, serif;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-source-sans), "Source Sans 3", system-ui, sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-playfair), "Playfair Display", Georgia, serif;
+}
+
+:focus-visible {
+  outline: 3px solid #0d1f5c;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* L'or en texte selon le fond : #8A6300 sur fond clair (5,43:1), #E9C25A sur
+   fond foncé (≥ 6,29:1). Les surfaces (bg-[#D4A017]) gardent l'or du groupe.
+   Règles hors couche : elles priment sur les utilitaires Tailwind. */
+.text-\[\#D4A017\],
+.hover\:text-\[\#D4A017\]:hover,
+.text-gold {
+  color: #8a6300;
+}
+:is(.bg-\[\#0D1F5C\], .bg-navy, [class*="-profond"], .sur-fonce)
+  :is(.text-\[\#D4A017\], .hover\:text-\[\#D4A017\]:hover, .text-gold),
+:is(.bg-\[\#0D1F5C\], .bg-navy, .sur-fonce):is(.text-\[\#D4A017\], .text-gold) {
+  color: #e9c25a;
+}
+:is(.bg-\[\#0D1F5C\], .bg-navy, [class*="-profond"], .sur-fonce) :focus-visible {
+  outline-color: #e9c25a;
 }

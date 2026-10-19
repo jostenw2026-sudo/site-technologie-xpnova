@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import localFont from "next/font/local";
 import { UtilityBar } from "@/components/shared/UtilityBar";
 import { DivisionBadge } from "@/components/shared/DivisionBadge";
 import { SharedNavigation } from "@/components/shared/SharedNavigation";
@@ -7,6 +8,11 @@ import { ConditionalFrenchLayout } from "@/components/ConditionalFrenchLayout";
 import "./globals.css";
 import { URL_SITES } from "@/lib/sites";
 import BandeauRecette from "@/components/BandeauRecette";
+import { ZonePrincipale } from "@/components/ZonePrincipale";
+
+// Polices de la charte A, auto-hébergées (mêmes fichiers WOFF2 que le portail) : Arial abandonné.
+const sourceSans = localFont({ src: "./fonts/SourceSans3.woff2", weight: "200 900", display: "swap", variable: "--font-source-sans" });
+const playfair = localFont({ src: "./fonts/PlayfairDisplay.woff2", weight: "400 900", display: "swap", variable: "--font-playfair" });
 
 // Indexation : gérée par src/proxy.ts (en-tête X-Robots-Tag hors production).
 
@@ -20,25 +26,25 @@ const divisions = [
     key: 'agrovita',
     name: 'AGROVITA',
     url: URL_SITES.agrovita,
-    accentColor: '#22C55E',
+    accentColor: '#2E7D32',
   },
   {
     key: 'odt',
     name: 'ODT',
     url: URL_SITES.odt,
-    accentColor: '#00289A',
+    accentColor: '#0E4C5A',
   },
   {
     key: 'technologie',
     name: 'Technologie',
     url: URL_SITES.technologie,
-    accentColor: '#D4A017',
+    accentColor: '#3D5A73',
   },
   {
     key: 'formation',
     name: 'Formation',
     url: URL_SITES.formation,
-    accentColor: '#F97316',
+    accentColor: '#B4470F',
   },
 ];
 
@@ -58,14 +64,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fr">
+    <html lang="fr" className={`${sourceSans.variable} ${playfair.variable}`}>
       <body className="min-h-full flex flex-col">
         {/* Recette locale : bandeau rendu seulement si SITE_ENV=recette */}
         <BandeauRecette />
         <ConditionalFrenchLayout>
-          {/* Bandeau + navigation collés en haut de l'écran au scroll */}
+          {/* Barre du groupe (non collante), puis navigation collée en haut au scroll */}
+          <UtilityBar divisions={divisions} siteUrl={URL_SITES.portail} currentKey="technologie" />
           <div className="sticky top-0 z-50">
-            <UtilityBar divisions={divisions} siteUrl={URL_SITES.portail} currentKey="technologie" />
             <SharedNavigation
               items={navItems}
               logoSrc="/brand/logo_xpnova_color.png"
@@ -75,7 +81,7 @@ export default function RootLayout({
           </div>
           <DivisionBadge divisionName="Technologie" />
         </ConditionalFrenchLayout>
-        <main className="flex-1">{children}</main>
+        <ZonePrincipale>{children}</ZonePrincipale>
         <ConditionalFrenchLayout>
           <Footer />
         </ConditionalFrenchLayout>

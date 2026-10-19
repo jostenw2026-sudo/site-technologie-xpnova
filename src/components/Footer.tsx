@@ -1,6 +1,15 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { URL_SITES } from "@/lib/sites";
+// Données du groupe : copie à l'identique de la référence du portail (CDC-RECETTE §8),
+// contrôlée par `npm run verifier:groupe`.
+import G from "@/content/donnees-groupe.json";
+
+const division = (cle: string) => {
+  const d = G.divisions.find((x) => x.cle === cle);
+  if (!d) throw new Error(`Division inconnue dans donnees-groupe.json : ${cle}`);
+  return d;
+};
 
 interface FooterProps {
   lang?: 'fr' | 'en';
@@ -65,18 +74,12 @@ export default function Footer({ lang = 'fr' }: FooterProps) {
   const site = {
     signature: t.signature,
     baseline: t.baseline,
-    address: '134, Rue 1813, Vallée Bastos — B.P. 5603, Nlongkak, Yaoundé, Cameroun',
-    phone: '+237 6700 34 000',
-    email: 'hello@xp-nova.com',
+    address: lang === 'fr' ? G.coordonnees.adresse : G.coordonnees.adresseEn,
+    phone: G.coordonnees.telephone,
+    email: G.coordonnees.courriel,
     responsePromise: t.responsePromise,
-    legalName: 'XP-NOVA SARL',
-    legal: {
-      forme: 'SARL',
-      capital: '10 000 000 FCFA',
-      cnps: '321-0105061-A',
-      rccm: 'RC/YAO/2006/B/945 (modif. RC/YAO/2026/M/354)',
-      niu: 'M010600019838W',
-    },
+    legalName: G.groupe.raisonSociale,
+    legal: G.identiteLegale,
   };
 
   const ecosystem = [
@@ -85,28 +88,28 @@ export default function Footer({ lang = 'fr' }: FooterProps) {
       name: 'AGROVITA',
       href: '/agrovita',
       url: URL_SITES.agrovita,
-      tagline: lang === 'fr' ? 'Produire pour la Demande' : 'Produce for Demand',
+      tagline: lang === 'fr' ? division('agrovita').tagline : division('agrovita').taglineEn,
     },
     {
       key: 'odt',
       name: 'ODT',
       href: '/odt',
       url: URL_SITES.odt,
-      tagline: lang === 'fr' ? 'Ingénierie territoriale' : 'Territorial Engineering',
+      tagline: lang === 'fr' ? division('odt').tagline : division('odt').taglineEn,
     },
     {
       key: 'technologie',
       name: lang === 'fr' ? 'Technologie' : 'Technology',
       href: '/technologie',
       url: URL_SITES.technologie,
-      tagline: lang === 'fr' ? 'Ingénierie technique' : 'Technical Engineering',
+      tagline: lang === 'fr' ? division('technologie').tagline : division('technologie').taglineEn,
     },
     {
       key: 'formation',
       name: lang === 'fr' ? 'Formation' : 'Training',
       href: '/formation',
       url: URL_SITES.formation,
-      tagline: lang === 'fr' ? 'Ingénierie pédagogique' : 'Training Engineering',
+      tagline: lang === 'fr' ? division('formation').tagline : division('formation').taglineEn,
     },
   ];
 
@@ -118,7 +121,7 @@ export default function Footer({ lang = 'fr' }: FooterProps) {
         {/* Identité + contact */}
         <div className="sm:col-span-2 lg:col-span-1">
           <Image
-            src="/brand/logo_xpnova_white.png"
+            src="/brand/logo_xpnova_white_mono.png"
             alt="XP-NOVA — Bureau d'Ingénierie Conseil"
             width={350}
             height={80}

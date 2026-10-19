@@ -151,7 +151,7 @@ export default function ServicesPageEN() {
           </div>
           <a
             href="/en/contact"
-            className="inline-block px-6 py-3 bg-[#D4A017] text-white rounded font-semibold hover:bg-[#B8860B] transition-colors"
+            className="inline-block px-6 py-3 bg-[#D4A017] text-[#0D1F5C] rounded font-semibold hover:bg-[#E9C25A] transition-colors"
           >
             Request technical expertise
           </a>
