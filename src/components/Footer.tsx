@@ -4,6 +4,7 @@ import { URL_SITES } from "@/lib/sites";
 // Données du groupe : copie à l'identique de la référence du portail (CDC-RECETTE §8),
 // contrôlée par `npm run verifier:groupe`.
 import G from "@/content/donnees-groupe.json";
+import { EncartAgroboussole } from "@/components/AppelAgroboussole";
 
 const division = (cle: string) => {
   const d = G.divisions.find((x) => x.cle === cle);
@@ -116,6 +117,7 @@ export default function Footer({ lang = 'fr' }: FooterProps) {
   return (
     <footer className="bg-[#0D1F5C] text-white/80">
       <div className="h-1.5 bg-[#D4A017]" />
+      <EncartAgroboussole en={lang === 'en'} />
 
       <div className="max-w-6xl mx-auto grid gap-x-10 gap-y-9 py-10 px-6 sm:grid-cols-2 lg:grid-cols-[1.18fr_0.86fr_0.86fr_1.1fr] lg:gap-x-10">
         {/* Identité + contact */}

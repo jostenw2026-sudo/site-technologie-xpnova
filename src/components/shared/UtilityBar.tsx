@@ -3,6 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { URL_SITES } from "@/lib/sites";
+import { BoutonAgroboussole } from "@/components/AppelAgroboussole";
 
 export interface Division {
   key: string;
@@ -78,12 +79,14 @@ export const UtilityBar: React.FC<UtilityBarProps> = ({
             </summary>
             <div className="absolute left-0 top-full z-[60] grid min-w-[230px] gap-2 rounded-b-md bg-[#0D1F5C] p-3 shadow-lg">
               {divisions.map((d) => badge(d, true))}
+              <BoutonAgroboussole en={!fr} grand />
             </div>
           </details>
         </nav>
         <div className="ml-auto flex items-center gap-4">
+          <BoutonAgroboussole en={!fr} />
           {showEmail && (
-            <a href="mailto:hello@xp-nova.com" className="hidden text-white/90 hover:text-white sm:inline font-medium no-underline">
+            <a href="mailto:hello@xp-nova.com" className="hidden text-white/90 hover:text-white xl:inline font-medium no-underline">
               hello@xp-nova.com
             </a>
           )}
