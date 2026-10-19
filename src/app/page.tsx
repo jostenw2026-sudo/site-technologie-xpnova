@@ -2,15 +2,15 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       {/* Héros */}
-      <section className="py-20 px-6 bg-white">
+      <section className="py-20 px-6 bg-[#22364A] text-white border-b-4 border-[#D4A017] sur-fonce">
         <div className="max-w-6xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold text-[#0D1F5C] mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Ingénierie des équipements et systèmes techniques
           </h1>
-          <p className="text-lg text-[#5A6072] max-w-3xl">
+          <p className="text-lg text-[#E4E8F3] max-w-3xl">
             Nous concevons et dimensionnons les équipements techniques et numériques nécessaires à vos projets agro-systémiques, de la mécanisation à la chaîne du froid, en passant par l'irrigation et les systèmes de connectivité.
           </p>
-          <div className="mt-8 flex gap-4">
+          <div className="mt-8 flex flex-wrap gap-4">
             <a
               href="/contact"
               className="px-6 py-3 bg-[#D4A017] text-[#0D1F5C] rounded font-semibold hover:bg-[#E9C25A] transition-colors"
@@ -19,7 +19,7 @@ export default function Home() {
             </a>
             <a
               href="/domaines"
-              className="px-6 py-3 bg-[#0D1F5C] text-white rounded font-semibold hover:bg-[#0A1850] transition-colors"
+              className="px-6 py-3 border-2 border-white/70 text-white rounded font-semibold hover:bg-white/10 transition-colors"
             >
               Découvrir nos domaines
             </a>
