@@ -2,6 +2,7 @@ export default function DomainesPage() {
   const domaines = [
     {
       title: 'Mechanization',
+      image: '/images/illustrations/mecanisation.webp',
       enjeu:
         "Motorization and equipment determine the productivity of farms and agro-industrial units. Poorly sized, they immobilize capital and weaken profitability.",
       description:
@@ -21,6 +22,7 @@ export default function DomainesPage() {
     },
     {
       title: 'Irrigation and Water',
+      image: '/images/illustrations/irrigation-eau.webp',
       enjeu:
         "Water is the primary limiting factor for productive systems. Poorly designed irrigation wastes resources, degrades soils and compromises expected yields.",
       description:
@@ -40,6 +42,7 @@ export default function DomainesPage() {
     },
     {
       title: 'Agricultural Greenhouses',
+      image: '/images/illustrations/serres-agricoles.webp',
       enjeu:
         "Greenhouses protect crops from climatic hazards and enable microclimate control. Poorly designed, they generate overheating, diseases and yields below expectations.",
       description:
@@ -59,6 +62,7 @@ export default function DomainesPage() {
     },
     {
       title: 'Processing and Plants',
+      image: '/images/illustrations/transformation-usines.webp',
       enjeu:
         "Processing captures added value close to production. A poorly specified production line leads to material losses, rejects and high operating costs.",
       description:
@@ -78,6 +82,7 @@ export default function DomainesPage() {
     },
     {
       title: 'Storage, Preservation and Cold Chain',
+      image: '/images/illustrations/stockage-froid.webp',
       enjeu:
         "Storage and cold chain reduce post-harvest losses and secure marketing. Poorly calibrated capacity increases costs without preserving products.",
       description:
@@ -97,6 +102,7 @@ export default function DomainesPage() {
     },
     {
       title: 'Energy and Utilities',
+      image: '/images/illustrations/energie-utilites.webp',
       enjeu:
         "Access to reliable and properly sized energy drives the operating costs of any production site. A poorly chosen mix penalizes competitiveness and service continuity.",
       description:
@@ -116,6 +122,7 @@ export default function DomainesPage() {
     },
     {
       title: 'Handling and Logistics',
+      image: '/images/illustrations/manutention-logistique.webp',
       enjeu:
         "Internal handling determines site throughput and safety. Poorly designed logistics create bottlenecks and recurring extra costs.",
       description:
@@ -135,6 +142,7 @@ export default function DomainesPage() {
     },
     {
       title: 'Digital Equipment',
+      image: '/images/illustrations/equipements-numeriques.webp',
       enjeu:
         "Data and control become a performance lever for production systems. An unsuitable digital choice generates costs without operational value.",
       description:
@@ -169,8 +177,11 @@ export default function DomainesPage() {
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
           {domaines.map((domaine) => (
             <div key={domaine.title} className="bg-white rounded border border-[#E2E5EC] overflow-hidden flex flex-col">
-              {/* Images générées par IA (CDN tiers) retirées — CDC-RECETTE §7, lot 6. */}
-              <div aria-hidden className="h-1.5 bg-[#3D5A73]" />
+              {/* Illustration générée par IA, hébergée par le site (DG, 20/10/2026) : la légende évite de la faire passer pour une photo (CDC §8). */}
+              <figure className="m-0">
+                <img src={domaine.image} alt={`Illustration — ${domaine.title}`} className="w-full h-48 object-cover" loading="lazy" width={1200} height={800} />
+                <figcaption className="px-3 py-1 text-xs text-[#4A5068] bg-[#F4F5F8]">Generated illustration, for information only</figcaption>
+              </figure>
               <div className="p-6 flex flex-col flex-1">
                 <h2 className="text-xl font-bold text-[#0D1F5C] mb-3">{domaine.title}</h2>
                 <p className="text-[#5A6072] mb-4">{domaine.enjeu}</p>

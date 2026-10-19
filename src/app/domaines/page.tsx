@@ -2,6 +2,7 @@ export default function DomainesPage() {
   const domaines = [
     {
       title: 'Mécanisation',
+      image: '/images/illustrations/mecanisation.webp',
       enjeu:
         "La motorisation et l'outillage conditionnent la productivité des exploitations comme des unités agro-industrielles. Mal dimensionnés, ils immobilisent du capital et fragilisent la rentabilité.",
       description:
@@ -21,6 +22,7 @@ export default function DomainesPage() {
     },
     {
       title: 'Irrigation et eau',
+      image: '/images/illustrations/irrigation-eau.webp',
       enjeu:
         "L'eau est le premier facteur limitant des systèmes productifs. Une irrigation mal conçue gaspille la ressource, dégrade les sols et compromet les rendements attendus.",
       description:
@@ -40,6 +42,7 @@ export default function DomainesPage() {
     },
     {
       title: 'Serres agricoles',
+      image: '/images/illustrations/serres-agricoles.webp',
       enjeu:
         "Les serres protègent les cultures des aléas climatiques et permettent une maîtrise du microclimat. Mal conçues, elles génèrent surchauffes, maladies et rendements inférieurs aux attentes.",
       description:
@@ -59,6 +62,7 @@ export default function DomainesPage() {
     },
     {
       title: 'Transformation et usines',
+      image: '/images/illustrations/transformation-usines.webp',
       enjeu:
         "La transformation capte la valeur ajoutée au plus près de la production. Une ligne de production mal spécifiée entraîne pertes de matière, rebuts et coûts d'exploitation élevés.",
       description:
@@ -78,6 +82,7 @@ export default function DomainesPage() {
     },
     {
       title: 'Stockage, conservation et froid',
+      image: '/images/illustrations/stockage-froid.webp',
       enjeu:
         "Le stockage et la chaîne du froid réduisent les pertes post-récolte et sécurisent la commercialisation. Une capacité mal calibrée augmente les coûts sans préserver les produits.",
       description:
@@ -97,6 +102,7 @@ export default function DomainesPage() {
     },
     {
       title: 'Énergie et utilités',
+      image: '/images/illustrations/energie-utilites.webp',
       enjeu:
         "L'accès à une énergie fiable et dimensionnée pilote les coûts d'exploitation de tout site productif. Un mix mal choisi pénalise la compétitivité et la continuité de service.",
       description:
@@ -116,6 +122,7 @@ export default function DomainesPage() {
     },
     {
       title: 'Manutention et logistique',
+      image: '/images/illustrations/manutention-logistique.webp',
       enjeu:
         "La manutention interne conditionne les cadences et la sécurité des sites. Une logistique mal pensée crée des goulots d'étranglement et des surcoûts récurrents.",
       description:
@@ -135,6 +142,7 @@ export default function DomainesPage() {
     },
     {
       title: 'Équipements numériques',
+      image: '/images/illustrations/equipements-numeriques.webp',
       enjeu:
         "La donnée et le pilotage deviennent un levier de performance des systèmes productifs. Un choix numérique inadapté génère des coûts sans valeur opérationnelle.",
       description:
@@ -169,8 +177,11 @@ export default function DomainesPage() {
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
           {domaines.map((domaine) => (
             <div key={domaine.title} className="bg-white rounded border border-[#E2E5EC] overflow-hidden flex flex-col">
-              {/* Images générées par IA (CDN tiers) retirées — CDC-RECETTE §7, lot 6. */}
-              <div aria-hidden className="h-1.5 bg-[#3D5A73]" />
+              {/* Illustration générée par IA, hébergée par le site (DG, 20/10/2026) : la légende évite de la faire passer pour une photo (CDC §8). */}
+              <figure className="m-0">
+                <img src={domaine.image} alt={`Illustration — ${domaine.title}`} className="w-full h-48 object-cover" loading="lazy" width={1200} height={800} />
+                <figcaption className="px-3 py-1 text-xs text-[#4A5068] bg-[#F4F5F8]">Illustration générée, non contractuelle</figcaption>
+              </figure>
               <div className="p-6 flex flex-col flex-1">
                 <h2 className="text-xl font-bold text-[#0D1F5C] mb-3">{domaine.title}</h2>
                 <p className="text-[#5A6072] mb-4">{domaine.enjeu}</p>
