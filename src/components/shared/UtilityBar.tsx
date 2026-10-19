@@ -30,7 +30,7 @@ export interface UtilityBarProps {
  *   aux accents de division de la charte (texte blanc ≥ 5,13:1) ; la division courante
  *   est un badge non cliquable (aria-current) à anneau blanc.
  * - Sous 768 px : une seule ligne, les badges passent dans « Nos divisions ▾ ».
- * - N'est plus collante : seul l'en-tête du site l'est (avant : 227 px collants sur téléphone).
+ * - Collante avec la navigation, dans un même bloc (demande du DG, 20/10/2026) ; une seule ligne en mobile.
  */
 export const UtilityBar: React.FC<UtilityBarProps> = ({
   divisions,

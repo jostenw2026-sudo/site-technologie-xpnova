@@ -69,9 +69,9 @@ export default function RootLayout({
         {/* Recette locale : bandeau rendu seulement si SITE_ENV=recette */}
         <BandeauRecette />
         <ConditionalFrenchLayout>
-          {/* Barre du groupe (non collante), puis navigation collée en haut au scroll */}
-          <UtilityBar divisions={divisions} siteUrl={URL_SITES.portail} currentKey="technologie" />
+          {/* Barre du groupe + navigation : un seul bloc collant (demande du DG, 20/10/2026) */}
           <div className="sticky top-0 z-50">
+            <UtilityBar divisions={divisions} siteUrl={URL_SITES.portail} currentKey="technologie" />
             <SharedNavigation
               items={navItems}
               logoSrc="/brand/logo_xpnova_color.png"

@@ -43,8 +43,8 @@ export const SharedNavigation: React.FC<SharedNavigationProps> = ({
   };
 
   return (
-    <header className={`sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-[#E2E5EC] ${className}`}>
-      <div className="max-w-6xl mx-auto flex items-center justify-between py-3 px-6">
+    <header className={`bg-white/95 backdrop-blur border-b border-[#E2E5EC] ${className}`}>
+      <div className="max-w-6xl mx-auto flex items-center justify-between min-h-[60px] lg:min-h-[72px] px-6">
         {/* Logo */}
         <a href={logoHref} className="flex items-center" aria-label="XP-NOVA">
           <Image
@@ -53,7 +53,7 @@ export const SharedNavigation: React.FC<SharedNavigationProps> = ({
             width={350}
             height={80}
             priority
-            className="h-[70px] w-auto"
+            className="h-8 w-auto lg:h-10"
           />
         </a>
 

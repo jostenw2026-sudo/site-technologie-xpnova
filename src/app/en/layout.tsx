@@ -57,14 +57,14 @@ export default function EnglishLayout({
 }) {
   return (
     <>
-        {/* Barre du groupe (non collante), puis navigation collée en haut au scroll */}
-        <UtilityBar
-            divisions={divisions}
-            siteUrl={URL_SITES.portail}
-            currentKey="technologie"
-            currentLang="en"
-          />
+        {/* Barre du groupe + navigation : un seul bloc collant (demande du DG, 20/10/2026) */}
         <div className="sticky top-0 z-50">
+          <UtilityBar
+              divisions={divisions}
+              siteUrl={URL_SITES.portail}
+              currentKey="technologie"
+              currentLang="en"
+            />
           <SharedNavigation
             items={navItems}
             logoSrc="/brand/logo_xpnova_color.png"
