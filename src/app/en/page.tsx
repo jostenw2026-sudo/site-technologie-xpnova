@@ -46,7 +46,7 @@ export default function HomeEN() {
       {/* Domains */}
       <section className="py-16 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl font-bold text-[#0D1F5C] mb-4">7 domains for complete projects</h2>
+          <h2 className="text-2xl font-bold text-[#0D1F5C] mb-4">8 domains for complete projects</h2>
           <p className="text-[#5A6072] mb-8">
             From production equipment to storage systems, including energy and connectivity, we cover all the technical needs of agro-systemic projects.
           </p>
@@ -59,6 +59,10 @@ export default function HomeEN() {
               {
                 title: 'Irrigation and water',
                 description: 'Irrigation systems (drip, sprinkler, gravity), pumping, water treatment and storage.',
+              },
+              {
+                title: 'Controlled production environments',
+                description: 'Greenhouses, tunnels and shade houses, livestock buildings, hatcheries and aquaculture: climate control and biosecurity.',
               },
               {
                 title: 'Processing and plants',
@@ -97,7 +101,7 @@ export default function HomeEN() {
       {/* Services */}
       <section className="py-16 px-6 bg-[#F4F5F8]">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl font-bold text-[#0D1F5C] mb-4">9 services for informed choices</h2>
+          <h2 className="text-2xl font-bold text-[#0D1F5C] mb-4">10 services for informed choices</h2>
           <p className="text-[#5A6072] mb-8">
             We support your projects from needs analysis to equipment reception, including specification design and solution selection.
           </p>
@@ -138,6 +142,10 @@ export default function HomeEN() {
               {
                 title: 'Reception assistance',
                 description: 'Final verification, team training and transfer documentation.',
+              },
+              {
+                title: 'Integration support',
+                description: 'Integration plan, interface specifications and functional acceptance of digital systems.',
               },
             ].map((service) => (
               <a

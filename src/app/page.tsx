@@ -39,7 +39,7 @@ export default function Home() {
       {/* Domaines */}
       <section className="py-16 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl font-bold text-[#0D1F5C] mb-4">7 domaines pour des projets complets</h2>
+          <h2 className="text-2xl font-bold text-[#0D1F5C] mb-4">8 domaines pour des projets complets</h2>
           <p className="text-[#5A6072] mb-8">
             Des équipements de production aux systèmes de stockage, en passant par l'énergie et la connectivité, nous couvrons l'ensemble des besoins techniques des projets agro-systémiques.
           </p>
@@ -52,6 +52,10 @@ export default function Home() {
               {
                 title: 'Irrigation et eau',
                 description: "Systèmes d'irrigation (goutte-à-goutte, aspersion, gravitaire), pompage, traitement et stockage de l'eau.",
+              },
+              {
+                title: 'Environnements de production contrôlés',
+                description: 'Serres, tunnels et ombrières, bâtiments d\'élevage, couvoirs et aquaculture : maîtrise du climat et de la biosécurité.',
               },
               {
                 title: 'Transformation et usines',
@@ -90,7 +94,7 @@ export default function Home() {
       {/* Services */}
       <section className="py-16 px-6 bg-[#F4F5F8]">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl font-bold text-[#0D1F5C] mb-4">9 services pour des choix éclairés</h2>
+          <h2 className="text-2xl font-bold text-[#0D1F5C] mb-4">10 services pour des choix éclairés</h2>
           <p className="text-[#5A6072] mb-8">
             Nous accompagnons vos projets de l'analyse du besoin jusqu'à la réception des équipements, en passant par la conception des spécifications et la sélection des solutions.
           </p>
@@ -131,6 +135,10 @@ export default function Home() {
               {
                 title: 'Assistance à la réception',
                 description: 'Vérification finale, formation des équipes et documentation de transfert.',
+              },
+              {
+                title: "Assistance à l'intégration",
+                description: "Plan d'intégration, spécifications d'interfaces et recette fonctionnelle des systèmes numériques.",
               },
             ].map((service) => (
               <a

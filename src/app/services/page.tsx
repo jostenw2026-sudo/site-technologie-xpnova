@@ -99,6 +99,17 @@ export default function ServicesPage() {
         "XP-NOVA assiste le client dans son rôle de réceptionnaire, en veillant à l'objectivité du procès-verbal face au fournisseur.",
       duree: '2 à 5 jours',
     },
+    {
+      title: "Assistance à l'intégration",
+      objectif:
+        "Faire fonctionner ensemble capteurs, automates, logiciels de gestion et plateformes de traçabilité, et vérifier que les données attendues arrivent bien là où elles sont utiles.",
+      description:
+        "Plan d'intégration, spécifications d'interfaces entre équipements et systèmes, recette fonctionnelle des flux de données.",
+      livrables: ["Plan d'intégration", "Spécifications d'interfaces", 'Procès-verbal de recette fonctionnelle'],
+      role:
+        "XP-NOVA cadre et recette l'intégration ; le paramétrage et le développement restent confiés aux intégrateurs retenus.",
+      duree: 'Selon la complexité',
+    },
   ];
 
   return (

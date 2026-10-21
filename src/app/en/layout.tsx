@@ -44,6 +44,7 @@ const navItems = [
   { label: 'Home', href: '/en' },
   { label: 'Domains', href: '/en/domaines' },
   { label: 'Services', href: '/en/services' },
+  { label: 'Reference', href: '/en/referentiel' },
   { label: 'Life Cycle', href: '/en/cycle-de-vie' },
   { label: 'References', href: '/en/references' },
   { label: 'About', href: '/en/a-propos' },

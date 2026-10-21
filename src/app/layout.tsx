@@ -52,6 +52,7 @@ const navItems = [
   { label: 'Accueil', href: '/' },
   { label: 'Domaines', href: '/domaines' },
   { label: 'Services', href: '/services' },
+  { label: 'Référentiel', href: '/referentiel' },
   { label: 'Cycle de vie', href: '/cycle-de-vie' },
   { label: 'Références', href: '/references' },
   { label: 'À propos', href: '/a-propos' },

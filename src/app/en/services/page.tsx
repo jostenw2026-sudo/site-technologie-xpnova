@@ -99,6 +99,17 @@ export default function ServicesPageEN() {
         'XP-NOVA assists the client in their receiver role, ensuring objectivity of the minutes vis-à-vis the supplier.',
       duree: '2 to 5 days',
     },
+    {
+      title: 'Integration support',
+      objectif:
+        'Make sensors, PLCs, management software and traceability platforms work together, and check that the expected data reaches where it is useful.',
+      description:
+        'Integration plan, interface specifications between equipment and systems, functional acceptance of data flows.',
+      livrables: ['Integration plan', 'Interface specifications', 'Functional acceptance report'],
+      role:
+        'XP-NOVA frames and accepts the integration; configuration and development remain with the selected integrators.',
+      duree: 'Depends on complexity',
+    },
   ];
 
   return (

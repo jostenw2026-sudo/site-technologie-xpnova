@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { envoyerDemande, type EtatEnvoi } from '@/lib/contact-client';
 import { EtatEnvoiPanneau } from '@/components/EtatEnvoi';
 import { Metadata } from 'next';
@@ -14,7 +14,14 @@ export default function ContactPageEN() {
     description: '',
     email: '',
     telephone: '',
+    prestation: '',
   });
+
+  // Lien « Demander une expertise » du référentiel : /contact?prestation=T2.2·TS-04
+  useEffect(() => {
+    const code = new URLSearchParams(window.location.search).get('prestation');
+    if (code) setFormData((d) => ({ ...d, prestation: code }));
+  }, []);
 
   const [etat, setEtat] = useState<EtatEnvoi>({ phase: 'repos' });
 
@@ -51,6 +58,7 @@ export default function ContactPageEN() {
                 <option value="">Select...</option>
                 <option value="mecanisation">Mechanization</option>
                 <option value="irrigation">Irrigation and water</option>
+                <option value="serres">Controlled production environments</option>
                 <option value="transformation">Processing and plants</option>
                 <option value="stockage">Storage, preservation and cold</option>
                 <option value="energie">Energy and utilities</option>
@@ -59,6 +67,19 @@ export default function ContactPageEN() {
                 <option value="autre">Other</option>
               </select>
             </div>
+
+            {formData.prestation && (
+              <div>
+                <label className="block text-sm font-semibold text-[#0D1F5C] mb-2">Service code (RT-TECH reference)</label>
+                <input
+                  type="text"
+                  value={formData.prestation}
+                  onChange={(e) => setFormData({ ...formData, prestation: e.target.value })}
+                  className="w-full p-3 border border-[#D4A017] rounded bg-[#FFF8E6] focus:outline-none focus:border-[#D4A017]"
+                />
+                <p className="mt-1 text-xs text-[#5A6072]">Pre-filled from the reference sheet; editable.</p>
+              </div>
+            )}
 
             <div>
               <label className="block text-sm font-semibold text-[#0D1F5C] mb-2">

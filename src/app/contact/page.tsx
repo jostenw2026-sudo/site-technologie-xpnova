@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { envoyerDemande, type EtatEnvoi } from '@/lib/contact-client';
 import { EtatEnvoiPanneau } from '@/components/EtatEnvoi';
 
@@ -13,7 +13,14 @@ export default function ContactPage() {
     description: '',
     email: '',
     telephone: '',
+    prestation: '',
   });
+
+  // Lien « Demander une expertise » du référentiel : /contact?prestation=T2.2·TS-04
+  useEffect(() => {
+    const code = new URLSearchParams(window.location.search).get('prestation');
+    if (code) setFormData((d) => ({ ...d, prestation: code }));
+  }, []);
 
   const [etat, setEtat] = useState<EtatEnvoi>({ phase: 'repos' });
 
@@ -50,6 +57,7 @@ export default function ContactPage() {
                 <option value="">Sélectionnez...</option>
                 <option value="mecanisation">Mécanisation</option>
                 <option value="irrigation">Irrigation et eau</option>
+                <option value="serres">Environnements de production contrôlés</option>
                 <option value="transformation">Transformation et usines</option>
                 <option value="stockage">Stockage, conservation et froid</option>
                 <option value="energie">Énergie et utilités</option>
@@ -58,6 +66,19 @@ export default function ContactPage() {
                 <option value="autre">Autre</option>
               </select>
             </div>
+
+            {formData.prestation && (
+              <div>
+                <label className="block text-sm font-semibold text-[#0D1F5C] mb-2">Code de prestation (référentiel RT-TECH)</label>
+                <input
+                  type="text"
+                  value={formData.prestation}
+                  onChange={(e) => setFormData({ ...formData, prestation: e.target.value })}
+                  className="w-full p-3 border border-[#D4A017] rounded bg-[#FFF8E6] focus:outline-none focus:border-[#D4A017]"
+                />
+                <p className="mt-1 text-xs text-[#5A6072]">Pré-rempli depuis la fiche du référentiel ; modifiable.</p>
+              </div>
+            )}
 
             <div>
               <label className="block text-sm font-semibold text-[#0D1F5C] mb-2">

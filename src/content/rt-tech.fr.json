@@ -1,0 +1,2488 @@
+{
+  "referentiel": "RT-TECH",
+  "version": "1.0",
+  "dateValidation": "2026-10-21",
+  "langue": "fr",
+  "doctrine": {
+    "signature": "De l'équipement à la performance.",
+    "perimetre": "Ingénierie seule : XP-NOVA spécifie, compare, vérifie et assiste la réception ; il ne fournit, n'installe, ne maintient ni ne certifie."
+  },
+  "types": [
+    {
+      "code": "P",
+      "nom": "Physique"
+    },
+    {
+      "code": "N",
+      "nom": "Numérique"
+    },
+    {
+      "code": "H",
+      "nom": "Hybride"
+    }
+  ],
+  "vues": [
+    {
+      "code": "produire",
+      "nom": "Produire pour la Demande"
+    },
+    {
+      "code": "transformer",
+      "nom": "Transformer pour la Valeur"
+    },
+    {
+      "code": "exporter",
+      "nom": "Exporter pour l'Impact"
+    },
+    {
+      "code": "resister",
+      "nom": "Résister pour la Durée"
+    }
+  ],
+  "maillons": [
+    {
+      "code": "DP1",
+      "nom": "Agriculture"
+    },
+    {
+      "code": "DP2",
+      "nom": "Élevage"
+    },
+    {
+      "code": "DP3",
+      "nom": "Transformation"
+    },
+    {
+      "code": "DP4",
+      "nom": "Logistique & Distribution"
+    },
+    {
+      "code": "DP5",
+      "nom": "Trading & Export"
+    },
+    {
+      "code": "DP6",
+      "nom": "Halieutique et aquacole"
+    },
+    {
+      "code": "DP7",
+      "nom": "Forestier"
+    }
+  ],
+  "domaines": [
+    {
+      "code": "T1",
+      "nom": "Mécanisation",
+      "slug": "mecanisation",
+      "transversal": false,
+      "sousFonctions": [
+        {
+          "code": "T1.1",
+          "nom": "Défrichage et préparation du sol",
+          "slug": "t1-1-defrichage-et-preparation-du-sol",
+          "types": [
+            "P"
+          ],
+          "maillons": [
+            "DP1",
+            "DP7"
+          ],
+          "maillonsLibelles": [
+            "Agriculture",
+            "Forestier"
+          ],
+          "vue": "produire",
+          "vueLibelle": "Produire pour la Demande",
+          "equipements": [
+            {
+              "code": "T1.1-01",
+              "nom": "Tracteur",
+              "type": "P"
+            },
+            {
+              "code": "T1.1-02",
+              "nom": "Charrue, pulvériseur à disques",
+              "type": "P"
+            },
+            {
+              "code": "T1.1-03",
+              "nom": "Motoculteur",
+              "type": "P"
+            },
+            {
+              "code": "T1.1-04",
+              "nom": "Traction animale",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Surface, sol, pente, fenêtre de travail, puissance (kW)",
+          "risques": "Pièces et ateliers rares hors des grandes villes ; souches ; pistes",
+          "normes": "ISO 4254 (int.) ; mandat de promotion du CENEEMA",
+          "servicesCles": [
+            "TS-01",
+            "TS-02",
+            "TS-04"
+          ]
+        },
+        {
+          "code": "T1.2",
+          "nom": "Semis, plantation et fertilisation",
+          "slug": "t1-2-semis-plantation-et-fertilisation",
+          "types": [
+            "P"
+          ],
+          "maillons": [
+            "DP1"
+          ],
+          "maillonsLibelles": [
+            "Agriculture"
+          ],
+          "vue": "produire",
+          "vueLibelle": "Produire pour la Demande",
+          "equipements": [
+            {
+              "code": "T1.2-01",
+              "nom": "Semoir",
+              "type": "P"
+            },
+            {
+              "code": "T1.2-02",
+              "nom": "Planteuse manioc ou plantain",
+              "type": "P"
+            },
+            {
+              "code": "T1.2-03",
+              "nom": "Repiqueuse à riz",
+              "type": "P"
+            },
+            {
+              "code": "T1.2-04",
+              "nom": "Épandeur d'engrais ou de chaux",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Densité, débit de chantier (ha/j), dose",
+          "risques": "Boutures hétérogènes ; peu de matériel adapté sur le marché local",
+          "normes": "ISO 4254 (int.)",
+          "servicesCles": [
+            "TS-02",
+            "TS-04",
+            "TS-05"
+          ]
+        },
+        {
+          "code": "T1.3",
+          "nom": "Protection phytosanitaire",
+          "slug": "t1-3-protection-phytosanitaire",
+          "types": [
+            "P",
+            "H"
+          ],
+          "maillons": [
+            "DP1"
+          ],
+          "maillonsLibelles": [
+            "Agriculture"
+          ],
+          "vue": "produire",
+          "vueLibelle": "Produire pour la Demande",
+          "equipements": [
+            {
+              "code": "T1.3-01",
+              "nom": "Pulvérisateur à dos",
+              "type": "P"
+            },
+            {
+              "code": "T1.3-02",
+              "nom": "Atomiseur motorisé",
+              "type": "P"
+            },
+            {
+              "code": "T1.3-03",
+              "nom": "Rampe tractée",
+              "type": "P"
+            },
+            {
+              "code": "T1.3-04",
+              "nom": "Drone de pulvérisation",
+              "type": "H"
+            }
+          ],
+          "grandeurs": "Volume par ha, taille de gouttes, autonomie",
+          "risques": "Exposition des opérateurs ; résidus à l'export ; cadre drone en construction",
+          "normes": "Certification des appareils de traitement : CNHPCAT (MINADER) ; drones : autorisation CCAA ; ISO 16119 (int.)",
+          "servicesCles": [
+            "TS-02",
+            "TS-05",
+            "TS-07"
+          ]
+        },
+        {
+          "code": "T1.4",
+          "nom": "Récolte et post-récolte primaire",
+          "slug": "t1-4-recolte-et-post-recolte-primaire",
+          "types": [
+            "P"
+          ],
+          "maillons": [
+            "DP1"
+          ],
+          "maillonsLibelles": [
+            "Agriculture"
+          ],
+          "vue": "produire",
+          "vueLibelle": "Produire pour la Demande",
+          "equipements": [
+            {
+              "code": "T1.4-01",
+              "nom": "Moissonneuse-batteuse",
+              "type": "P"
+            },
+            {
+              "code": "T1.4-02",
+              "nom": "Batteuse",
+              "type": "P"
+            },
+            {
+              "code": "T1.4-03",
+              "nom": "Égreneuse à maïs",
+              "type": "P"
+            },
+            {
+              "code": "T1.4-04",
+              "nom": "Écabosseuse, décortiqueuse d'arachide",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Débit (t/h), taux de pertes, taux de casse",
+          "risques": "Pluies pendant la récolte ; accès des machines aux parcelles",
+          "normes": "ISO 4254 (int.)",
+          "servicesCles": [
+            "TS-02",
+            "TS-04",
+            "TS-08"
+          ]
+        },
+        {
+          "code": "T1.5",
+          "nom": "Mécanisation de l'élevage et des fourrages",
+          "slug": "t1-5-mecanisation-de-l-elevage-et-des-fourrages",
+          "types": [
+            "P"
+          ],
+          "maillons": [
+            "DP2"
+          ],
+          "maillonsLibelles": [
+            "Élevage"
+          ],
+          "vue": "produire",
+          "vueLibelle": "Produire pour la Demande",
+          "equipements": [
+            {
+              "code": "T1.5-01",
+              "nom": "Broyeur-mélangeur fermier",
+              "type": "P"
+            },
+            {
+              "code": "T1.5-02",
+              "nom": "Faucheuse, ensileuse",
+              "type": "P"
+            },
+            {
+              "code": "T1.5-03",
+              "nom": "Distributeur d'aliment",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Cheptel, ration journalière, autonomie fourragère",
+          "risques": "Fourrages saisonniers ; énergie",
+          "normes": "ISO 4254 (int.)",
+          "servicesCles": [
+            "TS-01",
+            "TS-04"
+          ]
+        },
+        {
+          "code": "T1.6",
+          "nom": "Organisation des parcs",
+          "slug": "t1-6-organisation-des-parcs",
+          "types": [
+            "P",
+            "H"
+          ],
+          "maillons": [
+            "DP1",
+            "DP2"
+          ],
+          "maillonsLibelles": [
+            "Agriculture",
+            "Élevage"
+          ],
+          "vue": "resister",
+          "vueLibelle": "Résister pour la Durée",
+          "equipements": [
+            {
+              "code": "T1.6-01",
+              "nom": "Parc mutualisé",
+              "type": "P"
+            },
+            {
+              "code": "T1.6-02",
+              "nom": "Remorque, tricycle motorisé",
+              "type": "P"
+            },
+            {
+              "code": "T1.6-03",
+              "nom": "Télémétrie de flotte",
+              "type": "H"
+            }
+          ],
+          "grandeurs": "Heures d'utilisation par an, coût horaire en FCFA, rayon de service",
+          "risques": "Gouvernance du partage ; sous-utilisation ; maintenance",
+          "normes": "Pools de mécanisation du CENEEMA (référence publique)",
+          "servicesCles": [
+            "TS-01",
+            "TS-02",
+            "TS-03"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "T2",
+      "nom": "Irrigation et eau",
+      "slug": "irrigation-eau",
+      "transversal": false,
+      "sousFonctions": [
+        {
+          "code": "T2.1",
+          "nom": "Mobilisation de la ressource en eau",
+          "slug": "t2-1-mobilisation-de-la-ressource-en-eau",
+          "types": [
+            "P"
+          ],
+          "maillons": [
+            "DP1",
+            "DP2",
+            "DP6"
+          ],
+          "maillonsLibelles": [
+            "Agriculture",
+            "Élevage",
+            "Halieutique et aquacole"
+          ],
+          "vue": "produire",
+          "vueLibelle": "Produire pour la Demande",
+          "equipements": [
+            {
+              "code": "T2.1-01",
+              "nom": "Forage",
+              "type": "P"
+            },
+            {
+              "code": "T2.1-02",
+              "nom": "Puits",
+              "type": "P"
+            },
+            {
+              "code": "T2.1-03",
+              "nom": "Prise en rivière",
+              "type": "P"
+            },
+            {
+              "code": "T2.1-04",
+              "nom": "Retenue collinaire",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Débit d'exploitation (m³/h), rabattement, pointe de besoin",
+          "risques": "Débit non garanti sans essai de pompage ; droits sur l'eau",
+          "normes": "Régime d'autorisation des prélèvements : à vérifier ; travaux par DS.S21",
+          "servicesCles": [
+            "TS-01",
+            "TS-04",
+            "TS-07"
+          ]
+        },
+        {
+          "code": "T2.2",
+          "nom": "Pompage",
+          "slug": "t2-2-pompage",
+          "types": [
+            "P",
+            "H"
+          ],
+          "maillons": [
+            "DP1",
+            "DP2",
+            "DP6"
+          ],
+          "maillonsLibelles": [
+            "Agriculture",
+            "Élevage",
+            "Halieutique et aquacole"
+          ],
+          "vue": "produire",
+          "vueLibelle": "Produire pour la Demande",
+          "equipements": [
+            {
+              "code": "T2.2-01",
+              "nom": "Motopompe",
+              "type": "P"
+            },
+            {
+              "code": "T2.2-02",
+              "nom": "Électropompe",
+              "type": "P"
+            },
+            {
+              "code": "T2.2-03",
+              "nom": "Pompe solaire de surface ou immergée",
+              "type": "H"
+            },
+            {
+              "code": "T2.2-04",
+              "nom": "Bélier hydraulique",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Débit, hauteur manométrique totale (m), heures de pompage",
+          "risques": "Sable, cavitation, vol de panneaux, carburant",
+          "normes": "ISO 9906 (int.) ; IEC 62253 (int.)",
+          "servicesCles": [
+            "TS-02",
+            "TS-04",
+            "TS-08"
+          ]
+        },
+        {
+          "code": "T2.3",
+          "nom": "Stockage et adduction",
+          "slug": "t2-3-stockage-et-adduction",
+          "types": [
+            "P"
+          ],
+          "maillons": [
+            "DP1",
+            "DP2",
+            "DP3"
+          ],
+          "maillonsLibelles": [
+            "Agriculture",
+            "Élevage",
+            "Transformation"
+          ],
+          "vue": "resister",
+          "vueLibelle": "Résister pour la Durée",
+          "equipements": [
+            {
+              "code": "T2.3-01",
+              "nom": "Réservoir",
+              "type": "P"
+            },
+            {
+              "code": "T2.3-02",
+              "nom": "Château d'eau",
+              "type": "P"
+            },
+            {
+              "code": "T2.3-03",
+              "nom": "Bassin en géomembrane",
+              "type": "P"
+            },
+            {
+              "code": "T2.3-04",
+              "nom": "Conduites",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Autonomie (jours), pression de service, diamètres",
+          "risques": "Fuites, évaporation, qualité de pose",
+          "normes": "Règles de l'art",
+          "servicesCles": [
+            "TS-03",
+            "TS-04",
+            "TS-05"
+          ]
+        },
+        {
+          "code": "T2.4",
+          "nom": "Irrigation localisée et fertirrigation",
+          "slug": "t2-4-irrigation-localisee-et-fertirrigation",
+          "types": [
+            "P",
+            "H"
+          ],
+          "maillons": [
+            "DP1"
+          ],
+          "maillonsLibelles": [
+            "Agriculture"
+          ],
+          "vue": "produire",
+          "vueLibelle": "Produire pour la Demande",
+          "equipements": [
+            {
+              "code": "T2.4-01",
+              "nom": "Goutte-à-goutte",
+              "type": "P"
+            },
+            {
+              "code": "T2.4-02",
+              "nom": "Micro-aspersion",
+              "type": "P"
+            },
+            {
+              "code": "T2.4-03",
+              "nom": "Injecteur de fertirrigation",
+              "type": "H"
+            },
+            {
+              "code": "T2.4-04",
+              "nom": "Station de filtration",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Besoin de la culture (mm/j), débit par goutteur, uniformité",
+          "risques": "Colmatage ; rongeurs ; qualité variable des gaines importées",
+          "normes": "ISO 9261 (int.)",
+          "servicesCles": [
+            "TS-02",
+            "TS-04",
+            "TS-05"
+          ]
+        },
+        {
+          "code": "T2.5",
+          "nom": "Aspersion et irrigation gravitaire",
+          "slug": "t2-5-aspersion-et-irrigation-gravitaire",
+          "types": [
+            "P"
+          ],
+          "maillons": [
+            "DP1"
+          ],
+          "maillonsLibelles": [
+            "Agriculture"
+          ],
+          "vue": "produire",
+          "vueLibelle": "Produire pour la Demande",
+          "equipements": [
+            {
+              "code": "T2.5-01",
+              "nom": "Asperseurs, enrouleurs",
+              "type": "P"
+            },
+            {
+              "code": "T2.5-02",
+              "nom": "Canaux et ouvrages de régulation",
+              "type": "P"
+            },
+            {
+              "code": "T2.5-03",
+              "nom": "Planage de rizière",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Dose, intervalle, pente, pertes en réseau",
+          "risques": "Coût énergétique de l'aspersion ; entretien collectif des canaux",
+          "normes": "Règles de l'art",
+          "servicesCles": [
+            "TS-02",
+            "TS-03",
+            "TS-04"
+          ]
+        },
+        {
+          "code": "T2.6",
+          "nom": "Traitement de l'eau, eau de process et abreuvement",
+          "slug": "t2-6-traitement-de-l-eau-eau-de-process-et-abreuvement",
+          "types": [
+            "P"
+          ],
+          "maillons": [
+            "DP2",
+            "DP3",
+            "DP6"
+          ],
+          "maillonsLibelles": [
+            "Élevage",
+            "Transformation",
+            "Halieutique et aquacole"
+          ],
+          "vue": "transformer",
+          "vueLibelle": "Transformer pour la Valeur",
+          "equipements": [
+            {
+              "code": "T2.6-01",
+              "nom": "Filtration, désinfection",
+              "type": "P"
+            },
+            {
+              "code": "T2.6-02",
+              "nom": "Adoucisseur",
+              "type": "P"
+            },
+            {
+              "code": "T2.6-03",
+              "nom": "Abreuvoirs, pipettes",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Besoin par animal ou par tonne transformée, qualité visée",
+          "risques": "Eau de process non potable ; biofilm dans les réseaux d'élevage",
+          "normes": "Eau potable exigée par les démarches HACCP ; texte national à vérifier",
+          "servicesCles": [
+            "TS-01",
+            "TS-04",
+            "TS-05"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "T3",
+      "nom": "Environnements de production contrôlés",
+      "slug": "environnements-controles",
+      "transversal": false,
+      "sousFonctions": [
+        {
+          "code": "T3.1",
+          "nom": "Serres, tunnels et ombrières",
+          "slug": "t3-1-serres-tunnels-et-ombrieres",
+          "types": [
+            "P"
+          ],
+          "maillons": [
+            "DP1"
+          ],
+          "maillonsLibelles": [
+            "Agriculture"
+          ],
+          "vue": "produire",
+          "vueLibelle": "Produire pour la Demande",
+          "equipements": [
+            {
+              "code": "T3.1-01",
+              "nom": "Tunnel, chapelle",
+              "type": "P"
+            },
+            {
+              "code": "T3.1-02",
+              "nom": "Ombrière, filet anti-insectes",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Surface, charge de vent, surface d'ouvrants, couverture",
+          "risques": "Surchauffe en zone forestière ; vent en altitude ; durée de vie du film",
+          "normes": "EN 13031-1 (int.)",
+          "servicesCles": [
+            "TS-02",
+            "TS-03",
+            "TS-05"
+          ]
+        },
+        {
+          "code": "T3.2",
+          "nom": "Climat, hors-sol et pépinières",
+          "slug": "t3-2-climat-hors-sol-et-pepinieres",
+          "types": [
+            "H"
+          ],
+          "maillons": [
+            "DP1"
+          ],
+          "maillonsLibelles": [
+            "Agriculture"
+          ],
+          "vue": "produire",
+          "vueLibelle": "Produire pour la Demande",
+          "equipements": [
+            {
+              "code": "T3.2-01",
+              "nom": "Ventilation, brumisation",
+              "type": "H"
+            },
+            {
+              "code": "T3.2-02",
+              "nom": "Régulation climatique",
+              "type": "H"
+            },
+            {
+              "code": "T3.2-03",
+              "nom": "Hydroponie, tables de culture",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Température et humidité cibles, renouvellement d'air",
+          "risques": "Maladies fongiques en humidité élevée ; énergie",
+          "normes": "Règles de l'art",
+          "servicesCles": [
+            "TS-03",
+            "TS-04"
+          ]
+        },
+        {
+          "code": "T3.3",
+          "nom": "Bâtiments et équipements d'élevage",
+          "slug": "t3-3-batiments-et-equipements-d-elevage",
+          "types": [
+            "P"
+          ],
+          "maillons": [
+            "DP2"
+          ],
+          "maillonsLibelles": [
+            "Élevage"
+          ],
+          "vue": "produire",
+          "vueLibelle": "Produire pour la Demande",
+          "equipements": [
+            {
+              "code": "T3.3-01",
+              "nom": "Ventilation, éclairage",
+              "type": "P"
+            },
+            {
+              "code": "T3.3-02",
+              "nom": "Mangeoires, abreuvoirs, cages",
+              "type": "P"
+            },
+            {
+              "code": "T3.3-03",
+              "nom": "Pédiluves, fosses à effluents",
+              "type": "P"
+            },
+            {
+              "code": "T3.3-04",
+              "nom": "Ruches, extracteurs",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Densité animale, débit d'air par tête, volume d'effluents",
+          "risques": "Chaleur ; biosécurité (influenza aviaire, peste porcine africaine) ; effluents",
+          "normes": "Règles sanitaires MINEPIA : à confirmer par texte",
+          "servicesCles": [
+            "TS-01",
+            "TS-03",
+            "TS-05"
+          ]
+        },
+        {
+          "code": "T3.4",
+          "nom": "Couvoirs et incubation",
+          "slug": "t3-4-couvoirs-et-incubation",
+          "types": [
+            "H"
+          ],
+          "maillons": [
+            "DP2"
+          ],
+          "maillonsLibelles": [
+            "Élevage"
+          ],
+          "vue": "resister",
+          "vueLibelle": "Résister pour la Durée",
+          "equipements": [
+            {
+              "code": "T3.4-01",
+              "nom": "Incubateur, éclosoir",
+              "type": "H"
+            },
+            {
+              "code": "T3.4-02",
+              "nom": "Groupe de secours dédié",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Capacité par cycle, stabilité thermique",
+          "risques": "Coupure de courant = risque de perte du lot",
+          "normes": "Agrément MINEPIA : à confirmer",
+          "servicesCles": [
+            "TS-04",
+            "TS-07",
+            "TS-08"
+          ]
+        },
+        {
+          "code": "T3.5",
+          "nom": "Aquaculture",
+          "slug": "t3-5-aquaculture",
+          "types": [
+            "P",
+            "H"
+          ],
+          "maillons": [
+            "DP6"
+          ],
+          "maillonsLibelles": [
+            "Halieutique et aquacole"
+          ],
+          "vue": "produire",
+          "vueLibelle": "Produire pour la Demande",
+          "equipements": [
+            {
+              "code": "T3.5-01",
+              "nom": "Bassins, cages flottantes",
+              "type": "P"
+            },
+            {
+              "code": "T3.5-02",
+              "nom": "Aérateurs, oxygénation",
+              "type": "H"
+            },
+            {
+              "code": "T3.5-03",
+              "nom": "Système en recirculation",
+              "type": "H"
+            }
+          ],
+          "grandeurs": "Biomasse (kg/m³), oxygène dissous, renouvellement d'eau",
+          "risques": "Coût de l'aliment ; énergie des aérateurs ; vols",
+          "normes": "Autorisations MINEPIA : à confirmer",
+          "servicesCles": [
+            "TS-02",
+            "TS-04",
+            "TS-08"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "T4",
+      "nom": "Transformation et usines",
+      "slug": "transformation-usines",
+      "transversal": false,
+      "sousFonctions": [
+        {
+          "code": "T4.1",
+          "nom": "Réception, nettoyage et tri d'entrée",
+          "slug": "t4-1-reception-nettoyage-et-tri-d-entree",
+          "types": [
+            "P"
+          ],
+          "maillons": [
+            "DP3"
+          ],
+          "maillonsLibelles": [
+            "Transformation"
+          ],
+          "vue": "transformer",
+          "vueLibelle": "Transformer pour la Valeur",
+          "equipements": [
+            {
+              "code": "T4.1-01",
+              "nom": "Laveuse, épierreur",
+              "type": "P"
+            },
+            {
+              "code": "T4.1-02",
+              "nom": "Trieur, tamis",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Débit (t/h), taux d'impuretés",
+          "risques": "Matière première hétérogène",
+          "normes": "ISO 12100 (int.)",
+          "servicesCles": [
+            "TS-03",
+            "TS-04"
+          ]
+        },
+        {
+          "code": "T4.2",
+          "nom": "Décorticage, broyage et mouture",
+          "slug": "t4-2-decorticage-broyage-et-mouture",
+          "types": [
+            "P"
+          ],
+          "maillons": [
+            "DP3"
+          ],
+          "maillonsLibelles": [
+            "Transformation"
+          ],
+          "vue": "transformer",
+          "vueLibelle": "Transformer pour la Valeur",
+          "equipements": [
+            {
+              "code": "T4.2-01",
+              "nom": "Décortiqueuse à riz",
+              "type": "P"
+            },
+            {
+              "code": "T4.2-02",
+              "nom": "Broyeur à marteaux, moulin",
+              "type": "P"
+            },
+            {
+              "code": "T4.2-03",
+              "nom": "Râpe à manioc",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Débit, rendement au décorticage, granulométrie",
+          "risques": "Usure ; poussières ; pièces importées",
+          "normes": "ISO 12100 (int.)",
+          "servicesCles": [
+            "TS-02",
+            "TS-04",
+            "TS-08"
+          ]
+        },
+        {
+          "code": "T4.3",
+          "nom": "Pressage et extraction",
+          "slug": "t4-3-pressage-et-extraction",
+          "types": [
+            "P"
+          ],
+          "maillons": [
+            "DP3"
+          ],
+          "maillonsLibelles": [
+            "Transformation"
+          ],
+          "vue": "transformer",
+          "vueLibelle": "Transformer pour la Valeur",
+          "equipements": [
+            {
+              "code": "T4.3-01",
+              "nom": "Presse à huile de palme ou d'arachide",
+              "type": "P"
+            },
+            {
+              "code": "T4.3-02",
+              "nom": "Extracteur de jus",
+              "type": "P"
+            },
+            {
+              "code": "T4.3-03",
+              "nom": "Presse à pulpe de manioc",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Débit, taux d'extraction",
+          "risques": "Acidité de l'huile si le délai avant traitement s'allonge",
+          "normes": "Huiles végétales enrichies : NC 77 rendue obligatoire en 2011 (selon la presse)",
+          "servicesCles": [
+            "TS-02",
+            "TS-04",
+            "TS-08"
+          ]
+        },
+        {
+          "code": "T4.4",
+          "nom": "Séchage, fumage et lyophilisation",
+          "slug": "t4-4-sechage-fumage-et-lyophilisation",
+          "types": [
+            "P",
+            "H"
+          ],
+          "maillons": [
+            "DP3",
+            "DP6"
+          ],
+          "maillonsLibelles": [
+            "Transformation",
+            "Halieutique et aquacole"
+          ],
+          "vue": "transformer",
+          "vueLibelle": "Transformer pour la Valeur",
+          "equipements": [
+            {
+              "code": "T4.4-01",
+              "nom": "Séchoir solaire",
+              "type": "P"
+            },
+            {
+              "code": "T4.4-02",
+              "nom": "Séchoir au gaz ou à biomasse",
+              "type": "P"
+            },
+            {
+              "code": "T4.4-03",
+              "nom": "Four de fumage du poisson",
+              "type": "P"
+            },
+            {
+              "code": "T4.4-04",
+              "nom": "Lyophilisateur",
+              "type": "H"
+            }
+          ],
+          "grandeurs": "Eau à évaporer (kg/h), humidité finale, énergie spécifique",
+          "risques": "HAP sur les produits fumés ; humidité ambiante ; coût de l'énergie",
+          "normes": "Teneurs en HAP exigées par les marchés d'export : à vérifier par marché",
+          "servicesCles": [
+            "TS-02",
+            "TS-04",
+            "TS-08"
+          ]
+        },
+        {
+          "code": "T4.5",
+          "nom": "Traitement thermique",
+          "slug": "t4-5-traitement-thermique",
+          "types": [
+            "P",
+            "H"
+          ],
+          "maillons": [
+            "DP3"
+          ],
+          "maillonsLibelles": [
+            "Transformation"
+          ],
+          "vue": "transformer",
+          "vueLibelle": "Transformer pour la Valeur",
+          "equipements": [
+            {
+              "code": "T4.5-01",
+              "nom": "Pasteurisateur",
+              "type": "H"
+            },
+            {
+              "code": "T4.5-02",
+              "nom": "Autoclave",
+              "type": "P"
+            },
+            {
+              "code": "T4.5-03",
+              "nom": "Cuiseur, torréfacteur",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Barème temps-température, débit",
+          "risques": "Maîtrise des barèmes ; appareils à pression",
+          "normes": "Codex CXC 1-1969 (int.) ; appareils à pression : à vérifier",
+          "servicesCles": [
+            "TS-03",
+            "TS-05",
+            "TS-07"
+          ]
+        },
+        {
+          "code": "T4.6",
+          "nom": "Mélange et formulation",
+          "slug": "t4-6-melange-et-formulation",
+          "types": [
+            "P"
+          ],
+          "maillons": [
+            "DP3"
+          ],
+          "maillonsLibelles": [
+            "Transformation"
+          ],
+          "vue": "transformer",
+          "vueLibelle": "Transformer pour la Valeur",
+          "equipements": [
+            {
+              "code": "T4.6-01",
+              "nom": "Mélangeur",
+              "type": "P"
+            },
+            {
+              "code": "T4.6-02",
+              "nom": "Presse à granulés",
+              "type": "P"
+            },
+            {
+              "code": "T4.6-03",
+              "nom": "Pétrin, four",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Débit, homogénéité, calibre des granulés",
+          "risques": "Matières premières variables ; mycotoxines",
+          "normes": "Codex (int.) ; aliments du bétail : MINEPIA à vérifier",
+          "servicesCles": [
+            "TS-02",
+            "TS-04"
+          ]
+        },
+        {
+          "code": "T4.7",
+          "nom": "Abattage et découpe",
+          "slug": "t4-7-abattage-et-decoupe",
+          "types": [
+            "P"
+          ],
+          "maillons": [
+            "DP3"
+          ],
+          "maillonsLibelles": [
+            "Transformation"
+          ],
+          "vue": "transformer",
+          "vueLibelle": "Transformer pour la Valeur",
+          "equipements": [
+            {
+              "code": "T4.7-01",
+              "nom": "Ligne d'abattage volaille ou porc",
+              "type": "P"
+            },
+            {
+              "code": "T4.7-02",
+              "nom": "Matériel de découpe",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Cadence (têtes/h), eau par tête, effluents",
+          "risques": "Agrément sanitaire ; sous-produits",
+          "normes": "Agrément et inspection vétérinaire MINEPIA : à confirmer",
+          "servicesCles": [
+            "TS-03",
+            "TS-05",
+            "TS-07"
+          ]
+        },
+        {
+          "code": "T4.8",
+          "nom": "Conditionnement et emballage",
+          "slug": "t4-8-conditionnement-et-emballage",
+          "types": [
+            "P",
+            "H"
+          ],
+          "maillons": [
+            "DP3",
+            "DP5"
+          ],
+          "maillonsLibelles": [
+            "Transformation",
+            "Trading & Export"
+          ],
+          "vue": "exporter",
+          "vueLibelle": "Exporter pour l'Impact",
+          "equipements": [
+            {
+              "code": "T4.8-01",
+              "nom": "Doseuse, ensacheuse",
+              "type": "P"
+            },
+            {
+              "code": "T4.8-02",
+              "nom": "Thermoscelleuse, sous-vide",
+              "type": "P"
+            },
+            {
+              "code": "T4.8-03",
+              "nom": "Étiqueteuse",
+              "type": "H"
+            }
+          ],
+          "grandeurs": "Cadence, format, précision de dosage",
+          "risques": "Emballages importés ; étiquetage export",
+          "normes": "Exigences du marché cible ; GS1 (int.)",
+          "servicesCles": [
+            "TS-02",
+            "TS-05",
+            "TS-08"
+          ]
+        },
+        {
+          "code": "T4.9",
+          "nom": "Hygiène, nettoyage en place et contrôle qualité d'usine",
+          "slug": "t4-9-hygiene-nettoyage-en-place-et-controle-qualite-d-usine",
+          "types": [
+            "H"
+          ],
+          "maillons": [
+            "DP3"
+          ],
+          "maillonsLibelles": [
+            "Transformation"
+          ],
+          "vue": "exporter",
+          "vueLibelle": "Exporter pour l'Impact",
+          "equipements": [
+            {
+              "code": "T4.9-01",
+              "nom": "Nettoyage en place",
+              "type": "H"
+            },
+            {
+              "code": "T4.9-02",
+              "nom": "Détecteur de métaux",
+              "type": "H"
+            },
+            {
+              "code": "T4.9-03",
+              "nom": "Laboratoire d'usine",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Plan de nettoyage, points critiques HACCP",
+          "risques": "Eau ; compétences ; étalonnage",
+          "normes": "ISO 22000, Codex CXC 1-1969 (int.) ; ISO/IEC 17025 si accréditation visée",
+          "servicesCles": [
+            "TS-03",
+            "TS-05",
+            "TS-07"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "T5",
+      "nom": "Stockage, conservation et froid",
+      "slug": "stockage-froid",
+      "transversal": false,
+      "sousFonctions": [
+        {
+          "code": "T5.1",
+          "nom": "Stockage sec",
+          "slug": "t5-1-stockage-sec",
+          "types": [
+            "P"
+          ],
+          "maillons": [
+            "DP1",
+            "DP4"
+          ],
+          "maillonsLibelles": [
+            "Agriculture",
+            "Logistique & Distribution"
+          ],
+          "vue": "resister",
+          "vueLibelle": "Résister pour la Durée",
+          "equipements": [
+            {
+              "code": "T5.1-01",
+              "nom": "Silo",
+              "type": "P"
+            },
+            {
+              "code": "T5.1-02",
+              "nom": "Crib à maïs",
+              "type": "P"
+            },
+            {
+              "code": "T5.1-03",
+              "nom": "Magasin, entrepôt sous sac",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Volume (t), rotation, humidité de stockage",
+          "risques": "Insectes ; moisissures et aflatoxines ; inondation",
+          "normes": "Règles de l'art",
+          "servicesCles": [
+            "TS-02",
+            "TS-04",
+            "TS-05"
+          ]
+        },
+        {
+          "code": "T5.2",
+          "nom": "Protection des stocks",
+          "slug": "t5-2-protection-des-stocks",
+          "types": [
+            "P"
+          ],
+          "maillons": [
+            "DP4"
+          ],
+          "maillonsLibelles": [
+            "Logistique & Distribution"
+          ],
+          "vue": "resister",
+          "vueLibelle": "Résister pour la Durée",
+          "equipements": [
+            {
+              "code": "T5.2-01",
+              "nom": "Sacs hermétiques",
+              "type": "P"
+            },
+            {
+              "code": "T5.2-02",
+              "nom": "Cocons de stockage",
+              "type": "P"
+            },
+            {
+              "code": "T5.2-03",
+              "nom": "Bâches de fumigation",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Volume, durée de conservation",
+          "risques": "Produits de fumigation soumis à homologation",
+          "normes": "Homologation des produits : CNHPCAT (MINADER)",
+          "servicesCles": [
+            "TS-01",
+            "TS-02"
+          ]
+        },
+        {
+          "code": "T5.3",
+          "nom": "Chambres froides positives et négatives",
+          "slug": "t5-3-chambres-froides-positives-et-negatives",
+          "types": [
+            "P",
+            "H"
+          ],
+          "maillons": [
+            "DP3",
+            "DP4"
+          ],
+          "maillonsLibelles": [
+            "Transformation",
+            "Logistique & Distribution"
+          ],
+          "vue": "exporter",
+          "vueLibelle": "Exporter pour l'Impact",
+          "equipements": [
+            {
+              "code": "T5.3-01",
+              "nom": "Chambre froide positive",
+              "type": "H"
+            },
+            {
+              "code": "T5.3-02",
+              "nom": "Chambre froide négative",
+              "type": "H"
+            },
+            {
+              "code": "T5.3-03",
+              "nom": "Chambre de ressuage",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Volume (m³), température, puissance frigorifique, entrées journalières",
+          "risques": "Coupures réseau ; choix des fluides ; isolation",
+          "normes": "EN 378 (int.) ; amendement de Kigali ratifié par le Cameroun",
+          "servicesCles": [
+            "TS-03",
+            "TS-04",
+            "TS-08"
+          ]
+        },
+        {
+          "code": "T5.4",
+          "nom": "Froid mobile et collecte",
+          "slug": "t5-4-froid-mobile-et-collecte",
+          "types": [
+            "P"
+          ],
+          "maillons": [
+            "DP4",
+            "DP5"
+          ],
+          "maillonsLibelles": [
+            "Logistique & Distribution",
+            "Trading & Export"
+          ],
+          "vue": "exporter",
+          "vueLibelle": "Exporter pour l'Impact",
+          "equipements": [
+            {
+              "code": "T5.4-01",
+              "nom": "Tank à lait",
+              "type": "P"
+            },
+            {
+              "code": "T5.4-02",
+              "nom": "Camion frigorifique",
+              "type": "P"
+            },
+            {
+              "code": "T5.4-03",
+              "nom": "Conteneur frigorifique",
+              "type": "P"
+            },
+            {
+              "code": "T5.4-04",
+              "nom": "Caisson isotherme",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Volume, autonomie, température de transport",
+          "risques": "Pistes ; carburant ; rupture au transbordement",
+          "normes": "Accord ATP (int.) : applicabilité au Cameroun à vérifier",
+          "servicesCles": [
+            "TS-02",
+            "TS-04"
+          ]
+        },
+        {
+          "code": "T5.5",
+          "nom": "Glace et prérefroidissement",
+          "slug": "t5-5-glace-et-prerefroidissement",
+          "types": [
+            "P"
+          ],
+          "maillons": [
+            "DP4",
+            "DP6"
+          ],
+          "maillonsLibelles": [
+            "Logistique & Distribution",
+            "Halieutique et aquacole"
+          ],
+          "vue": "exporter",
+          "vueLibelle": "Exporter pour l'Impact",
+          "equipements": [
+            {
+              "code": "T5.5-01",
+              "nom": "Machine à glace",
+              "type": "P"
+            },
+            {
+              "code": "T5.5-02",
+              "nom": "Prérefroidissement à air forcé ou à l'eau",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Production de glace (t/j), temps de refroidissement",
+          "risques": "Eau potable pour la glace ; énergie",
+          "normes": "Hygiène des produits de la pêche : à vérifier",
+          "servicesCles": [
+            "TS-02",
+            "TS-04"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "T6",
+      "nom": "Énergie et utilités",
+      "slug": "energie-utilites",
+      "transversal": true,
+      "sousFonctions": [
+        {
+          "code": "T6.1",
+          "nom": "Bilan de puissance, raccordement et distribution électrique",
+          "slug": "t6-1-bilan-de-puissance-raccordement-et-distribution-electrique",
+          "types": [
+            "P"
+          ],
+          "maillons": [
+            "ALL"
+          ],
+          "maillonsLibelles": [
+            "Tous les maillons"
+          ],
+          "vue": "resister",
+          "vueLibelle": "Résister pour la Durée",
+          "equipements": [
+            {
+              "code": "T6.1-01",
+              "nom": "Poste de transformation",
+              "type": "P"
+            },
+            {
+              "code": "T6.1-02",
+              "nom": "Tableau général basse tension",
+              "type": "P"
+            },
+            {
+              "code": "T6.1-03",
+              "nom": "Compensation de l'énergie réactive",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Puissance appelée (kVA), facteur de puissance, profil de charge",
+          "risques": "Délestages ; chutes de tension ; délais de raccordement",
+          "normes": "IEC 60364 (int.) ; NF C 15-100 d'usage courant, statut à vérifier ; régulateur : ARSEL",
+          "servicesCles": [
+            "TS-01",
+            "TS-03",
+            "TS-04"
+          ]
+        },
+        {
+          "code": "T6.2",
+          "nom": "Solaire photovoltaïque et stockage par batteries",
+          "slug": "t6-2-solaire-photovoltaique-et-stockage-par-batteries",
+          "types": [
+            "H"
+          ],
+          "maillons": [
+            "ALL"
+          ],
+          "maillonsLibelles": [
+            "Tous les maillons"
+          ],
+          "vue": "resister",
+          "vueLibelle": "Résister pour la Durée",
+          "equipements": [
+            {
+              "code": "T6.2-01",
+              "nom": "Champ photovoltaïque",
+              "type": "P"
+            },
+            {
+              "code": "T6.2-02",
+              "nom": "Onduleur, régulateur",
+              "type": "H"
+            },
+            {
+              "code": "T6.2-03",
+              "nom": "Batteries lithium ou plomb",
+              "type": "H"
+            }
+          ],
+          "grandeurs": "Énergie journalière (kWh/j), autonomie, ensoleillement du site",
+          "risques": "Poussières au Nord ; vols ; qualité des modules importés ; fin de vie des batteries",
+          "normes": "IEC 61215, IEC 62446-1 (int.) ; PECAE à l'import",
+          "servicesCles": [
+            "TS-02",
+            "TS-04",
+            "TS-08"
+          ]
+        },
+        {
+          "code": "T6.3",
+          "nom": "Groupes électrogènes et continuité",
+          "slug": "t6-3-groupes-electrogenes-et-continuite",
+          "types": [
+            "P",
+            "H"
+          ],
+          "maillons": [
+            "ALL"
+          ],
+          "maillonsLibelles": [
+            "Tous les maillons"
+          ],
+          "vue": "resister",
+          "vueLibelle": "Résister pour la Durée",
+          "equipements": [
+            {
+              "code": "T6.3-01",
+              "nom": "Groupe électrogène",
+              "type": "P"
+            },
+            {
+              "code": "T6.3-02",
+              "nom": "Inverseur de source",
+              "type": "H"
+            },
+            {
+              "code": "T6.3-03",
+              "nom": "Onduleur ASI",
+              "type": "H"
+            }
+          ],
+          "grandeurs": "Puissance secourue, autonomie en carburant, temps de bascule",
+          "risques": "Prix et disponibilité du gasoil ; entretien",
+          "normes": "Essai de continuité en charge exigé à l'étape 9 AGROVITA",
+          "servicesCles": [
+            "TS-04",
+            "TS-07",
+            "TS-08"
+          ]
+        },
+        {
+          "code": "T6.4",
+          "nom": "Bioénergies",
+          "slug": "t6-4-bioenergies",
+          "types": [
+            "P"
+          ],
+          "maillons": [
+            "DP2",
+            "DP3"
+          ],
+          "maillonsLibelles": [
+            "Élevage",
+            "Transformation"
+          ],
+          "vue": "resister",
+          "vueLibelle": "Résister pour la Durée",
+          "equipements": [
+            {
+              "code": "T6.4-01",
+              "nom": "Digesteur à biogaz",
+              "type": "P"
+            },
+            {
+              "code": "T6.4-02",
+              "nom": "Chaudière ou gazéifieur à biomasse",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Gisement (t/an), pouvoir calorifique, production (m³/j)",
+          "risques": "Régularité du gisement ; savoir-faire d'exploitation",
+          "normes": "Règles de l'art",
+          "servicesCles": [
+            "TS-01",
+            "TS-02",
+            "TS-04"
+          ]
+        },
+        {
+          "code": "T6.5",
+          "nom": "Chaleur et vapeur de process",
+          "slug": "t6-5-chaleur-et-vapeur-de-process",
+          "types": [
+            "P"
+          ],
+          "maillons": [
+            "DP3"
+          ],
+          "maillonsLibelles": [
+            "Transformation"
+          ],
+          "vue": "transformer",
+          "vueLibelle": "Transformer pour la Valeur",
+          "equipements": [
+            {
+              "code": "T6.5-01",
+              "nom": "Chaudière, générateur de vapeur",
+              "type": "P"
+            },
+            {
+              "code": "T6.5-02",
+              "nom": "Échangeurs",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Besoin thermique (kW), pression",
+          "risques": "Appareils à pression ; combustible",
+          "normes": "Appareils à pression : à vérifier",
+          "servicesCles": [
+            "TS-03",
+            "TS-04",
+            "TS-07"
+          ]
+        },
+        {
+          "code": "T6.6",
+          "nom": "Air comprimé, eaux de process et effluents industriels",
+          "slug": "t6-6-air-comprime-eaux-de-process-et-effluents-industriels",
+          "types": [
+            "P"
+          ],
+          "maillons": [
+            "DP3"
+          ],
+          "maillonsLibelles": [
+            "Transformation"
+          ],
+          "vue": "transformer",
+          "vueLibelle": "Transformer pour la Valeur",
+          "equipements": [
+            {
+              "code": "T6.6-01",
+              "nom": "Compresseur",
+              "type": "P"
+            },
+            {
+              "code": "T6.6-02",
+              "nom": "Tour de refroidissement",
+              "type": "P"
+            },
+            {
+              "code": "T6.6-03",
+              "nom": "Station d'épuration agro-industrielle",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Débit d'air, charge polluante (DBO, DCO)",
+          "risques": "Rejets non conformes ; contrôles environnementaux",
+          "normes": "Études d'impact et rejets : MINEPDED, seuils à vérifier",
+          "servicesCles": [
+            "TS-01",
+            "TS-03",
+            "TS-05"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "T7",
+      "nom": "Manutention et logistique",
+      "slug": "manutention-logistique",
+      "transversal": false,
+      "sousFonctions": [
+        {
+          "code": "T7.1",
+          "nom": "Manutention de vrac",
+          "slug": "t7-1-manutention-de-vrac",
+          "types": [
+            "P"
+          ],
+          "maillons": [
+            "DP3",
+            "DP4"
+          ],
+          "maillonsLibelles": [
+            "Transformation",
+            "Logistique & Distribution"
+          ],
+          "vue": "transformer",
+          "vueLibelle": "Transformer pour la Valeur",
+          "equipements": [
+            {
+              "code": "T7.1-01",
+              "nom": "Convoyeur à bande",
+              "type": "P"
+            },
+            {
+              "code": "T7.1-02",
+              "nom": "Élévateur à godets",
+              "type": "P"
+            },
+            {
+              "code": "T7.1-03",
+              "nom": "Vis sans fin",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Débit (t/h), hauteur, masse volumique",
+          "risques": "Poussières de céréales explosives ; usure",
+          "normes": "ISO 12100 (int.)",
+          "servicesCles": [
+            "TS-03",
+            "TS-04"
+          ]
+        },
+        {
+          "code": "T7.2",
+          "nom": "Manutention de charges et rayonnage",
+          "slug": "t7-2-manutention-de-charges-et-rayonnage",
+          "types": [
+            "P"
+          ],
+          "maillons": [
+            "DP3",
+            "DP4"
+          ],
+          "maillonsLibelles": [
+            "Transformation",
+            "Logistique & Distribution"
+          ],
+          "vue": "transformer",
+          "vueLibelle": "Transformer pour la Valeur",
+          "equipements": [
+            {
+              "code": "T7.2-01",
+              "nom": "Chariot élévateur",
+              "type": "P"
+            },
+            {
+              "code": "T7.2-02",
+              "nom": "Transpalette",
+              "type": "P"
+            },
+            {
+              "code": "T7.2-03",
+              "nom": "Palan, rayonnage",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Charge, hauteur de levage, largeur d'allée",
+          "risques": "Formation des caristes ; sols inadaptés",
+          "normes": "ISO 3691-1 (int.)",
+          "servicesCles": [
+            "TS-03",
+            "TS-05"
+          ]
+        },
+        {
+          "code": "T7.3",
+          "nom": "Pesage et métrologie",
+          "slug": "t7-3-pesage-et-metrologie",
+          "types": [
+            "P",
+            "H"
+          ],
+          "maillons": [
+            "DP3",
+            "DP4",
+            "DP5"
+          ],
+          "maillonsLibelles": [
+            "Transformation",
+            "Logistique & Distribution",
+            "Trading & Export"
+          ],
+          "vue": "exporter",
+          "vueLibelle": "Exporter pour l'Impact",
+          "equipements": [
+            {
+              "code": "T7.3-01",
+              "nom": "Bascule, pont-bascule",
+              "type": "P"
+            },
+            {
+              "code": "T7.3-02",
+              "nom": "Balance connectée",
+              "type": "H"
+            }
+          ],
+          "grandeurs": "Portée, échelon, fréquence d'étalonnage",
+          "risques": "Fraude au poids ; étalonnage irrégulier",
+          "normes": "Métrologie légale : autorité et texte à confirmer",
+          "servicesCles": [
+            "TS-05",
+            "TS-07",
+            "TS-08"
+          ]
+        },
+        {
+          "code": "T7.4",
+          "nom": "Tri, calibrage et conditionnement export",
+          "slug": "t7-4-tri-calibrage-et-conditionnement-export",
+          "types": [
+            "P",
+            "H"
+          ],
+          "maillons": [
+            "DP4",
+            "DP5"
+          ],
+          "maillonsLibelles": [
+            "Logistique & Distribution",
+            "Trading & Export"
+          ],
+          "vue": "exporter",
+          "vueLibelle": "Exporter pour l'Impact",
+          "equipements": [
+            {
+              "code": "T7.4-01",
+              "nom": "Calibreuse à fruits",
+              "type": "P"
+            },
+            {
+              "code": "T7.4-02",
+              "nom": "Trieur optique café ou cacao",
+              "type": "H"
+            },
+            {
+              "code": "T7.4-03",
+              "nom": "Ligne de station de conditionnement",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Débit, classes de calibre, taux de rejet",
+          "risques": "Exigences des acheteurs ; énergie",
+          "normes": "Normes du marché cible ; RDUE pour cacao, café et bois",
+          "servicesCles": [
+            "TS-02",
+            "TS-05",
+            "TS-08"
+          ]
+        },
+        {
+          "code": "T7.5",
+          "nom": "Transport et flotte",
+          "slug": "t7-5-transport-et-flotte",
+          "types": [
+            "P",
+            "H"
+          ],
+          "maillons": [
+            "DP4"
+          ],
+          "maillonsLibelles": [
+            "Logistique & Distribution"
+          ],
+          "vue": "exporter",
+          "vueLibelle": "Exporter pour l'Impact",
+          "equipements": [
+            {
+              "code": "T7.5-01",
+              "nom": "Camion plateau ou benne",
+              "type": "P"
+            },
+            {
+              "code": "T7.5-02",
+              "nom": "Caisses-palettes",
+              "type": "P"
+            },
+            {
+              "code": "T7.5-03",
+              "nom": "Télématique",
+              "type": "H"
+            }
+          ],
+          "grandeurs": "Tonnage, rotations, distances",
+          "risques": "Pistes en saison des pluies ; charge à l'essieu",
+          "normes": "Charge à l'essieu : texte à vérifier",
+          "servicesCles": [
+            "TS-01",
+            "TS-02",
+            "TS-04"
+          ]
+        },
+        {
+          "code": "T7.6",
+          "nom": "Plateformes de collecte et de groupage",
+          "slug": "t7-6-plateformes-de-collecte-et-de-groupage",
+          "types": [
+            "P"
+          ],
+          "maillons": [
+            "DP4"
+          ],
+          "maillonsLibelles": [
+            "Logistique & Distribution"
+          ],
+          "vue": "exporter",
+          "vueLibelle": "Exporter pour l'Impact",
+          "equipements": [
+            {
+              "code": "T7.6-01",
+              "nom": "Magasin de collecte",
+              "type": "P"
+            },
+            {
+              "code": "T7.6-02",
+              "nom": "Aire de séchage",
+              "type": "P"
+            },
+            {
+              "code": "T7.6-03",
+              "nom": "Quai de chargement",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Volumes collectés, bassin d'approvisionnement",
+          "risques": "Foncier ; gouvernance coopérative",
+          "normes": "Interface avec ODT (équipements collectifs)",
+          "servicesCles": [
+            "TS-01",
+            "TS-03"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "T8",
+      "nom": "Équipements numériques",
+      "slug": "equipements-numeriques",
+      "transversal": true,
+      "sousFonctions": [
+        {
+          "code": "T8.1",
+          "nom": "Capteurs et IoT",
+          "slug": "t8-1-capteurs-et-iot",
+          "types": [
+            "H"
+          ],
+          "maillons": [
+            "ALL"
+          ],
+          "maillonsLibelles": [
+            "Tous les maillons"
+          ],
+          "vue": "resister",
+          "vueLibelle": "Résister pour la Durée",
+          "equipements": [
+            {
+              "code": "T8.1-01",
+              "nom": "Sonde d'humidité du sol",
+              "type": "H"
+            },
+            {
+              "code": "T8.1-02",
+              "nom": "Station météo connectée",
+              "type": "H"
+            },
+            {
+              "code": "T8.1-03",
+              "nom": "Enregistreur température et humidité",
+              "type": "H"
+            }
+          ],
+          "grandeurs": "Nombre de points, fréquence de mesure, autonomie",
+          "risques": "Couverture réseau ; vandalisme ; recalibrage",
+          "normes": "Règles de l'art",
+          "servicesCles": [
+            "TS-03",
+            "TS-05"
+          ]
+        },
+        {
+          "code": "T8.2",
+          "nom": "Télédétection et drones",
+          "slug": "t8-2-teledetection-et-drones",
+          "types": [
+            "N",
+            "H"
+          ],
+          "maillons": [
+            "DP1",
+            "DP7"
+          ],
+          "maillonsLibelles": [
+            "Agriculture",
+            "Forestier"
+          ],
+          "vue": "produire",
+          "vueLibelle": "Produire pour la Demande",
+          "equipements": [
+            {
+              "code": "T8.2-01",
+              "nom": "Drone d'imagerie",
+              "type": "H"
+            },
+            {
+              "code": "T8.2-02",
+              "nom": "Imagerie satellitaire",
+              "type": "N"
+            },
+            {
+              "code": "T8.2-03",
+              "nom": "Logiciel SIG",
+              "type": "N"
+            }
+          ],
+          "grandeurs": "Résolution (cm/pixel), surface, fréquence",
+          "risques": "Autorisation de vol ; couverture nuageuse",
+          "normes": "Autorisation CCAA",
+          "servicesCles": [
+            "TS-02",
+            "TS-05"
+          ]
+        },
+        {
+          "code": "T8.3",
+          "nom": "Connectivité et réseaux",
+          "slug": "t8-3-connectivite-et-reseaux",
+          "types": [
+            "P",
+            "N"
+          ],
+          "maillons": [
+            "ALL"
+          ],
+          "maillonsLibelles": [
+            "Tous les maillons"
+          ],
+          "vue": "resister",
+          "vueLibelle": "Résister pour la Durée",
+          "equipements": [
+            {
+              "code": "T8.3-01",
+              "nom": "Liaison GSM 4G",
+              "type": "N"
+            },
+            {
+              "code": "T8.3-02",
+              "nom": "Réseau LoRaWAN",
+              "type": "P"
+            },
+            {
+              "code": "T8.3-03",
+              "nom": "VSAT",
+              "type": "P"
+            },
+            {
+              "code": "T8.3-04",
+              "nom": "Wi-Fi industriel",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Débit, portée, coût mensuel en FCFA",
+          "risques": "Zones blanches rurales",
+          "normes": "Homologation des équipements radio : ART, à vérifier",
+          "servicesCles": [
+            "TS-02",
+            "TS-03"
+          ]
+        },
+        {
+          "code": "T8.4",
+          "nom": "Supervision, automatisation et tableaux de bord",
+          "slug": "t8-4-supervision-automatisation-et-tableaux-de-bord",
+          "types": [
+            "H",
+            "N"
+          ],
+          "maillons": [
+            "DP3",
+            "ALL"
+          ],
+          "maillonsLibelles": [
+            "Transformation",
+            "Tous les maillons"
+          ],
+          "vue": "transformer",
+          "vueLibelle": "Transformer pour la Valeur",
+          "equipements": [
+            {
+              "code": "T8.4-01",
+              "nom": "Automate programmable",
+              "type": "H"
+            },
+            {
+              "code": "T8.4-02",
+              "nom": "Supervision, IHM",
+              "type": "N"
+            },
+            {
+              "code": "T8.4-03",
+              "nom": "Variateurs",
+              "type": "H"
+            }
+          ],
+          "grandeurs": "Nombre d'entrées-sorties, cadence de rafraîchissement",
+          "risques": "Compétences locales ; dépendance au fournisseur",
+          "normes": "IEC 61131-3 (int.)",
+          "servicesCles": [
+            "TS-03",
+            "TS-05",
+            "TS-07",
+            "TS-10"
+          ]
+        },
+        {
+          "code": "T8.5",
+          "nom": "Logiciels de gestion",
+          "slug": "t8-5-logiciels-de-gestion",
+          "types": [
+            "N"
+          ],
+          "maillons": [
+            "ALL"
+          ],
+          "maillonsLibelles": [
+            "Tous les maillons"
+          ],
+          "vue": "resister",
+          "vueLibelle": "Résister pour la Durée",
+          "equipements": [
+            {
+              "code": "T8.5-01",
+              "nom": "Logiciel de gestion d'exploitation",
+              "type": "N"
+            },
+            {
+              "code": "T8.5-02",
+              "nom": "Logiciel de coopérative",
+              "type": "N"
+            },
+            {
+              "code": "T8.5-03",
+              "nom": "ERP agro-industriel",
+              "type": "N"
+            }
+          ],
+          "grandeurs": "Utilisateurs, modules, fonctionnement hors ligne",
+          "risques": "Abandon après déploiement ; hébergement ; licences",
+          "normes": "Protection des données : texte national à vérifier",
+          "servicesCles": [
+            "TS-01",
+            "TS-05",
+            "TS-06",
+            "TS-10"
+          ]
+        },
+        {
+          "code": "T8.6",
+          "nom": "Traçabilité et géolocalisation",
+          "slug": "t8-6-tracabilite-et-geolocalisation",
+          "types": [
+            "H"
+          ],
+          "maillons": [
+            "DP1",
+            "DP5",
+            "DP7"
+          ],
+          "maillonsLibelles": [
+            "Agriculture",
+            "Trading & Export",
+            "Forestier"
+          ],
+          "vue": "exporter",
+          "vueLibelle": "Exporter pour l'Impact",
+          "equipements": [
+            {
+              "code": "T8.6-01",
+              "nom": "Géolocalisation des parcelles",
+              "type": "H"
+            },
+            {
+              "code": "T8.6-02",
+              "nom": "Codes, QR, RFID",
+              "type": "H"
+            },
+            {
+              "code": "T8.6-03",
+              "nom": "Plateforme de traçabilité",
+              "type": "N"
+            }
+          ],
+          "grandeurs": "Parcelles, lots, granularité du suivi",
+          "risques": "Exigence RDUE de géolocalisation des parcelles",
+          "normes": "Règlement (UE) 2023/1115 ; ISO 22005, GS1 (int.)",
+          "servicesCles": [
+            "TS-01",
+            "TS-05",
+            "TS-07",
+            "TS-10"
+          ]
+        },
+        {
+          "code": "T8.7",
+          "nom": "Terminaux de terrain et interfaces de paiement",
+          "slug": "t8-7-terminaux-de-terrain-et-interfaces-de-paiement",
+          "types": [
+            "H",
+            "N"
+          ],
+          "maillons": [
+            "DP4",
+            "DP5"
+          ],
+          "maillonsLibelles": [
+            "Logistique & Distribution",
+            "Trading & Export"
+          ],
+          "vue": "exporter",
+          "vueLibelle": "Exporter pour l'Impact",
+          "equipements": [
+            {
+              "code": "T8.7-01",
+              "nom": "Tablette de collecte",
+              "type": "H"
+            },
+            {
+              "code": "T8.7-02",
+              "nom": "Imprimante d'étiquettes",
+              "type": "H"
+            },
+            {
+              "code": "T8.7-03",
+              "nom": "Interface de paiement mobile",
+              "type": "N"
+            }
+          ],
+          "grandeurs": "Volume de transactions, mode hors ligne",
+          "risques": "Réseau ; fraude ; frais de transaction",
+          "normes": "Intégration seulement ; le service relève de DS.S39",
+          "servicesCles": [
+            "TS-03",
+            "TS-05",
+            "TS-10"
+          ]
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "code": "TS-01",
+      "nom": "Analyse du besoin",
+      "slug": "ts-01-analyse-du-besoin",
+      "livrables": [
+        "Rapport d'analyse du besoin",
+        "Cartographie de l'existant",
+        "Identification des écarts"
+      ],
+      "dureeIndicative": "5 à 10 jours",
+      "phase": "comprendre",
+      "phaseLibelle": "Comprendre",
+      "prestationsAgrovita": [
+        "XPN-E2.3",
+        "XPN-E2.4",
+        "XPN-E2.5",
+        "XPN-E2.6"
+      ]
+    },
+    {
+      "code": "TS-02",
+      "nom": "Variantes",
+      "slug": "ts-02-variantes",
+      "livrables": [
+        "Étude de variantes",
+        "Comparatif technico-économique",
+        "Recommandation"
+      ],
+      "dureeIndicative": "10 à 15 jours",
+      "phase": "concevoir",
+      "phaseLibelle": "Concevoir",
+      "prestationsAgrovita": [
+        "XPN-E2.3",
+        "XPN-E2.4",
+        "XPN-E2.5",
+        "XPN-E2.6"
+      ]
+    },
+    {
+      "code": "TS-03",
+      "nom": "Architecture technique",
+      "slug": "ts-03-architecture-technique",
+      "livrables": [
+        "Schémas fonctionnels",
+        "Architecture système",
+        "Note de dimensionnement"
+      ],
+      "dureeIndicative": "10 à 20 jours",
+      "phase": "concevoir",
+      "phaseLibelle": "Concevoir",
+      "prestationsAgrovita": [
+        "XPN-E2.3",
+        "XPN-E2.4",
+        "XPN-E2.5",
+        "XPN-E2.6"
+      ]
+    },
+    {
+      "code": "TS-04",
+      "nom": "Dimensionnement",
+      "slug": "ts-04-dimensionnement",
+      "livrables": [
+        "Calculs de dimensionnement",
+        "Notes de calcul",
+        "Spécifications de capacités"
+      ],
+      "dureeIndicative": "5 à 15 jours",
+      "phase": "concevoir",
+      "phaseLibelle": "Concevoir",
+      "prestationsAgrovita": [
+        "XPN-E2.3",
+        "XPN-E2.4",
+        "XPN-E2.5",
+        "XPN-E2.6"
+      ]
+    },
+    {
+      "code": "TS-05",
+      "nom": "Cahiers des charges",
+      "slug": "ts-05-cahiers-des-charges",
+      "livrables": [
+        "Cahier des charges technique",
+        "Grille d'évaluation",
+        "Critères de sélection"
+      ],
+      "dureeIndicative": "10 à 15 jours",
+      "phase": "concevoir",
+      "phaseLibelle": "Concevoir",
+      "prestationsAgrovita": [
+        "XPN-E2.7"
+      ]
+    },
+    {
+      "code": "TS-06",
+      "nom": "Analyse d'offres",
+      "slug": "ts-06-analyse-d-offres",
+      "livrables": [
+        "Analyse comparative",
+        "Grille d'évaluation",
+        "Recommandation de choix"
+      ],
+      "dureeIndicative": "5 à 10 jours",
+      "phase": "realiser",
+      "phaseLibelle": "Réaliser",
+      "prestationsAgrovita": [
+        "XPN-E4.2"
+      ]
+    },
+    {
+      "code": "TS-07",
+      "nom": "Essais / testing",
+      "slug": "ts-07-essais-testing",
+      "livrables": [
+        "Protocoles d'essai",
+        "Grilles de vérification",
+        "Rapports d'essai"
+      ],
+      "dureeIndicative": "Selon la complexité",
+      "phase": "realiser",
+      "phaseLibelle": "Réaliser",
+      "prestationsAgrovita": [
+        "XPN-E4.3"
+      ]
+    },
+    {
+      "code": "TS-08",
+      "nom": "Vérification de performance",
+      "slug": "ts-08-verification-de-performance",
+      "livrables": [
+        "Rapport de tests",
+        "Validation des capacités",
+        "Certificat de conformité contractuelle"
+      ],
+      "dureeIndicative": "3 à 7 jours",
+      "phase": "realiser",
+      "phaseLibelle": "Réaliser",
+      "prestationsAgrovita": [
+        "XPN-E4.4"
+      ]
+    },
+    {
+      "code": "TS-09",
+      "nom": "Assistance à la réception",
+      "slug": "ts-09-assistance-a-la-reception",
+      "livrables": [
+        "Procès-verbal de réception",
+        "Documentation de transfert",
+        "Supports de formation"
+      ],
+      "dureeIndicative": "2 à 5 jours",
+      "phase": "perenniser",
+      "phaseLibelle": "Pérenniser",
+      "prestationsAgrovita": [
+        "XPN-E4.4"
+      ]
+    },
+    {
+      "code": "TS-10",
+      "nom": "Assistance à l'intégration",
+      "slug": "ts-10-assistance-a-l-integration",
+      "livrables": [
+        "Plan d'intégration",
+        "Spécifications d'interfaces",
+        "Procès-verbal de recette fonctionnelle"
+      ],
+      "dureeIndicative": "Selon la complexité",
+      "phase": "realiser",
+      "phaseLibelle": "Réaliser",
+      "prestationsAgrovita": [
+        "XPN-E4.4",
+        "XPN-E5.4"
+      ]
+    }
+  ],
+  "cycleDeVie": [
+    {
+      "code": "CV1",
+      "nom": "Disponibilité locale"
+    },
+    {
+      "code": "CV2",
+      "nom": "Approvisionnement"
+    },
+    {
+      "code": "CV3",
+      "nom": "Installation"
+    },
+    {
+      "code": "CV4",
+      "nom": "Mise en service"
+    },
+    {
+      "code": "CV5",
+      "nom": "Sécurité"
+    },
+    {
+      "code": "CV6",
+      "nom": "Pièces de rechange"
+    },
+    {
+      "code": "CV7",
+      "nom": "Maintenance"
+    },
+    {
+      "code": "CV8",
+      "nom": "Coûts d'exploitation"
+    },
+    {
+      "code": "CV9",
+      "nom": "Renouvellement"
+    }
+  ],
+  "compteurs": {
+    "domaines": 8,
+    "sousFonctions": 50,
+    "services": 10,
+    "combinaisons": 500
+  }
+}

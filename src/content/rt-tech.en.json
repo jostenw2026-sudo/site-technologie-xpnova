@@ -1,0 +1,2488 @@
+{
+  "referentiel": "RT-TECH",
+  "version": "1.0",
+  "dateValidation": "2026-10-21",
+  "langue": "en",
+  "doctrine": {
+    "signature": "From equipment to performance.",
+    "perimetre": "Engineering only: XP-NOVA specifies, compares, verifies and supports acceptance; it does not supply, install, maintain or certify."
+  },
+  "types": [
+    {
+      "code": "P",
+      "nom": "Physical"
+    },
+    {
+      "code": "N",
+      "nom": "Digital"
+    },
+    {
+      "code": "H",
+      "nom": "Hybrid"
+    }
+  ],
+  "vues": [
+    {
+      "code": "produire",
+      "nom": "Produce for Demand"
+    },
+    {
+      "code": "transformer",
+      "nom": "Transform for Value"
+    },
+    {
+      "code": "exporter",
+      "nom": "Export for Impact"
+    },
+    {
+      "code": "resister",
+      "nom": "Resist for Durability"
+    }
+  ],
+  "maillons": [
+    {
+      "code": "DP1",
+      "nom": "Agriculture"
+    },
+    {
+      "code": "DP2",
+      "nom": "Livestock"
+    },
+    {
+      "code": "DP3",
+      "nom": "Processing"
+    },
+    {
+      "code": "DP4",
+      "nom": "Logistics & Distribution"
+    },
+    {
+      "code": "DP5",
+      "nom": "Trading & Export"
+    },
+    {
+      "code": "DP6",
+      "nom": "Fisheries and aquaculture"
+    },
+    {
+      "code": "DP7",
+      "nom": "Forestry"
+    }
+  ],
+  "domaines": [
+    {
+      "code": "T1",
+      "nom": "Mechanisation",
+      "slug": "mechanisation",
+      "transversal": false,
+      "sousFonctions": [
+        {
+          "code": "T1.1",
+          "nom": "Land clearing and soil preparation",
+          "slug": "t1-1-land-clearing-and-soil-preparation",
+          "types": [
+            "P"
+          ],
+          "maillons": [
+            "DP1",
+            "DP7"
+          ],
+          "maillonsLibelles": [
+            "Agriculture",
+            "Forestry"
+          ],
+          "vue": "produire",
+          "vueLibelle": "Produce for Demand",
+          "equipements": [
+            {
+              "code": "T1.1-01",
+              "nom": "Tractor",
+              "type": "P"
+            },
+            {
+              "code": "T1.1-02",
+              "nom": "Plough, disc harrow",
+              "type": "P"
+            },
+            {
+              "code": "T1.1-03",
+              "nom": "Power tiller",
+              "type": "P"
+            },
+            {
+              "code": "T1.1-04",
+              "nom": "Animal traction",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Area, soil, slope, working window, power (kW)",
+          "risques": "Parts and workshops scarce outside major cities; stumps; rural tracks",
+          "normes": "ISO 4254 (intl.); CENEEMA promotion mandate",
+          "servicesCles": [
+            "TS-01",
+            "TS-02",
+            "TS-04"
+          ]
+        },
+        {
+          "code": "T1.2",
+          "nom": "Sowing, planting and fertilisation",
+          "slug": "t1-2-sowing-planting-and-fertilisation",
+          "types": [
+            "P"
+          ],
+          "maillons": [
+            "DP1"
+          ],
+          "maillonsLibelles": [
+            "Agriculture"
+          ],
+          "vue": "produire",
+          "vueLibelle": "Produce for Demand",
+          "equipements": [
+            {
+              "code": "T1.2-01",
+              "nom": "Seeder",
+              "type": "P"
+            },
+            {
+              "code": "T1.2-02",
+              "nom": "Cassava or plantain planter",
+              "type": "P"
+            },
+            {
+              "code": "T1.2-03",
+              "nom": "Rice transplanter",
+              "type": "P"
+            },
+            {
+              "code": "T1.2-04",
+              "nom": "Fertiliser or lime spreader",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Density, field capacity (ha/day), rate",
+          "risques": "Heterogeneous cuttings; little suitable equipment on the local market",
+          "normes": "ISO 4254 (intl.)",
+          "servicesCles": [
+            "TS-02",
+            "TS-04",
+            "TS-05"
+          ]
+        },
+        {
+          "code": "T1.3",
+          "nom": "Crop protection",
+          "slug": "t1-3-crop-protection",
+          "types": [
+            "P",
+            "H"
+          ],
+          "maillons": [
+            "DP1"
+          ],
+          "maillonsLibelles": [
+            "Agriculture"
+          ],
+          "vue": "produire",
+          "vueLibelle": "Produce for Demand",
+          "equipements": [
+            {
+              "code": "T1.3-01",
+              "nom": "Knapsack sprayer",
+              "type": "P"
+            },
+            {
+              "code": "T1.3-02",
+              "nom": "Motorised mist blower",
+              "type": "P"
+            },
+            {
+              "code": "T1.3-03",
+              "nom": "Trailed boom sprayer",
+              "type": "P"
+            },
+            {
+              "code": "T1.3-04",
+              "nom": "Spraying drone",
+              "type": "H"
+            }
+          ],
+          "grandeurs": "Volume per ha, droplet size, autonomy",
+          "risques": "Operator exposure; export residues; drone framework still being drafted",
+          "normes": "Sprayer certification: CNHPCAT (MINADER); drones: CCAA authorisation; ISO 16119 (intl.)",
+          "servicesCles": [
+            "TS-02",
+            "TS-05",
+            "TS-07"
+          ]
+        },
+        {
+          "code": "T1.4",
+          "nom": "Harvest and primary post-harvest",
+          "slug": "t1-4-harvest-and-primary-post-harvest",
+          "types": [
+            "P"
+          ],
+          "maillons": [
+            "DP1"
+          ],
+          "maillonsLibelles": [
+            "Agriculture"
+          ],
+          "vue": "produire",
+          "vueLibelle": "Produce for Demand",
+          "equipements": [
+            {
+              "code": "T1.4-01",
+              "nom": "Combine harvester",
+              "type": "P"
+            },
+            {
+              "code": "T1.4-02",
+              "nom": "Thresher",
+              "type": "P"
+            },
+            {
+              "code": "T1.4-03",
+              "nom": "Maize sheller",
+              "type": "P"
+            },
+            {
+              "code": "T1.4-04",
+              "nom": "Cocoa pod breaker, groundnut sheller",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Throughput (t/h), loss rate, breakage rate",
+          "risques": "Rain during harvest; machine access to plots",
+          "normes": "ISO 4254 (intl.)",
+          "servicesCles": [
+            "TS-02",
+            "TS-04",
+            "TS-08"
+          ]
+        },
+        {
+          "code": "T1.5",
+          "nom": "Livestock and forage mechanisation",
+          "slug": "t1-5-livestock-and-forage-mechanisation",
+          "types": [
+            "P"
+          ],
+          "maillons": [
+            "DP2"
+          ],
+          "maillonsLibelles": [
+            "Livestock"
+          ],
+          "vue": "produire",
+          "vueLibelle": "Produce for Demand",
+          "equipements": [
+            {
+              "code": "T1.5-01",
+              "nom": "Farm grinder-mixer",
+              "type": "P"
+            },
+            {
+              "code": "T1.5-02",
+              "nom": "Mower, forage harvester",
+              "type": "P"
+            },
+            {
+              "code": "T1.5-03",
+              "nom": "Feed distributor",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Herd size, daily ration, forage autonomy",
+          "risques": "Seasonal forage; energy",
+          "normes": "ISO 4254 (intl.)",
+          "servicesCles": [
+            "TS-01",
+            "TS-04"
+          ]
+        },
+        {
+          "code": "T1.6",
+          "nom": "Fleet organisation",
+          "slug": "t1-6-fleet-organisation",
+          "types": [
+            "P",
+            "H"
+          ],
+          "maillons": [
+            "DP1",
+            "DP2"
+          ],
+          "maillonsLibelles": [
+            "Agriculture",
+            "Livestock"
+          ],
+          "vue": "resister",
+          "vueLibelle": "Resist for Durability",
+          "equipements": [
+            {
+              "code": "T1.6-01",
+              "nom": "Shared machinery pool",
+              "type": "P"
+            },
+            {
+              "code": "T1.6-02",
+              "nom": "Trailer, motorised tricycle",
+              "type": "P"
+            },
+            {
+              "code": "T1.6-03",
+              "nom": "Fleet telematics",
+              "type": "H"
+            }
+          ],
+          "grandeurs": "Hours of use per year, hourly cost in FCFA, service radius",
+          "risques": "Sharing governance; under-use; maintenance",
+          "normes": "CENEEMA mechanisation pools (public reference)",
+          "servicesCles": [
+            "TS-01",
+            "TS-02",
+            "TS-03"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "T2",
+      "nom": "Irrigation and water",
+      "slug": "irrigation-water",
+      "transversal": false,
+      "sousFonctions": [
+        {
+          "code": "T2.1",
+          "nom": "Water resource mobilisation",
+          "slug": "t2-1-water-resource-mobilisation",
+          "types": [
+            "P"
+          ],
+          "maillons": [
+            "DP1",
+            "DP2",
+            "DP6"
+          ],
+          "maillonsLibelles": [
+            "Agriculture",
+            "Livestock",
+            "Fisheries and aquaculture"
+          ],
+          "vue": "produire",
+          "vueLibelle": "Produce for Demand",
+          "equipements": [
+            {
+              "code": "T2.1-01",
+              "nom": "Borehole",
+              "type": "P"
+            },
+            {
+              "code": "T2.1-02",
+              "nom": "Well",
+              "type": "P"
+            },
+            {
+              "code": "T2.1-03",
+              "nom": "River intake",
+              "type": "P"
+            },
+            {
+              "code": "T2.1-04",
+              "nom": "Hillside reservoir",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Operating flow (m³/h), drawdown, peak demand",
+          "risques": "Flow not guaranteed without pumping test; water rights",
+          "normes": "Abstraction permit regime: to be verified; works by DS.S21",
+          "servicesCles": [
+            "TS-01",
+            "TS-04",
+            "TS-07"
+          ]
+        },
+        {
+          "code": "T2.2",
+          "nom": "Pumping",
+          "slug": "t2-2-pumping",
+          "types": [
+            "P",
+            "H"
+          ],
+          "maillons": [
+            "DP1",
+            "DP2",
+            "DP6"
+          ],
+          "maillonsLibelles": [
+            "Agriculture",
+            "Livestock",
+            "Fisheries and aquaculture"
+          ],
+          "vue": "produire",
+          "vueLibelle": "Produce for Demand",
+          "equipements": [
+            {
+              "code": "T2.2-01",
+              "nom": "Engine-driven pump",
+              "type": "P"
+            },
+            {
+              "code": "T2.2-02",
+              "nom": "Electric pump",
+              "type": "P"
+            },
+            {
+              "code": "T2.2-03",
+              "nom": "Solar surface or submersible pump",
+              "type": "H"
+            },
+            {
+              "code": "T2.2-04",
+              "nom": "Hydraulic ram",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Flow, total dynamic head (m), pumping hours",
+          "risques": "Sand, cavitation, panel theft, fuel",
+          "normes": "ISO 9906 (intl.); IEC 62253 (intl.)",
+          "servicesCles": [
+            "TS-02",
+            "TS-04",
+            "TS-08"
+          ]
+        },
+        {
+          "code": "T2.3",
+          "nom": "Storage and conveyance",
+          "slug": "t2-3-storage-and-conveyance",
+          "types": [
+            "P"
+          ],
+          "maillons": [
+            "DP1",
+            "DP2",
+            "DP3"
+          ],
+          "maillonsLibelles": [
+            "Agriculture",
+            "Livestock",
+            "Processing"
+          ],
+          "vue": "resister",
+          "vueLibelle": "Resist for Durability",
+          "equipements": [
+            {
+              "code": "T2.3-01",
+              "nom": "Tank",
+              "type": "P"
+            },
+            {
+              "code": "T2.3-02",
+              "nom": "Water tower",
+              "type": "P"
+            },
+            {
+              "code": "T2.3-03",
+              "nom": "Geomembrane pond",
+              "type": "P"
+            },
+            {
+              "code": "T2.3-04",
+              "nom": "Pipelines",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Autonomy (days), service pressure, diameters",
+          "risques": "Leaks, evaporation, installation quality",
+          "normes": "Good practice",
+          "servicesCles": [
+            "TS-03",
+            "TS-04",
+            "TS-05"
+          ]
+        },
+        {
+          "code": "T2.4",
+          "nom": "Localised irrigation and fertigation",
+          "slug": "t2-4-localised-irrigation-and-fertigation",
+          "types": [
+            "P",
+            "H"
+          ],
+          "maillons": [
+            "DP1"
+          ],
+          "maillonsLibelles": [
+            "Agriculture"
+          ],
+          "vue": "produire",
+          "vueLibelle": "Produce for Demand",
+          "equipements": [
+            {
+              "code": "T2.4-01",
+              "nom": "Drip irrigation",
+              "type": "P"
+            },
+            {
+              "code": "T2.4-02",
+              "nom": "Micro-sprinklers",
+              "type": "P"
+            },
+            {
+              "code": "T2.4-03",
+              "nom": "Fertigation injector",
+              "type": "H"
+            },
+            {
+              "code": "T2.4-04",
+              "nom": "Filtration station",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Crop requirement (mm/day), emitter flow, uniformity",
+          "risques": "Clogging; rodents; variable quality of imported tapes",
+          "normes": "ISO 9261 (intl.)",
+          "servicesCles": [
+            "TS-02",
+            "TS-04",
+            "TS-05"
+          ]
+        },
+        {
+          "code": "T2.5",
+          "nom": "Sprinkler and gravity irrigation",
+          "slug": "t2-5-sprinkler-and-gravity-irrigation",
+          "types": [
+            "P"
+          ],
+          "maillons": [
+            "DP1"
+          ],
+          "maillonsLibelles": [
+            "Agriculture"
+          ],
+          "vue": "produire",
+          "vueLibelle": "Produce for Demand",
+          "equipements": [
+            {
+              "code": "T2.5-01",
+              "nom": "Sprinklers, hose reels",
+              "type": "P"
+            },
+            {
+              "code": "T2.5-02",
+              "nom": "Canals and control structures",
+              "type": "P"
+            },
+            {
+              "code": "T2.5-03",
+              "nom": "Paddy levelling",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Dose, interval, slope, network losses",
+          "risques": "Energy cost of sprinkling; collective canal maintenance",
+          "normes": "Good practice",
+          "servicesCles": [
+            "TS-02",
+            "TS-03",
+            "TS-04"
+          ]
+        },
+        {
+          "code": "T2.6",
+          "nom": "Water treatment, process water and watering",
+          "slug": "t2-6-water-treatment-process-water-and-watering",
+          "types": [
+            "P"
+          ],
+          "maillons": [
+            "DP2",
+            "DP3",
+            "DP6"
+          ],
+          "maillonsLibelles": [
+            "Livestock",
+            "Processing",
+            "Fisheries and aquaculture"
+          ],
+          "vue": "transformer",
+          "vueLibelle": "Transform for Value",
+          "equipements": [
+            {
+              "code": "T2.6-01",
+              "nom": "Filtration, disinfection",
+              "type": "P"
+            },
+            {
+              "code": "T2.6-02",
+              "nom": "Water softener",
+              "type": "P"
+            },
+            {
+              "code": "T2.6-03",
+              "nom": "Drinkers, nipples",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Requirement per animal or per tonne processed, target quality",
+          "risques": "Non-potable process water; biofilm in livestock lines",
+          "normes": "Potable water required by HACCP; national text to be verified",
+          "servicesCles": [
+            "TS-01",
+            "TS-04",
+            "TS-05"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "T3",
+      "nom": "Controlled production environments",
+      "slug": "controlled-environments",
+      "transversal": false,
+      "sousFonctions": [
+        {
+          "code": "T3.1",
+          "nom": "Greenhouses, tunnels and shade houses",
+          "slug": "t3-1-greenhouses-tunnels-and-shade-houses",
+          "types": [
+            "P"
+          ],
+          "maillons": [
+            "DP1"
+          ],
+          "maillonsLibelles": [
+            "Agriculture"
+          ],
+          "vue": "produire",
+          "vueLibelle": "Produce for Demand",
+          "equipements": [
+            {
+              "code": "T3.1-01",
+              "nom": "Tunnel, gable greenhouse",
+              "type": "P"
+            },
+            {
+              "code": "T3.1-02",
+              "nom": "Shade house, insect net",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Area, wind load, vent area, cladding",
+          "risques": "Overheating in forest zone; wind at altitude; film lifetime",
+          "normes": "EN 13031-1 (intl.)",
+          "servicesCles": [
+            "TS-02",
+            "TS-03",
+            "TS-05"
+          ]
+        },
+        {
+          "code": "T3.2",
+          "nom": "Climate control, soilless culture and nurseries",
+          "slug": "t3-2-climate-control-soilless-culture-and-nurseries",
+          "types": [
+            "H"
+          ],
+          "maillons": [
+            "DP1"
+          ],
+          "maillonsLibelles": [
+            "Agriculture"
+          ],
+          "vue": "produire",
+          "vueLibelle": "Produce for Demand",
+          "equipements": [
+            {
+              "code": "T3.2-01",
+              "nom": "Ventilation, fogging",
+              "type": "H"
+            },
+            {
+              "code": "T3.2-02",
+              "nom": "Climate controller",
+              "type": "H"
+            },
+            {
+              "code": "T3.2-03",
+              "nom": "Hydroponics, growing tables",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Target temperature and humidity, air changes",
+          "risques": "Fungal diseases at high humidity; energy",
+          "normes": "Good practice",
+          "servicesCles": [
+            "TS-03",
+            "TS-04"
+          ]
+        },
+        {
+          "code": "T3.3",
+          "nom": "Livestock buildings and equipment",
+          "slug": "t3-3-livestock-buildings-and-equipment",
+          "types": [
+            "P"
+          ],
+          "maillons": [
+            "DP2"
+          ],
+          "maillonsLibelles": [
+            "Livestock"
+          ],
+          "vue": "produire",
+          "vueLibelle": "Produce for Demand",
+          "equipements": [
+            {
+              "code": "T3.3-01",
+              "nom": "Ventilation, lighting",
+              "type": "P"
+            },
+            {
+              "code": "T3.3-02",
+              "nom": "Feeders, drinkers, cages",
+              "type": "P"
+            },
+            {
+              "code": "T3.3-03",
+              "nom": "Footbaths, slurry pits",
+              "type": "P"
+            },
+            {
+              "code": "T3.3-04",
+              "nom": "Hives, honey extractors",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Stocking density, airflow per head, effluent volume",
+          "risques": "Heat; biosecurity (avian influenza, African swine fever); effluents",
+          "normes": "MINEPIA sanitary rules: to be confirmed",
+          "servicesCles": [
+            "TS-01",
+            "TS-03",
+            "TS-05"
+          ]
+        },
+        {
+          "code": "T3.4",
+          "nom": "Hatcheries and incubation",
+          "slug": "t3-4-hatcheries-and-incubation",
+          "types": [
+            "H"
+          ],
+          "maillons": [
+            "DP2"
+          ],
+          "maillonsLibelles": [
+            "Livestock"
+          ],
+          "vue": "resister",
+          "vueLibelle": "Resist for Durability",
+          "equipements": [
+            {
+              "code": "T3.4-01",
+              "nom": "Incubator, hatcher",
+              "type": "H"
+            },
+            {
+              "code": "T3.4-02",
+              "nom": "Dedicated backup generator",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Capacity per cycle, thermal stability",
+          "risques": "Power cut = risk of losing the batch",
+          "normes": "MINEPIA approval: to be confirmed",
+          "servicesCles": [
+            "TS-04",
+            "TS-07",
+            "TS-08"
+          ]
+        },
+        {
+          "code": "T3.5",
+          "nom": "Aquaculture",
+          "slug": "t3-5-aquaculture",
+          "types": [
+            "P",
+            "H"
+          ],
+          "maillons": [
+            "DP6"
+          ],
+          "maillonsLibelles": [
+            "Fisheries and aquaculture"
+          ],
+          "vue": "produire",
+          "vueLibelle": "Produce for Demand",
+          "equipements": [
+            {
+              "code": "T3.5-01",
+              "nom": "Ponds, floating cages",
+              "type": "P"
+            },
+            {
+              "code": "T3.5-02",
+              "nom": "Aerators, oxygenation",
+              "type": "H"
+            },
+            {
+              "code": "T3.5-03",
+              "nom": "Recirculating system",
+              "type": "H"
+            }
+          ],
+          "grandeurs": "Biomass (kg/m³), dissolved oxygen, water exchange",
+          "risques": "Feed cost; aerator energy; theft",
+          "normes": "MINEPIA authorisations: to be confirmed",
+          "servicesCles": [
+            "TS-02",
+            "TS-04",
+            "TS-08"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "T4",
+      "nom": "Processing and plants",
+      "slug": "processing-plants",
+      "transversal": false,
+      "sousFonctions": [
+        {
+          "code": "T4.1",
+          "nom": "Intake, cleaning and sorting",
+          "slug": "t4-1-intake-cleaning-and-sorting",
+          "types": [
+            "P"
+          ],
+          "maillons": [
+            "DP3"
+          ],
+          "maillonsLibelles": [
+            "Processing"
+          ],
+          "vue": "transformer",
+          "vueLibelle": "Transform for Value",
+          "equipements": [
+            {
+              "code": "T4.1-01",
+              "nom": "Washer, destoner",
+              "type": "P"
+            },
+            {
+              "code": "T4.1-02",
+              "nom": "Sorter, sieve",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Throughput (t/h), impurity rate",
+          "risques": "Heterogeneous raw material",
+          "normes": "ISO 12100 (intl.)",
+          "servicesCles": [
+            "TS-03",
+            "TS-04"
+          ]
+        },
+        {
+          "code": "T4.2",
+          "nom": "Hulling, grinding and milling",
+          "slug": "t4-2-hulling-grinding-and-milling",
+          "types": [
+            "P"
+          ],
+          "maillons": [
+            "DP3"
+          ],
+          "maillonsLibelles": [
+            "Processing"
+          ],
+          "vue": "transformer",
+          "vueLibelle": "Transform for Value",
+          "equipements": [
+            {
+              "code": "T4.2-01",
+              "nom": "Rice huller",
+              "type": "P"
+            },
+            {
+              "code": "T4.2-02",
+              "nom": "Hammer mill, grinder",
+              "type": "P"
+            },
+            {
+              "code": "T4.2-03",
+              "nom": "Cassava grater",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Throughput, hulling yield, particle size",
+          "risques": "Wear; dust; imported parts",
+          "normes": "ISO 12100 (intl.)",
+          "servicesCles": [
+            "TS-02",
+            "TS-04",
+            "TS-08"
+          ]
+        },
+        {
+          "code": "T4.3",
+          "nom": "Pressing and extraction",
+          "slug": "t4-3-pressing-and-extraction",
+          "types": [
+            "P"
+          ],
+          "maillons": [
+            "DP3"
+          ],
+          "maillonsLibelles": [
+            "Processing"
+          ],
+          "vue": "transformer",
+          "vueLibelle": "Transform for Value",
+          "equipements": [
+            {
+              "code": "T4.3-01",
+              "nom": "Palm or groundnut oil press",
+              "type": "P"
+            },
+            {
+              "code": "T4.3-02",
+              "nom": "Juice extractor",
+              "type": "P"
+            },
+            {
+              "code": "T4.3-03",
+              "nom": "Cassava pulp press",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Throughput, extraction rate",
+          "risques": "Oil acidity if processing is delayed",
+          "normes": "Fortified vegetable oils: NC 77 made mandatory in 2011 (press reports)",
+          "servicesCles": [
+            "TS-02",
+            "TS-04",
+            "TS-08"
+          ]
+        },
+        {
+          "code": "T4.4",
+          "nom": "Drying, smoking and freeze-drying",
+          "slug": "t4-4-drying-smoking-and-freeze-drying",
+          "types": [
+            "P",
+            "H"
+          ],
+          "maillons": [
+            "DP3",
+            "DP6"
+          ],
+          "maillonsLibelles": [
+            "Processing",
+            "Fisheries and aquaculture"
+          ],
+          "vue": "transformer",
+          "vueLibelle": "Transform for Value",
+          "equipements": [
+            {
+              "code": "T4.4-01",
+              "nom": "Solar dryer",
+              "type": "P"
+            },
+            {
+              "code": "T4.4-02",
+              "nom": "Gas or biomass dryer",
+              "type": "P"
+            },
+            {
+              "code": "T4.4-03",
+              "nom": "Fish smoking kiln",
+              "type": "P"
+            },
+            {
+              "code": "T4.4-04",
+              "nom": "Freeze-dryer",
+              "type": "H"
+            }
+          ],
+          "grandeurs": "Water to evaporate (kg/h), final moisture, specific energy",
+          "risques": "PAH on smoked products; ambient humidity; energy cost",
+          "normes": "PAH limits required by export markets: to be checked per market",
+          "servicesCles": [
+            "TS-02",
+            "TS-04",
+            "TS-08"
+          ]
+        },
+        {
+          "code": "T4.5",
+          "nom": "Thermal processing",
+          "slug": "t4-5-thermal-processing",
+          "types": [
+            "P",
+            "H"
+          ],
+          "maillons": [
+            "DP3"
+          ],
+          "maillonsLibelles": [
+            "Processing"
+          ],
+          "vue": "transformer",
+          "vueLibelle": "Transform for Value",
+          "equipements": [
+            {
+              "code": "T4.5-01",
+              "nom": "Pasteuriser",
+              "type": "H"
+            },
+            {
+              "code": "T4.5-02",
+              "nom": "Autoclave",
+              "type": "P"
+            },
+            {
+              "code": "T4.5-03",
+              "nom": "Cooker, roaster",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Time-temperature schedule, throughput",
+          "risques": "Schedule control; pressure equipment",
+          "normes": "Codex CXC 1-1969 (intl.); pressure equipment: to be verified",
+          "servicesCles": [
+            "TS-03",
+            "TS-05",
+            "TS-07"
+          ]
+        },
+        {
+          "code": "T4.6",
+          "nom": "Mixing and formulation",
+          "slug": "t4-6-mixing-and-formulation",
+          "types": [
+            "P"
+          ],
+          "maillons": [
+            "DP3"
+          ],
+          "maillonsLibelles": [
+            "Processing"
+          ],
+          "vue": "transformer",
+          "vueLibelle": "Transform for Value",
+          "equipements": [
+            {
+              "code": "T4.6-01",
+              "nom": "Mixer",
+              "type": "P"
+            },
+            {
+              "code": "T4.6-02",
+              "nom": "Pellet mill",
+              "type": "P"
+            },
+            {
+              "code": "T4.6-03",
+              "nom": "Kneader, oven",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Throughput, homogeneity, pellet size",
+          "risques": "Variable raw materials; mycotoxins",
+          "normes": "Codex (intl.); animal feed: MINEPIA to be verified",
+          "servicesCles": [
+            "TS-02",
+            "TS-04"
+          ]
+        },
+        {
+          "code": "T4.7",
+          "nom": "Slaughter and cutting",
+          "slug": "t4-7-slaughter-and-cutting",
+          "types": [
+            "P"
+          ],
+          "maillons": [
+            "DP3"
+          ],
+          "maillonsLibelles": [
+            "Processing"
+          ],
+          "vue": "transformer",
+          "vueLibelle": "Transform for Value",
+          "equipements": [
+            {
+              "code": "T4.7-01",
+              "nom": "Poultry or pig slaughter line",
+              "type": "P"
+            },
+            {
+              "code": "T4.7-02",
+              "nom": "Cutting equipment",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Rate (heads/h), water per head, effluents",
+          "risques": "Sanitary approval; by-products",
+          "normes": "MINEPIA approval and veterinary inspection: to be confirmed",
+          "servicesCles": [
+            "TS-03",
+            "TS-05",
+            "TS-07"
+          ]
+        },
+        {
+          "code": "T4.8",
+          "nom": "Packing and packaging",
+          "slug": "t4-8-packing-and-packaging",
+          "types": [
+            "P",
+            "H"
+          ],
+          "maillons": [
+            "DP3",
+            "DP5"
+          ],
+          "maillonsLibelles": [
+            "Processing",
+            "Trading & Export"
+          ],
+          "vue": "exporter",
+          "vueLibelle": "Export for Impact",
+          "equipements": [
+            {
+              "code": "T4.8-01",
+              "nom": "Dosing and bagging machine",
+              "type": "P"
+            },
+            {
+              "code": "T4.8-02",
+              "nom": "Heat sealer, vacuum packer",
+              "type": "P"
+            },
+            {
+              "code": "T4.8-03",
+              "nom": "Labeller",
+              "type": "H"
+            }
+          ],
+          "grandeurs": "Rate, format, dosing accuracy",
+          "risques": "Imported packaging; export labelling",
+          "normes": "Target market requirements; GS1 (intl.)",
+          "servicesCles": [
+            "TS-02",
+            "TS-05",
+            "TS-08"
+          ]
+        },
+        {
+          "code": "T4.9",
+          "nom": "Hygiene, CIP and plant quality control",
+          "slug": "t4-9-hygiene-cip-and-plant-quality-control",
+          "types": [
+            "H"
+          ],
+          "maillons": [
+            "DP3"
+          ],
+          "maillonsLibelles": [
+            "Processing"
+          ],
+          "vue": "exporter",
+          "vueLibelle": "Export for Impact",
+          "equipements": [
+            {
+              "code": "T4.9-01",
+              "nom": "Clean-in-place",
+              "type": "H"
+            },
+            {
+              "code": "T4.9-02",
+              "nom": "Metal detector",
+              "type": "H"
+            },
+            {
+              "code": "T4.9-03",
+              "nom": "Plant laboratory",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Cleaning plan, HACCP critical points",
+          "risques": "Water; skills; calibration",
+          "normes": "ISO 22000, Codex CXC 1-1969 (intl.); ISO/IEC 17025 if accreditation sought",
+          "servicesCles": [
+            "TS-03",
+            "TS-05",
+            "TS-07"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "T5",
+      "nom": "Storage, preservation and cold chain",
+      "slug": "storage-cold-chain",
+      "transversal": false,
+      "sousFonctions": [
+        {
+          "code": "T5.1",
+          "nom": "Dry storage",
+          "slug": "t5-1-dry-storage",
+          "types": [
+            "P"
+          ],
+          "maillons": [
+            "DP1",
+            "DP4"
+          ],
+          "maillonsLibelles": [
+            "Agriculture",
+            "Logistics & Distribution"
+          ],
+          "vue": "resister",
+          "vueLibelle": "Resist for Durability",
+          "equipements": [
+            {
+              "code": "T5.1-01",
+              "nom": "Silo",
+              "type": "P"
+            },
+            {
+              "code": "T5.1-02",
+              "nom": "Maize crib",
+              "type": "P"
+            },
+            {
+              "code": "T5.1-03",
+              "nom": "Warehouse, bag storage",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Volume (t), turnover, storage moisture",
+          "risques": "Insects; mould and aflatoxins; flooding",
+          "normes": "Good practice",
+          "servicesCles": [
+            "TS-02",
+            "TS-04",
+            "TS-05"
+          ]
+        },
+        {
+          "code": "T5.2",
+          "nom": "Stock protection",
+          "slug": "t5-2-stock-protection",
+          "types": [
+            "P"
+          ],
+          "maillons": [
+            "DP4"
+          ],
+          "maillonsLibelles": [
+            "Logistics & Distribution"
+          ],
+          "vue": "resister",
+          "vueLibelle": "Resist for Durability",
+          "equipements": [
+            {
+              "code": "T5.2-01",
+              "nom": "Hermetic bags",
+              "type": "P"
+            },
+            {
+              "code": "T5.2-02",
+              "nom": "Storage cocoons",
+              "type": "P"
+            },
+            {
+              "code": "T5.2-03",
+              "nom": "Fumigation sheets",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Volume, storage duration",
+          "risques": "Fumigants subject to registration",
+          "normes": "Product registration: CNHPCAT (MINADER)",
+          "servicesCles": [
+            "TS-01",
+            "TS-02"
+          ]
+        },
+        {
+          "code": "T5.3",
+          "nom": "Chilled and frozen cold rooms",
+          "slug": "t5-3-chilled-and-frozen-cold-rooms",
+          "types": [
+            "P",
+            "H"
+          ],
+          "maillons": [
+            "DP3",
+            "DP4"
+          ],
+          "maillonsLibelles": [
+            "Processing",
+            "Logistics & Distribution"
+          ],
+          "vue": "exporter",
+          "vueLibelle": "Export for Impact",
+          "equipements": [
+            {
+              "code": "T5.3-01",
+              "nom": "Chilled cold room",
+              "type": "H"
+            },
+            {
+              "code": "T5.3-02",
+              "nom": "Frozen cold room",
+              "type": "H"
+            },
+            {
+              "code": "T5.3-03",
+              "nom": "Ripening room",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Volume (m³), temperature, cooling capacity, daily intake",
+          "risques": "Grid outages; refrigerant choice; insulation",
+          "normes": "EN 378 (intl.); Kigali Amendment ratified by Cameroon",
+          "servicesCles": [
+            "TS-03",
+            "TS-04",
+            "TS-08"
+          ]
+        },
+        {
+          "code": "T5.4",
+          "nom": "Mobile cold chain and collection",
+          "slug": "t5-4-mobile-cold-chain-and-collection",
+          "types": [
+            "P"
+          ],
+          "maillons": [
+            "DP4",
+            "DP5"
+          ],
+          "maillonsLibelles": [
+            "Logistics & Distribution",
+            "Trading & Export"
+          ],
+          "vue": "exporter",
+          "vueLibelle": "Export for Impact",
+          "equipements": [
+            {
+              "code": "T5.4-01",
+              "nom": "Milk tank",
+              "type": "P"
+            },
+            {
+              "code": "T5.4-02",
+              "nom": "Refrigerated truck",
+              "type": "P"
+            },
+            {
+              "code": "T5.4-03",
+              "nom": "Reefer container",
+              "type": "P"
+            },
+            {
+              "code": "T5.4-04",
+              "nom": "Insulated box",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Volume, autonomy, transport temperature",
+          "risques": "Tracks; fuel; break at transshipment",
+          "normes": "ATP Agreement (intl.): applicability in Cameroon to be verified",
+          "servicesCles": [
+            "TS-02",
+            "TS-04"
+          ]
+        },
+        {
+          "code": "T5.5",
+          "nom": "Ice and pre-cooling",
+          "slug": "t5-5-ice-and-pre-cooling",
+          "types": [
+            "P"
+          ],
+          "maillons": [
+            "DP4",
+            "DP6"
+          ],
+          "maillonsLibelles": [
+            "Logistics & Distribution",
+            "Fisheries and aquaculture"
+          ],
+          "vue": "exporter",
+          "vueLibelle": "Export for Impact",
+          "equipements": [
+            {
+              "code": "T5.5-01",
+              "nom": "Ice machine",
+              "type": "P"
+            },
+            {
+              "code": "T5.5-02",
+              "nom": "Forced-air or hydro pre-cooling",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Ice output (t/day), cooling time",
+          "risques": "Potable water for ice; energy",
+          "normes": "Fishery product hygiene: to be verified",
+          "servicesCles": [
+            "TS-02",
+            "TS-04"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "T6",
+      "nom": "Energy and utilities",
+      "slug": "energy-utilities",
+      "transversal": true,
+      "sousFonctions": [
+        {
+          "code": "T6.1",
+          "nom": "Power balance, grid connection and distribution",
+          "slug": "t6-1-power-balance-grid-connection-and-distribution",
+          "types": [
+            "P"
+          ],
+          "maillons": [
+            "ALL"
+          ],
+          "maillonsLibelles": [
+            "All links"
+          ],
+          "vue": "resister",
+          "vueLibelle": "Resist for Durability",
+          "equipements": [
+            {
+              "code": "T6.1-01",
+              "nom": "Transformer substation",
+              "type": "P"
+            },
+            {
+              "code": "T6.1-02",
+              "nom": "Main LV switchboard",
+              "type": "P"
+            },
+            {
+              "code": "T6.1-03",
+              "nom": "Reactive power compensation",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Demand (kVA), power factor, load profile",
+          "risques": "Load shedding; voltage drops; connection delays",
+          "normes": "IEC 60364 (intl.); NF C 15-100 in common use, status to be verified; regulator: ARSEL",
+          "servicesCles": [
+            "TS-01",
+            "TS-03",
+            "TS-04"
+          ]
+        },
+        {
+          "code": "T6.2",
+          "nom": "Solar PV and battery storage",
+          "slug": "t6-2-solar-pv-and-battery-storage",
+          "types": [
+            "H"
+          ],
+          "maillons": [
+            "ALL"
+          ],
+          "maillonsLibelles": [
+            "All links"
+          ],
+          "vue": "resister",
+          "vueLibelle": "Resist for Durability",
+          "equipements": [
+            {
+              "code": "T6.2-01",
+              "nom": "PV array",
+              "type": "P"
+            },
+            {
+              "code": "T6.2-02",
+              "nom": "Inverter, charge controller",
+              "type": "H"
+            },
+            {
+              "code": "T6.2-03",
+              "nom": "Lithium or lead batteries",
+              "type": "H"
+            }
+          ],
+          "grandeurs": "Daily energy (kWh/day), autonomy, site irradiation",
+          "risques": "Dust in the North; theft; quality of imported modules; battery end of life",
+          "normes": "IEC 61215, IEC 62446-1 (intl.); PECAE on import",
+          "servicesCles": [
+            "TS-02",
+            "TS-04",
+            "TS-08"
+          ]
+        },
+        {
+          "code": "T6.3",
+          "nom": "Generators and continuity of supply",
+          "slug": "t6-3-generators-and-continuity-of-supply",
+          "types": [
+            "P",
+            "H"
+          ],
+          "maillons": [
+            "ALL"
+          ],
+          "maillonsLibelles": [
+            "All links"
+          ],
+          "vue": "resister",
+          "vueLibelle": "Resist for Durability",
+          "equipements": [
+            {
+              "code": "T6.3-01",
+              "nom": "Generator set",
+              "type": "P"
+            },
+            {
+              "code": "T6.3-02",
+              "nom": "Transfer switch",
+              "type": "H"
+            },
+            {
+              "code": "T6.3-03",
+              "nom": "UPS",
+              "type": "H"
+            }
+          ],
+          "grandeurs": "Backed-up power, fuel autonomy, switchover time",
+          "risques": "Diesel price and availability; servicing",
+          "normes": "Loaded continuity test required at AGROVITA step 9",
+          "servicesCles": [
+            "TS-04",
+            "TS-07",
+            "TS-08"
+          ]
+        },
+        {
+          "code": "T6.4",
+          "nom": "Bioenergy",
+          "slug": "t6-4-bioenergy",
+          "types": [
+            "P"
+          ],
+          "maillons": [
+            "DP2",
+            "DP3"
+          ],
+          "maillonsLibelles": [
+            "Livestock",
+            "Processing"
+          ],
+          "vue": "resister",
+          "vueLibelle": "Resist for Durability",
+          "equipements": [
+            {
+              "code": "T6.4-01",
+              "nom": "Biogas digester",
+              "type": "P"
+            },
+            {
+              "code": "T6.4-02",
+              "nom": "Biomass boiler or gasifier",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Feedstock (t/year), calorific value, output (m³/day)",
+          "risques": "Feedstock regularity; operating know-how",
+          "normes": "Good practice",
+          "servicesCles": [
+            "TS-01",
+            "TS-02",
+            "TS-04"
+          ]
+        },
+        {
+          "code": "T6.5",
+          "nom": "Process heat and steam",
+          "slug": "t6-5-process-heat-and-steam",
+          "types": [
+            "P"
+          ],
+          "maillons": [
+            "DP3"
+          ],
+          "maillonsLibelles": [
+            "Processing"
+          ],
+          "vue": "transformer",
+          "vueLibelle": "Transform for Value",
+          "equipements": [
+            {
+              "code": "T6.5-01",
+              "nom": "Boiler, steam generator",
+              "type": "P"
+            },
+            {
+              "code": "T6.5-02",
+              "nom": "Heat exchangers",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Heat demand (kW), pressure",
+          "risques": "Pressure equipment; fuel",
+          "normes": "Pressure equipment: to be verified",
+          "servicesCles": [
+            "TS-03",
+            "TS-04",
+            "TS-07"
+          ]
+        },
+        {
+          "code": "T6.6",
+          "nom": "Compressed air, process water and industrial effluents",
+          "slug": "t6-6-compressed-air-process-water-and-industrial-effluents",
+          "types": [
+            "P"
+          ],
+          "maillons": [
+            "DP3"
+          ],
+          "maillonsLibelles": [
+            "Processing"
+          ],
+          "vue": "transformer",
+          "vueLibelle": "Transform for Value",
+          "equipements": [
+            {
+              "code": "T6.6-01",
+              "nom": "Compressor",
+              "type": "P"
+            },
+            {
+              "code": "T6.6-02",
+              "nom": "Cooling tower",
+              "type": "P"
+            },
+            {
+              "code": "T6.6-03",
+              "nom": "Agro-industrial wastewater plant",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Air flow, pollution load (BOD, COD)",
+          "risques": "Non-compliant discharges; environmental inspections",
+          "normes": "Impact studies and discharges: MINEPDED, thresholds to be verified",
+          "servicesCles": [
+            "TS-01",
+            "TS-03",
+            "TS-05"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "T7",
+      "nom": "Handling and logistics",
+      "slug": "handling-logistics",
+      "transversal": false,
+      "sousFonctions": [
+        {
+          "code": "T7.1",
+          "nom": "Bulk handling",
+          "slug": "t7-1-bulk-handling",
+          "types": [
+            "P"
+          ],
+          "maillons": [
+            "DP3",
+            "DP4"
+          ],
+          "maillonsLibelles": [
+            "Processing",
+            "Logistics & Distribution"
+          ],
+          "vue": "transformer",
+          "vueLibelle": "Transform for Value",
+          "equipements": [
+            {
+              "code": "T7.1-01",
+              "nom": "Belt conveyor",
+              "type": "P"
+            },
+            {
+              "code": "T7.1-02",
+              "nom": "Bucket elevator",
+              "type": "P"
+            },
+            {
+              "code": "T7.1-03",
+              "nom": "Screw conveyor",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Throughput (t/h), height, bulk density",
+          "risques": "Explosive grain dust; wear",
+          "normes": "ISO 12100 (intl.)",
+          "servicesCles": [
+            "TS-03",
+            "TS-04"
+          ]
+        },
+        {
+          "code": "T7.2",
+          "nom": "Load handling and racking",
+          "slug": "t7-2-load-handling-and-racking",
+          "types": [
+            "P"
+          ],
+          "maillons": [
+            "DP3",
+            "DP4"
+          ],
+          "maillonsLibelles": [
+            "Processing",
+            "Logistics & Distribution"
+          ],
+          "vue": "transformer",
+          "vueLibelle": "Transform for Value",
+          "equipements": [
+            {
+              "code": "T7.2-01",
+              "nom": "Forklift",
+              "type": "P"
+            },
+            {
+              "code": "T7.2-02",
+              "nom": "Pallet truck",
+              "type": "P"
+            },
+            {
+              "code": "T7.2-03",
+              "nom": "Hoist, racking",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Load, lift height, aisle width",
+          "risques": "Operator training; unsuitable floors",
+          "normes": "ISO 3691-1 (intl.)",
+          "servicesCles": [
+            "TS-03",
+            "TS-05"
+          ]
+        },
+        {
+          "code": "T7.3",
+          "nom": "Weighing and metrology",
+          "slug": "t7-3-weighing-and-metrology",
+          "types": [
+            "P",
+            "H"
+          ],
+          "maillons": [
+            "DP3",
+            "DP4",
+            "DP5"
+          ],
+          "maillonsLibelles": [
+            "Processing",
+            "Logistics & Distribution",
+            "Trading & Export"
+          ],
+          "vue": "exporter",
+          "vueLibelle": "Export for Impact",
+          "equipements": [
+            {
+              "code": "T7.3-01",
+              "nom": "Platform scale, weighbridge",
+              "type": "P"
+            },
+            {
+              "code": "T7.3-02",
+              "nom": "Connected scale",
+              "type": "H"
+            }
+          ],
+          "grandeurs": "Capacity, resolution, calibration frequency",
+          "risques": "Weight fraud; irregular calibration",
+          "normes": "Legal metrology: authority and text to be confirmed",
+          "servicesCles": [
+            "TS-05",
+            "TS-07",
+            "TS-08"
+          ]
+        },
+        {
+          "code": "T7.4",
+          "nom": "Sorting, grading and export packing",
+          "slug": "t7-4-sorting-grading-and-export-packing",
+          "types": [
+            "P",
+            "H"
+          ],
+          "maillons": [
+            "DP4",
+            "DP5"
+          ],
+          "maillonsLibelles": [
+            "Logistics & Distribution",
+            "Trading & Export"
+          ],
+          "vue": "exporter",
+          "vueLibelle": "Export for Impact",
+          "equipements": [
+            {
+              "code": "T7.4-01",
+              "nom": "Fruit grader",
+              "type": "P"
+            },
+            {
+              "code": "T7.4-02",
+              "nom": "Optical sorter for coffee or cocoa",
+              "type": "H"
+            },
+            {
+              "code": "T7.4-03",
+              "nom": "Packhouse line",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Throughput, size classes, reject rate",
+          "risques": "Buyer requirements; energy",
+          "normes": "Target market standards; EUDR for cocoa, coffee and timber",
+          "servicesCles": [
+            "TS-02",
+            "TS-05",
+            "TS-08"
+          ]
+        },
+        {
+          "code": "T7.5",
+          "nom": "Transport and fleet",
+          "slug": "t7-5-transport-and-fleet",
+          "types": [
+            "P",
+            "H"
+          ],
+          "maillons": [
+            "DP4"
+          ],
+          "maillonsLibelles": [
+            "Logistics & Distribution"
+          ],
+          "vue": "exporter",
+          "vueLibelle": "Export for Impact",
+          "equipements": [
+            {
+              "code": "T7.5-01",
+              "nom": "Flatbed or tipper truck",
+              "type": "P"
+            },
+            {
+              "code": "T7.5-02",
+              "nom": "Pallet boxes",
+              "type": "P"
+            },
+            {
+              "code": "T7.5-03",
+              "nom": "Telematics",
+              "type": "H"
+            }
+          ],
+          "grandeurs": "Tonnage, trips, distances",
+          "risques": "Tracks in the rainy season; axle load",
+          "normes": "Axle load: text to be verified",
+          "servicesCles": [
+            "TS-01",
+            "TS-02",
+            "TS-04"
+          ]
+        },
+        {
+          "code": "T7.6",
+          "nom": "Collection and consolidation platforms",
+          "slug": "t7-6-collection-and-consolidation-platforms",
+          "types": [
+            "P"
+          ],
+          "maillons": [
+            "DP4"
+          ],
+          "maillonsLibelles": [
+            "Logistics & Distribution"
+          ],
+          "vue": "exporter",
+          "vueLibelle": "Export for Impact",
+          "equipements": [
+            {
+              "code": "T7.6-01",
+              "nom": "Collection warehouse",
+              "type": "P"
+            },
+            {
+              "code": "T7.6-02",
+              "nom": "Drying yard",
+              "type": "P"
+            },
+            {
+              "code": "T7.6-03",
+              "nom": "Loading dock",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Collected volumes, supply catchment",
+          "risques": "Land tenure; cooperative governance",
+          "normes": "Interface with ODT (community facilities)",
+          "servicesCles": [
+            "TS-01",
+            "TS-03"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "T8",
+      "nom": "Digital equipment",
+      "slug": "digital-equipment",
+      "transversal": true,
+      "sousFonctions": [
+        {
+          "code": "T8.1",
+          "nom": "Sensors and IoT",
+          "slug": "t8-1-sensors-and-iot",
+          "types": [
+            "H"
+          ],
+          "maillons": [
+            "ALL"
+          ],
+          "maillonsLibelles": [
+            "All links"
+          ],
+          "vue": "resister",
+          "vueLibelle": "Resist for Durability",
+          "equipements": [
+            {
+              "code": "T8.1-01",
+              "nom": "Soil moisture probe",
+              "type": "H"
+            },
+            {
+              "code": "T8.1-02",
+              "nom": "Connected weather station",
+              "type": "H"
+            },
+            {
+              "code": "T8.1-03",
+              "nom": "Temperature and humidity logger",
+              "type": "H"
+            }
+          ],
+          "grandeurs": "Number of points, sampling frequency, autonomy",
+          "risques": "Network coverage; vandalism; recalibration",
+          "normes": "Good practice",
+          "servicesCles": [
+            "TS-03",
+            "TS-05"
+          ]
+        },
+        {
+          "code": "T8.2",
+          "nom": "Remote sensing and drones",
+          "slug": "t8-2-remote-sensing-and-drones",
+          "types": [
+            "N",
+            "H"
+          ],
+          "maillons": [
+            "DP1",
+            "DP7"
+          ],
+          "maillonsLibelles": [
+            "Agriculture",
+            "Forestry"
+          ],
+          "vue": "produire",
+          "vueLibelle": "Produce for Demand",
+          "equipements": [
+            {
+              "code": "T8.2-01",
+              "nom": "Imaging drone",
+              "type": "H"
+            },
+            {
+              "code": "T8.2-02",
+              "nom": "Satellite imagery",
+              "type": "N"
+            },
+            {
+              "code": "T8.2-03",
+              "nom": "GIS software",
+              "type": "N"
+            }
+          ],
+          "grandeurs": "Resolution (cm/pixel), area, frequency",
+          "risques": "Flight authorisation; cloud cover",
+          "normes": "CCAA authorisation",
+          "servicesCles": [
+            "TS-02",
+            "TS-05"
+          ]
+        },
+        {
+          "code": "T8.3",
+          "nom": "Connectivity and networks",
+          "slug": "t8-3-connectivity-and-networks",
+          "types": [
+            "P",
+            "N"
+          ],
+          "maillons": [
+            "ALL"
+          ],
+          "maillonsLibelles": [
+            "All links"
+          ],
+          "vue": "resister",
+          "vueLibelle": "Resist for Durability",
+          "equipements": [
+            {
+              "code": "T8.3-01",
+              "nom": "4G GSM link",
+              "type": "N"
+            },
+            {
+              "code": "T8.3-02",
+              "nom": "LoRaWAN network",
+              "type": "P"
+            },
+            {
+              "code": "T8.3-03",
+              "nom": "VSAT",
+              "type": "P"
+            },
+            {
+              "code": "T8.3-04",
+              "nom": "Industrial Wi-Fi",
+              "type": "P"
+            }
+          ],
+          "grandeurs": "Bandwidth, range, monthly cost in FCFA",
+          "risques": "Rural coverage gaps",
+          "normes": "Radio equipment approval: ART, to be verified",
+          "servicesCles": [
+            "TS-02",
+            "TS-03"
+          ]
+        },
+        {
+          "code": "T8.4",
+          "nom": "Supervision, automation and dashboards",
+          "slug": "t8-4-supervision-automation-and-dashboards",
+          "types": [
+            "H",
+            "N"
+          ],
+          "maillons": [
+            "DP3",
+            "ALL"
+          ],
+          "maillonsLibelles": [
+            "Processing",
+            "All links"
+          ],
+          "vue": "transformer",
+          "vueLibelle": "Transform for Value",
+          "equipements": [
+            {
+              "code": "T8.4-01",
+              "nom": "PLC",
+              "type": "H"
+            },
+            {
+              "code": "T8.4-02",
+              "nom": "SCADA, HMI",
+              "type": "N"
+            },
+            {
+              "code": "T8.4-03",
+              "nom": "Variable-speed drives",
+              "type": "H"
+            }
+          ],
+          "grandeurs": "I/O count, refresh rate",
+          "risques": "Local skills; vendor lock-in",
+          "normes": "IEC 61131-3 (intl.)",
+          "servicesCles": [
+            "TS-03",
+            "TS-05",
+            "TS-07",
+            "TS-10"
+          ]
+        },
+        {
+          "code": "T8.5",
+          "nom": "Management software",
+          "slug": "t8-5-management-software",
+          "types": [
+            "N"
+          ],
+          "maillons": [
+            "ALL"
+          ],
+          "maillonsLibelles": [
+            "All links"
+          ],
+          "vue": "resister",
+          "vueLibelle": "Resist for Durability",
+          "equipements": [
+            {
+              "code": "T8.5-01",
+              "nom": "Farm management software",
+              "type": "N"
+            },
+            {
+              "code": "T8.5-02",
+              "nom": "Cooperative management software",
+              "type": "N"
+            },
+            {
+              "code": "T8.5-03",
+              "nom": "Agro-industrial ERP",
+              "type": "N"
+            }
+          ],
+          "grandeurs": "Users, modules, offline operation",
+          "risques": "Abandonment after rollout; hosting; licences",
+          "normes": "Data protection: national text to be verified",
+          "servicesCles": [
+            "TS-01",
+            "TS-05",
+            "TS-06",
+            "TS-10"
+          ]
+        },
+        {
+          "code": "T8.6",
+          "nom": "Traceability and geolocation",
+          "slug": "t8-6-traceability-and-geolocation",
+          "types": [
+            "H"
+          ],
+          "maillons": [
+            "DP1",
+            "DP5",
+            "DP7"
+          ],
+          "maillonsLibelles": [
+            "Agriculture",
+            "Trading & Export",
+            "Forestry"
+          ],
+          "vue": "exporter",
+          "vueLibelle": "Export for Impact",
+          "equipements": [
+            {
+              "code": "T8.6-01",
+              "nom": "Plot geolocation",
+              "type": "H"
+            },
+            {
+              "code": "T8.6-02",
+              "nom": "Codes, QR, RFID",
+              "type": "H"
+            },
+            {
+              "code": "T8.6-03",
+              "nom": "Traceability platform",
+              "type": "N"
+            }
+          ],
+          "grandeurs": "Plots, batches, tracking granularity",
+          "risques": "EUDR plot geolocation requirement",
+          "normes": "Regulation (EU) 2023/1115; ISO 22005, GS1 (intl.)",
+          "servicesCles": [
+            "TS-01",
+            "TS-05",
+            "TS-07",
+            "TS-10"
+          ]
+        },
+        {
+          "code": "T8.7",
+          "nom": "Field terminals and payment interfaces",
+          "slug": "t8-7-field-terminals-and-payment-interfaces",
+          "types": [
+            "H",
+            "N"
+          ],
+          "maillons": [
+            "DP4",
+            "DP5"
+          ],
+          "maillonsLibelles": [
+            "Logistics & Distribution",
+            "Trading & Export"
+          ],
+          "vue": "exporter",
+          "vueLibelle": "Export for Impact",
+          "equipements": [
+            {
+              "code": "T8.7-01",
+              "nom": "Field data tablet",
+              "type": "H"
+            },
+            {
+              "code": "T8.7-02",
+              "nom": "Label printer",
+              "type": "H"
+            },
+            {
+              "code": "T8.7-03",
+              "nom": "Mobile money interface",
+              "type": "N"
+            }
+          ],
+          "grandeurs": "Transaction volume, offline mode",
+          "risques": "Network; fraud; transaction fees",
+          "normes": "Integration only; the service belongs to DS.S39",
+          "servicesCles": [
+            "TS-03",
+            "TS-05",
+            "TS-10"
+          ]
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "code": "TS-01",
+      "nom": "Needs analysis",
+      "slug": "ts-01-needs-analysis",
+      "livrables": [
+        "Needs analysis report",
+        "Mapping of the existing situation",
+        "Gap identification"
+      ],
+      "dureeIndicative": "5 to 10 days",
+      "phase": "comprendre",
+      "phaseLibelle": "Understand",
+      "prestationsAgrovita": [
+        "XPN-E2.3",
+        "XPN-E2.4",
+        "XPN-E2.5",
+        "XPN-E2.6"
+      ]
+    },
+    {
+      "code": "TS-02",
+      "nom": "Options study",
+      "slug": "ts-02-options-study",
+      "livrables": [
+        "Options study",
+        "Technical and economic comparison",
+        "Recommendation"
+      ],
+      "dureeIndicative": "10 to 15 days",
+      "phase": "concevoir",
+      "phaseLibelle": "Design",
+      "prestationsAgrovita": [
+        "XPN-E2.3",
+        "XPN-E2.4",
+        "XPN-E2.5",
+        "XPN-E2.6"
+      ]
+    },
+    {
+      "code": "TS-03",
+      "nom": "Technical architecture",
+      "slug": "ts-03-technical-architecture",
+      "livrables": [
+        "Functional diagrams",
+        "System architecture",
+        "Sizing note"
+      ],
+      "dureeIndicative": "10 to 20 days",
+      "phase": "concevoir",
+      "phaseLibelle": "Design",
+      "prestationsAgrovita": [
+        "XPN-E2.3",
+        "XPN-E2.4",
+        "XPN-E2.5",
+        "XPN-E2.6"
+      ]
+    },
+    {
+      "code": "TS-04",
+      "nom": "Sizing",
+      "slug": "ts-04-sizing",
+      "livrables": [
+        "Sizing calculations",
+        "Calculation notes",
+        "Capacity specifications"
+      ],
+      "dureeIndicative": "5 to 15 days",
+      "phase": "concevoir",
+      "phaseLibelle": "Design",
+      "prestationsAgrovita": [
+        "XPN-E2.3",
+        "XPN-E2.4",
+        "XPN-E2.5",
+        "XPN-E2.6"
+      ]
+    },
+    {
+      "code": "TS-05",
+      "nom": "Technical specifications",
+      "slug": "ts-05-technical-specifications",
+      "livrables": [
+        "Technical specification",
+        "Evaluation grid",
+        "Selection criteria"
+      ],
+      "dureeIndicative": "10 to 15 days",
+      "phase": "concevoir",
+      "phaseLibelle": "Design",
+      "prestationsAgrovita": [
+        "XPN-E2.7"
+      ]
+    },
+    {
+      "code": "TS-06",
+      "nom": "Bid analysis",
+      "slug": "ts-06-bid-analysis",
+      "livrables": [
+        "Comparative analysis",
+        "Evaluation grid",
+        "Selection recommendation"
+      ],
+      "dureeIndicative": "5 to 10 days",
+      "phase": "realiser",
+      "phaseLibelle": "Deliver",
+      "prestationsAgrovita": [
+        "XPN-E4.2"
+      ]
+    },
+    {
+      "code": "TS-07",
+      "nom": "Testing",
+      "slug": "ts-07-testing",
+      "livrables": [
+        "Test protocols",
+        "Verification grids",
+        "Test reports"
+      ],
+      "dureeIndicative": "Depends on complexity",
+      "phase": "realiser",
+      "phaseLibelle": "Deliver",
+      "prestationsAgrovita": [
+        "XPN-E4.3"
+      ]
+    },
+    {
+      "code": "TS-08",
+      "nom": "Performance verification",
+      "slug": "ts-08-performance-verification",
+      "livrables": [
+        "Test report",
+        "Capacity validation",
+        "Contractual conformity certificate"
+      ],
+      "dureeIndicative": "3 to 7 days",
+      "phase": "realiser",
+      "phaseLibelle": "Deliver",
+      "prestationsAgrovita": [
+        "XPN-E4.4"
+      ]
+    },
+    {
+      "code": "TS-09",
+      "nom": "Acceptance support",
+      "slug": "ts-09-acceptance-support",
+      "livrables": [
+        "Acceptance report",
+        "Handover documentation",
+        "Training materials"
+      ],
+      "dureeIndicative": "2 to 5 days",
+      "phase": "perenniser",
+      "phaseLibelle": "Sustain",
+      "prestationsAgrovita": [
+        "XPN-E4.4"
+      ]
+    },
+    {
+      "code": "TS-10",
+      "nom": "Integration support",
+      "slug": "ts-10-integration-support",
+      "livrables": [
+        "Integration plan",
+        "Interface specifications",
+        "Functional acceptance report"
+      ],
+      "dureeIndicative": "Depends on complexity",
+      "phase": "realiser",
+      "phaseLibelle": "Deliver",
+      "prestationsAgrovita": [
+        "XPN-E4.4",
+        "XPN-E5.4"
+      ]
+    }
+  ],
+  "cycleDeVie": [
+    {
+      "code": "CV1",
+      "nom": "Local availability"
+    },
+    {
+      "code": "CV2",
+      "nom": "Procurement"
+    },
+    {
+      "code": "CV3",
+      "nom": "Installation"
+    },
+    {
+      "code": "CV4",
+      "nom": "Commissioning"
+    },
+    {
+      "code": "CV5",
+      "nom": "Safety"
+    },
+    {
+      "code": "CV6",
+      "nom": "Spare parts"
+    },
+    {
+      "code": "CV7",
+      "nom": "Maintenance"
+    },
+    {
+      "code": "CV8",
+      "nom": "Operating costs"
+    },
+    {
+      "code": "CV9",
+      "nom": "Renewal"
+    }
+  ],
+  "compteurs": {
+    "domaines": 8,
+    "sousFonctions": 50,
+    "services": 10,
+    "combinaisons": 500
+  }
+}

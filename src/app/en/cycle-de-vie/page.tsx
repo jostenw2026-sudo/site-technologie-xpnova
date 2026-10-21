@@ -63,8 +63,8 @@ export default function LifecyclePageEN() {
           <div className="space-y-8">
             {phases.map((phase, index) => (
               <div key={phase.title} className="flex gap-6">
-                <div className="flex-shrink-0 w-12 h-12 bg-[#D4A017] text-[#0D1F5C] rounded-full flex items-center justify-center font-bold text-xl">
-                  {index + 1}
+                <div className="flex-shrink-0 w-12 h-12 bg-[#D4A017] text-[#0D1F5C] rounded-full flex items-center justify-center font-bold text-sm">
+                  CV{index + 1}
                 </div>
                 <div className="flex-1 p-6 bg-white rounded border border-[#E2E5EC]">
                   <h2 className="text-xl font-bold text-[#0D1F5C] mb-2">{phase.title}</h2>
