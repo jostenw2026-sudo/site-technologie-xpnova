@@ -49,7 +49,17 @@ export interface Service {
   prestationsAgrovita: string[];
 }
 
+export interface Filiere {
+  code: string;
+  nom: string;
+  nomEn: string;
+  maillon: string;
+  slug: string;
+  sousFonctions: { code: string; niveau: 1 | 2 | 3 }[];
+}
+
 export interface Referentiel {
+  filieres: Filiere[];
   referentiel: string;
   version: string;
   dateValidation: string;
@@ -61,7 +71,7 @@ export interface Referentiel {
   domaines: Domaine[];
   services: Service[];
   cycleDeVie: { code: string; nom: string }[];
-  compteurs: { domaines: number; sousFonctions: number; services: number; combinaisons: number };
+  compteurs: { domaines: number; sousFonctions: number; services: number; combinaisons: number; filieres: number };
 }
 
 export function getReferentiel(lang: Lang = "fr"): Referentiel {
@@ -78,6 +88,25 @@ export function getSousFonction(slug: string, lang: Lang = "fr"): { domaine: Dom
     if (sf) return { domaine, sf };
   }
   return null;
+}
+
+export function getFilieres(lang: Lang = "fr"): Filiere[] {
+  return getReferentiel(lang).filieres;
+}
+
+export function getFiliere(slug: string, lang: Lang = "fr"): Filiere | undefined {
+  return getReferentiel(lang).filieres.find((f) => f.slug === slug);
+}
+
+/** Filières qui mobilisent une sous-fonction, par niveau décroissant. */
+export function filieresDeSousFonction(code: string, lang: Lang = "fr"): { filiere: Filiere; niveau: number }[] {
+  return getReferentiel(lang)
+    .filieres.flatMap((f) => f.sousFonctions.filter((s) => s.code === code).map((s) => ({ filiere: f, niveau: s.niveau })))
+    .sort((a, b) => b.niveau - a.niveau);
+}
+
+export function nomFiliere(f: Filiere, lang: Lang): string {
+  return lang === "en" ? f.nomEn : f.nom;
 }
 
 export function getService(code: string, lang: Lang = "fr"): Service | undefined {
@@ -160,6 +189,7 @@ export const LIBELLES = {
     resultats: (n: number) => `${n} sous-fonction${n > 1 ? "s" : ""}`,
     fiche: { equipements: "Équipements types", grandeurs: "Grandeurs à dimensionner", risques: "Risque emblématique au Cameroun", normes: "Références internationales de bonne pratique", services: "Services clés", maillons: "Maillons de la chaîne de valeur", demander: "Demander une expertise", retour: "Retour au référentiel", typeP: "Physique", typeN: "Numérique", typeH: "Hybride", enCours: "Cadre camerounais documenté dans la fiche complète", prestation: "Code de prestation", complete: "Fiche technique complète sur demande", completeTexte: "Liste complète des risques et contraintes, autorités camerounaises et textes applicables, grille de cycle de vie CV1–CV9 : remis après ouverture du dossier.", completeCta: "Demander la fiche complète", autresRisques: (n: number) => `${n - 1} autre${n > 2 ? "s" : ""} risque${n > 2 ? "s" : ""} documenté${n > 2 ? "s" : ""} dans la fiche complète.` },
     transversal: "Transversal : sert les quatre temps",
+    filieres: { titre: "Entrer par filière", intro: "Les 29 filières d'AGROVITA, chacune avec les sous-fonctions qu'elle mobilise : essentielles, fréquentes ou occasionnelles. Une filière n'est pas un domaine : elle traverse plusieurs domaines.", niveau: { 3: "Essentiel", 2: "Fréquent", 1: "Occasionnel" } as Record<number, string>, retour: "Toutes les filières", mobilise: "Sous-fonctions mobilisées", agrovita: "Voir la filière sur AGROVITA", filieresDeFiche: "Filières qui mobilisent cette sous-fonction", chapeau: "Comment lire cette page", chapeauTexte: "Chaque filière liste les sous-fonctions du référentiel qu'un projet de cette filière mobilise le plus souvent. Le niveau indique la fréquence, pas l'importance : un projet précis peut s'en écarter, c'est l'analyse du besoin (TS-01) qui tranche." },
     sections: { domaines: "Entrer par domaine", domainesTexte: "Huit raccourcis vers les cartes de la page Domaines ; le nombre de sous-fonctions indique l'étendue de chacun.", explorer: "Explorer les sous-fonctions", explorerTexte: "Un domaine à la fois, affiné par type d'équipement, maillon de la chaîne de valeur et besoin ; chaque carte ouvre une fiche.", mobiliser: "Mobiliser cette sous-fonction", mobiliserTexte: "Maillons concernés, services clés et deux façons de nous solliciter : le formulaire, pré-rempli avec le code, ou WhatsApp." },
     aucun: "Aucune sous-fonction ne correspond à ces filtres.",
     doctrine: "Doctrine",
@@ -172,6 +202,7 @@ export const LIBELLES = {
     resultats: (n: number) => `${n} sub-function${n > 1 ? "s" : ""}`,
     fiche: { equipements: "Typical equipment", grandeurs: "Sizing parameters", risques: "Key risk in Cameroon", normes: "International good-practice references", services: "Key services", maillons: "Value chain links", demander: "Request an expertise", retour: "Back to the reference", typeP: "Physical", typeN: "Digital", typeH: "Hybrid", enCours: "Cameroonian framework documented in the full sheet", prestation: "Service code", complete: "Full technical sheet on request", completeTexte: "Complete list of risks and constraints, Cameroonian authorities and applicable texts, CV1–CV9 life-cycle grid: provided after the file is opened.", completeCta: "Request the full sheet", autresRisques: (n: number) => `${n - 1} other risk${n > 2 ? "s" : ""} documented in the full sheet.` },
     transversal: "Cross-cutting: serves all four stages",
+    filieres: { titre: "Enter by value chain", intro: "AGROVITA's 29 value chains, each with the sub-functions it mobilises: essential, frequent or occasional. A value chain is not a domain: it cuts across several domains.", niveau: { 3: "Essential", 2: "Frequent", 1: "Occasional" } as Record<number, string>, retour: "All value chains", mobilise: "Sub-functions mobilised", agrovita: "See the value chain on AGROVITA", filieresDeFiche: "Value chains that mobilise this sub-function", chapeau: "How to read this page", chapeauTexte: "Each value chain lists the reference sub-functions a project in that chain most often mobilises. The level indicates frequency, not importance: a specific project may differ, and the needs analysis (TS-01) decides." },
     sections: { domaines: "Enter by domain", domainesTexte: "Eight shortcuts to the cards of the Domains page; the number of sub-functions shows the extent of each.", explorer: "Explore the sub-functions", explorerTexte: "One domain at a time, refined by equipment type, value-chain link and need; each card opens a sheet.", mobiliser: "Mobilise this sub-function", mobiliserTexte: "Links concerned, key services and two ways to reach us: the form, pre-filled with the code, or WhatsApp." },
     aucun: "No sub-function matches these filters.",
     doctrine: "Doctrine",

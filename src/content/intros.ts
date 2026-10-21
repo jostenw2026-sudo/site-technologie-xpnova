@@ -56,7 +56,7 @@ export const INTROS: Record<'fr' | 'en', Record<CleIntro, Intro>> = {
       texte:
         "Le référentiel RT-TECH classe les équipements par fonction technique, jamais par marque ni par filière. Il sert à nommer un besoin sans ambiguïté, à rédiger un cahier des charges comparable et à dialoguer avec les fournisseurs sur des bases neutres.",
       points: [
-        'Filtrez par domaine, par type (physique, numérique, hybride), par maillon de la chaîne de valeur ou par besoin.',
+        'Entrez par domaine, par filière (29 filières AGROVITA) ou filtrez par type, maillon et besoin.',
         'Chaque fiche donne les équipements types, les grandeurs à dimensionner, les risques au Cameroun et le cadre normatif.',
         "Depuis une fiche, demandez une expertise : le code de prestation est pré-rempli dans le formulaire.",
       ],
@@ -148,7 +148,7 @@ export const INTROS: Record<'fr' | 'en', Record<CleIntro, Intro>> = {
       texte:
         'The RT-TECH reference classifies equipment by technical function, never by brand or value chain. It is used to name a need unambiguously, to write comparable specifications and to talk to suppliers on neutral ground.',
       points: [
-        'Filter by domain, by type (physical, digital, hybrid), by value-chain link or by need.',
+        'Enter by domain, by value chain (29 AGROVITA chains) or filter by type, link and need.',
         'Each sheet gives typical equipment, sizing parameters, risks in Cameroon and the regulatory framework.',
         'From a sheet, request an expertise: the service code is pre-filled in the form.',
       ],

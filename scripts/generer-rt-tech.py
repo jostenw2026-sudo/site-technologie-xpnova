@@ -63,7 +63,7 @@ SF = [
   [("Pulvérisateur à dos","Knapsack sprayer","P"),("Atomiseur motorisé","Motorised mist blower","P"),("Rampe tractée","Trailed boom sprayer","P"),("Drone de pulvérisation","Spraying drone","H")],
   "Volume par ha, taille de gouttes, autonomie","Volume per ha, droplet size, autonomy",
   "Exposition des opérateurs ; résidus à l'export ; cadre drone en construction","Operator exposure; export residues; drone framework still being drafted",
-  "Certification des appareils de traitement : CNHPCAT (MINADER) ; drones : autorisation CCAA ; ISO 16119 (int.)","Sprayer certification: CNHPCAT (MINADER); drones: CCAA authorisation; ISO 16119 (intl.)",["TS-02","TS-05","TS-07"]),
+  "Certification obligatoire des appareils de traitement : loi 2003/003 art. 27 et décret 2005/0772/PM, CNHPCAT (MINADER) ; drones : autorisation CCAA ; ISO 16119 (int.)","Mandatory sprayer certification: Law 2003/003 art. 27 and Decree 2005/0772/PM, CNHPCAT (MINADER); drones: CCAA authorisation; ISO 16119 (intl.)",["TS-02","TS-05","TS-07"]),
  ("T1.4","Récolte et post-récolte primaire","Harvest and primary post-harvest","P",["DP1"],"produire",
   [("Moissonneuse-batteuse","Combine harvester","P"),("Batteuse","Thresher","P"),("Égreneuse à maïs","Maize sheller","P"),("Écabosseuse, décortiqueuse d'arachide","Cocoa pod breaker, groundnut sheller","P")],
   "Débit (t/h), taux de pertes, taux de casse","Throughput (t/h), loss rate, breakage rate",
@@ -83,7 +83,7 @@ SF = [
   [("Forage","Borehole","P"),("Puits","Well","P"),("Prise en rivière","River intake","P"),("Retenue collinaire","Hillside reservoir","P")],
   "Débit d'exploitation (m³/h), rabattement, pointe de besoin","Operating flow (m³/h), drawdown, peak demand",
   "Débit non garanti sans essai de pompage ; droits sur l'eau","Flow not guaranteed without pumping test; water rights",
-  "Régime d'autorisation des prélèvements : à vérifier ; travaux par DS.S21","Abstraction permit regime: to be verified; works by DS.S21",["TS-01","TS-04","TS-07"]),
+  "Autorisation préalable, redevance et étude d'impact pour tout prélèvement industriel ou commercial : loi 98/005 art. 10, ministère de l'Eau ; travaux par DS.S21","Prior authorisation, fee and impact study for any industrial or commercial abstraction: Law 98/005 art. 10, Ministry of Water; works by DS.S21",["TS-01","TS-04","TS-07"]),
  ("T2.2","Pompage","Pumping","P,H",["DP1","DP2","DP6"],"produire",
   [("Motopompe","Engine-driven pump","P"),("Électropompe","Electric pump","P"),("Pompe solaire de surface ou immergée","Solar surface or submersible pump","H"),("Bélier hydraulique","Hydraulic ram","P")],
   "Débit, hauteur manométrique totale (m), heures de pompage","Flow, total dynamic head (m), pumping hours",
@@ -158,7 +158,7 @@ SF = [
   [("Pasteurisateur","Pasteuriser","H"),("Autoclave","Autoclave","P"),("Cuiseur, torréfacteur","Cooker, roaster","P")],
   "Barème temps-température, débit","Time-temperature schedule, throughput",
   "Maîtrise des barèmes ; appareils à pression","Schedule control; pressure equipment",
-  "Codex CXC 1-1969 (int.) ; appareils à pression : à vérifier","Codex CXC 1-1969 (intl.); pressure equipment: to be verified",["TS-03","TS-05","TS-07"]),
+  "Codex CXC 1-1969 (int.) ; appareils à pression : décret 99/819/PM, contrôles par organismes agréés MINMIDT","Codex CXC 1-1969 (intl.); pressure equipment: Decree 99/819/PM, inspections by MINMIDT-approved bodies",["TS-03","TS-05","TS-07"]),
  ("T4.6","Mélange et formulation","Mixing and formulation","P",["DP3"],"transformer",
   [("Mélangeur","Mixer","P"),("Presse à granulés","Pellet mill","P"),("Pétrin, four","Kneader, oven","P")],
   "Débit, homogénéité, calibre des granulés","Throughput, homogeneity, pellet size",
@@ -188,7 +188,7 @@ SF = [
   [("Sacs hermétiques","Hermetic bags","P"),("Cocons de stockage","Storage cocoons","P"),("Bâches de fumigation","Fumigation sheets","P")],
   "Volume, durée de conservation","Volume, storage duration",
   "Produits de fumigation soumis à homologation","Fumigants subject to registration",
-  "Homologation des produits : CNHPCAT (MINADER)","Product registration: CNHPCAT (MINADER)",["TS-01","TS-02"]),
+  "Homologation des fumigants : loi 2003/003 et décret 2005/0772/PM, CNHPCAT (MINADER)","Fumigant registration: Law 2003/003 and Decree 2005/0772/PM, CNHPCAT (MINADER)",["TS-01","TS-02"]),
  ("T5.3","Chambres froides positives et négatives","Chilled and frozen cold rooms","P,H",["DP3","DP4"],"exporter",
   [("Chambre froide positive","Chilled cold room","H"),("Chambre froide négative","Frozen cold room","H"),("Chambre de ressuage","Ripening room","P")],
   "Volume (m³), température, puissance frigorifique, entrées journalières","Volume (m³), temperature, cooling capacity, daily intake",
@@ -208,12 +208,12 @@ SF = [
   [("Poste de transformation","Transformer substation","P"),("Tableau général basse tension","Main LV switchboard","P"),("Compensation de l'énergie réactive","Reactive power compensation","P")],
   "Puissance appelée (kVA), facteur de puissance, profil de charge","Demand (kVA), power factor, load profile",
   "Délestages ; chutes de tension ; délais de raccordement","Load shedding; voltage drops; connection delays",
-  "IEC 60364 (int.) ; NF C 15-100 d'usage courant, statut à vérifier ; régulateur : ARSEL","IEC 60364 (intl.); NF C 15-100 in common use, status to be verified; regulator: ARSEL",["TS-01","TS-03","TS-04"]),
+  "NC 244 installations électriques basse tension (rendue obligatoire par arrêté conjoint, à confirmer) ; IEC 60364 (int.) ; régulateur : ARSEL","NC 244 low-voltage electrical installations (made mandatory by joint order, to be confirmed); IEC 60364 (intl.); regulator: ARSEL",["TS-01","TS-03","TS-04"]),
  ("T6.2","Solaire photovoltaïque et stockage par batteries","Solar PV and battery storage","H",["ALL"],"resister",
   [("Champ photovoltaïque","PV array","P"),("Onduleur, régulateur","Inverter, charge controller","H"),("Batteries lithium ou plomb","Lithium or lead batteries","H")],
   "Énergie journalière (kWh/j), autonomie, ensoleillement du site","Daily energy (kWh/day), autonomy, site irradiation",
   "Poussières au Nord ; vols ; qualité des modules importés ; fin de vie des batteries","Dust in the North; theft; quality of imported modules; battery end of life",
-  "IEC 61215, IEC 62446-1 (int.) ; PECAE à l'import","IEC 61215, IEC 62446-1 (intl.); PECAE on import",["TS-02","TS-04","TS-08"]),
+  "IEC 61215, IEC 62446-1 (int.) ; PECAE Route A à l'import (décrets 2015/1875/PM et 2021/3306/PM, ANOR) : inspection et essais par envoi","IEC 61215, IEC 62446-1 (intl.); PECAE Route A on import (Decrees 2015/1875/PM and 2021/3306/PM, ANOR): inspection and tests per shipment",["TS-02","TS-04","TS-08"]),
  ("T6.3","Groupes électrogènes et continuité","Generators and continuity of supply","P,H",["ALL"],"resister",
   [("Groupe électrogène","Generator set","P"),("Inverseur de source","Transfer switch","H"),("Onduleur ASI","UPS","H")],
   "Puissance secourue, autonomie en carburant, temps de bascule","Backed-up power, fuel autonomy, switchover time",
@@ -228,12 +228,12 @@ SF = [
   [("Chaudière, générateur de vapeur","Boiler, steam generator","P"),("Échangeurs","Heat exchangers","P")],
   "Besoin thermique (kW), pression","Heat demand (kW), pressure",
   "Appareils à pression ; combustible","Pressure equipment; fuel",
-  "Appareils à pression : à vérifier","Pressure equipment: to be verified",["TS-03","TS-04","TS-07"]),
+  "Appareils à pression de vapeur : décret 99/819/PM, contrôles par organismes agréés MINMIDT","Steam pressure equipment: Decree 99/819/PM, inspections by MINMIDT-approved bodies",["TS-03","TS-04","TS-07"]),
  ("T6.6","Air comprimé, eaux de process et effluents industriels","Compressed air, process water and industrial effluents","P",["DP3"],"transformer",
   [("Compresseur","Compressor","P"),("Tour de refroidissement","Cooling tower","P"),("Station d'épuration agro-industrielle","Agro-industrial wastewater plant","P")],
   "Débit d'air, charge polluante (DBO, DCO)","Air flow, pollution load (BOD, COD)",
   "Rejets non conformes ; contrôles environnementaux","Non-compliant discharges; environmental inspections",
-  "Études d'impact et rejets : MINEPDED, seuils à vérifier","Impact studies and discharges: MINEPDED, thresholds to be verified",["TS-01","TS-03","TS-05"]),
+  "Loi 96/12 et décret 2013/0171/PM (études d'impact), MINEPDED ; catégorie de l'unité à confirmer","Law 96/12 and Decree 2013/0171/PM (impact studies), MINEPDED; unit category to be confirmed",["TS-01","TS-03","TS-05"]),
  ("T7.1","Manutention de vrac","Bulk handling","P",["DP3","DP4"],"transformer",
   [("Convoyeur à bande","Belt conveyor","P"),("Élévateur à godets","Bucket elevator","P"),("Vis sans fin","Screw conveyor","P")],
   "Débit (t/h), hauteur, masse volumique","Throughput (t/h), height, bulk density",
@@ -248,7 +248,7 @@ SF = [
   [("Bascule, pont-bascule","Platform scale, weighbridge","P"),("Balance connectée","Connected scale","H")],
   "Portée, échelon, fréquence d'étalonnage","Capacity, resolution, calibration frequency",
   "Fraude au poids ; étalonnage irrégulier","Weight fraud; irregular calibration",
-  "Métrologie légale : autorité et texte à confirmer","Legal metrology: authority and text to be confirmed",["TS-05","TS-07","TS-08"]),
+  "Métrologie légale : loi 2004/002, approbation de modèle, vérification primitive et périodique (MINCOMMERCE)","Legal metrology: Law 2004/002, model approval, initial and periodic verification (MINCOMMERCE)",["TS-05","TS-07","TS-08"]),
  ("T7.4","Tri, calibrage et conditionnement export","Sorting, grading and export packing","P,H",["DP4","DP5"],"exporter",
   [("Calibreuse à fruits","Fruit grader","P"),("Trieur optique café ou cacao","Optical sorter for coffee or cocoa","H"),("Ligne de station de conditionnement","Packhouse line","P")],
   "Débit, classes de calibre, taux de rejet","Throughput, size classes, reject rate",
@@ -278,7 +278,7 @@ SF = [
   [("Liaison GSM 4G","4G GSM link","N"),("Réseau LoRaWAN","LoRaWAN network","P"),("VSAT","VSAT","P"),("Wi-Fi industriel","Industrial Wi-Fi","P")],
   "Débit, portée, coût mensuel en FCFA","Bandwidth, range, monthly cost in FCFA",
   "Zones blanches rurales","Rural coverage gaps",
-  "Homologation des équipements radio : ART, à vérifier","Radio equipment approval: ART, to be verified",["TS-02","TS-03"]),
+  "Homologation des équipements terminaux et radioélectriques par l'ART (loi 2010/013) : dossier technique, essais CEM, échantillons","Terminal and radio equipment approval by ART (Law 2010/013): technical file, EMC tests, samples",["TS-02","TS-03"]),
  ("T8.4","Supervision, automatisation et tableaux de bord","Supervision, automation and dashboards","H,N",["DP3","ALL"],"transformer",
   [("Automate programmable","PLC","H"),("Supervision, IHM","SCADA, HMI","N"),("Variateurs","Variable-speed drives","H")],
   "Nombre d'entrées-sorties, cadence de rafraîchissement","I/O count, refresh rate",
@@ -379,3 +379,79 @@ with open("data/equipements.csv", "w", newline="", encoding="utf-8") as f:
         for i, (efr, een, t) in enumerate(r[6], 1):
             w.writerow([f"{r[0]}-{i:02d}", r[0], efr, een, t]); n += 1
 print("OK — 50 sous-fonctions,", n, "équipements types,", len(SERVICES), "services")
+
+# ---------- Matrice filières × sous-fonctions (lot validé le 21/10/2026) ----------
+# 29 filières AGROVITA (codes FV/FA/FH/FF du site agrovita.xp-nova.com/filieres).
+# Niveau : 3 = essentiel (presque tout projet de la filière), 2 = fréquent, 1 = occasionnel.
+FILIERES = [
+ ("FV01","Cultures de rente","Cash crops","DP1"),("FV02","Cultures vivrières","Food crops","DP1"),("FV03","Filière maraîchère","Market gardening","DP1"),
+ ("FV04","Fruits tropicaux","Tropical fruits","DP1"),("FV05","Huiles et oléagineux","Oils and oilseeds","DP1"),("FV06","Plantes médicinales","Medicinal plants","DP1"),
+ ("FV07","Plantes aromatiques et épices","Aromatic plants and spices","DP1"),("FV08","Semencière","Seed production","DP1"),("FV09","Floricole et horticulture ornementale","Floriculture and ornamental horticulture","DP1"),
+ ("FA01","Volailles","Poultry","DP2"),("FA02","Porcins","Pigs","DP2"),("FA03","Caprins et ovins","Goats and sheep","DP2"),("FA04","Bovins (viande et lait)","Cattle (meat and dairy)","DP2"),
+ ("FA05","Apicole","Beekeeping","DP2"),("FA06","Cunicole","Rabbit farming","DP2"),("FA07","Équine et asine","Horses and donkeys","DP2"),("FA08","Cynégétique et élevage de gibier","Game farming","DP2"),("FA09","Hélicicole","Snail farming","DP2"),
+ ("FH01","Aquaculture","Aquaculture","DP6"),("FH02","Halieutique marine","Marine fisheries","DP6"),("FH03","Halieutique continentale","Inland fisheries","DP6"),
+ ("FF01","Bois d'œuvre et de service","Timber and service wood","DP7"),("FF02","Miel forestier sauvage","Wild forest honey","DP7"),("FF03","Fruits, graines et oléagineux sauvages","Wild fruits, seeds and oilseeds","DP7"),
+ ("FF04","Champignons et insectes comestibles","Edible mushrooms and insects","DP7"),("FF05","Boissons fermentées de sève","Fermented sap beverages","DP7"),("FF06","PFNL non alimentaires","Non-food NTFPs","DP7"),
+ ("FF07","Bambou","Bamboo","DP7"),("FF08","Reboisement, foresterie communautaire et carbone","Reforestation, community forestry and carbon","DP7"),
+]
+assert len(FILIERES) == 29
+
+# Transversaux appliqués à toutes les filières (niveau 2 sauf précision)
+TRANSVERSAL = {"T6.1":2,"T6.2":2,"T6.3":2,"T8.1":1,"T8.3":1,"T8.5":2,"T8.7":1,"T7.3":2,"T7.5":1}
+
+M = {
+ "FV01": {"T1.1":2,"T1.3":3,"T1.4":3,"T1.6":2,"T2.4":1,"T4.4":3,"T4.8":2,"T5.1":3,"T5.2":3,"T7.1":1,"T7.4":3,"T7.6":3,"T8.2":2,"T8.6":3,"T8.4":1},
+ "FV02": {"T1.1":3,"T1.2":3,"T1.3":2,"T1.4":3,"T1.6":3,"T2.2":2,"T2.5":2,"T4.1":2,"T4.2":3,"T4.3":2,"T4.4":3,"T4.6":1,"T4.8":2,"T5.1":3,"T5.2":3,"T7.1":2,"T7.6":2,"T8.2":1},
+ "FV03": {"T1.1":2,"T1.2":2,"T1.3":3,"T2.1":3,"T2.2":3,"T2.3":2,"T2.4":3,"T2.5":2,"T3.1":3,"T3.2":2,"T4.1":2,"T4.8":2,"T5.3":3,"T5.4":2,"T5.5":2,"T7.4":3,"T8.1":2,"T8.6":1},
+ "FV04": {"T1.1":2,"T1.3":2,"T2.2":2,"T2.4":2,"T3.1":1,"T4.1":2,"T4.3":2,"T4.4":3,"T4.5":2,"T4.8":3,"T5.3":3,"T5.4":2,"T5.5":2,"T7.4":3,"T7.6":2,"T8.6":2},
+ "FV05": {"T1.1":2,"T1.4":3,"T4.1":2,"T4.2":2,"T4.3":3,"T4.4":2,"T4.5":2,"T4.8":3,"T4.9":2,"T5.1":2,"T6.5":2,"T6.6":2,"T7.1":2,"T8.4":1},
+ "FV06": {"T1.3":1,"T2.4":2,"T3.1":2,"T3.2":2,"T4.1":2,"T4.2":2,"T4.3":2,"T4.4":3,"T4.8":3,"T4.9":2,"T5.1":2,"T8.6":2},
+ "FV07": {"T1.3":1,"T2.4":2,"T3.1":1,"T4.1":2,"T4.2":2,"T4.3":2,"T4.4":3,"T4.8":3,"T4.9":2,"T5.1":2,"T7.4":2,"T8.6":2},
+ "FV08": {"T1.2":3,"T1.3":2,"T1.4":3,"T2.4":2,"T3.1":2,"T3.2":2,"T4.1":3,"T4.4":3,"T4.8":3,"T5.1":3,"T5.2":3,"T5.3":2,"T8.6":2},
+ "FV09": {"T2.2":2,"T2.4":3,"T3.1":3,"T3.2":3,"T4.8":2,"T5.3":2,"T5.4":2,"T8.1":2},
+ "FA01": {"T1.5":2,"T2.6":3,"T3.3":3,"T3.4":3,"T4.6":3,"T4.7":2,"T4.8":2,"T4.9":2,"T5.3":2,"T6.3":3,"T6.4":2,"T8.1":2,"T8.4":2},
+ "FA02": {"T1.5":2,"T2.6":3,"T3.3":3,"T4.6":3,"T4.7":2,"T4.8":1,"T5.3":2,"T6.4":3,"T6.6":2,"T8.1":1},
+ "FA03": {"T1.5":3,"T2.1":2,"T2.3":2,"T2.6":2,"T3.3":2,"T4.6":2,"T4.7":2,"T5.3":1,"T6.4":1},
+ "FA04": {"T1.5":3,"T2.1":2,"T2.3":2,"T2.6":3,"T3.3":2,"T4.5":2,"T4.6":2,"T4.7":2,"T4.9":2,"T5.3":2,"T5.4":3,"T6.3":2,"T6.4":2,"T8.1":1},
+ "FA05": {"T3.3":3,"T4.3":2,"T4.8":3,"T4.9":1,"T5.1":2,"T7.4":1,"T8.6":2},
+ "FA06": {"T2.6":2,"T3.3":3,"T4.6":2,"T4.7":2,"T5.3":2},
+ "FA07": {"T1.5":2,"T2.6":2,"T3.3":2,"T7.5":1},
+ "FA08": {"T2.6":2,"T3.3":2,"T4.6":1,"T4.7":2,"T5.3":2,"T8.6":1},
+ "FA09": {"T2.6":2,"T3.2":2,"T3.3":2,"T4.5":1,"T4.8":2,"T5.3":2},
+ "FH01": {"T2.1":3,"T2.2":3,"T2.3":2,"T2.6":3,"T3.5":3,"T4.4":2,"T4.6":3,"T4.8":2,"T5.3":2,"T5.5":3,"T6.3":3,"T8.1":2,"T8.4":2},
+ "FH02": {"T4.4":3,"T4.8":2,"T4.9":2,"T5.3":3,"T5.4":3,"T5.5":3,"T7.3":2,"T7.6":2,"T8.6":2},
+ "FH03": {"T4.4":3,"T4.8":2,"T5.3":2,"T5.4":2,"T5.5":3,"T7.6":2},
+ "FF01": {"T1.1":2,"T1.6":2,"T4.2":3,"T4.4":3,"T7.1":2,"T7.2":3,"T7.5":3,"T8.2":2,"T8.6":3},
+ "FF02": {"T4.3":2,"T4.8":3,"T4.9":1,"T5.1":2,"T8.6":2},
+ "FF03": {"T4.1":2,"T4.3":3,"T4.4":3,"T4.8":2,"T5.1":2,"T7.6":2,"T8.6":2},
+ "FF04": {"T3.2":2,"T4.1":2,"T4.4":3,"T4.8":3,"T4.9":2,"T5.3":2},
+ "FF05": {"T4.5":2,"T4.8":3,"T4.9":2,"T5.3":2},
+ "FF06": {"T4.2":2,"T4.3":2,"T4.4":2,"T4.8":2,"T7.6":2,"T8.6":1},
+ "FF07": {"T1.1":1,"T4.2":2,"T4.4":2,"T6.4":1,"T7.2":2,"T7.5":2},
+ "FF08": {"T1.1":2,"T1.2":2,"T2.2":1,"T3.2":3,"T8.1":2,"T8.2":3,"T8.6":3},
+}
+CODES = {r[0] for r in SF}
+for f, d in M.items():
+    for c in d: assert c in CODES, (f, c)
+
+def build_matrice():
+    out = []
+    for code, nfr, nen, dp in FILIERES:
+        base = dict(TRANSVERSAL); base.update(M[code])
+        out.append({"code": code, "nom": nfr, "nomEn": nen, "maillon": dp, "slug": code.lower(),
+                    "sousFonctions": [{"code": c, "niveau": n} for c, n in sorted(base.items())]})
+    return out
+
+for lang in ("fr", "en"):
+    p = f"data/rt-tech.{lang}.json"
+    d = json.load(open(p, encoding="utf-8"))
+    d["filieres"] = build_matrice()
+    d["compteurs"]["filieres"] = 29
+    json.dump(d, open(p, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
+with open("data/matrice-filieres.csv", "w", newline="", encoding="utf-8") as f:
+    w = csv.writer(f, delimiter=";")
+    w.writerow(["filiere"] + [r[0] for r in SF])
+    for fl in build_matrice():
+        niv = {x["code"]: x["niveau"] for x in fl["sousFonctions"]}
+        w.writerow([fl["code"]] + [niv.get(r[0], "") for r in SF])
+print("Matrice : 29 filières,", sum(len(f["sousFonctions"]) for f in build_matrice()), "couples")
