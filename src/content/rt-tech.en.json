@@ -210,7 +210,7 @@
           ],
           "grandeurs": "Volume per ha, droplet size, autonomy",
           "risques": "Operator exposure; export residues; drone framework still being drafted",
-          "normes": "Sprayer certification: CNHPCAT (MINADER); drones: CCAA authorisation; ISO 16119 (intl.)",
+          "normes": "Mandatory sprayer certification: Law 2003/003 art. 27 and Decree 2005/0772/PM, CNHPCAT (MINADER); drones: CCAA authorisation; ISO 16119 (intl.)",
           "servicesCles": [
             "TS-02",
             "TS-05",
@@ -398,7 +398,7 @@
           ],
           "grandeurs": "Operating flow (m³/h), drawdown, peak demand",
           "risques": "Flow not guaranteed without pumping test; water rights",
-          "normes": "Abstraction permit regime: to be verified; works by DS.S21",
+          "normes": "Prior authorisation, fee and impact study for any industrial or commercial abstraction: Law 98/005 art. 10, Ministry of Water; works by DS.S21",
           "servicesCles": [
             "TS-01",
             "TS-04",
@@ -1056,7 +1056,7 @@
           ],
           "grandeurs": "Time-temperature schedule, throughput",
           "risques": "Schedule control; pressure equipment",
-          "normes": "Codex CXC 1-1969 (intl.); pressure equipment: to be verified",
+          "normes": "Codex CXC 1-1969 (intl.); pressure equipment: Decree 99/819/PM, inspections by MINMIDT-approved bodies",
           "servicesCles": [
             "TS-03",
             "TS-05",
@@ -1309,7 +1309,7 @@
           ],
           "grandeurs": "Volume, storage duration",
           "risques": "Fumigants subject to registration",
-          "normes": "Product registration: CNHPCAT (MINADER)",
+          "normes": "Fumigant registration: Law 2003/003 and Decree 2005/0772/PM, CNHPCAT (MINADER)",
           "servicesCles": [
             "TS-01",
             "TS-02"
@@ -1485,7 +1485,7 @@
           ],
           "grandeurs": "Demand (kVA), power factor, load profile",
           "risques": "Load shedding; voltage drops; connection delays",
-          "normes": "IEC 60364 (intl.); NF C 15-100 in common use, status to be verified; regulator: ARSEL",
+          "normes": "NC 244 low-voltage electrical installations (made mandatory by joint order, to be confirmed); IEC 60364 (intl.); regulator: ARSEL",
           "servicesCles": [
             "TS-01",
             "TS-03",
@@ -1526,7 +1526,7 @@
           ],
           "grandeurs": "Daily energy (kWh/day), autonomy, site irradiation",
           "risques": "Dust in the North; theft; quality of imported modules; battery end of life",
-          "normes": "IEC 61215, IEC 62446-1 (intl.); PECAE on import",
+          "normes": "IEC 61215, IEC 62446-1 (intl.); PECAE Route A on import (Decrees 2015/1875/PM and 2021/3306/PM, ANOR): inspection and tests per shipment",
           "servicesCles": [
             "TS-02",
             "TS-04",
@@ -1642,7 +1642,7 @@
           ],
           "grandeurs": "Heat demand (kW), pressure",
           "risques": "Pressure equipment; fuel",
-          "normes": "Pressure equipment: to be verified",
+          "normes": "Steam pressure equipment: Decree 99/819/PM, inspections by MINMIDT-approved bodies",
           "servicesCles": [
             "TS-03",
             "TS-04",
@@ -1683,7 +1683,7 @@
           ],
           "grandeurs": "Air flow, pollution load (BOD, COD)",
           "risques": "Non-compliant discharges; environmental inspections",
-          "normes": "Impact studies and discharges: MINEPDED, thresholds to be verified",
+          "normes": "Law 96/12 and Decree 2013/0171/PM (impact studies), MINEPDED; unit category to be confirmed",
           "servicesCles": [
             "TS-01",
             "TS-03",
@@ -1816,7 +1816,7 @@
           ],
           "grandeurs": "Capacity, resolution, calibration frequency",
           "risques": "Weight fraud; irregular calibration",
-          "normes": "Legal metrology: authority and text to be confirmed",
+          "normes": "Legal metrology: Law 2004/002, model approval, initial and periodic verification (MINCOMMERCE)",
           "servicesCles": [
             "TS-05",
             "TS-07",
@@ -2080,7 +2080,7 @@
           ],
           "grandeurs": "Bandwidth, range, monthly cost in FCFA",
           "risques": "Rural coverage gaps",
-          "normes": "Radio equipment approval: ART, to be verified",
+          "normes": "Terminal and radio equipment approval by ART (Law 2010/013): technical file, EMC tests, samples",
           "servicesCles": [
             "TS-02",
             "TS-03"
