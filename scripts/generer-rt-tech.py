@@ -379,3 +379,79 @@ with open("data/equipements.csv", "w", newline="", encoding="utf-8") as f:
         for i, (efr, een, t) in enumerate(r[6], 1):
             w.writerow([f"{r[0]}-{i:02d}", r[0], efr, een, t]); n += 1
 print("OK — 50 sous-fonctions,", n, "équipements types,", len(SERVICES), "services")
+
+# ---------- Matrice filières × sous-fonctions (lot validé le 21/10/2026) ----------
+# 29 filières AGROVITA (codes FV/FA/FH/FF du site agrovita.xp-nova.com/filieres).
+# Niveau : 3 = essentiel (presque tout projet de la filière), 2 = fréquent, 1 = occasionnel.
+FILIERES = [
+ ("FV01","Cultures de rente","Cash crops","DP1"),("FV02","Cultures vivrières","Food crops","DP1"),("FV03","Filière maraîchère","Market gardening","DP1"),
+ ("FV04","Fruits tropicaux","Tropical fruits","DP1"),("FV05","Huiles et oléagineux","Oils and oilseeds","DP1"),("FV06","Plantes médicinales","Medicinal plants","DP1"),
+ ("FV07","Plantes aromatiques et épices","Aromatic plants and spices","DP1"),("FV08","Semencière","Seed production","DP1"),("FV09","Floricole et horticulture ornementale","Floriculture and ornamental horticulture","DP1"),
+ ("FA01","Volailles","Poultry","DP2"),("FA02","Porcins","Pigs","DP2"),("FA03","Caprins et ovins","Goats and sheep","DP2"),("FA04","Bovins (viande et lait)","Cattle (meat and dairy)","DP2"),
+ ("FA05","Apicole","Beekeeping","DP2"),("FA06","Cunicole","Rabbit farming","DP2"),("FA07","Équine et asine","Horses and donkeys","DP2"),("FA08","Cynégétique et élevage de gibier","Game farming","DP2"),("FA09","Hélicicole","Snail farming","DP2"),
+ ("FH01","Aquaculture","Aquaculture","DP6"),("FH02","Halieutique marine","Marine fisheries","DP6"),("FH03","Halieutique continentale","Inland fisheries","DP6"),
+ ("FF01","Bois d'œuvre et de service","Timber and service wood","DP7"),("FF02","Miel forestier sauvage","Wild forest honey","DP7"),("FF03","Fruits, graines et oléagineux sauvages","Wild fruits, seeds and oilseeds","DP7"),
+ ("FF04","Champignons et insectes comestibles","Edible mushrooms and insects","DP7"),("FF05","Boissons fermentées de sève","Fermented sap beverages","DP7"),("FF06","PFNL non alimentaires","Non-food NTFPs","DP7"),
+ ("FF07","Bambou","Bamboo","DP7"),("FF08","Reboisement, foresterie communautaire et carbone","Reforestation, community forestry and carbon","DP7"),
+]
+assert len(FILIERES) == 29
+
+# Transversaux appliqués à toutes les filières (niveau 2 sauf précision)
+TRANSVERSAL = {"T6.1":2,"T6.2":2,"T6.3":2,"T8.1":1,"T8.3":1,"T8.5":2,"T8.7":1,"T7.3":2,"T7.5":1}
+
+M = {
+ "FV01": {"T1.1":2,"T1.3":3,"T1.4":3,"T1.6":2,"T2.4":1,"T4.4":3,"T4.8":2,"T5.1":3,"T5.2":3,"T7.1":1,"T7.4":3,"T7.6":3,"T8.2":2,"T8.6":3,"T8.4":1},
+ "FV02": {"T1.1":3,"T1.2":3,"T1.3":2,"T1.4":3,"T1.6":3,"T2.2":2,"T2.5":2,"T4.1":2,"T4.2":3,"T4.3":2,"T4.4":3,"T4.6":1,"T4.8":2,"T5.1":3,"T5.2":3,"T7.1":2,"T7.6":2,"T8.2":1},
+ "FV03": {"T1.1":2,"T1.2":2,"T1.3":3,"T2.1":3,"T2.2":3,"T2.3":2,"T2.4":3,"T2.5":2,"T3.1":3,"T3.2":2,"T4.1":2,"T4.8":2,"T5.3":3,"T5.4":2,"T5.5":2,"T7.4":3,"T8.1":2,"T8.6":1},
+ "FV04": {"T1.1":2,"T1.3":2,"T2.2":2,"T2.4":2,"T3.1":1,"T4.1":2,"T4.3":2,"T4.4":3,"T4.5":2,"T4.8":3,"T5.3":3,"T5.4":2,"T5.5":2,"T7.4":3,"T7.6":2,"T8.6":2},
+ "FV05": {"T1.1":2,"T1.4":3,"T4.1":2,"T4.2":2,"T4.3":3,"T4.4":2,"T4.5":2,"T4.8":3,"T4.9":2,"T5.1":2,"T6.5":2,"T6.6":2,"T7.1":2,"T8.4":1},
+ "FV06": {"T1.3":1,"T2.4":2,"T3.1":2,"T3.2":2,"T4.1":2,"T4.2":2,"T4.3":2,"T4.4":3,"T4.8":3,"T4.9":2,"T5.1":2,"T8.6":2},
+ "FV07": {"T1.3":1,"T2.4":2,"T3.1":1,"T4.1":2,"T4.2":2,"T4.3":2,"T4.4":3,"T4.8":3,"T4.9":2,"T5.1":2,"T7.4":2,"T8.6":2},
+ "FV08": {"T1.2":3,"T1.3":2,"T1.4":3,"T2.4":2,"T3.1":2,"T3.2":2,"T4.1":3,"T4.4":3,"T4.8":3,"T5.1":3,"T5.2":3,"T5.3":2,"T8.6":2},
+ "FV09": {"T2.2":2,"T2.4":3,"T3.1":3,"T3.2":3,"T4.8":2,"T5.3":2,"T5.4":2,"T8.1":2},
+ "FA01": {"T1.5":2,"T2.6":3,"T3.3":3,"T3.4":3,"T4.6":3,"T4.7":2,"T4.8":2,"T4.9":2,"T5.3":2,"T6.3":3,"T6.4":2,"T8.1":2,"T8.4":2},
+ "FA02": {"T1.5":2,"T2.6":3,"T3.3":3,"T4.6":3,"T4.7":2,"T4.8":1,"T5.3":2,"T6.4":3,"T6.6":2,"T8.1":1},
+ "FA03": {"T1.5":3,"T2.1":2,"T2.3":2,"T2.6":2,"T3.3":2,"T4.6":2,"T4.7":2,"T5.3":1,"T6.4":1},
+ "FA04": {"T1.5":3,"T2.1":2,"T2.3":2,"T2.6":3,"T3.3":2,"T4.5":2,"T4.6":2,"T4.7":2,"T4.9":2,"T5.3":2,"T5.4":3,"T6.3":2,"T6.4":2,"T8.1":1},
+ "FA05": {"T3.3":3,"T4.3":2,"T4.8":3,"T4.9":1,"T5.1":2,"T7.4":1,"T8.6":2},
+ "FA06": {"T2.6":2,"T3.3":3,"T4.6":2,"T4.7":2,"T5.3":2},
+ "FA07": {"T1.5":2,"T2.6":2,"T3.3":2,"T7.5":1},
+ "FA08": {"T2.6":2,"T3.3":2,"T4.6":1,"T4.7":2,"T5.3":2,"T8.6":1},
+ "FA09": {"T2.6":2,"T3.2":2,"T3.3":2,"T4.5":1,"T4.8":2,"T5.3":2},
+ "FH01": {"T2.1":3,"T2.2":3,"T2.3":2,"T2.6":3,"T3.5":3,"T4.4":2,"T4.6":3,"T4.8":2,"T5.3":2,"T5.5":3,"T6.3":3,"T8.1":2,"T8.4":2},
+ "FH02": {"T4.4":3,"T4.8":2,"T4.9":2,"T5.3":3,"T5.4":3,"T5.5":3,"T7.3":2,"T7.6":2,"T8.6":2},
+ "FH03": {"T4.4":3,"T4.8":2,"T5.3":2,"T5.4":2,"T5.5":3,"T7.6":2},
+ "FF01": {"T1.1":2,"T1.6":2,"T4.2":3,"T4.4":3,"T7.1":2,"T7.2":3,"T7.5":3,"T8.2":2,"T8.6":3},
+ "FF02": {"T4.3":2,"T4.8":3,"T4.9":1,"T5.1":2,"T8.6":2},
+ "FF03": {"T4.1":2,"T4.3":3,"T4.4":3,"T4.8":2,"T5.1":2,"T7.6":2,"T8.6":2},
+ "FF04": {"T3.2":2,"T4.1":2,"T4.4":3,"T4.8":3,"T4.9":2,"T5.3":2},
+ "FF05": {"T4.5":2,"T4.8":3,"T4.9":2,"T5.3":2},
+ "FF06": {"T4.2":2,"T4.3":2,"T4.4":2,"T4.8":2,"T7.6":2,"T8.6":1},
+ "FF07": {"T1.1":1,"T4.2":2,"T4.4":2,"T6.4":1,"T7.2":2,"T7.5":2},
+ "FF08": {"T1.1":2,"T1.2":2,"T2.2":1,"T3.2":3,"T8.1":2,"T8.2":3,"T8.6":3},
+}
+CODES = {r[0] for r in SF}
+for f, d in M.items():
+    for c in d: assert c in CODES, (f, c)
+
+def build_matrice():
+    out = []
+    for code, nfr, nen, dp in FILIERES:
+        base = dict(TRANSVERSAL); base.update(M[code])
+        out.append({"code": code, "nom": nfr, "nomEn": nen, "maillon": dp, "slug": code.lower(),
+                    "sousFonctions": [{"code": c, "niveau": n} for c, n in sorted(base.items())]})
+    return out
+
+for lang in ("fr", "en"):
+    p = f"data/rt-tech.{lang}.json"
+    d = json.load(open(p, encoding="utf-8"))
+    d["filieres"] = build_matrice()
+    d["compteurs"]["filieres"] = 29
+    json.dump(d, open(p, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
+with open("data/matrice-filieres.csv", "w", newline="", encoding="utf-8") as f:
+    w = csv.writer(f, delimiter=";")
+    w.writerow(["filiere"] + [r[0] for r in SF])
+    for fl in build_matrice():
+        niv = {x["code"]: x["niveau"] for x in fl["sousFonctions"]}
+        w.writerow([fl["code"]] + [niv.get(r[0], "") for r in SF])
+print("Matrice : 29 filières,", sum(len(f["sousFonctions"]) for f in build_matrice()), "couples")
