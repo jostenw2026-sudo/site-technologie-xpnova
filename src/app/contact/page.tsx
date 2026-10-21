@@ -1,8 +1,13 @@
 'use client';
 
-import { useState } from 'react';
+import TitreSection from '@/components/TitreSection';
+import { SchemaDemande } from '@/components/Schemas';
+import IntroPage from '@/components/IntroPage';
+import { useEffect, useState } from 'react';
 import { envoyerDemande, type EtatEnvoi } from '@/lib/contact-client';
 import { EtatEnvoiPanneau } from '@/components/EtatEnvoi';
+import { IconeWhatsApp } from '@/components/BoutonWhatsApp';
+import { lienWhatsapp, MESSAGES, NUMERO_WHATSAPP_AFFICHE } from '@/lib/whatsapp-public';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -13,7 +18,18 @@ export default function ContactPage() {
     description: '',
     email: '',
     telephone: '',
+    prestation: '',
+    whatsapp: '',
+    canal: '',
   });
+
+  // Lien « Demander une expertise » du référentiel : /contact?prestation=T2.2·TS-04
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get('prestation');
+    const fiche = params.get('fiche') === 'complete';
+    if (code) setFormData((d) => ({ ...d, prestation: code, ...(fiche ? { description: 'Demande de fiche technique complète (après ouverture du dossier) — ' + code + '.\n' } : {}) }));
+  }, []);
 
   const [etat, setEtat] = useState<EtatEnvoi>({ phase: 'repos' });
 
@@ -31,11 +47,30 @@ export default function ContactPage() {
           <p className="text-lg text-[#5A6072] max-w-3xl">
             Notre équipe d'ingénieurs est à votre disposition pour vous accompagner dans vos projets techniques.
           </p>
+          <IntroPage cle="contact" lang="fr">
+            <SchemaDemande lang="fr" />
+          </IntroPage>
         </div>
       </section>
 
       <section className="py-16 px-6 bg-[#F4F5F8]">
         <div className="max-w-3xl mx-auto">
+          <TitreSection titre="Décrire votre besoin" texte="Les champs utiles au premier retour sous 48 h ; le code de prestation apparaît si vous venez d'une fiche du référentiel." />
+        </div>
+        <div className="max-w-3xl mx-auto">
+          <div className="mb-8 p-5 bg-white rounded border border-[#E2E5EC] flex flex-col sm:flex-row sm:items-center gap-4">
+            <p className="text-sm text-[#5A6072] flex-1">Vous préférez WhatsApp ? Écrivez-nous directement, un expert vous répond sous 48 h ouvrées.</p>
+            <a
+              href={lienWhatsapp(formData.prestation ? MESSAGES['fr'].prestation(formData.prestation) : MESSAGES['fr'].defaut)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-4 py-3 bg-[#25D366] text-white rounded font-semibold hover:bg-[#1ebe5b] transition-colors"
+            >
+              <IconeWhatsApp />
+              Écrire directement sur WhatsApp
+            </a>
+          </div>
+
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <label className="block text-sm font-semibold text-[#0D1F5C] mb-2">
@@ -50,6 +85,7 @@ export default function ContactPage() {
                 <option value="">Sélectionnez...</option>
                 <option value="mecanisation">Mécanisation</option>
                 <option value="irrigation">Irrigation et eau</option>
+                <option value="serres">Environnements de production contrôlés</option>
                 <option value="transformation">Transformation et usines</option>
                 <option value="stockage">Stockage, conservation et froid</option>
                 <option value="energie">Énergie et utilités</option>
@@ -58,6 +94,19 @@ export default function ContactPage() {
                 <option value="autre">Autre</option>
               </select>
             </div>
+
+            {formData.prestation && (
+              <div>
+                <label className="block text-sm font-semibold text-[#0D1F5C] mb-2">Code de prestation (référentiel RT-TECH)</label>
+                <input
+                  type="text"
+                  value={formData.prestation}
+                  onChange={(e) => setFormData({ ...formData, prestation: e.target.value })}
+                  className="w-full p-3 border border-[#D4A017] rounded bg-[#FFF8E6] focus:outline-none focus:border-[#D4A017]"
+                />
+                <p className="mt-1 text-xs text-[#5A6072]">Pré-rempli depuis la fiche du référentiel ; modifiable.</p>
+              </div>
+            )}
 
             <div>
               <label className="block text-sm font-semibold text-[#0D1F5C] mb-2">
@@ -142,6 +191,28 @@ export default function ContactPage() {
               />
             </div>
 
+            <div>
+              <label className="block text-sm font-semibold text-[#0D1F5C] mb-2">Numéro WhatsApp</label>
+              <input
+                type="tel"
+                value={formData.whatsapp}
+                onChange={(e) => setFormData({ ...formData, whatsapp: e.target.value })}
+                className="w-full p-3 border border-[#E2E5EC] rounded focus:outline-none focus:border-[#D4A017]"
+                placeholder="+237 ..."
+              />
+              <p className="mt-1 text-xs text-[#5A6072]">Laissez vide si c'est le même que le téléphone.</p>
+            </div>
+
+            <label className="flex items-center gap-3 text-sm text-[#0D1F5C]">
+              <input
+                type="checkbox"
+                checked={formData.canal === 'whatsapp'}
+                onChange={(e) => setFormData({ ...formData, canal: e.target.checked ? 'whatsapp' : '' })}
+                className="h-4 w-4 accent-[#D4A017]"
+              />
+              Je préfère être recontacté par WhatsApp
+            </label>
+
             <button
               type="submit"
               disabled={etat.phase === 'envoi'}
@@ -160,6 +231,12 @@ export default function ContactPage() {
             </p>
             <p className="text-[#5A6072] mb-2">
               <strong>Téléphone :</strong> +237 670 034 000
+            </p>
+            <p className="text-[#5A6072] mb-2">
+              <strong>WhatsApp :</strong>{' '}
+              <a href={lienWhatsapp(MESSAGES['fr'].defaut)} target="_blank" rel="noopener noreferrer" className="text-[#0D1F5C] underline">
+                {NUMERO_WHATSAPP_AFFICHE}
+              </a>
             </p>
             <p className="text-[#5A6072]">
               <strong>Adresse :</strong> 134, Rue 1813, Vallée Bastos — B.P. 5603, Nlongkak, Yaoundé, Cameroun

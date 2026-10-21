@@ -1,3 +1,7 @@
+import TitreSection from '@/components/TitreSection';
+import { SchemaCycle } from '@/components/Schemas';
+import IntroPage from '@/components/IntroPage';
+
 export default function CycleDeViePage() {
   const phases = [
     {
@@ -55,16 +59,22 @@ export default function CycleDeViePage() {
           <p className="text-lg text-[#5A6072] max-w-3xl">
             Nous analysons le cycle de vie complet des équipements pour garantir leur durabilité et leur performance dans votre contexte.
           </p>
+          <IntroPage cle="cycleDeVie" lang="fr">
+            <SchemaCycle lang="fr" />
+          </IntroPage>
         </div>
       </section>
 
       <section className="py-16 px-6 bg-[#F4F5F8]">
         <div className="max-w-6xl mx-auto">
+          <TitreSection titre="Les neuf étapes, de CV1 à CV9" texte="La grille appliquée à chaque variante avant tout choix d'équipement : ce que coûte et exige une machine sur toute sa vie, pas seulement à l'achat." />
+        </div>
+        <div className="max-w-6xl mx-auto">
           <div className="space-y-8">
             {phases.map((phase, index) => (
               <div key={phase.title} className="flex gap-6">
-                <div className="flex-shrink-0 w-12 h-12 bg-[#D4A017] text-[#0D1F5C] rounded-full flex items-center justify-center font-bold text-xl">
-                  {index + 1}
+                <div className="flex-shrink-0 w-12 h-12 bg-[#D4A017] text-[#0D1F5C] rounded-full flex items-center justify-center font-bold text-sm">
+                  CV{index + 1}
                 </div>
                 <div className="flex-1 p-6 bg-white rounded border border-[#E2E5EC]">
                   <h2 className="text-xl font-bold text-[#0D1F5C] mb-2">{phase.title}</h2>

@@ -1,3 +1,11 @@
+import TitreSection from '@/components/TitreSection';
+import { SchemaFlux } from '@/components/Schemas';
+import IntroPage from '@/components/IntroPage';
+import { getReferentiel } from '@/lib/referentiel';
+
+// Les 8 cartes suivent l'ordre T1..T8 du référentiel RT-TECH (src/content/rt-tech.fr.json).
+const REF = getReferentiel('fr').domaines;
+
 export default function DomainesPage() {
   const domaines = [
     {
@@ -41,17 +49,18 @@ export default function DomainesPage() {
       services: ['Analyse du besoin', 'Dimensionnement', 'Architecture technique'],
     },
     {
-      title: 'Serres agricoles',
+      title: 'Environnements de production contrôlés',
       image: '/images/illustrations/serres-agricoles.webp',
       enjeu:
         "Les serres protègent les cultures des aléas climatiques et permettent une maîtrise du microclimat. Mal conçues, elles génèrent surchauffes, maladies et rendements inférieurs aux attentes.",
       description:
-        'Serres multi-tunnels, structures chapelles, ventilation, ombrage, irrigation intégrée, gestion du climat.',
+        'Serres, tunnels et ombrières, bâtiments d\'élevage, couvoirs et aquaculture : maîtrise du climat, de l\'eau et de la biosécurité.',
       perimetre: [
         "Dimensionnement des structures et des surfaces selon les cultures et le climat local.",
         "Choix des matériaux de couverture (film polyéthylène, polycarbonate, verre) et des systèmes d'ancrage.",
         "Conception de la ventilation naturelle ou mécanique, du système d'ombrage et de brumisation.",
         "Intégration de l'irrigation localisée et du pilotage climatique (capteurs, régulation).",
+        "Conception des bâtiments d'élevage, couvoirs et bassins aquacoles : ventilation, abreuvement, effluents et biosécurité.",
       ],
       livrables: [
         'Note de dimensionnement et implantation des serres',
@@ -170,17 +179,26 @@ export default function DomainesPage() {
           <p className="text-lg text-[#5A6072] max-w-3xl">
             Des équipements de production aux systèmes de stockage, en passant par l'énergie et la connectivité, nous couvrons l'ensemble des besoins techniques des projets agro-systémiques.
           </p>
+          <IntroPage cle="domaines" lang="fr">
+            <SchemaFlux lang="fr" />
+          </IntroPage>
         </div>
       </section>
 
       <section className="py-16 px-6 bg-[#F4F5F8]">
+        <div className="max-w-6xl mx-auto">
+          <TitreSection titre="Les huit domaines" texte="Chaque carte dit le périmètre d'ingénierie, les livrables et les sous-fonctions du domaine ; cliquez une sous-fonction pour ouvrir sa fiche." />
+        </div>
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-          {domaines.map((domaine) => (
-            <div key={domaine.title} className="bg-white rounded border border-[#E2E5EC] overflow-hidden flex flex-col">
+          {domaines.map((domaine, index) => (
+            <div key={domaine.title} id={REF[index]?.slug} className="bg-white rounded border border-[#E2E5EC] overflow-hidden flex flex-col scroll-mt-32">
               {/* Illustration générée par IA, hébergée par le site : mention unique en bas de la liste (DG, 20/10/2026). */}
               <img src={domaine.image} alt={`Illustration — ${domaine.title}`} className="w-full h-48 object-cover" loading="lazy" width={1200} height={800} />
               <div className="p-6 flex flex-col flex-1">
-                <h2 className="text-xl font-bold text-[#0D1F5C] mb-3">{domaine.title}</h2>
+                <h2 className="text-xl font-bold text-[#0D1F5C] mb-3">
+                  <span className="text-[#D4A017] mr-2">{REF[index]?.code}</span>
+                  {domaine.title}
+                </h2>
                 <p className="text-[#5A6072] mb-4">{domaine.enjeu}</p>
                 <div className="mb-4">
                   <h3 className="text-sm font-semibold text-[#0D1F5C] mb-2">Périmètre d'ingénierie XP-NOVA</h3>
@@ -206,6 +224,20 @@ export default function DomainesPage() {
                     ))}
                   </ul>
                 </div>
+                {REF[index] && (
+                  <div className="mb-4">
+                    <h3 className="text-sm font-semibold text-[#0D1F5C] mb-2">Sous-fonctions du référentiel</h3>
+                    <ul className="flex flex-wrap gap-2">
+                      {REF[index].sousFonctions.map((sf) => (
+                        <li key={sf.code}>
+                          <a href={`/referentiel/${sf.slug}`} className="inline-block px-2 py-1 text-xs rounded bg-[#F4F5F8] text-[#0D1F5C] hover:bg-[#E9C25A] transition-colors">
+                            <span className="font-semibold">{sf.code}</span> {sf.nom}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
                 <a
                   href="/contact"
                   className="mt-auto inline-block px-4 py-2 bg-[#D4A017] text-[#0D1F5C] rounded text-sm font-semibold hover:bg-[#E9C25A] transition-colors self-start"

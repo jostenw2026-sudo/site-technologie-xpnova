@@ -1,3 +1,7 @@
+import TitreSection from '@/components/TitreSection';
+import { SchemaParcours } from '@/components/Schemas';
+import IntroPage from '@/components/IntroPage';
+
 export default function ServicesPage() {
   const services = [
     {
@@ -99,6 +103,17 @@ export default function ServicesPage() {
         "XP-NOVA assiste le client dans son rôle de réceptionnaire, en veillant à l'objectivité du procès-verbal face au fournisseur.",
       duree: '2 à 5 jours',
     },
+    {
+      title: "Assistance à l'intégration",
+      objectif:
+        "Faire fonctionner ensemble capteurs, automates, logiciels de gestion et plateformes de traçabilité, et vérifier que les données attendues arrivent bien là où elles sont utiles.",
+      description:
+        "Plan d'intégration, spécifications d'interfaces entre équipements et systèmes, recette fonctionnelle des flux de données.",
+      livrables: ["Plan d'intégration", "Spécifications d'interfaces", 'Procès-verbal de recette fonctionnelle'],
+      role:
+        "XP-NOVA cadre et recette l'intégration ; le paramétrage et le développement restent confiés aux intégrateurs retenus.",
+      duree: 'Selon la complexité',
+    },
   ];
 
   return (
@@ -109,10 +124,16 @@ export default function ServicesPage() {
           <p className="text-lg text-[#5A6072] max-w-3xl">
             Nous accompagnons vos projets de l'analyse du besoin jusqu'à la réception des équipements, avec une méthode structurée, des livrables clairs et un rôle de conseil impartial.
           </p>
+          <IntroPage cle="services" lang="fr">
+            <SchemaParcours lang="fr" />
+          </IntroPage>
         </div>
       </section>
 
       <section className="py-16 px-6 bg-[#F4F5F8]">
+        <div className="max-w-6xl mx-auto">
+          <TitreSection titre="Les dix services, de TS-01 à TS-10" texte="Chaque carte donne l'objectif, les livrables, le rôle de XP-NOVA et une durée indicative ; les services se commandent séparément ou en chaîne." />
+        </div>
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service) => (
             <div key={service.title} className="p-6 bg-white rounded border border-[#E2E5EC]">

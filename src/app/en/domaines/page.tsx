@@ -1,3 +1,11 @@
+import TitreSection from '@/components/TitreSection';
+import { SchemaFlux } from '@/components/Schemas';
+import IntroPage from '@/components/IntroPage';
+import { getReferentiel } from '@/lib/referentiel';
+
+// The 8 cards follow the T1..T8 order of the RT-TECH reference (src/content/rt-tech.en.json).
+const REF = getReferentiel('en').domaines;
+
 export default function DomainesPage() {
   const domaines = [
     {
@@ -41,7 +49,7 @@ export default function DomainesPage() {
       services: ['Needs Analysis', 'Sizing', 'Technical Architecture'],
     },
     {
-      title: 'Agricultural Greenhouses',
+      title: 'Controlled production environments',
       image: '/images/illustrations/serres-agricoles.webp',
       enjeu:
         "Greenhouses protect crops from climatic hazards and enable microclimate control. Poorly designed, they generate overheating, diseases and yields below expectations.",
@@ -52,6 +60,7 @@ export default function DomainesPage() {
         "Choice of covering materials (polyethylene film, polycarbonate, glass) and anchoring systems.",
         "Design of natural or mechanical ventilation, shading and misting systems.",
         "Integration of localized irrigation and climate control (sensors, regulation).",
+        "Design of livestock buildings, hatcheries and aquaculture ponds: ventilation, watering, effluents and biosecurity.",
       ],
       livrables: [
         'Greenhouse sizing and layout report',
@@ -170,17 +179,26 @@ export default function DomainesPage() {
           <p className="text-lg text-[#5A6072] max-w-3xl">
             From production equipment to storage systems, through energy and connectivity, we cover all technical needs of agro-systemic projects.
           </p>
+          <IntroPage cle="domaines" lang="en">
+            <SchemaFlux lang="en" />
+          </IntroPage>
         </div>
       </section>
 
       <section className="py-16 px-6 bg-[#F4F5F8]">
+        <div className="max-w-6xl mx-auto">
+          <TitreSection titre="The eight domains" texte="Each card states the engineering scope, the deliverables and the sub-functions of the domain; click a sub-function to open its sheet." />
+        </div>
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-          {domaines.map((domaine) => (
-            <div key={domaine.title} className="bg-white rounded border border-[#E2E5EC] overflow-hidden flex flex-col">
+          {domaines.map((domaine, index) => (
+            <div key={domaine.title} id={REF[index]?.slug} className="bg-white rounded border border-[#E2E5EC] overflow-hidden flex flex-col scroll-mt-32">
               {/* Illustration générée par IA, hébergée par le site : mention unique en bas de la liste (DG, 20/10/2026). */}
               <img src={domaine.image} alt={`Illustration — ${domaine.title}`} className="w-full h-48 object-cover" loading="lazy" width={1200} height={800} />
               <div className="p-6 flex flex-col flex-1">
-                <h2 className="text-xl font-bold text-[#0D1F5C] mb-3">{domaine.title}</h2>
+                <h2 className="text-xl font-bold text-[#0D1F5C] mb-3">
+                  <span className="text-[#D4A017] mr-2">{REF[index]?.code}</span>
+                  {domaine.title}
+                </h2>
                 <p className="text-[#5A6072] mb-4">{domaine.enjeu}</p>
                 <div className="mb-4">
                   <h3 className="text-sm font-semibold text-[#0D1F5C] mb-2">XP-NOVA Engineering Scope</h3>
@@ -206,6 +224,20 @@ export default function DomainesPage() {
                     ))}
                   </ul>
                 </div>
+                {REF[index] && (
+                  <div className="mb-4">
+                    <h3 className="text-sm font-semibold text-[#0D1F5C] mb-2">Reference sub-functions</h3>
+                    <ul className="flex flex-wrap gap-2">
+                      {REF[index].sousFonctions.map((sf) => (
+                        <li key={sf.code}>
+                          <a href={`/en/referentiel/${sf.slug}`} className="inline-block px-2 py-1 text-xs rounded bg-[#F4F5F8] text-[#0D1F5C] hover:bg-[#E9C25A] transition-colors">
+                            <span className="font-semibold">{sf.code}</span> {sf.nom}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
                 <a
                   href="/en/contact"
                   className="mt-auto inline-block px-4 py-2 bg-[#D4A017] text-[#0D1F5C] rounded text-sm font-semibold hover:bg-[#E9C25A] transition-colors self-start"

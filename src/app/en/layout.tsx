@@ -1,3 +1,4 @@
+import BoutonWhatsApp from '@/components/BoutonWhatsApp';
 import type { Metadata } from "next";
 import { UtilityBar } from "@/components/shared/UtilityBar";
 import { DivisionBadge } from "@/components/shared/DivisionBadge";
@@ -44,8 +45,10 @@ const navItems = [
   { label: 'Home', href: '/en' },
   { label: 'Domains', href: '/en/domaines' },
   { label: 'Services', href: '/en/services' },
+  { label: 'Reference', href: '/en/referentiel' },
   { label: 'Life Cycle', href: '/en/cycle-de-vie' },
   { label: 'References', href: '/en/references' },
+  { label: 'FAQ', href: '/en/faq' },
   { label: 'About', href: '/en/a-propos' },
   { label: 'Contact', href: '/en/contact' },
 ];
@@ -74,6 +77,7 @@ export default function EnglishLayout({
         </div>
         <DivisionBadge divisionName="Technology" />
         <main className="flex-1">{children}</main>
+        <BoutonWhatsApp lang="en" />
         <Footer lang="en" />
     </>
   );

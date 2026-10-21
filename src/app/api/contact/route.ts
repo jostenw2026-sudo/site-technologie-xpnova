@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { odooConfigured, odooCreate } from "@/lib/odoo";
+import { alerterEquipe } from "@/lib/whatsapp";
 
 // Réception du formulaire de contact → CRM Odoo (crm.lead), source-taggé.
 // Avant le 18/10/2026, le formulaire n'envoyait rien (console.log côté navigateur) :
@@ -56,6 +57,24 @@ export async function POST(req: Request) {
   } else {
     console.warn("[contact Technologie] Odoo non configuré — demande journalisée :", { email, ...champs });
   }
+
+  // Alerte WhatsApp à l'équipe (Green API) — non bloquante, inactive sans variables.
+  await alerterEquipe(
+    [
+      `🔔 Nouvelle demande ${SOURCE}`,
+      [champs.type, champs.organisation ?? champs.localisation].filter(Boolean).join(" · "),
+      champs.filiere && `Filière : ${champs.filiere}`,
+      `📧 ${email}`,
+      champs.telephone && `📞 ${champs.telephone}`,
+      (champs.whatsapp || champs.canal === "whatsapp") &&
+        `💬 WhatsApp : ${champs.whatsapp ?? champs.telephone}${champs.canal === "whatsapp" ? " (canal préféré)" : ""}`,
+      champs.prestation && `🔧 Prestation : ${champs.prestation}`,
+      enregistrement === "crm" ? "CRM : piste créée" : "CRM : non enregistrée (voir le journal du site)",
+    ]
+      .filter(Boolean)
+      .join("\n"),
+    "contact Technologie",
+  );
 
   return NextResponse.json({ ok: true, enregistrement });
 }

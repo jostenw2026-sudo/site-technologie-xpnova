@@ -1,3 +1,6 @@
+import TitreSection from '@/components/TitreSection';
+import IntroPage from '@/components/IntroPage';
+
 export default function AProposPage() {
   return (
     <div className="flex flex-col">
@@ -7,10 +10,14 @@ export default function AProposPage() {
           <p className="text-lg text-[#5A6072] max-w-3xl">
             La division Technologie de XP-NOVA conçoit et dimensionne les équipements techniques et numériques nécessaires aux projets agro-systémiques.
           </p>
+          <IntroPage cle="aPropos" lang="fr" />
         </div>
       </section>
 
       <section className="py-16 px-6 bg-[#F4F5F8]">
+        <div className="max-w-6xl mx-auto">
+          <TitreSection titre="La division en cinq points" texte="Positionnement, approche, compétences, partenaires et limites : de quoi juger si nous sommes le bon interlocuteur pour votre besoin." />
+        </div>
         <div className="max-w-6xl mx-auto space-y-8">
           <div className="p-6 bg-white rounded border border-[#E2E5EC]">
             <h2 className="text-xl font-bold text-[#0D1F5C] mb-3">Notre positionnement</h2>
