@@ -9,7 +9,12 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 ENV NEXT_TELEMETRY_DISABLED=1
-RUN npm run build
+# Identifiant GA4 du flux de ce site, inliné par `next build` (src/lib/analytics.ts) :
+# à déclarer dans Coolify comme « Build Variable ». Absent ou vide = aucune mesure ;
+# une variable vide est retirée de l'environnement pour ne pas figer une chaîne vide.
+ARG NEXT_PUBLIC_GA_MEASUREMENT_ID
+RUN if [ -z "$NEXT_PUBLIC_GA_MEASUREMENT_ID" ]; then unset NEXT_PUBLIC_GA_MEASUREMENT_ID; fi; \
+    npm run build
 
 FROM node:20-alpine AS runner
 WORKDIR /app

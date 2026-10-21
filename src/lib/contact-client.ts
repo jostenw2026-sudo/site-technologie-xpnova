@@ -1,5 +1,7 @@
 // Envoi du formulaire de contact depuis le navigateur (voir src/app/api/contact/route.ts).
 
+import { generateLead } from "@/lib/analytics";
+
 export type EtatEnvoi =
   | { phase: "repos" }
   | { phase: "envoi" }
@@ -30,7 +32,11 @@ export async function envoyerDemande(donnees: Record<string, string>, lang: "fr"
     if (res.status === 400 && json.error) {
       return { phase: "erreur", message: lang === "en" ? "Please check your email address." : "Vérifiez votre adresse e-mail." };
     }
-    if (res.ok && json.ok && json.enregistrement === "crm") return { phase: "crm" };
+    if (res.ok && json.ok && json.enregistrement === "crm") {
+      // Mesure : une demande entrée dans le CRM (aucune donnée du formulaire transmise).
+      generateLead("contact", "crm");
+      return { phase: "crm" };
+    }
   } catch {
     // réseau indisponible : repli sur l'e-mail ci-dessous
   }
