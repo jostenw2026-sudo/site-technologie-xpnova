@@ -1,3 +1,6 @@
+import TitreSection from '@/components/TitreSection';
+import { SchemaFlux } from '@/components/Schemas';
+import IntroPage from '@/components/IntroPage';
 import { getReferentiel } from '@/lib/referentiel';
 
 // Les 8 cartes suivent l'ordre T1..T8 du référentiel RT-TECH (src/content/rt-tech.fr.json).
@@ -176,10 +179,16 @@ export default function DomainesPage() {
           <p className="text-lg text-[#5A6072] max-w-3xl">
             Des équipements de production aux systèmes de stockage, en passant par l'énergie et la connectivité, nous couvrons l'ensemble des besoins techniques des projets agro-systémiques.
           </p>
+          <IntroPage cle="domaines" lang="fr">
+            <SchemaFlux lang="fr" />
+          </IntroPage>
         </div>
       </section>
 
       <section className="py-16 px-6 bg-[#F4F5F8]">
+        <div className="max-w-6xl mx-auto">
+          <TitreSection titre="Les huit domaines" texte="Chaque carte dit le périmètre d'ingénierie, les livrables et les sous-fonctions du domaine ; cliquez une sous-fonction pour ouvrir sa fiche." />
+        </div>
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
           {domaines.map((domaine, index) => (
             <div key={domaine.title} id={REF[index]?.slug} className="bg-white rounded border border-[#E2E5EC] overflow-hidden flex flex-col scroll-mt-32">

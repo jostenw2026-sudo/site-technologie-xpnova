@@ -1,3 +1,6 @@
+import { SchemaRole } from '@/components/Schemas';
+import IntroPage from '@/components/IntroPage';
+
 export default function Home() {
   return (
     <div className="flex flex-col">
@@ -33,6 +36,15 @@ export default function Home() {
           <p className="text-[#0D1F5C]">
             <strong>Notre rôle :</strong> XP-NOVA assure l'ingénierie, les études et les spécifications techniques. La fourniture d'équipements, les travaux d'installation et l'exploitation sont confiés à des prestataires spécialisés sélectionnés selon vos besoins.
           </p>
+        </div>
+      </section>
+
+      {/* Chapeau pédagogique + schéma du rôle (DG, 21/10/2026) */}
+      <section className="py-10 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <IntroPage cle="accueil" lang="fr">
+            <SchemaRole lang="fr" />
+          </IntroPage>
         </div>
       </section>
 

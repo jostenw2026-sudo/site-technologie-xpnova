@@ -1,3 +1,5 @@
+import { SchemaRole } from '@/components/Schemas';
+import IntroPage from '@/components/IntroPage';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -40,6 +42,15 @@ export default function HomeEN() {
           <p className="text-[#0D1F5C]">
             <strong>Our role:</strong> XP-NOVA provides engineering, studies and technical specifications. The supply of equipment, installation works and operation are entrusted to specialized service providers selected according to your needs.
           </p>
+        </div>
+      </section>
+
+      {/* Chapeau pédagogique + schéma du rôle (DG, 21/10/2026) */}
+      <section className="py-10 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <IntroPage cle="accueil" lang="en">
+            <SchemaRole lang="en" />
+          </IntroPage>
         </div>
       </section>
 

@@ -1,16 +1,18 @@
 'use client';
 
 import { useMemo, useState } from 'react';
-import type { Lang, Referentiel } from '@/lib/referentiel';
+import type { Lang, ReferentielPublic } from '@/lib/referentiel';
 import { LIBELLES } from '@/lib/referentiel';
 
 // Explorateur filtrable du référentiel RT-TECH (page /referentiel).
 // Les filtres se combinent (ET) ; les compteurs se recalculent côté navigateur.
+// Secret industriel (DG, 21/10/2026) : pas de vue « tous les domaines » — un domaine à la fois,
+// T1 par défaut ; les cartes n'énumèrent pas les équipements, la fiche seule les détaille.
 
-export default function ReferentielExplorateur({ data, lang }: { data: Referentiel; lang: Lang }) {
+export default function ReferentielExplorateur({ data, lang }: { data: ReferentielPublic; lang: Lang }) {
   const t = LIBELLES[lang];
   const base = lang === 'en' ? '/en' : '';
-  const [domaine, setDomaine] = useState('');
+  const [domaine, setDomaine] = useState(data.domaines[0]?.code ?? 'T1');
   const [type, setType] = useState('');
   const [maillon, setMaillon] = useState('');
   const [vue, setVue] = useState('');
@@ -36,7 +38,6 @@ export default function ReferentielExplorateur({ data, lang }: { data: Referenti
         <label className="text-xs font-semibold text-[#0D1F5C]">
           {t.filtres.domaine}
           <select className={`${select} w-full mt-1`} value={domaine} onChange={(e) => setDomaine(e.target.value)}>
-            <option value="">{t.filtres.tous}</option>
             {data.domaines.map((d) => (
               <option key={d.code} value={d.code}>
                 {d.code} · {d.nom}
@@ -81,11 +82,10 @@ export default function ReferentielExplorateur({ data, lang }: { data: Referenti
 
       <div className="flex items-center justify-between mb-4">
         <p className="text-sm text-[#5A6072]">{t.resultats(lignes.length)}</p>
-        {(domaine || type || maillon || vue) && (
+        {(type || maillon || vue) && (
           <button
             type="button"
             onClick={() => {
-              setDomaine('');
               setType('');
               setMaillon('');
               setVue('');
@@ -112,7 +112,9 @@ export default function ReferentielExplorateur({ data, lang }: { data: Referenti
                 <span className="text-xs text-[#5A6072]">{d.nom}</span>
               </div>
               <h3 className="font-semibold text-[#0D1F5C] mb-2">{sf.nom}</h3>
-              <p className="text-sm text-[#5A6072] mb-3">{sf.equipements.map((e) => e.nom).join(' · ')}</p>
+              <p className="text-sm text-[#5A6072] mb-3">
+                {sf.equipements.length} {lang === 'en' ? 'typical equipment items' : 'équipements types'} · {sf.maillonsLibelles.join(', ')}
+              </p>
               <div className="flex flex-wrap gap-2 text-[11px]">
                 {sf.types.map((x) => (
                   <span key={x} className="px-2 py-0.5 rounded bg-[#F4F5F8] text-[#0D1F5C]">

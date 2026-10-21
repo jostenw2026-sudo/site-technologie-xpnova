@@ -1,3 +1,4 @@
+import BoutonWhatsApp from '@/components/BoutonWhatsApp';
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { UtilityBar } from "@/components/shared/UtilityBar";
@@ -55,6 +56,7 @@ const navItems = [
   { label: 'Référentiel', href: '/referentiel' },
   { label: 'Cycle de vie', href: '/cycle-de-vie' },
   { label: 'Références', href: '/references' },
+  { label: 'FAQ', href: '/faq' },
   { label: 'À propos', href: '/a-propos' },
   { label: 'Contact', href: '/contact' },
 ];
@@ -83,6 +85,9 @@ export default function RootLayout({
           <DivisionBadge divisionName="Technologie" />
         </ConditionalFrenchLayout>
         <ZonePrincipale>{children}</ZonePrincipale>
+        <ConditionalFrenchLayout>
+          <BoutonWhatsApp lang="fr" />
+        </ConditionalFrenchLayout>
         <ConditionalFrenchLayout>
           <Footer />
         </ConditionalFrenchLayout>

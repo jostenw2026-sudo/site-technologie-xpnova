@@ -1,3 +1,7 @@
+import TitreSection from '@/components/TitreSection';
+import { SchemaParcours } from '@/components/Schemas';
+import IntroPage from '@/components/IntroPage';
+
 export default function ServicesPageEN() {
   const services = [
     {
@@ -120,10 +124,16 @@ export default function ServicesPageEN() {
           <p className="text-lg text-[#5A6072] max-w-3xl">
             We support your projects from needs analysis to equipment reception, with a structured method, clear deliverables and an impartial advisory role.
           </p>
+          <IntroPage cle="services" lang="en">
+            <SchemaParcours lang="en" />
+          </IntroPage>
         </div>
       </section>
 
       <section className="py-16 px-6 bg-[#F4F5F8]">
+        <div className="max-w-6xl mx-auto">
+          <TitreSection titre="The ten services, TS-01 to TS-10" texte="Each card gives the objective, deliverables, XP-NOVA's role and an indicative duration; services are ordered separately or as a chain." />
+        </div>
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service) => (
             <div key={service.title} className="p-6 bg-white rounded border border-[#E2E5EC]">

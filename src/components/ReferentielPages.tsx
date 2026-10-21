@@ -2,12 +2,21 @@
 // Les pages src/app/referentiel/* et src/app/en/referentiel/* ne font que choisir la langue.
 
 import ReferentielExplorateur from '@/components/ReferentielExplorateur';
+import TitreSection from '@/components/TitreSection';
+import IntroPage from '@/components/IntroPage';
+import { SchemaCode } from '@/components/Schemas';
+import { lienWhatsapp, MESSAGES } from '@/lib/whatsapp-public';
+import { IconeWhatsApp } from '@/components/BoutonWhatsApp';
 import {
   codePrestation,
   getReferentiel,
   getSousFonction,
   IMAGE_DOMAINE,
   LIBELLES,
+  MENTION_RT_TECH,
+  MENTION_RT_TECH_EN,
+  referentielPublic,
+  versPublique,
   type Lang,
 } from '@/lib/referentiel';
 
@@ -29,10 +38,16 @@ export function PageReferentiel({ lang }: { lang: Lang }) {
               <strong>{t.doctrine} :</strong> {data.doctrine.perimetre}
             </p>
           </div>
+          <IntroPage cle="referentiel" lang={lang}>
+            <SchemaCode lang={lang} />
+          </IntroPage>
         </div>
       </section>
 
       <section className="py-12 px-6 bg-white border-t border-[#E2E5EC]">
+        <div className="max-w-6xl mx-auto">
+          <TitreSection titre={t.sections.domaines} texte={t.sections.domainesTexte} />
+        </div>
         <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
           {data.domaines.map((d) => (
             <a key={d.code} href={`${base}/domaines#${d.slug}`} className="p-4 border border-[#E2E5EC] rounded hover:border-[#D4A017] transition-colors">
@@ -46,7 +61,9 @@ export function PageReferentiel({ lang }: { lang: Lang }) {
 
       <section className="py-16 px-6 bg-[#F4F5F8]">
         <div className="max-w-6xl mx-auto">
-          <ReferentielExplorateur data={data} lang={lang} />
+          <TitreSection titre={t.sections.explorer} texte={t.sections.explorerTexte} />
+          <ReferentielExplorateur data={referentielPublic(lang)} lang={lang} />
+          <p className="mt-8 text-[11px] text-[#5A6072]">{lang === 'en' ? MENTION_RT_TECH_EN : MENTION_RT_TECH}</p>
         </div>
       </section>
     </div>
@@ -56,12 +73,12 @@ export function PageReferentiel({ lang }: { lang: Lang }) {
 export function PageSousFonction({ slug, lang }: { slug: string; lang: Lang }) {
   const res = getSousFonction(slug, lang);
   if (!res) return null;
-  const { domaine, sf } = res;
+  const { domaine, sf: prive } = res;
+  const sf = versPublique(prive);
   const data = getReferentiel(lang);
   const t = LIBELLES[lang];
   const base = lang === 'en' ? '/en' : '';
   const typeLabel = (x: string) => (x === 'P' ? t.fiche.typeP : x === 'N' ? t.fiche.typeN : t.fiche.typeH);
-  const enCours = /à vérifier|à confirmer|to be verified|to be confirmed|to be checked/i.test(sf.normes);
   const services = sf.servicesCles.map((c) => data.services.find((s) => s.code === c)).filter(Boolean);
 
   return (
@@ -85,6 +102,7 @@ export function PageSousFonction({ slug, lang }: { slug: string; lang: Lang }) {
             ))}
             <span className="px-2 py-1 rounded bg-[#F4F5F8] text-[#5A6072]">{sf.vueLibelle}</span>
           </div>
+          <IntroPage cle="fiche" lang={lang} />
         </div>
       </section>
 
@@ -111,16 +129,42 @@ export function PageSousFonction({ slug, lang }: { slug: string; lang: Lang }) {
             </div>
             <div className="p-6 bg-white rounded border border-[#E2E5EC]">
               <h2 className="text-lg font-bold text-[#0D1F5C] mb-2">{t.fiche.risques}</h2>
-              <p className="text-sm text-[#5A6072]">{sf.risques}</p>
+              <p className="text-sm text-[#5A6072]">{sf.risqueEmblematique}</p>
+              {sf.nbRisques > 1 && <p className="mt-2 text-xs text-[#5A6072] italic">{t.fiche.autresRisques(sf.nbRisques)}</p>}
             </div>
             <div className="p-6 bg-white rounded border border-[#E2E5EC]">
               <h2 className="text-lg font-bold text-[#0D1F5C] mb-2">{t.fiche.normes}</h2>
-              <p className="text-sm text-[#5A6072]">{sf.normes}</p>
-              {enCours && <p className="mt-2 text-xs text-[#5A6072] italic">{t.fiche.enCours}.</p>}
+              {sf.normesPubliques.length > 0 ? (
+                <ul className="flex flex-wrap gap-2">
+                  {sf.normesPubliques.map((n) => (
+                    <li key={n} className="px-2 py-1 text-xs rounded bg-[#F4F5F8] text-[#0D1F5C]">
+                      {n}
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="text-sm text-[#5A6072]">{lang === 'en' ? 'Good practice.' : 'Règles de l’art.'}</p>
+              )}
+              {sf.cadreNational && <p className="mt-2 text-xs text-[#5A6072] italic">{t.fiche.enCours}.</p>}
             </div>
+            <div className="p-6 bg-[#0D1F5C] text-white rounded">
+              <h2 className="text-lg font-bold mb-2">{t.fiche.complete}</h2>
+              <p className="text-sm text-[#E4E8F3] mb-4">{t.fiche.completeTexte}</p>
+              <a
+                href={`${base}/contact?prestation=${encodeURIComponent(sf.code)}&fiche=complete`}
+                className="inline-block px-4 py-2 bg-[#D4A017] text-[#0D1F5C] rounded text-sm font-semibold hover:bg-[#E9C25A] transition-colors"
+              >
+                {t.fiche.completeCta}
+              </a>
+            </div>
+            <p className="text-[11px] text-[#5A6072]">{lang === 'en' ? MENTION_RT_TECH_EN : MENTION_RT_TECH}</p>
           </div>
 
           <aside className="space-y-6">
+            <div>
+              <h2 className="text-lg font-bold text-[#0D1F5C] mb-1">{t.sections.mobiliser}</h2>
+              <p className="text-sm text-[#5A6072]">{t.sections.mobiliserTexte}</p>
+            </div>
             <img src={IMAGE_DOMAINE[domaine.code]} alt="" className="w-full h-40 object-cover rounded border border-[#E2E5EC]" loading="lazy" width={1200} height={800} />
             <div className="p-6 bg-white rounded border border-[#E2E5EC]">
               <h2 className="text-sm font-bold text-[#0D1F5C] mb-2">{t.fiche.maillons}</h2>
@@ -150,6 +194,15 @@ export function PageSousFonction({ slug, lang }: { slug: string; lang: Lang }) {
               className="block text-center px-4 py-3 bg-[#D4A017] text-[#0D1F5C] rounded font-semibold hover:bg-[#E9C25A] transition-colors"
             >
               {t.fiche.demander}
+            </a>
+            <a
+              href={lienWhatsapp(MESSAGES[lang].prestation(`${sf.code} ${sf.nom}`))}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 px-4 py-3 bg-[#25D366] text-white rounded font-semibold hover:bg-[#1ebe5b] transition-colors"
+            >
+              <IconeWhatsApp />
+              {MESSAGES[lang].bouton}
             </a>
           </aside>
         </div>
