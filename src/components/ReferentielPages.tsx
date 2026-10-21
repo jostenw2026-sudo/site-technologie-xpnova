@@ -9,7 +9,9 @@ import { lienWhatsapp, MESSAGES } from '@/lib/whatsapp-public';
 import { IconeWhatsApp } from '@/components/BoutonWhatsApp';
 import {
   codePrestation,
+  filieresDeSousFonction,
   getReferentiel,
+  nomFiliere,
   getSousFonction,
   IMAGE_DOMAINE,
   LIBELLES,
@@ -47,6 +49,11 @@ export function PageReferentiel({ lang }: { lang: Lang }) {
       <section className="py-12 px-6 bg-white border-t border-[#E2E5EC]">
         <div className="max-w-6xl mx-auto">
           <TitreSection titre={t.sections.domaines} texte={t.sections.domainesTexte} />
+        </div>
+        <div className="max-w-6xl mx-auto mb-6">
+          <a href={`${base}/filieres`} className="inline-block px-4 py-2 border border-[#0D1F5C] rounded text-sm font-semibold text-[#0D1F5C] hover:bg-[#F4F5F8]">
+            {LIBELLES[lang].filieres.titre} · 29 →
+          </a>
         </div>
         <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
           {data.domaines.map((d) => (
@@ -170,6 +177,24 @@ export function PageSousFonction({ slug, lang }: { slug: string; lang: Lang }) {
               <h2 className="text-sm font-bold text-[#0D1F5C] mb-2">{t.fiche.maillons}</h2>
               <p className="text-sm text-[#5A6072]">{sf.maillonsLibelles.join(' · ')}</p>
             </div>
+            {filieresDeSousFonction(sf.code, lang).length > 0 && (
+              <div className="p-6 bg-white rounded border border-[#E2E5EC]">
+                <h2 className="text-sm font-bold text-[#0D1F5C] mb-2">{LIBELLES[lang].filieres.filieresDeFiche}</h2>
+                <ul className="flex flex-wrap gap-2">
+                  {filieresDeSousFonction(sf.code, lang).map(({ filiere, niveau }) => (
+                    <li key={filiere.code}>
+                      <a
+                        href={`${base}/filieres/${filiere.slug}`}
+                        title={LIBELLES[lang].filieres.niveau[niveau]}
+                        className={`inline-block px-2 py-1 text-xs rounded ${niveau === 3 ? 'bg-[#D4A017] text-[#0D1F5C]' : niveau === 2 ? 'bg-[#0D1F5C] text-white' : 'bg-[#F4F5F8] text-[#5A6072]'}`}
+                      >
+                        {filiere.code} {nomFiliere(filiere, lang)}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
             <div className="p-6 bg-white rounded border border-[#E2E5EC]">
               <h2 className="text-sm font-bold text-[#0D1F5C] mb-3">{t.fiche.services}</h2>
               <ul className="space-y-3">
