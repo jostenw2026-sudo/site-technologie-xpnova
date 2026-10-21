@@ -9,6 +9,7 @@ import { ConditionalFrenchLayout } from "@/components/ConditionalFrenchLayout";
 import "./globals.css";
 import { URL_SITES } from "@/lib/sites";
 import BandeauRecette from "@/components/BandeauRecette";
+import { Analytics } from "@/components/Analytics";
 import { ZonePrincipale } from "@/components/ZonePrincipale";
 
 // Polices de la charte A, auto-hébergées (mêmes fichiers WOFF2 que le portail) : Arial abandonné.
@@ -91,6 +92,8 @@ export default function RootLayout({
         <ConditionalFrenchLayout>
           <Footer />
         </ConditionalFrenchLayout>
+        {/* Mesure d'audience GA4 (FR et EN) : inactive sans NEXT_PUBLIC_GA_MEASUREMENT_ID, hors production. */}
+        <Analytics />
       </body>
     </html>
   );
