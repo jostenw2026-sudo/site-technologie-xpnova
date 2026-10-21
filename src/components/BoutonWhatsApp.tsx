@@ -1,29 +1,28 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
+import type { MouseEvent } from 'react';
 import { lienWhatsapp, MESSAGES } from '@/lib/whatsapp-public';
 
-// Bouton flottant WhatsApp, présent sur toutes les pages (décision DG du 21/10/2026).
-// Le message pré-rédigé cite la page d'où écrit le visiteur ; sur /contact il est masqué,
-// le formulaire portant déjà son propre bouton.
+// Bouton flottant WhatsApp, présent sur toutes les pages (volet 1, 21/10/2026 ; repris de site-technologie-xpnova).
+// Masqué sur /contact, qui porte déjà son propre bouton. Sans `lang`, la langue suit le
+// chemin (/en/…). Au clic, le message pré-rédigé cite le titre de la page d'où écrit le visiteur.
 
-export default function BoutonWhatsApp({ lang = 'fr' }: { lang?: 'fr' | 'en' }) {
-  const t = MESSAGES[lang];
-  const [href, setHref] = useState(lienWhatsapp(t.defaut));
-  const [masque, setMasque] = useState(false);
+export default function BoutonWhatsApp({ lang }: { lang?: 'fr' | 'en' }) {
+  const chemin = usePathname() ?? '/';
+  const langue: 'fr' | 'en' = lang ?? (/^\/en(\/|$)/.test(chemin) ? 'en' : 'fr');
+  const t = MESSAGES[langue];
+  if (/\/contact\/?$/.test(chemin)) return null;
 
-  useEffect(() => {
-    const chemin = window.location.pathname;
-    setMasque(/\/contact\/?$/.test(chemin));
+  const citerLaPage = (e: MouseEvent<HTMLAnchorElement>) => {
     const titre = document.title.split('—')[0].trim();
-    setHref(lienWhatsapp(titre ? t.page(titre) : t.defaut));
-  }, [t]);
-
-  if (masque) return null;
+    if (titre) e.currentTarget.href = lienWhatsapp(t.page(titre));
+  };
 
   return (
     <a
-      href={href}
+      href={lienWhatsapp(t.defaut)}
+      onClick={citerLaPage}
       target="_blank"
       rel="noopener noreferrer"
       aria-label={t.aria}

@@ -13,20 +13,22 @@ export function lienWhatsapp(message: string): string {
   return `https://wa.me/${NUMERO_WHATSAPP}?text=${encodeURIComponent(message)}`;
 }
 
+// Le premier mot de chaque message est le mot-clé de la division (TECHNOLOGIE / TECHNOLOGY) : le chatbot
+// du numéro public le reconnaît et propose directement les besoins de la division (volet 1, 21/10/2026).
 export const MESSAGES = {
   fr: {
-    defaut: "Bonjour XP-NOVA Technologie, je souhaite échanger sur un projet d'équipement.",
-    prestation: (code: string) => `Bonjour XP-NOVA Technologie, je souhaite échanger sur la prestation ${code} du référentiel.`,
-    page: (titre: string) => `Bonjour XP-NOVA Technologie, je vous écris depuis la page « ${titre} ».`,
+    defaut: "TECHNOLOGIE — Bonjour XP-NOVA Technologie, je souhaite échanger sur un projet d'équipement.",
+    prestation: (code: string) => `TECHNOLOGIE — Bonjour XP-NOVA Technologie, je souhaite échanger sur la prestation ${code} du référentiel.`,
+    page: (titre: string) => `TECHNOLOGIE — Bonjour XP-NOVA Technologie, je vous écris depuis la page « ${titre} ».`,
     bouton: "Échanger sur WhatsApp",
     boutonCourt: "WhatsApp",
     aria: "Ouvrir une conversation WhatsApp avec XP-NOVA Technologie",
     reponse: "Un expert vous répond sous 48 h ouvrées.",
   },
   en: {
-    defaut: "Hello XP-NOVA Technology, I would like to discuss an equipment project.",
-    prestation: (code: string) => `Hello XP-NOVA Technology, I would like to discuss service ${code} from the reference.`,
-    page: (titre: string) => `Hello XP-NOVA Technology, I am writing from the page "${titre}".`,
+    defaut: "TECHNOLOGY — Hello XP-NOVA Technology, I would like to discuss an equipment project.",
+    prestation: (code: string) => `TECHNOLOGY — Hello XP-NOVA Technology, I would like to discuss service ${code} from the reference.`,
+    page: (titre: string) => `TECHNOLOGY — Hello XP-NOVA Technology, I am writing from the page "${titre}".`,
     bouton: "Chat on WhatsApp",
     boutonCourt: "WhatsApp",
     aria: "Open a WhatsApp conversation with XP-NOVA Technology",
