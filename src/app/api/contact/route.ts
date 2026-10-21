@@ -66,6 +66,9 @@ export async function POST(req: Request) {
       champs.filiere && `Filière : ${champs.filiere}`,
       `📧 ${email}`,
       champs.telephone && `📞 ${champs.telephone}`,
+      (champs.whatsapp || champs.canal === "whatsapp") &&
+        `💬 WhatsApp : ${champs.whatsapp ?? champs.telephone}${champs.canal === "whatsapp" ? " (canal préféré)" : ""}`,
+      champs.prestation && `🔧 Prestation : ${champs.prestation}`,
       enregistrement === "crm" ? "CRM : piste créée" : "CRM : non enregistrée (voir le journal du site)",
     ]
       .filter(Boolean)

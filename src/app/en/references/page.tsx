@@ -1,3 +1,6 @@
+import TitreSection from '@/components/TitreSection';
+import IntroPage from '@/components/IntroPage';
+
 export default function ReferencesPageEN() {
   return (
     <div className="flex flex-col">
@@ -7,10 +10,14 @@ export default function ReferencesPageEN() {
           <p className="text-lg text-[#5A6072] max-w-3xl">
             References will be published once documented: XP-NOVA’s exact role, client, location and period.
           </p>
+          <IntroPage cle="references" lang="en" />
         </div>
       </section>
 
       <section className="py-16 px-6 bg-[#F4F5F8]">
+        <div className="max-w-6xl mx-auto">
+          <TitreSection titre="Documented missions" texte="XP-NOVA's exact role, client, location and period for each published reference; nothing is shown before it is verified." />
+        </div>
         <div className="max-w-6xl mx-auto">
           <div className="p-6 bg-white rounded border border-[#E2E5EC] mb-8">
             <h2 className="text-xl font-bold text-[#0D1F5C] mb-3">Coming soon</h2>
