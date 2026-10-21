@@ -1,6 +1,7 @@
 import { FAQ } from '@/content/faq';
 import { INTROS } from '@/content/intros';
 import IntroPage from '@/components/IntroPage';
+import Illustration from '@/components/Illustration';
 import { lienWhatsapp, MESSAGES } from '@/lib/whatsapp-public';
 
 // Page FAQ FR/EN : accordéons natifs <details>, aucun script ; données JSON-LD FAQPage
@@ -34,6 +35,7 @@ export default function PageFaq({ lang }: { lang: 'fr' | 'en' }) {
               </a>
             ))}
           </div>
+          <Illustration src="/images/illustrations/faq.webp" alt={lang === 'en' ? 'Cooperative members reviewing an equipment study with an engineer' : "Membres d'une coopérative examinant une étude d'équipement avec un ingénieur"} lang={lang} />
         </div>
       </section>
 

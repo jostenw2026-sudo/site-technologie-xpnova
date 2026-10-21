@@ -1,6 +1,7 @@
 import TitreSection from '@/components/TitreSection';
 import { SchemaParcours } from '@/components/Schemas';
 import IntroPage from '@/components/IntroPage';
+import Illustration from '@/components/Illustration';
 
 export default function ServicesPageEN() {
   const services = [
@@ -127,6 +128,7 @@ export default function ServicesPageEN() {
           <IntroPage cle="services" lang="en">
             <SchemaParcours lang="en" />
           </IntroPage>
+          <Illustration src="/images/illustrations/services.webp" alt="Engineer recording the parameters of a rice-husking unit" lang="en" />
         </div>
       </section>
 

@@ -1,6 +1,7 @@
 import TitreSection from '@/components/TitreSection';
 import { SchemaCycle } from '@/components/Schemas';
 import IntroPage from '@/components/IntroPage';
+import Illustration from '@/components/Illustration';
 
 export default function LifecyclePageEN() {
   const phases = [
@@ -62,6 +63,7 @@ export default function LifecyclePageEN() {
           <IntroPage cle="cycleDeVie" lang="en">
             <SchemaCycle lang="en" />
           </IntroPage>
+          <Illustration src="/images/illustrations/cycle-de-vie.webp" alt="Technician checking a solar pump at the edge of a plot" lang="en" />
         </div>
       </section>
 
