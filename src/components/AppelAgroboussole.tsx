@@ -5,18 +5,30 @@ import { URL_SITES } from "@/lib/sites";
  * (décision DG du 20/10/2026, option A) : bouton dans la barre du groupe et
  * encadré en tête du pied de page. Textes repris de la page AGROBOUSSOLE
  * d'AGROVITA (/ressources/agroboussole), sans formulation nouvelle.
+ * Champ couvert (décision Q9 du DG, 22/10/2026) : sur les sites hors AGROVITA, le
+ * bouton et l'encadré disent pour quels projets l'outil est fait. Dans la barre du
+ * groupe, faute de place, la mention est portée par l'infobulle et le nom accessible ;
+ * elle est visible dans le menu mobile et dans l'encadré.
  * Couleurs fixes, indépendantes des jetons de chaque site : or #D4A017 avec
  * texte navy (6,46:1), or clair #E9C25A sur navy profond (≥ 9:1).
  */
 const lien = (en: boolean) => `${URL_SITES.agrovita}${en ? "/en" : ""}/ressources/agroboussole`;
 
+/** Champ couvert par AGROBOUSSOLE (Q9, validé par le DG le 22/10/2026). */
+export const CHAMP_AGROBOUSSOLE = {
+  fr: "pour les projets agricoles, d'élevage et agro-industriels",
+  en: "for farming, livestock and agri-business projects",
+} as const;
+
 /** Bouton de la barre du groupe. `grand` : version du menu déroulant mobile. */
 export function BoutonAgroboussole({ en = false, grand = false }: { en?: boolean; grand?: boolean }) {
   const complet = en ? "AGROBOUSSOLE · free mini-assessment" : "AGROBOUSSOLE · mini-évaluation gratuite";
+  const champ = en ? CHAMP_AGROBOUSSOLE.en : CHAMP_AGROBOUSSOLE.fr;
   if (grand) {
     return (
-      <a href={lien(en)} className="rounded-md bg-[#D4A017] px-3.5 py-2.5 text-sm font-extrabold text-[#0D1F5C] no-underline hover:no-underline hover:bg-[#E9C25A]">
-        {complet}
+      <a href={lien(en)} className="flex flex-col rounded-md bg-[#D4A017] px-3.5 py-2.5 text-sm font-extrabold text-[#0D1F5C] no-underline hover:no-underline hover:bg-[#E9C25A]">
+        <span>{complet}</span>
+        <span className="text-xs font-semibold">{champ}</span>
       </a>
     );
   }
@@ -24,7 +36,8 @@ export function BoutonAgroboussole({ en = false, grand = false }: { en?: boolean
     <a
       href={lien(en)}
       className="hidden md:inline-flex items-center rounded-md bg-[#D4A017] px-3 py-1 text-[0.8125rem] font-extrabold text-[#0D1F5C] no-underline hover:no-underline hover:bg-[#E9C25A] whitespace-nowrap"
-      aria-label={complet}
+      aria-label={`${complet}, ${champ}`}
+      title={`${complet}, ${champ}`}
     >
       <span className="xl:hidden">AGROBOUSSOLE</span>
       <span className="hidden xl:inline">{complet}</span>
@@ -43,6 +56,10 @@ export function EncartAgroboussole({ en = false }: { en?: boolean }) {
           </p>
           <p className="m-0 mt-1 text-lg font-semibold text-white">
             {en ? "Is your agricultural idea ready to become a project?" : "Votre idée agricole est-elle prête à devenir un projet ?"}
+          </p>
+          <p className="m-0 mt-1 text-sm text-white/80">
+            {en ? "Free mini-assessment " : "Mini-évaluation gratuite "}
+            {en ? CHAMP_AGROBOUSSOLE.en : CHAMP_AGROBOUSSOLE.fr}.
           </p>
         </div>
         <a
