@@ -27,17 +27,18 @@ export const metadata: Metadata = {
   openGraph: { type: "website", url: "./", locale: "en_GB", alternateLocale: "fr_FR" },
 };
 
+// Pages anglaises : les sites du groupe dans leur version anglaise (/en).
 const divisions = [
   {
     key: 'agrovita',
     name: 'AGROVITA',
-    url: URL_SITES.agrovita,
+    url: `${URL_SITES.agrovita}/en`,
     accentColor: '#2E7D32',
   },
   {
     key: 'odt',
     name: 'ODT',
-    url: URL_SITES.odt,
+    url: `${URL_SITES.odt}/en`,
     accentColor: '#0E4C5A',
   },
   {
@@ -49,7 +50,7 @@ const divisions = [
   {
     key: 'formation',
     name: 'Training',
-    url: URL_SITES.formation,
+    url: `${URL_SITES.formation}/en`,
     accentColor: '#B4470F',
   },
 ];
@@ -82,7 +83,7 @@ export default function EnglishRootLayout({
         <div className="sticky top-0 z-50">
           <UtilityBar
             divisions={divisions}
-            siteUrl={URL_SITES.portail}
+            siteUrl={`${URL_SITES.portail}/en`}
             currentKey="technologie"
             currentLang="en"
             fiches={PAIRES_FICHES}
@@ -94,7 +95,7 @@ export default function EnglishRootLayout({
             logoHref="/en"
           />
         </div>
-        <DivisionBadge divisionName="Technology" lang="en" />
+        <DivisionBadge divisionName="Technology" lang="en" parentUrl={`${URL_SITES.portail}/en`} />
         <main className="flex-1">{children}</main>
         <BoutonWhatsApp lang="en" />
         <Footer lang="en" />

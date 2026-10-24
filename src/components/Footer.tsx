@@ -63,9 +63,9 @@ export default function Footer({ lang = 'fr' }: FooterProps) {
         { href: '/en/contact', label: 'Contact' },
       ],
       portalItems: [
-        { href: URL_SITES.portail, label: 'XP-NOVA' },
-        { href: `${URL_SITES.portail}/cabinet`, label: 'The Firm' },
-        { href: `${URL_SITES.portail}/metiers`, label: 'Professions' },
+        { href: `${URL_SITES.portail}/en`, label: 'XP-NOVA' },
+        { href: `${URL_SITES.portail}/en/cabinet`, label: 'The Firm' },
+        { href: `${URL_SITES.portail}/en/metiers`, label: 'Professions' },
         { href: `${URL_SITES.portail}/portail`, label: 'Internal Portal' },
       ],
     },
@@ -84,6 +84,8 @@ export default function Footer({ lang = 'fr' }: FooterProps) {
     legal: G.identiteLegale,
   };
 
+  // Sur les pages EN, les sites du groupe dans leur version anglaise (/en).
+  const versionLangue = (url: string) => (lang === 'en' ? `${url}/en` : url);
   const ecosystem = [
     {
       key: 'agrovita',
@@ -203,11 +205,11 @@ export default function Footer({ lang = 'fr' }: FooterProps) {
           <ul className="space-y-4 text-[0.9rem] leading-snug">
             {ecosystem.map((e) => (
               <li key={e.key}>
-                {/* Site de chaque division (URL absolue) ; la division courante : l'accueil de
-                    ce site dans la langue de la page. Les chemins /agrovita, /odt… de l'ancien
-                    gabarit n'existent pas ici (404). */}
+                {/* Site de chaque division (URL absolue), dans la langue de la page ; la
+                    division courante : l'accueil de ce site. Les chemins /agrovita, /odt… de
+                    l'ancien gabarit n'existent pas ici (404). */}
                 <a
-                  href={e.key === 'technologie' ? (lang === 'en' ? '/en' : '/') : e.url}
+                  href={e.key === 'technologie' ? (lang === 'en' ? '/en' : '/') : versionLangue(e.url)}
                   {...(e.key === 'technologie' ? {} : { target: '_blank', rel: 'noopener' })}
                   className="font-bold text-white no-underline hover:text-[#D4A017]"
                 >
@@ -215,7 +217,7 @@ export default function Footer({ lang = 'fr' }: FooterProps) {
                 </a>
                 <span className="mt-0.5 block text-white/60">{e.tagline}</span>
                 <a
-                  href={e.url}
+                  href={versionLangue(e.url)}
                   target="_blank"
                   rel="noopener"
                   className="mt-0.5 block text-[0.78rem] text-white/40 hover:text-[#D4A017]"

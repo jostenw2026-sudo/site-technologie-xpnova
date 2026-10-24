@@ -69,7 +69,7 @@ export const UtilityBar: React.FC<UtilityBarProps> = ({
       );
     }
     return (
-      <a key={division.key} href={division.url} target="_blank" rel="noopener noreferrer" className={classe} style={{ background: division.accentColor }}>
+      <a key={division.key} href={division.url} target="_blank" rel="noopener" className={classe} style={{ background: division.accentColor }}>
         {division.name} <span aria-hidden>↗</span>
       </a>
     );
