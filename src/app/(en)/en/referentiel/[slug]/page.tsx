@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     // Canonical et hreflang : fiche équivalente appariée par code (src/lib/alternates.ts).
     alternates: alternatesPour(`/en/referentiel/${slug}`),
-    title: `${res.sf.code} ${res.sf.nom} — Technology reference XP-NOVA`,
+    title: `${res.sf.code} ${res.sf.nom} — Technology XP-NOVA`,
     description: `${res.domaine.nom}: ${res.sf.equipements.map((e) => e.nom).join(', ')}. ${res.sf.grandeurs}.`,
   };
 }

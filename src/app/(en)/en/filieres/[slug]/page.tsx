@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const f = getFiliere(slug, 'en');
   if (!f) return {};
   // Canonical et hreflang : fiche équivalente appariée par code (src/lib/alternates.ts).
-  return { alternates: alternatesPour(`/en/filieres/${slug}`), title: `${f.code} ${nomFiliere(f, 'en')} — Technology reference XP-NOVA`, description: `${f.sousFonctions.length} reference sub-functions mobilised by this value chain.` };
+  return { alternates: alternatesPour(`/en/filieres/${slug}`), title: `${f.code} ${nomFiliere(f, 'en')} — Technology XP-NOVA`, description: `${f.sousFonctions.length} reference sub-functions mobilised by this value chain.` };
 }
 
 export default async function FilierePage({ params }: { params: Promise<{ slug: string }> }) {
