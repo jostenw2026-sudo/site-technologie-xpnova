@@ -3,6 +3,7 @@ import { INTROS } from '@/content/intros';
 import IntroPage from '@/components/IntroPage';
 import Illustration from '@/components/Illustration';
 import { lienWhatsapp, MESSAGES } from '@/lib/whatsapp-public';
+import { JsonLd } from '@/components/JsonLd';
 
 // Page FAQ FR/EN : accordéons natifs <details>, aucun script ; données JSON-LD FAQPage
 // pour le référencement. Contenu dans src/content/faq.ts.
@@ -23,7 +24,7 @@ export default function PageFaq({ lang }: { lang: 'fr' | 'en' }) {
 
   return (
     <div className="flex flex-col">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <JsonLd data={jsonLd} />
       <section className="py-16 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
           <h1 className="text-4xl font-bold text-[#0D1F5C] mb-6">{t.titre}</h1>

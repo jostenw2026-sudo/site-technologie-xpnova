@@ -8,6 +8,7 @@ import IntroPage from '@/components/IntroPage';
 import { SchemaCode } from '@/components/Schemas';
 import { lienWhatsapp, MESSAGES } from '@/lib/whatsapp-public';
 import { IconeWhatsApp } from '@/components/BoutonWhatsApp';
+import { filArianeLd, JsonLd } from '@/components/JsonLd';
 import {
   codePrestation,
   filieresDeSousFonction,
@@ -89,8 +90,17 @@ export function PageSousFonction({ slug, lang }: { slug: string; lang: Lang }) {
   const typeLabel = (x: string) => (x === 'P' ? t.fiche.typeP : x === 'N' ? t.fiche.typeN : t.fiche.typeH);
   const services = sf.servicesCles.map((c) => data.services.find((s) => s.code === c)).filter(Boolean);
 
+  // Fil d'Ariane (données structurées) : accueil › référentiel › fiche, libellés existants
+  // (navigation, titre du référentiel, code et nom de la sous-fonction).
+  const filAriane = filArianeLd([
+    { nom: lang === 'en' ? 'Home' : 'Accueil', chemin: base || '/' },
+    { nom: t.referentiel, chemin: `${base}/referentiel` },
+    { nom: `${sf.code} ${sf.nom}`, chemin: `${base}/referentiel/${sf.slug}` },
+  ]);
+
   return (
     <div className="flex flex-col">
+      <JsonLd data={filAriane} />
       <section className="py-12 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
           <a href={`${base}/referentiel`} className="text-sm text-[#5A6072] hover:text-[#0D1F5C]">

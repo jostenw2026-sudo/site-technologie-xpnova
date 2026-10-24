@@ -8,6 +8,7 @@ import "../../globals.css";
 import { URL_SITES } from "@/lib/sites";
 import BandeauRecette from "@/components/BandeauRecette";
 import { Analytics } from "@/components/Analytics";
+import { JsonLd, organisationLd } from "@/components/JsonLd";
 import { URL_PRODUCTION } from "@/lib/indexation";
 import { PAIRES_FICHES } from "@/lib/alternates";
 import { sourceSans, playfair } from "@/lib/polices";
@@ -22,6 +23,8 @@ export const metadata: Metadata = {
   metadataBase: new URL(URL_PRODUCTION),
   title: "Technology — Equipment & Technical Systems Engineering — XP-NOVA",
   description: "Engineering for mechanization, irrigation, processing, storage, cold chain, energy, handling and digital equipment for agro-systemic projects in Cameroon and Central Africa.",
+  // Partage social : voir src/app/(fr)/layout.tsx (image : opengraph-image.tsx de ce dossier).
+  openGraph: { type: "website", url: "./", locale: "en_GB", alternateLocale: "fr_FR" },
 };
 
 const divisions = [
@@ -71,6 +74,8 @@ export default function EnglishRootLayout({
   return (
     <html lang="en" className={`${sourceSans.variable} ${playfair.variable}`}>
       <body className="min-h-full flex flex-col">
+        {/* Données structurées : la division, rattachée à l'organisation du groupe */}
+        <JsonLd data={organisationLd('en')} />
         {/* Recette locale : bandeau rendu seulement si SITE_ENV=recette */}
         <BandeauRecette />
         {/* Barre du groupe + navigation : un seul bloc collant (demande du DG, 20/10/2026) */}
