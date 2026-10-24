@@ -4,6 +4,8 @@
 
 import TitreSection from '@/components/TitreSection';
 import { getFiliere, getFilieres, getReferentiel, getSousFonctions, LIBELLES, nomFiliere, type Lang } from '@/lib/referentiel';
+import { URL_SITES } from '@/lib/sites';
+import { filArianeLd, JsonLd } from '@/components/JsonLd';
 
 const DP_LABEL: Record<string, { fr: string; en: string }> = {
   DP1: { fr: 'Agriculture', en: 'Agriculture' },
@@ -89,8 +91,16 @@ export function PageFiliere({ slug, lang }: { slug: string; lang: Lang }) {
   const sfIndex = new Map(getSousFonctions(lang).map((s) => [s.code, s]));
   const domIndex = new Map(data.domaines.flatMap((d) => d.sousFonctions.map((s) => [s.code, d])));
   const parNiveau = [3, 2, 1].map((n) => ({ n, items: f.sousFonctions.filter((s) => s.niveau === n) }));
+  // Fil d'Ariane (données structurées) : accueil › filières › filière, libellés existants
+  // (navigation, titre de la page des filières, code et nom de la filière).
+  const filAriane = filArianeLd([
+    { nom: lang === 'en' ? 'Home' : 'Accueil', chemin: base || '/' },
+    { nom: t.titre, chemin: `${base}/filieres` },
+    { nom: `${f.code} ${nomFiliere(f, lang)}`, chemin: `${base}/filieres/${f.slug}` },
+  ]);
   return (
     <div className="flex flex-col">
+      <JsonLd data={filAriane} />
       <section className="py-12 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
           <a href={`${base}/filieres`} className="text-sm text-[#5A6072] hover:text-[#0D1F5C]">
@@ -102,7 +112,8 @@ export function PageFiliere({ slug, lang }: { slug: string; lang: Lang }) {
           <h1 className="text-3xl md:text-4xl font-bold text-[#0D1F5C] mb-3">
             <span className="text-[#D4A017]">{f.code}</span> {nomFiliere(f, lang)}
           </h1>
-          <a href={`https://agrovita.xp-nova.com/filieres/${f.slug}`} target="_blank" rel="noopener noreferrer" className="text-sm text-[#0D1F5C] underline hover:text-[#D4A017]">
+          {/* Fiche filière d'AGROVITA (/filieres/fv01, /en/filieres/fv01 : code en minuscules), dans la langue de la page */}
+          <a href={`${URL_SITES.agrovita}${base}/filieres/${f.code.toLowerCase()}`} target="_blank" rel="noopener noreferrer" className="text-sm text-[#0D1F5C] underline hover:text-[#D4A017]">
             {t.agrovita} ↗
           </a>
           <Chapeau lang={lang} />

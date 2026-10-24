@@ -2,6 +2,8 @@
 
 import React from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { pageEquivalente, type Paire } from '@/lib/pages-miroir';
 import { URL_SITES } from "@/lib/sites";
 import { BoutonAgroboussole } from "@/components/AppelAgroboussole";
 
@@ -23,6 +25,11 @@ export interface UtilityBarProps {
   className?: string;
   /** Clé de la division courante : rendue en badge non-cliquable. */
   currentKey?: string;
+  /**
+   * Fiches appariées FR ↔ EN par code (src/lib/alternates.ts, fournies par le layout) :
+   * le bouton FR/EN mène à la fiche équivalente, comme les liens hreflang.
+   */
+  fiches?: readonly Paire[];
 }
 
 /**
@@ -42,8 +49,12 @@ export const UtilityBar: React.FC<UtilityBarProps> = ({
   onLanguageChange,
   className = '',
   currentKey,
+  fiches = [],
 }) => {
   const fr = currentLang === 'fr';
+  // Bouton FR/EN : page équivalente dans l'autre langue (même table que les hreflang),
+  // à défaut l'accueil de cette langue.
+  const autreLangue = pageEquivalente(usePathname(), fr ? 'en' : 'fr', fiches);
   const libelleDivisions = fr ? 'Nos divisions' : 'Our divisions';
 
   const badge = (division: Division, grand = false) => {
@@ -58,7 +69,7 @@ export const UtilityBar: React.FC<UtilityBarProps> = ({
       );
     }
     return (
-      <a key={division.key} href={division.url} target="_blank" rel="noopener noreferrer" className={classe} style={{ background: division.accentColor }}>
+      <a key={division.key} href={division.url} target="_blank" rel="noopener" className={classe} style={{ background: division.accentColor }}>
         {division.name} <span aria-hidden>↗</span>
       </a>
     );
@@ -101,7 +112,7 @@ export const UtilityBar: React.FC<UtilityBarProps> = ({
               </button>
             ) : (
               <Link
-                href={fr ? '/en' : '/'}
+                href={autreLangue}
                 className="rounded border border-white/50 px-2 py-0.5 text-xs font-bold text-white no-underline hover:border-[#E9C25A] hover:text-[#E9C25A]"
                 aria-label={fr ? 'Version anglaise' : 'Version française'}
               >

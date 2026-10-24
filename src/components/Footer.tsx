@@ -46,7 +46,7 @@ export default function Footer({ lang = 'fr' }: FooterProps) {
     },
     en: {
       signature: "From idea to impact.",
-      baseline: "Engineering Consulting Firm",
+      baseline: G.groupe.baselineEn,
       responsePromise: "An expert answers within 48 hours.",
       navigation: "Navigation",
       portal: "The Portal",
@@ -63,9 +63,9 @@ export default function Footer({ lang = 'fr' }: FooterProps) {
         { href: '/en/contact', label: 'Contact' },
       ],
       portalItems: [
-        { href: URL_SITES.portail, label: 'XP-NOVA' },
-        { href: `${URL_SITES.portail}/cabinet`, label: 'The Firm' },
-        { href: `${URL_SITES.portail}/metiers`, label: 'Professions' },
+        { href: `${URL_SITES.portail}/en`, label: 'XP-NOVA' },
+        { href: `${URL_SITES.portail}/en/cabinet`, label: 'The Firm' },
+        { href: `${URL_SITES.portail}/en/metiers`, label: 'Professions' },
         { href: `${URL_SITES.portail}/portail`, label: 'Internal Portal' },
       ],
     },
@@ -84,32 +84,30 @@ export default function Footer({ lang = 'fr' }: FooterProps) {
     legal: G.identiteLegale,
   };
 
+  // Sur les pages EN, les sites du groupe dans leur version anglaise (/en).
+  const versionLangue = (url: string) => (lang === 'en' ? `${url}/en` : url);
   const ecosystem = [
     {
       key: 'agrovita',
       name: 'AGROVITA',
-      href: '/agrovita',
       url: URL_SITES.agrovita,
       tagline: lang === 'fr' ? division('agrovita').tagline : division('agrovita').taglineEn,
     },
     {
       key: 'odt',
       name: 'ODT',
-      href: '/odt',
       url: URL_SITES.odt,
       tagline: lang === 'fr' ? division('odt').tagline : division('odt').taglineEn,
     },
     {
       key: 'technologie',
       name: lang === 'fr' ? 'Technologie' : 'Technology',
-      href: '/technologie',
       url: URL_SITES.technologie,
       tagline: lang === 'fr' ? division('technologie').tagline : division('technologie').taglineEn,
     },
     {
       key: 'formation',
       name: lang === 'fr' ? 'Formation' : 'Training',
-      href: '/formation',
       url: URL_SITES.formation,
       tagline: lang === 'fr' ? division('formation').tagline : division('formation').taglineEn,
     },
@@ -125,7 +123,7 @@ export default function Footer({ lang = 'fr' }: FooterProps) {
         <div className="sm:col-span-2 lg:col-span-1">
           <Image
             src="/brand/logo_xpnova_white_mono.png"
-            alt="XP-NOVA — Bureau d'Ingénierie Conseil"
+            alt={`XP-NOVA — ${t.baseline}`}
             width={350}
             height={80}
             className="h-[52px] w-auto"
@@ -207,15 +205,19 @@ export default function Footer({ lang = 'fr' }: FooterProps) {
           <ul className="space-y-4 text-[0.9rem] leading-snug">
             {ecosystem.map((e) => (
               <li key={e.key}>
-                <Link
-                  href={e.href}
+                {/* Site de chaque division (URL absolue), dans la langue de la page ; la
+                    division courante : l'accueil de ce site. Les chemins /agrovita, /odt… de
+                    l'ancien gabarit n'existent pas ici (404). */}
+                <a
+                  href={e.key === 'technologie' ? (lang === 'en' ? '/en' : '/') : versionLangue(e.url)}
+                  {...(e.key === 'technologie' ? {} : { target: '_blank', rel: 'noopener' })}
                   className="font-bold text-white no-underline hover:text-[#D4A017]"
                 >
                   {e.name}
-                </Link>
+                </a>
                 <span className="mt-0.5 block text-white/60">{e.tagline}</span>
                 <a
-                  href={e.url}
+                  href={versionLangue(e.url)}
                   target="_blank"
                   rel="noopener"
                   className="mt-0.5 block text-[0.78rem] text-white/40 hover:text-[#D4A017]"

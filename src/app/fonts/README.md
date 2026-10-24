@@ -2,7 +2,7 @@
 
 Sous-ensembles WOFF2 de Source Sans 3 et Playfair Display, identiques sur les sites du
 groupe (xp-nova.com, odt, technologie, ingenierie-formation). Chargés et préchargés par
-`next/font/local` dans le layout racine.
+`next/font/local` (src/lib/polices.ts), lu par les deux layouts racine et la page 404.
 
 Révision du 24/10/2026 : 157 Ko → 84 Ko pour les deux fichiers. Le jeu de caractères est
 limité à ce que les sites utilisent réellement : latin de base et Latin-1 (tous les accents

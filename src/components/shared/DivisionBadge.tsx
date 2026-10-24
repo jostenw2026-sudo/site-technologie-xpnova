@@ -8,6 +8,8 @@ export interface DivisionBadgeProps {
   parentUrl?: string;
   className?: string;
   showParentLink?: boolean;
+  /** Langue de la page : le libellé suit (pages /en : « A division of XP-NOVA »). */
+  lang?: 'fr' | 'en';
 }
 
 /**
@@ -19,7 +21,9 @@ export const DivisionBadge: React.FC<DivisionBadgeProps> = ({
   parentUrl = URL_SITES.portail,
   className = '',
   showParentLink = true,
+  lang = 'fr',
 }) => {
+  const libelle = lang === 'en' ? 'A division of XP-NOVA' : 'Une division de XP-NOVA';
   return (
     <div className={`xpnova-division-badge ${className}`} style={{
       backgroundColor: '#F4F5F8',
@@ -41,7 +45,7 @@ export const DivisionBadge: React.FC<DivisionBadgeProps> = ({
           }}
         >
           <span style={{ opacity: 0.7 }}>←</span>
-          <span>Une division de XP-NOVA</span>
+          <span>{libelle}</span>
         </a>
       ) : (
         <span style={{
@@ -49,7 +53,7 @@ export const DivisionBadge: React.FC<DivisionBadgeProps> = ({
           fontSize: '0.875rem',
           fontWeight: 500,
         }}>
-          Une division de XP-NOVA
+          {libelle}
         </span>
       )}
     </div>

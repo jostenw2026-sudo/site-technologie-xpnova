@@ -5,9 +5,11 @@ import { useEffect } from "react";
 import { GA4_ID, HOTE_MESURE, evenementPourLien, scriptGa4, suivre } from "@/lib/analytics";
 
 /**
- * La balise GA4 du site — une seule, posée par le layout racine pour les deux
- * langues. Rien n'est rendu sans identifiant de mesure. L'hôte de production et
- * l'absence de jeton dans l'URL sont contrôlés par le script à l'exécution.
+ * La balise GA4 du site — une seule par page, posée par chacun des deux layouts
+ * racine (src/app/(fr)/layout.tsx, src/app/(en)/en/layout.tsx) et par la page 404
+ * (src/app/global-not-found.tsx). Rien n'est rendu sans identifiant de mesure.
+ * L'hôte de production et l'absence de jeton dans l'URL sont contrôlés par le
+ * script à l'exécution.
  *
  * Un `<script>` ordinaire plutôt que `next/script` : il figure dans le HTML
  * rendu, ce qui permet de constater la balise en production (curl, PageSpeed).

@@ -114,6 +114,34 @@ export function getService(code: string, lang: Lang = "fr"): Service | undefined
 }
 
 // ---------------------------------------------------------------------------
+// Titres (<title>) des fiches du référentiel et des fiches filières (décision D6 de la
+// direction, 24/10/2026) : le nom, sans le code interne, qui reste dans le H1, le corps et
+// le fil d'Ariane. Deux fiches de même nom dans une langue (T3.5 et FH01 « Aquaculture »)
+// prennent entre parenthèses le libellé affiché au-dessus de leur H1 : le domaine parent
+// pour une sous-fonction, le maillon pour une filière. Les autres gardent leur nom seul.
+// ---------------------------------------------------------------------------
+
+const cleNom = (nom: string, lang: Lang) => nom.trim().toLocaleLowerCase(lang);
+
+/** Noms portés par plusieurs fiches (sous-fonctions et filières confondues) d'une langue. */
+function nomsHomonymes(lang: Lang): Set<string> {
+  const noms = [...getSousFonctions(lang).map((s) => s.nom), ...getFilieres(lang).map((f) => nomFiliere(f, lang))].map((n) => cleNom(n, lang));
+  return new Set(noms.filter((n, i) => noms.indexOf(n) !== i));
+}
+
+function nomTitre(nom: string, libelle: string | undefined, lang: Lang): string {
+  return libelle && nomsHomonymes(lang).has(cleNom(nom, lang)) ? `${nom} (${libelle})` : nom;
+}
+
+export function nomTitreSousFonction(domaine: Domaine, sf: SousFonction, lang: Lang): string {
+  return nomTitre(sf.nom, domaine.nom, lang);
+}
+
+export function nomTitreFiliere(f: Filiere, lang: Lang): string {
+  return nomTitre(nomFiliere(f, lang), getReferentiel(lang).maillons.find((m) => m.code === f.maillon)?.nom, lang);
+}
+
+// ---------------------------------------------------------------------------
 // Secret industriel (décision DG du 21/10/2026) — fiche en deux niveaux.
 // Niveau public : code, nom, équipements types, grandeurs, maillons, services, un risque
 // emblématique, références internationales seules. Niveau privé (sur demande, après

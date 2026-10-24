@@ -4,7 +4,7 @@
  *   npm run verifier:analytics
  *
  * Rejoue les gardes pures de src/lib/analytics.ts, puis relit le source :
- * une seule porte vers gtag, balise posée par le layout racine, identifiant
+ * une seule porte vers gtag, balise posée par les deux layouts racine, identifiant
  * transmis au build par le Dockerfile, aucune donnée personnelle envoyée.
  */
 import fs from "node:fs";
@@ -64,7 +64,7 @@ const fichiers = (dir: string): string[] =>
 const sources = fichiers("src");
 const hors = sources.filter((f) => !f.endsWith(path.join("lib", "analytics.ts")) && /googletagmanager|gtag\(/.test(lire(f)));
 verifier("une seule porte vers gtag (src/lib/analytics.ts)", hors.length === 0, hors.join(", "));
-verifier("layout racine pose <Analytics />", /<Analytics\s*\/>/.test(lire("src/app/layout.tsx")));
+verifier("les deux layouts racines (FR, EN) posent <Analytics />", ["src/app/(fr)/layout.tsx", "src/app/(en)/en/layout.tsx"].every((f) => /<Analytics\s*\/>/.test(lire(f))));
 verifier("identifiant lu dans NEXT_PUBLIC_GA_MEASUREMENT_ID", lire("src/lib/analytics.ts").includes("process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID"));
 verifier("Dockerfile transmet l'identifiant au build", /ARG NEXT_PUBLIC_GA_MEASUREMENT_ID/.test(lire("Dockerfile")));
 const appels = sources.flatMap((f) => lire(f).match(/(suivre|generateLead)\([^)]*\)/g) ?? []);
