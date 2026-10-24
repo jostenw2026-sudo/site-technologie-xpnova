@@ -1,5 +1,5 @@
 // Composants serveur partagés FR/EN pour le référentiel RT-TECH.
-// Les pages src/app/referentiel/* et src/app/en/referentiel/* ne font que choisir la langue.
+// Les pages src/app/(fr)/referentiel/* et src/app/(en)/en/referentiel/* ne font que choisir la langue.
 
 import Image from 'next/image';
 import ReferentielExplorateur from '@/components/ReferentielExplorateur';
