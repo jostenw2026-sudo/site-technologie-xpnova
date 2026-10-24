@@ -227,7 +227,7 @@ export const FAQ: Record<'fr' | 'en', ThemeFaq[]> = {
         {
           q: 'Do you consider the EU deforestation regulation (EUDR)?',
           r: 'Yes, for cocoa, coffee and timber bound for the European Union: plot geolocation, batch traceability and documentation. Sub-function T8.6 of the reference and the AGROVITA division handle this aspect.',
-          lien: { label: 'EUDR compliance (AGROVITA)', href: 'https://agrovita.xp-nova.com/rdue' },
+          lien: { label: 'EUDR compliance (AGROVITA)', href: 'https://agrovita.xp-nova.com/en/rdue' },
         },
       ],
     },
@@ -238,7 +238,7 @@ export const FAQ: Record<'fr' | 'en', ThemeFaq[]> = {
         {
           q: 'What is the difference between Technology and AGROVITA?',
           r: 'AGROVITA supports an agricultural or agro-industrial project from idea to first sale, in 13 steps. Technology handles the equipment side of those projects, or works alone when your need is purely technical: an existing plant, a donor, a cooperative, a local authority.',
-          lien: { label: 'AGROVITA', href: 'https://agrovita.xp-nova.com' },
+          lien: { label: 'AGROVITA', href: 'https://agrovita.xp-nova.com/en' },
         },
         {
           q: 'Do you train operators?',

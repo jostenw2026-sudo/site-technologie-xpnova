@@ -75,7 +75,7 @@ export default function EnglishLayout({
             logoHref="/en"
           />
         </div>
-        <DivisionBadge divisionName="Technology" />
+        <DivisionBadge divisionName="Technology" lang="en" />
         <main className="flex-1">{children}</main>
         <BoutonWhatsApp lang="en" />
         <Footer lang="en" />

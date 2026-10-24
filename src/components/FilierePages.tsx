@@ -4,6 +4,7 @@
 
 import TitreSection from '@/components/TitreSection';
 import { getFiliere, getFilieres, getReferentiel, getSousFonctions, LIBELLES, nomFiliere, type Lang } from '@/lib/referentiel';
+import { URL_SITES } from '@/lib/sites';
 
 const DP_LABEL: Record<string, { fr: string; en: string }> = {
   DP1: { fr: 'Agriculture', en: 'Agriculture' },
@@ -102,7 +103,8 @@ export function PageFiliere({ slug, lang }: { slug: string; lang: Lang }) {
           <h1 className="text-3xl md:text-4xl font-bold text-[#0D1F5C] mb-3">
             <span className="text-[#D4A017]">{f.code}</span> {nomFiliere(f, lang)}
           </h1>
-          <a href={`https://agrovita.xp-nova.com/filieres/${f.slug}`} target="_blank" rel="noopener noreferrer" className="text-sm text-[#0D1F5C] underline hover:text-[#D4A017]">
+          {/* Fiche filière d'AGROVITA (/filieres/fv01, /en/filieres/fv01 : code en minuscules), dans la langue de la page */}
+          <a href={`${URL_SITES.agrovita}${base}/filieres/${f.code.toLowerCase()}`} target="_blank" rel="noopener noreferrer" className="text-sm text-[#0D1F5C] underline hover:text-[#D4A017]">
             {t.agrovita} ↗
           </a>
           <Chapeau lang={lang} />
