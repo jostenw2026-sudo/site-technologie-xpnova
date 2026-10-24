@@ -46,7 +46,7 @@ export default function Footer({ lang = 'fr' }: FooterProps) {
     },
     en: {
       signature: "From idea to impact.",
-      baseline: "Engineering Consulting Firm",
+      baseline: G.groupe.baselineEn,
       responsePromise: "An expert answers within 48 hours.",
       navigation: "Navigation",
       portal: "The Portal",
