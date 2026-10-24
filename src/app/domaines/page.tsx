@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import TitreSection from '@/components/TitreSection';
 import { SchemaFlux } from '@/components/Schemas';
 import IntroPage from '@/components/IntroPage';
@@ -193,7 +194,7 @@ export default function DomainesPage() {
           {domaines.map((domaine, index) => (
             <div key={domaine.title} id={REF[index]?.slug} className="bg-white rounded border border-[#E2E5EC] overflow-hidden flex flex-col scroll-mt-32">
               {/* Illustration générée par IA, hébergée par le site : mention unique en bas de la liste (DG, 20/10/2026). */}
-              <img src={domaine.image} alt={`Illustration — ${domaine.title}`} className="w-full h-48 object-cover" loading="lazy" width={1200} height={800} />
+              <Image src={domaine.image} alt={`Illustration — ${domaine.title}`} className="w-full h-48 object-cover" width={1200} height={800} sizes="(min-width: 1152px) 560px, (min-width: 768px) 50vw, 100vw" />
               <div className="p-6 flex flex-col flex-1">
                 <h2 className="text-xl font-bold text-[#0D1F5C] mb-3">
                   <span className="text-[#D4A017] mr-2">{REF[index]?.code}</span>

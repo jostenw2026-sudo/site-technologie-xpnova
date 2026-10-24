@@ -50,9 +50,9 @@ export const SharedNavigation: React.FC<SharedNavigationProps> = ({
           <Image
             src={logoSrc}
             alt={logoAlt}
-            width={350}
-            height={80}
-            priority
+            width={175}
+            height={40}
+            loading="eager"
             className="h-8 w-auto lg:h-10"
           />
         </a>
