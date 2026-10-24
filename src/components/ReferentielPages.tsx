@@ -1,6 +1,7 @@
 // Composants serveur partagés FR/EN pour le référentiel RT-TECH.
 // Les pages src/app/referentiel/* et src/app/en/referentiel/* ne font que choisir la langue.
 
+import Image from 'next/image';
 import ReferentielExplorateur from '@/components/ReferentielExplorateur';
 import TitreSection from '@/components/TitreSection';
 import IntroPage from '@/components/IntroPage';
@@ -172,7 +173,7 @@ export function PageSousFonction({ slug, lang }: { slug: string; lang: Lang }) {
               <h2 className="text-lg font-bold text-[#0D1F5C] mb-1">{t.sections.mobiliser}</h2>
               <p className="text-sm text-[#5A6072]">{t.sections.mobiliserTexte}</p>
             </div>
-            <img src={IMAGE_DOMAINE[domaine.code]} alt="" className="w-full h-40 object-cover rounded border border-[#E2E5EC]" loading="lazy" width={1200} height={800} />
+            <Image src={IMAGE_DOMAINE[domaine.code]} alt="" className="w-full h-40 object-cover rounded border border-[#E2E5EC]" width={1200} height={800} sizes="(min-width: 1024px) 360px, 100vw" />
             <div className="p-6 bg-white rounded border border-[#E2E5EC]">
               <h2 className="text-sm font-bold text-[#0D1F5C] mb-2">{t.fiche.maillons}</h2>
               <p className="text-sm text-[#5A6072]">{sf.maillonsLibelles.join(' · ')}</p>
