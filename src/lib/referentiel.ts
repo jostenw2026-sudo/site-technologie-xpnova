@@ -142,14 +142,77 @@ export function nomTitreFiliere(f: Filiere, lang: Lang): string {
 }
 
 // ---------------------------------------------------------------------------
+// Titres et descriptions validés par la direction (« série 2 validée », 25/10/2026).
+// Titre (fiches du référentiel et fiches filières) : cascade sur le nom de titre ci-dessus,
+// « {nom} — Technologie XP-NOVA » (EN « — Technology XP-NOVA ») s'il tient en 60 caractères,
+// sinon « {nom} — XP-NOVA », sinon le nom seul (décisions A6, A7).
+// Apostrophes droites des données remplacées par ’ dans les métadonnées seulement : le texte
+// visible (H1, corps, fil d'Ariane) garde la forme des données (décision A4).
+// ---------------------------------------------------------------------------
+
+const TITRE_MAX = 60;
+const DESCRIPTION_MAX = 160;
+const SUFFIXE_TITRE: Record<Lang, string> = { fr: ' — Technologie XP-NOVA', en: ' — Technology XP-NOVA' };
+const SUFFIXE_TITRE_COURT = ' — XP-NOVA';
+
+/** Apostrophe typographique (’) à la place de l'apostrophe droite, pour les métadonnées. */
+export function apostropheTypographique(s: string): string {
+  return s.replace(/'/g, '’');
+}
+
+/** Titre (<title>) d'une fiche à partir de son nom de titre : suffixe complet, court ou aucun. */
+export function titreFiche(nom: string, lang: Lang): string {
+  const titre = [nom + SUFFIXE_TITRE[lang], nom + SUFFIXE_TITRE_COURT].find((t) => t.length <= TITRE_MAX) ?? nom;
+  return apostropheTypographique(titre);
+}
+
+export function titreSousFonction(domaine: Domaine, sf: SousFonction, lang: Lang): string {
+  return titreFiche(nomTitreSousFonction(domaine, sf, lang), lang);
+}
+
+export function titreFiliere(f: Filiere, lang: Lang): string {
+  return titreFiche(nomTitreFiliere(f, lang), lang);
+}
+
+/**
+ * Énumération en cours de phrase : « a, b et c » ; « a ; b ; c » si l'un des éléments contient
+ * déjà une virgule ou « et » (noms composés : « séchage, fumage et lyophilisation »).
+ * `etFinal` à false : liste écourtée, sans « et » devant le dernier élément cité.
+ */
+export function enumeration(xs: string[], lang: Lang, etFinal = true): string {
+  const et = lang === 'en' ? ' and ' : ' et ';
+  const pv = lang === 'en' ? '; ' : ' ; ';
+  if (xs.length < 2) return xs[0] ?? '';
+  if (xs.some((x) => x.includes(',') || x.includes(et))) return xs.join(pv);
+  return etFinal ? `${xs.slice(0, -1).join(', ')}${et}${xs[xs.length - 1]}` : xs.join(', ');
+}
+
+/** Initiale en minuscule, sauf si le premier mot porte une autre majuscule (sigle : IHM, LoRaWAN, Wi-Fi). */
+export function initialeMinuscule(s: string, lang: Lang): string {
+  return /\p{Lu}/u.test(s.split(' ')[0].slice(1)) ? s : s.charAt(0).toLocaleLowerCase(lang) + s.slice(1);
+}
+
+/**
+ * Description (meta description) d'une fiche du référentiel : « {domaine} : {équipements}.
+ * {grandeurs}. » (EN « {domain}: … »). Si elle dépasse 160 caractères, on retire les derniers
+ * équipements, sans « et » final, jusqu'à tenir (décision A1).
+ */
+export function descriptionSousFonction(domaine: Domaine, sf: SousFonction, lang: Lang): string {
+  const eq = sf.equipements.map((e) => initialeMinuscule(e.nom, lang));
+  const deuxPoints = lang === 'en' ? ': ' : ' : ';
+  const phrase = (k: number) => `${domaine.nom}${deuxPoints}${enumeration(eq.slice(0, k), lang, k === eq.length)}. ${sf.grandeurs}.`;
+  let k = eq.length;
+  while (k > 1 && phrase(k).length > DESCRIPTION_MAX) k--;
+  return apostropheTypographique(phrase(k));
+}
+
+// ---------------------------------------------------------------------------
 // Description (meta description) des fiches filières (tableau de référencement validé par la
 // direction le 24/10/2026) : nom de la filière, nombre de sous-fonctions mobilisées et les
 // premières dans l'ordre de la page (essentielles, puis fréquentes, puis occasionnelles ; ordre
 // des données à niveau égal). Trois sous-fonctions citées, deux, une ou aucune : le plus grand
 // nombre qui tient en 160 caractères.
 // ---------------------------------------------------------------------------
-
-const DESCRIPTION_MAX = 160;
 
 export function descriptionFiliere(f: Filiere, lang: Lang): string {
   const noms = new Map(getSousFonctions(lang).map((s) => [s.code, s.nom]));
@@ -160,19 +223,10 @@ export function descriptionFiliere(f: Filiere, lang: Lang): string {
     .map((n) => n.charAt(0).toLocaleLowerCase(lang) + n.slice(1));
   const nb = f.sousFonctions.length;
   const nom = nomFiliere(f, lang);
-  const et = lang === 'en' ? ' and ' : ' et ';
-  // Noms composés (« séchage, fumage et lyophilisation ») : séparés par un point-virgule.
-  const pv = lang === 'en' ? '; ' : ' ; ';
-  const enumeration = (xs: string[]) =>
-    xs.length < 2
-      ? xs[0]
-      : xs.some((x) => x.includes(',') || x.includes(et))
-        ? xs.join(pv)
-        : `${xs.slice(0, -1).join(', ')}${et}${xs[xs.length - 1]}`;
   const phrase = (xs: string[]) =>
     lang === 'en'
-      ? `${nom}: ${nb} equipment sub-functions involved${xs.length ? `, including ${enumeration(xs)}` : ''}. XP-NOVA RT-TECH reference.`
-      : `${nom} : ${nb} sous-fonctions d'équipement mobilisées${xs.length ? `, dont ${enumeration(xs)}` : ''}. Référentiel RT-TECH de XP-NOVA.`;
+      ? `${nom}: ${nb} equipment sub-functions involved${xs.length ? `, including ${enumeration(xs, lang)}` : ''}. XP-NOVA RT-TECH reference.`
+      : `${nom} : ${nb} sous-fonctions d'équipement mobilisées${xs.length ? `, dont ${enumeration(xs, lang)}` : ''}. Référentiel RT-TECH de XP-NOVA.`;
   for (let k = Math.min(3, ordre.length); k > 0; k--) {
     const d = phrase(ordre.slice(0, k));
     if (d.length <= DESCRIPTION_MAX) return d;
