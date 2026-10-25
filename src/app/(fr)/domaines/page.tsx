@@ -6,8 +6,14 @@ import { SchemaFlux } from '@/components/Schemas';
 import IntroPage from '@/components/IntroPage';
 import { getReferentiel } from '@/lib/referentiel';
 
-// Titre et description : ceux du layout racine (inchangés) ; liens canonical et hreflang.
-export const metadata: Metadata = { alternates: alternatesPour('/domaines') };
+// Titre et description : tableau de référencement validé par la direction le 24/10/2026 ;
+// liens canonical et hreflang.
+export const metadata: Metadata = {
+  alternates: alternatesPour('/domaines'),
+  title: "Domaines d'intervention — Technologie XP-NOVA",
+  description:
+    "Mécanisation, irrigation, transformation, stockage, froid, énergie, manutention, numérique : les domaines d'intervention de la division Technologie.",
+};
 
 // Les 8 cartes suivent l'ordre T1..T8 du référentiel RT-TECH (src/content/rt-tech.fr.json).
 const REF = getReferentiel('fr').domaines;

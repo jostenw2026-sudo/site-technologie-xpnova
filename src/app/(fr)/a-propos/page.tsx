@@ -3,8 +3,14 @@ import { alternatesPour } from '@/lib/alternates';
 import TitreSection from '@/components/TitreSection';
 import IntroPage from '@/components/IntroPage';
 
-// Titre et description : ceux du layout racine (inchangés) ; liens canonical et hreflang.
-export const metadata: Metadata = { alternates: alternatesPour('/a-propos') };
+// Titre et description : tableau de référencement validé par la direction le 24/10/2026 ;
+// liens canonical et hreflang.
+export const metadata: Metadata = {
+  alternates: alternatesPour('/a-propos'),
+  title: 'À propos de la division Technologie — XP-NOVA',
+  description:
+    'La division Technologie de XP-NOVA conçoit et dimensionne les équipements techniques et numériques des projets agro-systémiques.',
+};
 
 export default function AProposPage() {
   return (

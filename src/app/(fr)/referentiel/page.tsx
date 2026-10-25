@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   alternates: alternatesPour('/referentiel'),
   title: 'Référentiel des équipements — Technologie XP-NOVA',
   description:
-    'Référentiel RT-TECH : 8 domaines, 50 sous-fonctions et 154 équipements types classés par fonction technique, avec les grandeurs à dimensionner, les risques au Cameroun et le cadre normatif.',
+    'Référentiel RT-TECH : 8 domaines, 50 sous-fonctions et 154 équipements types, avec grandeurs à dimensionner, risques au Cameroun et normes.',
 };
 
 export default function ReferentielPage() {

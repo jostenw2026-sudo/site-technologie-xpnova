@@ -3,8 +3,14 @@ import { alternatesPour } from '@/lib/alternates';
 import { SchemaRole } from '@/components/Schemas';
 import IntroPage from '@/components/IntroPage';
 
-// Titre et description : ceux du layout racine (inchangés) ; liens canonical et hreflang.
-export const metadata: Metadata = { alternates: alternatesPour('/') };
+// Titre et description : tableau de référencement validé par la direction le 24/10/2026 ;
+// liens canonical et hreflang.
+export const metadata: Metadata = {
+  alternates: alternatesPour('/'),
+  title: 'Ingénierie des équipements et systèmes techniques — XP-NOVA',
+  description:
+    "Mécanisation, irrigation, transformation, stockage, froid, énergie et numérique : l'ingénierie des équipements des projets agro-systémiques au Cameroun.",
+};
 
 export default function Home() {
   return (
