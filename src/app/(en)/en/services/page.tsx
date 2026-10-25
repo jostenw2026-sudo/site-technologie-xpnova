@@ -5,8 +5,14 @@ import { SchemaParcours } from '@/components/Schemas';
 import IntroPage from '@/components/IntroPage';
 import Illustration from '@/components/Illustration';
 
-// Titre et description : ceux du layout racine (inchangés) ; liens canonical et hreflang.
-export const metadata: Metadata = { alternates: alternatesPour('/en/services') };
+// Titre et description : traduction de ceux de la page française (tableau de référencement
+// validé par la direction le 24/10/2026) ; liens canonical et hreflang.
+export const metadata: Metadata = {
+  alternates: alternatesPour('/en/services'),
+  title: 'Our technical engineering services — Technology XP-NOVA',
+  description:
+    "XP-NOVA's technical engineering services: mechanization, irrigation, processing, storage, cold chain, energy and digital equipment.",
+};
 
 export default function ServicesPageEN() {
   const services = [

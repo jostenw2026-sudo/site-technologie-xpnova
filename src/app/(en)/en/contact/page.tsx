@@ -231,7 +231,7 @@ export default function ContactPageEN() {
               <strong>Email:</strong> hello@xp-nova.com
             </p>
             <p className="text-[#5A6072] mb-2">
-              <strong>Phone:</strong> +237 670 034 000
+              <strong>Phone:</strong> +237 6700 34 000
             </p>
             <p className="text-[#5A6072] mb-2">
               <strong>WhatsApp:</strong>{' '}

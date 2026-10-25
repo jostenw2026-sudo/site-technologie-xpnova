@@ -9,14 +9,14 @@ const TEXTES = {
     courrielTitre: "Dernière étape : envoyez votre demande par e-mail",
     courriel: "Votre message est déjà rédigé. Cliquez sur le bouton : votre messagerie s'ouvre, il ne reste qu'à l'envoyer.",
     bouton: "Envoyer ma demande par e-mail",
-    secours: `Si rien ne s'ouvre, écrivez-nous à ${EMAIL_CONTACT} ou appelez le +237 670 034 000.`,
+    secours: `Si rien ne s'ouvre, écrivez-nous à ${EMAIL_CONTACT} ou appelez le +237 6700 34 000.`,
   },
   en: {
     crm: "Thank you, your request has been recorded. We will reply within 48 business hours.",
     courrielTitre: "Last step: send your request by email",
     courriel: "Your message is already written. Click the button: your mail app opens, you only need to press send.",
     bouton: "Send my request by email",
-    secours: `If nothing opens, write to ${EMAIL_CONTACT} or call +237 670 034 000.`,
+    secours: `If nothing opens, write to ${EMAIL_CONTACT} or call +237 6700 34 000.`,
   },
 } as const;
 

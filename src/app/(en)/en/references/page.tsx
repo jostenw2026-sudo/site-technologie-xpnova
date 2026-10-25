@@ -3,8 +3,15 @@ import { alternatesPour } from '@/lib/alternates';
 import TitreSection from '@/components/TitreSection';
 import IntroPage from '@/components/IntroPage';
 
-// Titre et description : ceux du layout racine (inchangés) ; liens canonical et hreflang.
-export const metadata: Metadata = { alternates: alternatesPour('/en/references') };
+// Titre : traduction de celui de la page française (tableau de référencement validé par la
+// direction le 24/10/2026). Description : celle du layout racine, à rédiger quand des
+// références seront publiées. D'ici là, page hors index (noindex, liens suivis) et hors sitemap,
+// comme la page française. Liens canonical et hreflang.
+export const metadata: Metadata = {
+  alternates: alternatesPour('/en/references'),
+  title: 'Technical engineering projects — Technology XP-NOVA',
+  robots: { index: false, follow: true },
+};
 
 export default function ReferencesPageEN() {
   return (

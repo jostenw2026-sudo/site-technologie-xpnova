@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { alternatesPour } from '@/lib/alternates';
 import { notFound } from 'next/navigation';
 import { PageFiliere } from '@/components/FilierePages';
-import { getFiliere, getFilieres, nomTitreFiliere } from '@/lib/referentiel';
+import { descriptionFiliere, getFiliere, getFilieres, nomTitreFiliere } from '@/lib/referentiel';
 
 export function generateStaticParams() {
   return getFilieres('en').map((f) => ({ slug: f.slug }));
@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const f = getFiliere(slug, 'en');
   if (!f) return {};
   // Canonical et hreflang : fiche équivalente appariée par code (src/lib/alternates.ts).
-  return { alternates: alternatesPour(`/en/filieres/${slug}`), title: `${nomTitreFiliere(f, 'en')} — Technology XP-NOVA`, description: `${f.sousFonctions.length} reference sub-functions mobilised by this value chain.` };
+  return { alternates: alternatesPour(`/en/filieres/${slug}`), title: `${nomTitreFiliere(f, 'en')} — Technology XP-NOVA`, description: descriptionFiliere(f, 'en') };
 }
 
 export default async function FilierePage({ params }: { params: Promise<{ slug: string }> }) {

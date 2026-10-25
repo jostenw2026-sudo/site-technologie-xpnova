@@ -142,6 +142,45 @@ export function nomTitreFiliere(f: Filiere, lang: Lang): string {
 }
 
 // ---------------------------------------------------------------------------
+// Description (meta description) des fiches filières (tableau de référencement validé par la
+// direction le 24/10/2026) : nom de la filière, nombre de sous-fonctions mobilisées et les
+// premières dans l'ordre de la page (essentielles, puis fréquentes, puis occasionnelles ; ordre
+// des données à niveau égal). Trois sous-fonctions citées, deux, une ou aucune : le plus grand
+// nombre qui tient en 160 caractères.
+// ---------------------------------------------------------------------------
+
+const DESCRIPTION_MAX = 160;
+
+export function descriptionFiliere(f: Filiere, lang: Lang): string {
+  const noms = new Map(getSousFonctions(lang).map((s) => [s.code, s.nom]));
+  const ordre = [3, 2, 1]
+    .flatMap((n) => f.sousFonctions.filter((s) => s.niveau === n))
+    .flatMap((s) => noms.get(s.code) ?? [])
+    // En cours de phrase : initiale en minuscule (aucun nom ne commence par un sigle).
+    .map((n) => n.charAt(0).toLocaleLowerCase(lang) + n.slice(1));
+  const nb = f.sousFonctions.length;
+  const nom = nomFiliere(f, lang);
+  const et = lang === 'en' ? ' and ' : ' et ';
+  // Noms composés (« séchage, fumage et lyophilisation ») : séparés par un point-virgule.
+  const pv = lang === 'en' ? '; ' : ' ; ';
+  const enumeration = (xs: string[]) =>
+    xs.length < 2
+      ? xs[0]
+      : xs.some((x) => x.includes(',') || x.includes(et))
+        ? xs.join(pv)
+        : `${xs.slice(0, -1).join(', ')}${et}${xs[xs.length - 1]}`;
+  const phrase = (xs: string[]) =>
+    lang === 'en'
+      ? `${nom}: ${nb} equipment sub-functions involved${xs.length ? `, including ${enumeration(xs)}` : ''}. XP-NOVA RT-TECH reference.`
+      : `${nom} : ${nb} sous-fonctions d'équipement mobilisées${xs.length ? `, dont ${enumeration(xs)}` : ''}. Référentiel RT-TECH de XP-NOVA.`;
+  for (let k = Math.min(3, ordre.length); k > 0; k--) {
+    const d = phrase(ordre.slice(0, k));
+    if (d.length <= DESCRIPTION_MAX) return d;
+  }
+  return phrase([]);
+}
+
+// ---------------------------------------------------------------------------
 // Secret industriel (décision DG du 21/10/2026) — fiche en deux niveaux.
 // Niveau public : code, nom, équipements types, grandeurs, maillons, services, un risque
 // emblématique, références internationales seules. Niveau privé (sur demande, après

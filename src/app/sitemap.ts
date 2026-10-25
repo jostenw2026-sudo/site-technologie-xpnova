@@ -14,7 +14,7 @@ const ROUTES = [
     "/cycle-de-vie",
     "/domaines",
     "/faq",
-    "/references",
+    // "/references" et "/en/references" : hors sitemap tant qu'elles sont vides (noindex).
     "/referentiel",
     "/filieres",
     "/services",
@@ -24,7 +24,6 @@ const ROUTES = [
     "/en/cycle-de-vie",
     "/en/domaines",
     "/en/faq",
-    "/en/references",
     "/en/referentiel",
     "/en/filieres",
     "/en/services",
@@ -41,7 +40,7 @@ const FICHES = [
 // Date de la dernière révision publiée du site (<lastmod>), fixe : un `new Date()` au
 // build ferait changer toutes les dates à chaque déploiement, même sans modification.
 // À avancer quand le contenu des pages change.
-const DATE_REVISION = "2026-10-24";
+const DATE_REVISION = "2026-10-25";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [...ROUTES, ...FICHES].map((route) => {

@@ -5,8 +5,14 @@ import { SchemaCycle } from '@/components/Schemas';
 import IntroPage from '@/components/IntroPage';
 import Illustration from '@/components/Illustration';
 
-// Titre et description : ceux du layout racine (inchangés) ; liens canonical et hreflang.
-export const metadata: Metadata = { alternates: alternatesPour('/cycle-de-vie') };
+// Titre et description : tableau de référencement validé par la direction le 24/10/2026 ;
+// liens canonical et hreflang.
+export const metadata: Metadata = {
+  alternates: alternatesPour('/cycle-de-vie'),
+  title: 'Cycle de vie des équipements — Technologie XP-NOVA',
+  description:
+    'Le cycle de vie des équipements techniques des projets agro-systémiques, présenté par la division Technologie de XP-NOVA.',
+};
 
 export default function CycleDeViePage() {
   const phases = [
