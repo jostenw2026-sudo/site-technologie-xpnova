@@ -5,8 +5,13 @@ import IntroPage from '@/components/IntroPage';
 
 // Titre : traduction de celui de la page française (tableau de référencement validé par la
 // direction le 24/10/2026). Description : celle du layout racine, à rédiger quand des
-// références seront publiées. Liens canonical et hreflang.
-export const metadata: Metadata = { alternates: alternatesPour('/en/references'), title: 'Technical engineering projects — Technology XP-NOVA' };
+// références seront publiées. D'ici là, page hors index (noindex, liens suivis) et hors sitemap,
+// comme la page française. Liens canonical et hreflang.
+export const metadata: Metadata = {
+  alternates: alternatesPour('/en/references'),
+  title: 'Technical engineering projects — Technology XP-NOVA',
+  robots: { index: false, follow: true },
+};
 
 export default function ReferencesPageEN() {
   return (

@@ -155,11 +155,20 @@ export function descriptionFiliere(f: Filiere, lang: Lang): string {
   const noms = new Map(getSousFonctions(lang).map((s) => [s.code, s.nom]));
   const ordre = [3, 2, 1]
     .flatMap((n) => f.sousFonctions.filter((s) => s.niveau === n))
-    .flatMap((s) => noms.get(s.code) ?? []);
+    .flatMap((s) => noms.get(s.code) ?? [])
+    // En cours de phrase : initiale en minuscule (aucun nom ne commence par un sigle).
+    .map((n) => n.charAt(0).toLocaleLowerCase(lang) + n.slice(1));
   const nb = f.sousFonctions.length;
   const nom = nomFiliere(f, lang);
   const et = lang === 'en' ? ' and ' : ' et ';
-  const enumeration = (xs: string[]) => (xs.length > 1 ? `${xs.slice(0, -1).join(', ')}${et}${xs[xs.length - 1]}` : xs[0]);
+  // Noms composés (« séchage, fumage et lyophilisation ») : séparés par un point-virgule.
+  const pv = lang === 'en' ? '; ' : ' ; ';
+  const enumeration = (xs: string[]) =>
+    xs.length < 2
+      ? xs[0]
+      : xs.some((x) => x.includes(',') || x.includes(et))
+        ? xs.join(pv)
+        : `${xs.slice(0, -1).join(', ')}${et}${xs[xs.length - 1]}`;
   const phrase = (xs: string[]) =>
     lang === 'en'
       ? `${nom}: ${nb} equipment sub-functions involved${xs.length ? `, including ${enumeration(xs)}` : ''}. XP-NOVA RT-TECH reference.`

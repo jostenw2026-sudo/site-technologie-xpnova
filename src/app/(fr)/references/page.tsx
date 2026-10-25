@@ -4,8 +4,13 @@ import TitreSection from '@/components/TitreSection';
 import IntroPage from '@/components/IntroPage';
 
 // Titre : tableau de référencement validé par la direction le 24/10/2026. Description : celle
-// du layout racine, à rédiger quand des références seront publiées. Liens canonical et hreflang.
-export const metadata: Metadata = { alternates: alternatesPour('/references'), title: "Projets d'ingénierie technique — Technologie XP-NOVA" };
+// du layout racine, à rédiger quand des références seront publiées. D'ici là, page hors index
+// (noindex, liens suivis) et hors sitemap (même tableau, section 7.4). Liens canonical et hreflang.
+export const metadata: Metadata = {
+  alternates: alternatesPour('/references'),
+  title: "Projets d'ingénierie technique — Technologie XP-NOVA",
+  robots: { index: false, follow: true },
+};
 
 export default function ReferencesPage() {
   return (
