@@ -19,6 +19,9 @@ const DIVISION = G.divisions.find((d) => d.cle === "technologie")!;
 
 /** Identifiant de l'organisation du portail xp-nova.com (src/components/JsonLd.tsx du portail). */
 export const ID_GROUPE = "https://xp-nova.com/#organisation";
+// Fiche Google Business Profile de XP-NOVA (lien public communiqué par la direction le
+// 25/10/2026), portée par l'organisation du groupe que référence parentOrganization.
+const FICHE_GOOGLE = "https://maps.app.goo.gl/xaTfVMgpvk4sHu5W9";
 
 /**
  * La division Technologie, rattachée à l'organisation du groupe. Nom, adresse,
@@ -46,7 +49,7 @@ export function organisationLd(lang: Langue) {
       addressLocality: G.groupe.ville,
       addressCountry: "CM",
     },
-    parentOrganization: { "@id": ID_GROUPE },
+    parentOrganization: { "@id": ID_GROUPE, sameAs: [FICHE_GOOGLE] },
   };
 }
 
