@@ -6,8 +6,14 @@ import { SchemaFlux } from '@/components/Schemas';
 import IntroPage from '@/components/IntroPage';
 import { getReferentiel } from '@/lib/referentiel';
 
-// Titre et description : ceux du layout racine (inchangés) ; liens canonical et hreflang.
-export const metadata: Metadata = { alternates: alternatesPour('/en/domaines') };
+// Titre et description : traduction de ceux de la page française (tableau de référencement
+// validé par la direction le 24/10/2026) ; liens canonical et hreflang.
+export const metadata: Metadata = {
+  alternates: alternatesPour('/en/domaines'),
+  title: 'Domains of intervention — Technology XP-NOVA',
+  description:
+    'Mechanization, irrigation, processing, storage, cold chain, energy, handling, digital: the domains of intervention of the Technology division.',
+};
 
 // The 8 cards follow the T1..T8 order of the RT-TECH reference (src/content/rt-tech.en.json).
 const REF = getReferentiel('en').domaines;

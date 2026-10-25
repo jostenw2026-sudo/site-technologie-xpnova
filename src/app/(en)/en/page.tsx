@@ -3,10 +3,13 @@ import IntroPage from '@/components/IntroPage';
 import { Metadata } from 'next';
 import { alternatesPour } from '@/lib/alternates';
 
+// Titre et description : traduction de ceux de la page française (tableau de référencement
+// validé par la direction le 24/10/2026) ; liens canonical et hreflang.
 export const metadata: Metadata = {
   alternates: alternatesPour('/en'),
-  title: 'Technical Equipment and Systems Engineering | XP-NOVA',
-  description: 'We design and size technical and digital equipment for agro-systemic projects, from mechanization to cold chain, including irrigation and connectivity systems.',
+  title: 'Engineering of technical equipment and systems — XP-NOVA',
+  description:
+    'Mechanization, irrigation, processing, storage, cold chain, energy and digital: equipment engineering for agro-systemic projects in Cameroon.',
 };
 
 export default function HomeEN() {
