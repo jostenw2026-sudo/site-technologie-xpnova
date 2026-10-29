@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Illustration from '@/components/Illustration';
 import { BLOG_DIVISION, BLOGS_GROUPE } from '@/content/blog';
 
 type Lang = 'fr' | 'en';
@@ -24,6 +25,7 @@ export default function PageBlog({ lang }: { lang: Lang }) {
           <p className="text-lg text-[#5A6072] max-w-3xl">
             {en ? "Analyses and lessons learned on the equipment and technical systems of the agrosystem: mechanisation, irrigation, cold chain, energy." : "Analyses et retours d’expérience sur les équipements et systèmes techniques de l’agrosystème : mécanisation, irrigation, froid, énergie."}
           </p>
+          <Illustration src="/images/illustrations/equipements-numeriques.webp" alt={en ? "Weather station and monitoring screens for a greenhouse and a field" : "Station de mesure et écrans de suivi d’une serre et d’une parcelle"} lang={lang} />
         </div>
       </section>
 

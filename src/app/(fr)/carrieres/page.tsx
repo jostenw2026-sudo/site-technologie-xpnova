@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { alternatesPour } from '@/lib/alternates';
 import FormulaireCandidature from '@/components/FormulaireCandidature';
+import Illustration from '@/components/Illustration';
 import { URL_SITES } from '@/lib/sites';
 
 // Page Carrières de la division (29/10/2026) : profils recherchés, renvoi vers les offres
@@ -26,6 +27,7 @@ export default function CarrieresPage() {
           <p className="text-sm font-bold uppercase tracking-[0.14em] text-[#8A6300] mb-3">Carrières</p>
           <h1 className="text-4xl font-bold text-[#0D1F5C] mb-6">Rejoindre la division TECHNOLOGIE</h1>
           <p className="text-lg text-[#5A6072] max-w-3xl">{"La division TECHNOLOGIE conçoit et dimensionne les équipements et systèmes techniques des projets de l’agrosystème. Elle recrute au fil de ses missions des ingénieurs et des experts techniques."}</p>
+          <Illustration src="/images/illustrations/services.webp" alt="Ingénieur relevant les paramètres d'une unité de décorticage de riz" lang="fr" />
         </div>
       </section>
 
