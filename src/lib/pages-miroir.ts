@@ -18,6 +18,7 @@ export const PAGES_MIROIR = [
   "/domaines",
   "/faq",
   "/blog",
+  "/carrieres",
   "/references",
   "/referentiel",
   "/filieres",
