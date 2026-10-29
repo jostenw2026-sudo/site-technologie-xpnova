@@ -7,9 +7,9 @@ import IntroPage from '@/components/IntroPage';
 // liens canonical et hreflang.
 export const metadata: Metadata = {
   alternates: alternatesPour('/a-propos'),
-  title: 'À propos de la division Technologie — XP-NOVA',
+  title: 'À propos de la division TECHNOLOGIE — XP-NOVA',
   description:
-    'La division Technologie de XP-NOVA conçoit et dimensionne les équipements techniques et numériques des projets agro-systémiques.',
+    'La division TECHNOLOGIE de XP-NOVA conçoit et dimensionne les équipements techniques et numériques des projets agro-systémiques.',
 };
 
 export default function AProposPage() {
@@ -17,9 +17,9 @@ export default function AProposPage() {
     <div className="flex flex-col">
       <section className="py-16 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
-          <h1 className="text-4xl font-bold text-[#0D1F5C] mb-6">À propos de la division Technologie</h1>
+          <h1 className="text-4xl font-bold text-[#0D1F5C] mb-6">À propos de la division TECHNOLOGIE</h1>
           <p className="text-lg text-[#5A6072] max-w-3xl">
-            La division Technologie de XP-NOVA conçoit et dimensionne les équipements techniques et numériques nécessaires aux projets agro-systémiques.
+            La division TECHNOLOGIE de XP-NOVA conçoit et dimensionne les équipements techniques et numériques nécessaires aux projets agro-systémiques.
           </p>
           <IntroPage cle="aPropos" lang="fr" />
         </div>

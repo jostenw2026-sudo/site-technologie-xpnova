@@ -37,8 +37,8 @@ function Boite({ x, y, w, h, titre, lignes = [], fort = false, tint = false }: {
 export function SchemaRole({ lang = 'fr' }: { lang?: L }) {
   const t =
     lang === 'en'
-      ? { titre: 'XP-NOVA engineers; others supply, install and operate', a: 'XP-NOVA Technology', a1: 'Analyses, sizes, specifies', a2: 'Compares bids, tests, accepts', b: 'Selected contractors', b1: 'Supply the equipment', b2: 'Install and maintain', c: 'You', c1: 'Decide and buy', c2: 'Operate and produce', f1: 'specifications', f2: 'acceptance report' }
-      : { titre: 'XP-NOVA conçoit et vérifie ; d’autres fournissent, installent et exploitent', a: 'XP-NOVA Technologie', a1: 'Analyse, dimensionne, spécifie', a2: 'Compare les offres, essaie, réceptionne', b: 'Prestataires retenus', b1: "Fournissent l'équipement", b2: 'Installent et maintiennent', c: 'Vous', c1: 'Décidez et achetez', c2: 'Exploitez et produisez', f1: 'cahier des charges', f2: 'PV de réception' };
+      ? { titre: 'XP-NOVA engineers; others supply, install and operate', a: 'XP-NOVA TECHNOLOGY', a1: 'Analyses, sizes, specifies', a2: 'Compares bids, tests, accepts', b: 'Selected contractors', b1: 'Supply the equipment', b2: 'Install and maintain', c: 'You', c1: 'Decide and buy', c2: 'Operate and produce', f1: 'specifications', f2: 'acceptance report' }
+      : { titre: 'XP-NOVA conçoit et vérifie ; d’autres fournissent, installent et exploitent', a: 'XP-NOVA TECHNOLOGIE', a1: 'Analyse, dimensionne, spécifie', a2: 'Compare les offres, essaie, réceptionne', b: 'Prestataires retenus', b1: "Fournissent l'équipement", b2: 'Installent et maintiennent', c: 'Vous', c1: 'Décidez et achetez', c2: 'Exploitez et produisez', f1: 'cahier des charges', f2: 'PV de réception' };
   return (
     <svg viewBox="0 0 760 200" role="img" aria-label={t.titre} className="w-full h-auto" fontFamily="inherit">
       <Fleche id="role-arrow" />

@@ -17,6 +17,8 @@ export const PAGES_MIROIR = [
   "/cycle-de-vie",
   "/domaines",
   "/faq",
+  "/blog",
+  "/carrieres",
   "/references",
   "/referentiel",
   "/filieres",

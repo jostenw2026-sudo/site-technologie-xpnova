@@ -21,7 +21,7 @@ import { sourceSans, playfair } from "@/lib/polices";
 
 export const metadata: Metadata = {
   metadataBase: new URL(URL_PRODUCTION),
-  title: "Technology — Equipment & Technical Systems Engineering — XP-NOVA",
+  title: "TECHNOLOGY — Equipment & Technical Systems Engineering — XP-NOVA",
   description: "Engineering for mechanization, irrigation, processing, storage, cold chain, energy, handling and digital equipment for agro-systemic projects in Cameroon and Central Africa.",
   // Partage social : voir src/app/(fr)/layout.tsx (image : opengraph-image.tsx de ce dossier).
   openGraph: { type: "website", url: "./", locale: "en_GB", alternateLocale: "fr_FR" },
@@ -43,13 +43,13 @@ const divisions = [
   },
   {
     key: 'technologie',
-    name: 'Technology',
+    name: 'TECHNOLOGY',
     url: URL_SITES.technologie,
     accentColor: '#3D5A73',
   },
   {
     key: 'formation',
-    name: 'Training',
+    name: 'TRAINING',
     url: `${URL_SITES.formation}/en`,
     accentColor: '#B4470F',
   },
@@ -62,6 +62,7 @@ const navItems = [
   { label: 'Reference', href: '/en/referentiel' },
   { label: 'Life Cycle', href: '/en/cycle-de-vie' },
   { label: 'References', href: '/en/references' },
+  { label: 'Blog', href: '/en/blog' },
   { label: 'FAQ', href: '/en/faq' },
   { label: 'About', href: '/en/a-propos' },
   { label: 'Contact', href: '/en/contact' },
@@ -95,7 +96,7 @@ export default function EnglishRootLayout({
             logoHref="/en"
           />
         </div>
-        <DivisionBadge divisionName="Technology" lang="en" parentUrl={`${URL_SITES.portail}/en`} />
+        <DivisionBadge divisionName="TECHNOLOGY" lang="en" parentUrl={`${URL_SITES.portail}/en`} />
         <main className="flex-1">{children}</main>
         <BoutonWhatsApp lang="en" />
         <Footer lang="en" />

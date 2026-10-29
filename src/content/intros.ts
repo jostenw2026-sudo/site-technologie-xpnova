@@ -24,7 +24,7 @@ export const INTROS: Record<'fr' | 'en', Record<CleIntro, Intro>> = {
     accueil: {
       titre: 'Ce que vous trouverez sur ce site',
       texte:
-        "La division Technologie répond à une question simple : quel équipement, de quelle capacité, à quel coût d'exploitation, pour votre projet et votre site ? Elle instruit cette question en ingénieur indépendant, sans vendre ni installer.",
+        "La division TECHNOLOGIE répond à une question simple : quel équipement, de quelle capacité, à quel coût d'exploitation, pour votre projet et votre site ? Elle instruit cette question en ingénieur indépendant, sans vendre ni installer.",
       points: [
         '8 domaines techniques, de la mécanisation aux équipements numériques.',
         "10 services, de l'analyse du besoin à la réception des équipements.",
@@ -116,7 +116,7 @@ export const INTROS: Record<'fr' | 'en', Record<CleIntro, Intro>> = {
     accueil: {
       titre: 'What you will find on this site',
       texte:
-        'The Technology division answers a simple question: which equipment, at what capacity, at what operating cost, for your project and your site? It investigates it as an independent engineer, without selling or installing anything.',
+        'The TECHNOLOGY division answers a simple question: which equipment, at what capacity, at what operating cost, for your project and your site? It investigates it as an independent engineer, without selling or installing anything.',
       points: [
         '8 technical domains, from mechanisation to digital equipment.',
         '10 services, from needs analysis to equipment acceptance.',

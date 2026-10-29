@@ -9,7 +9,7 @@ import IntroPage from '@/components/IntroPage';
 // comme la page française. Liens canonical et hreflang.
 export const metadata: Metadata = {
   alternates: alternatesPour('/en/references'),
-  title: 'Technical engineering projects — Technology XP-NOVA',
+  title: 'Technical engineering projects — TECHNOLOGY XP-NOVA',
   robots: { index: false, follow: true },
 };
 

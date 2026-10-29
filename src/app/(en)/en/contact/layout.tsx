@@ -7,9 +7,9 @@ import { alternatesPour } from '@/lib/alternates';
 // validé par la direction le 24/10/2026).
 export const metadata: Metadata = {
   alternates: alternatesPour('/en/contact'),
-  title: 'Contact — Technology XP-NOVA',
+  title: 'Contact — TECHNOLOGY XP-NOVA',
   description:
-    'A technical equipment project? Contact the Technology division of XP-NOVA in Yaoundé: form, WhatsApp or phone.',
+    'A technical equipment project? Contact the TECHNOLOGY division of XP-NOVA in Yaoundé: form, WhatsApp or phone.',
 };
 
 export default function ContactLayout({ children }: { children: React.ReactNode }) {

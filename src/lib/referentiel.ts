@@ -1,4 +1,4 @@
-// Référentiel Technologie XP-NOVA (RT-TECH v1.0, validé le 21/10/2026).
+// Référentiel TECHNOLOGIE XP-NOVA (RT-TECH v1.0, validé le 21/10/2026).
 // Source de vérité : scripts/generer-rt-tech.py → src/content/rt-tech.{fr,en}.json.
 // Ne pas modifier les JSON à la main : corriger le script puis le relancer.
 
@@ -144,7 +144,7 @@ export function nomTitreFiliere(f: Filiere, lang: Lang): string {
 // ---------------------------------------------------------------------------
 // Titres et descriptions validés par la direction (« série 2 validée », 25/10/2026).
 // Titre (fiches du référentiel et fiches filières) : cascade sur le nom de titre ci-dessus,
-// « {nom} — Technologie XP-NOVA » (EN « — Technology XP-NOVA ») s'il tient en 60 caractères,
+// « {nom} — TECHNOLOGIE XP-NOVA » (EN « — TECHNOLOGY XP-NOVA ») s'il tient en 60 caractères,
 // sinon « {nom} — XP-NOVA », sinon le nom seul (décisions A6, A7).
 // Apostrophes droites des données remplacées par ’ dans les métadonnées seulement : le texte
 // visible (H1, corps, fil d'Ariane) garde la forme des données (décision A4).
@@ -152,7 +152,7 @@ export function nomTitreFiliere(f: Filiere, lang: Lang): string {
 
 const TITRE_MAX = 60;
 const DESCRIPTION_MAX = 160;
-const SUFFIXE_TITRE: Record<Lang, string> = { fr: ' — Technologie XP-NOVA', en: ' — Technology XP-NOVA' };
+const SUFFIXE_TITRE: Record<Lang, string> = { fr: ' — TECHNOLOGIE XP-NOVA', en: ' — TECHNOLOGY XP-NOVA' };
 const SUFFIXE_TITRE_COURT = ' — XP-NOVA';
 
 /** Apostrophe typographique (’) à la place de l'apostrophe droite, pour les métadonnées. */
