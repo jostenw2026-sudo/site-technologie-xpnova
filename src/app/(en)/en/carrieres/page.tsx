@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { alternatesPour } from '@/lib/alternates';
 import FormulaireCandidature from '@/components/FormulaireCandidature';
 import Illustration from '@/components/Illustration';
+import LienCarrieresPortail from '@/components/LienCarrieresPortail';
 import { URL_SITES } from '@/lib/sites';
 
 // Page Carrières de la division (29/10/2026) : profils recherchés, renvoi vers les offres
@@ -27,6 +28,7 @@ export default function CarrieresPage() {
           <p className="text-sm font-bold uppercase tracking-[0.14em] text-[#8A6300] mb-3">Careers</p>
           <h1 className="text-4xl font-bold text-[#0D1F5C] mb-6">Join the TECHNOLOGY division</h1>
           <p className="text-lg text-[#5A6072] max-w-3xl">{"The TECHNOLOGY division designs and sizes the equipment and technical systems of agrosystem projects. It recruits engineers and technical experts as its assignments require."}</p>
+          <LienCarrieresPortail lang="en" />
           <Illustration src="/images/illustrations/services.webp" alt="Engineer recording the settings of a rice hulling unit" lang="en" />
         </div>
       </section>
