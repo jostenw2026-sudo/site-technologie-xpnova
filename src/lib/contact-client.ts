@@ -12,7 +12,7 @@ export type EtatEnvoi =
 export const EMAIL_CONTACT = "hello@xp-nova.com";
 
 function construireMailto(donnees: Record<string, string>, lang: "fr" | "en"): string {
-  const sujet = lang === "en" ? "Request — Technology division (XP-NOVA)" : "Demande — division Technologie (XP-NOVA)";
+  const sujet = lang === "en" ? "Request — TECHNOLOGY division (XP-NOVA)" : "Demande — division TECHNOLOGIE (XP-NOVA)";
   const corps = Object.entries(donnees)
     .filter(([, v]) => v && v.trim())
     .map(([k, v]) => `${k} : ${v.trim()}`)

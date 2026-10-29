@@ -1,4 +1,4 @@
-// Configuration i18n pour XP-NOVA Technologie
+// Configuration i18n pour XP-NOVA TECHNOLOGIE
 export const i18n = {
   defaultLocale: 'fr',
   locales: ['fr', 'en'],

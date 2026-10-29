@@ -1,4 +1,4 @@
-// FAQ de la division Technologie (décision DG du 21/10/2026). Réponses alignées sur la
+// FAQ de la division TECHNOLOGIE (décision DG du 21/10/2026). Réponses alignées sur la
 // doctrine « ingénierie seule », le référentiel RT-TECH v1.0 et les conditions publiées
 // sur AGROVITA (dépôt gratuit, premier retour sous 48 h, devis après ouverture du dossier).
 
@@ -22,7 +22,7 @@ export const FAQ: Record<'fr' | 'en', ThemeFaq[]> = {
       questions: [
         {
           q: 'Vendez-vous ou installez-vous des équipements ?',
-          r: "Non. XP-NOVA Technologie fait de l'ingénierie : analyse du besoin, comparaison de solutions, dimensionnement, cahiers des charges, analyse d'offres, essais et réception. La fourniture, l'installation et la maintenance sont confiées à des prestataires que vous choisissez sur la base de nos spécifications. Nous ne percevons aucune commission.",
+          r: "Non. XP-NOVA TECHNOLOGIE fait de l'ingénierie : analyse du besoin, comparaison de solutions, dimensionnement, cahiers des charges, analyse d'offres, essais et réception. La fourniture, l'installation et la maintenance sont confiées à des prestataires que vous choisissez sur la base de nos spécifications. Nous ne percevons aucune commission.",
           lien: { label: 'Nos services', href: '/services' },
         },
         {
@@ -141,7 +141,7 @@ export const FAQ: Record<'fr' | 'en', ThemeFaq[]> = {
       questions: [
         {
           q: 'Do you sell or install equipment?',
-          r: 'No. XP-NOVA Technology does engineering: needs analysis, options comparison, sizing, specifications, bid analysis, testing and acceptance. Supply, installation and maintenance go to contractors you select on the basis of our specifications. We receive no commission.',
+          r: 'No. XP-NOVA TECHNOLOGY does engineering: needs analysis, options comparison, sizing, specifications, bid analysis, testing and acceptance. Supply, installation and maintenance go to contractors you select on the basis of our specifications. We receive no commission.',
           lien: { label: 'Our services', href: '/en/services' },
         },
         {

@@ -21,7 +21,7 @@ import { sourceSans, playfair } from "@/lib/polices";
 
 export const metadata: Metadata = {
   metadataBase: new URL(URL_PRODUCTION),
-  title: "Technologie — Ingénierie des équipements et systèmes techniques — XP-NOVA",
+  title: "TECHNOLOGIE — Ingénierie des équipements et systèmes techniques — XP-NOVA",
   description: "Ingénierie mécanisation, irrigation, transformation, stockage, froid, énergie, manutention et équipements numériques pour projets agro-systémiques au Cameroun et en Afrique centrale.",
   // Partage social. og:title et og:description : ceux de la page, repris par Next ;
   // url « ./ » : l'adresse de la page (= sa canonical) ; image : opengraph-image.tsx
@@ -45,13 +45,13 @@ const divisions = [
   },
   {
     key: 'technologie',
-    name: 'Technologie',
+    name: 'TECHNOLOGIE',
     url: URL_SITES.technologie,
     accentColor: '#3D5A73',
   },
   {
     key: 'formation',
-    name: 'Formation',
+    name: 'FORMATION',
     url: URL_SITES.formation,
     accentColor: '#B4470F',
   },
@@ -64,6 +64,7 @@ const navItems = [
   { label: 'Référentiel', href: '/referentiel' },
   { label: 'Cycle de vie', href: '/cycle-de-vie' },
   { label: 'Références', href: '/references' },
+  { label: 'Blog', href: '/blog' },
   { label: 'FAQ', href: '/faq' },
   { label: 'À propos', href: '/a-propos' },
   { label: 'Contact', href: '/contact' },
@@ -91,7 +92,7 @@ export default function FrenchRootLayout({
             logoHref="/"
           />
         </div>
-        <DivisionBadge divisionName="Technologie" />
+        <DivisionBadge divisionName="TECHNOLOGIE" />
         <main className="flex-1">{children}</main>
         <BoutonWhatsApp lang="fr" />
         <Footer />

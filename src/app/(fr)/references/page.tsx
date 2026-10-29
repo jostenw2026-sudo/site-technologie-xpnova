@@ -8,7 +8,7 @@ import IntroPage from '@/components/IntroPage';
 // (noindex, liens suivis) et hors sitemap (même tableau, section 7.4). Liens canonical et hreflang.
 export const metadata: Metadata = {
   alternates: alternatesPour('/references'),
-  title: "Projets d'ingénierie technique — Technologie XP-NOVA",
+  title: "Projets d'ingénierie technique — TECHNOLOGIE XP-NOVA",
   robots: { index: false, follow: true },
 };
 

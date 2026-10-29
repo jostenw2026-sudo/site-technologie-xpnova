@@ -13,8 +13,8 @@ export default function PageFaq({ lang }: { lang: 'fr' | 'en' }) {
   const base = lang === 'en' ? '/en' : '';
   const t =
     lang === 'en'
-      ? { titre: 'Frequently asked questions', lead: 'What prospects, cooperatives, donors and local authorities ask us before engaging the Technology division.', autre: 'Your question is not here?', cta: 'Ask us', wa: 'or on WhatsApp' }
-      : { titre: 'Questions fréquentes', lead: 'Ce que promoteurs, coopératives, bailleurs et collectivités nous demandent avant d’engager la division Technologie.', autre: 'Votre question n’est pas là ?', cta: 'Posez-la nous', wa: 'ou sur WhatsApp' };
+      ? { titre: 'Frequently asked questions', lead: 'What prospects, cooperatives, donors and local authorities ask us before engaging the TECHNOLOGY division.', autre: 'Your question is not here?', cta: 'Ask us', wa: 'or on WhatsApp' }
+      : { titre: 'Questions fréquentes', lead: 'Ce que promoteurs, coopératives, bailleurs et collectivités nous demandent avant d’engager la division TECHNOLOGIE.', autre: 'Votre question n’est pas là ?', cta: 'Posez-la nous', wa: 'ou sur WhatsApp' };
 
   const jsonLd = {
     '@context': 'https://schema.org',

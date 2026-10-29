@@ -9,7 +9,7 @@ import Illustration from '@/components/Illustration';
 // liens canonical et hreflang.
 export const metadata: Metadata = {
   alternates: alternatesPour('/services'),
-  title: "Nos services d'ingénierie technique — Technologie XP-NOVA",
+  title: "Nos services d'ingénierie technique — TECHNOLOGIE XP-NOVA",
   description:
     "Services d'ingénierie technique de XP-NOVA : mécanisation, irrigation, transformation, stockage, froid, énergie et équipements numériques.",
 };

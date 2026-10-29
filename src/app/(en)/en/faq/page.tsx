@@ -4,8 +4,8 @@ import PageFaq from '@/components/PageFaq';
 
 export const metadata: Metadata = {
   alternates: alternatesPour('/en/faq'),
-  title: 'Frequently asked questions — Technology XP-NOVA',
-  description: "XP-NOVA's role, cost of a request, lead times, RT-TECH reference, power cuts, spare parts, PECAE, EUDR: the Technology division's answers.",
+  title: 'Frequently asked questions — TECHNOLOGY XP-NOVA',
+  description: "XP-NOVA's role, cost of a request, lead times, RT-TECH reference, power cuts, spare parts, PECAE, EUDR: the TECHNOLOGY division's answers.",
 };
 
 export default function FaqPage() {

@@ -10,9 +10,9 @@ import { getReferentiel } from '@/lib/referentiel';
 // liens canonical et hreflang.
 export const metadata: Metadata = {
   alternates: alternatesPour('/domaines'),
-  title: "Domaines d'intervention — Technologie XP-NOVA",
+  title: "Domaines d'intervention — TECHNOLOGIE XP-NOVA",
   description:
-    "Mécanisation, irrigation, transformation, stockage, froid, énergie, manutention, numérique : les domaines d'intervention de la division Technologie.",
+    "Mécanisation, irrigation, transformation, stockage, froid, énergie, manutention, numérique : les domaines d'intervention de la division TECHNOLOGIE.",
 };
 
 // Les 8 cartes suivent l'ordre T1..T8 du référentiel RT-TECH (src/content/rt-tech.fr.json).

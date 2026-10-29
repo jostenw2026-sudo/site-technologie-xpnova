@@ -24,7 +24,7 @@ export const ID_GROUPE = "https://xp-nova.com/#organisation";
 const FICHE_GOOGLE = "https://maps.app.goo.gl/xaTfVMgpvk4sHu5W9";
 
 /**
- * La division Technologie, rattachée à l'organisation du groupe. Nom, adresse,
+ * La division TECHNOLOGIE, rattachée à l'organisation du groupe. Nom, adresse,
  * téléphone et e-mail : fichier de référence du groupe (donnees-groupe.json).
  */
 export function organisationLd(lang: Langue) {

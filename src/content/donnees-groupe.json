@@ -32,7 +32,7 @@
   "divisions": [
     { "cle": "agrovita", "nom": "AGROVITA", "tagline": "Agriculture, élevage & agro-industrie", "taglineEn": "Agriculture & agri-business", "urlProduction": "https://agrovita.xp-nova.com" },
     { "cle": "odt", "nom": "ODT", "tagline": "Territoires, infrastructures & projets locaux", "taglineEn": "Territorial Development Operator", "urlProduction": "https://odt.xp-nova.com" },
-    { "cle": "technologie", "nom": "Technologie", "nomEn": "Technology", "tagline": "Ingénierie des équipements et systèmes techniques", "taglineEn": "Equipment & systems engineering", "urlProduction": "https://technologie.xp-nova.com" },
-    { "cle": "formation", "nom": "Formation", "nomEn": "Training", "tagline": "Ingénierie de la formation professionnelle", "taglineEn": "Professional training engineering", "urlProduction": "https://ingenierie-formation.xp-nova.com" }
+    { "cle": "technologie", "nom": "TECHNOLOGIE", "nomEn": "TECHNOLOGY", "tagline": "Ingénierie des équipements et systèmes techniques", "taglineEn": "Equipment & systems engineering", "urlProduction": "https://technologie.xp-nova.com" },
+    { "cle": "formation", "nom": "FORMATION", "nomEn": "TRAINING", "tagline": "Ingénierie de la formation professionnelle", "taglineEn": "Professional training engineering", "urlProduction": "https://ingenierie-formation.xp-nova.com" }
   ]
 }

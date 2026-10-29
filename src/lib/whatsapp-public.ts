@@ -17,21 +17,21 @@ export function lienWhatsapp(message: string): string {
 // du numéro public le reconnaît et propose directement les besoins de la division (volet 1, 21/10/2026).
 export const MESSAGES = {
   fr: {
-    defaut: "TECHNOLOGIE — Bonjour XP-NOVA Technologie, je souhaite échanger sur un projet d'équipement.",
-    prestation: (code: string) => `TECHNOLOGIE — Bonjour XP-NOVA Technologie, je souhaite échanger sur la prestation ${code} du référentiel.`,
-    page: (titre: string) => `TECHNOLOGIE — Bonjour XP-NOVA Technologie, je vous écris depuis la page « ${titre} ».`,
+    defaut: "TECHNOLOGIE — Bonjour XP-NOVA TECHNOLOGIE, je souhaite échanger sur un projet d'équipement.",
+    prestation: (code: string) => `TECHNOLOGIE — Bonjour XP-NOVA TECHNOLOGIE, je souhaite échanger sur la prestation ${code} du référentiel.`,
+    page: (titre: string) => `TECHNOLOGIE — Bonjour XP-NOVA TECHNOLOGIE, je vous écris depuis la page « ${titre} ».`,
     bouton: "Échanger sur WhatsApp",
     boutonCourt: "WhatsApp",
-    aria: "Ouvrir une conversation WhatsApp avec XP-NOVA Technologie",
+    aria: "Ouvrir une conversation WhatsApp avec XP-NOVA TECHNOLOGIE",
     reponse: "Un expert vous répond sous 48 h ouvrées.",
   },
   en: {
-    defaut: "TECHNOLOGY — Hello XP-NOVA Technology, I would like to discuss an equipment project.",
-    prestation: (code: string) => `TECHNOLOGY — Hello XP-NOVA Technology, I would like to discuss service ${code} from the reference.`,
-    page: (titre: string) => `TECHNOLOGY — Hello XP-NOVA Technology, I am writing from the page "${titre}".`,
+    defaut: "TECHNOLOGY — Hello XP-NOVA TECHNOLOGY, I would like to discuss an equipment project.",
+    prestation: (code: string) => `TECHNOLOGY — Hello XP-NOVA TECHNOLOGY, I would like to discuss service ${code} from the reference.`,
+    page: (titre: string) => `TECHNOLOGY — Hello XP-NOVA TECHNOLOGY, I am writing from the page "${titre}".`,
     bouton: "Chat on WhatsApp",
     boutonCourt: "WhatsApp",
-    aria: "Open a WhatsApp conversation with XP-NOVA Technology",
+    aria: "Open a WhatsApp conversation with XP-NOVA TECHNOLOGY",
     reponse: "An expert replies within 48 working hours.",
   },
 } as const;

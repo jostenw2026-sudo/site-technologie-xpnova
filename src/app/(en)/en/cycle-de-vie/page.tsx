@@ -9,9 +9,9 @@ import Illustration from '@/components/Illustration';
 // validé par la direction le 24/10/2026) ; liens canonical et hreflang.
 export const metadata: Metadata = {
   alternates: alternatesPour('/en/cycle-de-vie'),
-  title: 'Equipment lifecycle — Technology XP-NOVA',
+  title: 'Equipment lifecycle — TECHNOLOGY XP-NOVA',
   description:
-    'The lifecycle of technical equipment in agro-systemic projects, presented by the Technology division of XP-NOVA.',
+    'The lifecycle of technical equipment in agro-systemic projects, presented by the TECHNOLOGY division of XP-NOVA.',
 };
 
 export default function LifecyclePageEN() {

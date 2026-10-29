@@ -9,7 +9,7 @@ import Illustration from '@/components/Illustration';
 // validé par la direction le 24/10/2026) ; liens canonical et hreflang.
 export const metadata: Metadata = {
   alternates: alternatesPour('/en/services'),
-  title: 'Our technical engineering services — Technology XP-NOVA',
+  title: 'Our technical engineering services — TECHNOLOGY XP-NOVA',
   description:
     "XP-NOVA's technical engineering services: mechanization, irrigation, processing, storage, cold chain, energy and digital equipment.",
 };

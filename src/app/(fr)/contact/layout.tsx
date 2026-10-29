@@ -6,9 +6,9 @@ import { alternatesPour } from '@/lib/alternates';
 // Titre et description : tableau de référencement validé par la direction le 24/10/2026.
 export const metadata: Metadata = {
   alternates: alternatesPour('/contact'),
-  title: 'Contact — Technologie XP-NOVA',
+  title: 'Contact — TECHNOLOGIE XP-NOVA',
   description:
-    "Un projet d'équipements techniques ? Contactez la division Technologie de XP-NOVA à Yaoundé : formulaire, WhatsApp ou téléphone.",
+    "Un projet d'équipements techniques ? Contactez la division TECHNOLOGIE de XP-NOVA à Yaoundé : formulaire, WhatsApp ou téléphone.",
 };
 
 export default function ContactLayout({ children }: { children: React.ReactNode }) {
