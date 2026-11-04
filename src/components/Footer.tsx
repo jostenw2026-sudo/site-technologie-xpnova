@@ -21,7 +21,7 @@ export default function Footer({ lang = 'fr' }: FooterProps) {
   const translations = {
     fr: {
       signature: "De l'idée à l'impact.",
-      baseline: "Bureau d'Ingénierie Conseil",
+      baseline: "Bureau d'Études Conseil",
       responsePromise: "Un expert vous répond sous 48 h.",
       navigation: "Navigation",
       portal: "Le portail",
