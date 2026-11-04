@@ -47,7 +47,7 @@ export const SharedFooter: React.FC<SharedFooterProps> = ({
   },
   divisions = [],
   legal = {
-    mention: '© XP-NOVA SARL — Bureau d\'Études Conseil',
+    mention: '© XP-NOVA SARL — Bureau d\'Ingénierie Conseil',
     mentionsLegales: '/mentions-legales',
     confidentialite: '/confidentialite',
   },

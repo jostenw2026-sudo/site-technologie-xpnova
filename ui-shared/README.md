@@ -141,7 +141,7 @@ import { SharedFooter } from '@xpnova/ui-shared';
     responsePromise: '48 h',
   }}
   legal={{
-    mention: '© XP-NOVA SARL — Bureau d\'Études Conseil',
+    mention: '© XP-NOVA SARL — Bureau d\'Ingénierie Conseil',
     mentionsLegales: '/mentions-legales',
     confidentialite: '/confidentialite',
   }}
