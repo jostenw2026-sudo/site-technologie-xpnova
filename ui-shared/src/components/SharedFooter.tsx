@@ -40,7 +40,7 @@ export const SharedFooter: React.FC<SharedFooterProps> = ({
   columns,
   companyInfo = {
     signature: 'De l\'idée à l\'impact.',
-    address: '134, Rue 1813, Vallée Bastos — B.P. 5603, Nlongkak, Yaoundé, Cameroun',
+    address: '80, Rue 1105, Etoa-Meki — B.P. 5603, Nlongkak, Yaoundé, Cameroun',
     phone: '+237 6700 34 000',
     email: 'hello@xp-nova.com',
     responsePromise: '48 h',

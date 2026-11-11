@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-19",
+  "version": "2026-11-11",
   "regle": "Fichier de référence des données du groupe XP-NOVA (CDC-RECETTE-XPNOVA v1.1 §8). Source : portail-xp-nova. Recopié à l'identique dans chaque dépôt ; ne pas modifier une copie, modifier la source puis recopier.",
   "groupe": {
     "nom": "XP-NOVA",
@@ -23,8 +23,8 @@
   "coordonnees": {
     "courriel": "hello@xp-nova.com",
     "telephone": "+237 6700 34 000",
-    "adresse": "134, Rue 1813, Vallée Bastos — B.P. 5603, Nlongkak, Yaoundé, Cameroun",
-    "adresseEn": "134, Rue 1813, Vallée Bastos — P.O. Box 5603, Nlongkak, Yaoundé, Cameroon"
+    "adresse": "80, Rue 1105, Etoa-Meki — B.P. 5603, Nlongkak, Yaoundé, Cameroun",
+    "adresseEn": "80, Rue 1105, Etoa-Meki — P.O. Box 5603, Nlongkak, Yaoundé, Cameroon"
   },
   "engagements": {
     "premierRetour": "48 h"
