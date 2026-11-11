@@ -239,7 +239,7 @@ export default function ContactPage() {
               </a>
             </p>
             <p className="text-[#5A6072]">
-              <strong>Adresse :</strong> 134, Rue 1813, Vallée Bastos — B.P. 5603, Nlongkak, Yaoundé, Cameroun
+              <strong>Adresse :</strong> 80, Rue 1105, Etoa-Meki — B.P. 5603, Nlongkak, Yaoundé, Cameroun
             </p>
           </div>
         </div>

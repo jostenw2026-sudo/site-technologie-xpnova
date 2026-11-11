@@ -5,7 +5,7 @@
 import fs from "node:fs";
 import crypto from "node:crypto";
 
-const EMPREINTE_ATTENDUE = "fc747e2d797befe3";
+const EMPREINTE_ATTENDUE = "6cbb5a45aeddd4b4";
 const FICHIER = "src/content/donnees-groupe.json";
 let ko = 0;
 const ok = (c, m) => { console.log(c ? `  ok   ${m}` : `  ECHEC : ${m}`); if (!c) ko++; };
