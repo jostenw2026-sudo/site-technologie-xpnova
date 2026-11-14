@@ -24,7 +24,11 @@
     "courriel": "hello@xp-nova.com",
     "telephone": "+237 6700 34 000",
     "adresse": "80, Rue 1105, Etoa-Meki — B.P. 5603, Nlongkak, Yaoundé, Cameroun",
-    "adresseEn": "80, Rue 1105, Etoa-Meki — P.O. Box 5603, Nlongkak, Yaoundé, Cameroon"
+    "adresseEn": "80, Rue 1105, Etoa-Meki — P.O. Box 5603, Nlongkak, Yaoundé, Cameroon",
+    "siege": "80, Rue 1105, Etoa-Meki",
+    "siegeEn": "80, Rue 1105, Etoa-Meki",
+    "adressePostale": "B.P. 5603 Nlongkak, Yaoundé, Cameroun",
+    "adressePostaleEn": "P.O. Box 5603 Nlongkak, Yaoundé, Cameroon"
   },
   "engagements": {
     "premierRetour": "48 h"
