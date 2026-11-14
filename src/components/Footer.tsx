@@ -6,6 +6,7 @@ import { URL_SITES } from "@/lib/sites";
 // contrôlée par `npm run verifier:groupe`.
 import G from "@/content/donnees-groupe.json";
 import { EncartAgroboussole } from "@/components/AppelAgroboussole";
+import ReseauxSociaux from "@/components/ReseauxSociaux";
 
 const division = (cle: string) => {
   const d = G.divisions.find((x) => x.cle === cle);
@@ -169,6 +170,11 @@ export default function Footer({ lang = 'fr' }: FooterProps) {
           <p className="mt-2.5 text-[0.86rem] font-semibold text-[#D4A017]/80">
             {site.responsePromise}
           </p>
+          <ReseauxSociaux
+            en={lang === 'en'}
+            classeTitre="text-[#D4A017]"
+            classeLien="text-white/70 hover:text-[#D4A017]"
+          />
         </div>
 
         {/* Navigation */}
