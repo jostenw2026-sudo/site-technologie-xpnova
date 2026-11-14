@@ -31,7 +31,7 @@
   },
   "reseaux": [
     { "cle": "linkedin", "nom": "LinkedIn", "url": "https://www.linkedin.com/company/xp-nova-sarl", "libelle": "XP-NOVA sur LinkedIn (nouvel onglet)", "libelleEn": "XP-NOVA on LinkedIn (new tab)" },
-    { "cle": "youtube", "nom": "YouTube", "url": "https://www.youtube.com/@Josten-XPN", "libelle": "Chaîne YouTube de XP-NOVA (nouvel onglet)", "libelleEn": "XP-NOVA YouTube channel (new tab)" }
+    { "cle": "youtube", "nom": "YouTube", "url": "https://www.youtube.com/@xpenova", "libelle": "Chaîne YouTube de XP-NOVA (nouvel onglet)", "libelleEn": "XP-NOVA YouTube channel (new tab)" }
   ],
   "divisions": [
     { "cle": "agrovita", "nom": "AGROVITA", "tagline": "Agriculture, élevage & agro-industrie", "taglineEn": "Agriculture & agri-business", "urlProduction": "https://agrovita.xp-nova.com" },

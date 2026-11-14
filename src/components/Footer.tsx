@@ -145,12 +145,12 @@ export default function Footer({ lang = 'fr' }: FooterProps) {
           <div className="mt-5 h-px w-10 bg-[#D4A017]/50" />
 
           <address className="mt-4 not-italic text-[0.86rem] leading-snug text-white/70">
-            <span className="block max-w-[38ch]">{site.address}</span>
+            <span className="block max-w-[38ch]"><span aria-hidden="true">📍 </span>{site.address}</span>
             <a
               href={`tel:${site.phone.replace(/\s/g, "")}`}
               className="mt-1.5 block text-white/70 hover:text-[#D4A017]"
             >
-              {site.phone}
+              <span aria-hidden="true">📞 </span>{site.phone}
             </a>
             <a
               href={lienWhatsapp(MESSAGES[lang].defaut)}
@@ -158,13 +158,13 @@ export default function Footer({ lang = 'fr' }: FooterProps) {
               rel="noopener noreferrer"
               className="block text-white/70 hover:text-[#D4A017]"
             >
-              WhatsApp {NUMERO_WHATSAPP_AFFICHE} ↗
+              <span aria-hidden="true">💬 </span>WhatsApp {NUMERO_WHATSAPP_AFFICHE} ↗
             </a>
             <a
               href={`mailto:${site.email}`}
               className="block text-white/70 hover:text-[#D4A017]"
             >
-              {site.email}
+              <span aria-hidden="true">✉️ </span>{site.email}
             </a>
           </address>
           <p className="mt-2.5 text-[0.86rem] font-semibold text-[#D4A017]/80">
