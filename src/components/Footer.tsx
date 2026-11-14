@@ -145,7 +145,8 @@ export default function Footer({ lang = 'fr' }: FooterProps) {
           <div className="mt-5 h-px w-10 bg-[#D4A017]/50" />
 
           <address className="mt-4 not-italic text-[0.86rem] leading-snug text-white/70">
-            <span className="block max-w-[38ch]"><span aria-hidden="true">📍 </span>{site.address}</span>
+            <span className="block max-w-[38ch]"><span aria-hidden="true">📍 </span>{lang === 'fr' ? G.coordonnees.siege : G.coordonnees.siegeEn}</span>
+            <span className="mt-1 block max-w-[38ch]"><span aria-hidden="true">📮 </span>{lang === 'fr' ? G.coordonnees.adressePostale : G.coordonnees.adressePostaleEn}</span>
             <a
               href={`tel:${site.phone.replace(/\s/g, "")}`}
               className="mt-1.5 block text-white/70 hover:text-[#D4A017]"
