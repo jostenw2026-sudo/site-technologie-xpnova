@@ -36,7 +36,7 @@
   "reseaux": [
     { "cle": "linkedin", "nom": "LinkedIn", "url": "https://www.linkedin.com/company/xp-nova-sarl", "libelle": "XP-NOVA sur LinkedIn (nouvel onglet)", "libelleEn": "XP-NOVA on LinkedIn (new tab)" },
     { "cle": "youtube", "nom": "YouTube", "url": "https://www.youtube.com/@xpenova", "libelle": "Chaîne YouTube de XP-NOVA (nouvel onglet)", "libelleEn": "XP-NOVA YouTube channel (new tab)" },
-    { "cle": "facebook", "nom": "Facebook", "url": "https://www.facebook.com/profile.php?id=61591748455150", "libelle": "Page Facebook de XP-NOVA (nouvel onglet)", "libelleEn": "XP-NOVA Facebook page (new tab)" }
+    { "cle": "facebook", "nom": "Facebook", "url": "https://www.facebook.com/xpnova.agrovita", "libelle": "Page Facebook de XP-NOVA (nouvel onglet)", "libelleEn": "XP-NOVA Facebook page (new tab)" }
   ],
   "divisions": [
     { "cle": "agrovita", "nom": "AGROVITA", "tagline": "Agriculture, élevage & agro-industrie", "taglineEn": "Agriculture & agri-business", "urlProduction": "https://agrovita.xp-nova.com" },
